@@ -1,0 +1,152 @@
+/**
+*快捷方式的背景样式,颜色方块背景
+*/
+.shortcut-bg-color1 {
+	background-color: #1B89EA;
+	*background-color: #e6e6e6;
+	background-image: -ms-linear-gradient(-45deg, #2A92F1 33%, #0E6DC7 56%);
+	background-image: -webkit-linear-gradient(-45deg, #2A92F1 33%, #0E6DC7 56%);
+	background-image: -o-linear-gradient(-45deg, #2A92F1 33%, #0E6DC7 56%);
+	background-image: linear-gradient(-45deg, #2A92F1 33%, #0E6DC7 56%);
+	background-image: -moz-linear-gradient(-45deg, #2A92F1 33%, #0E6DC7 56%);
+	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.33,
+		#2A92F1), color-stop(0.56, #0E6DC7) );
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#2A92F1',
+		endColorstr='#0E6DC7', GradientType=0 );
+	filter: progid:dximagetransform.microsoft.gradient(enabled=false );
+}
+
+.shortcut-bg-color1:hover,.shortcut-bg-color1.hover {
+	background-color: #1B89EA;
+}
+
+.shortcut-bg-color2 {
+	background-color: #66B025;
+}
+
+.shortcut-bg-color2:hover,.shortcut-bg-color2.hover {
+	background-color: #1B89EA;
+}
+
+.shortcut-bg-color3 {
+	background-color: #D4542F;
+}
+
+.shortcut-bg-color3:hover,.shortcut-bg-color3.hover {
+	background-color: #1B89EA;
+}
+
+.shortcut-bg-color4 {
+	background-color: #B61E44;
+}
+
+.shortcut-bg-color4:hover,.shortcut-bg-color4.hover {
+	background-color: #1B89EA;
+}
+
+.shortcut-bg-color5 {
+	background-color: #5F3BB7;
+}
+
+.shortcut-bg-color5:hover,.shortcut-bg-color5.hover {
+	background-color: #1B89EA;
+}
+
+.shortcut-bg-color6 {
+	background-color: #5F3BB7;
+}
+
+.shortcut-bg-color6:hover,.shortcut-bg-color6.hover {
+	background-color: #1B89EA;
+}
+
+.shortcut-bg-color7 {
+	background-color: #5F3BB7;
+}
+
+.shortcut-bg-color7:hover,.shortcut-bg-color7.hover {
+	background-color: #1B89EA;
+}
+
+/**
+*快捷方式的背景样式,渐变的方块背景
+*/
+[class^="shortcut-bg-box"],[class*=" shortcut-bg-box"] {
+	display: inline-block;
+	width: 112px;
+	height: 112px;
+	vertical-align: text-top;
+	background-image: url("../images/bg.png");
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+}
+
+.shortcut-bg-box1 {
+	background-color: #1B89EA;
+	background-position: 0px 0px;
+}
+
+.shortcut-bg-box1:hover,.shortcut-bg-box1.hover {
+	background-color: #1B89EA;
+	background-position: -115px 0px;
+}
+
+.shortcut-bg-box2 {
+	background-color: #66B025;
+	background-position: 0px -115px;
+}
+
+.shortcut-bg-box2:hover,.shortcut-bg-box2.hover {
+	background-color: #1B89EA;
+	background-position: -115px -115px;
+}
+
+.shortcut-bg-box3 {
+	background-color: #D4542F;
+	background-position: 0px -230px;
+}
+
+.shortcut-bg-box3:hover,.shortcut-bg-box3.hover {
+	background-color: #1B89EA;
+	background-position: -115px -230px;
+}
+
+.shortcut-bg-box4 {
+	background-color: #B61E44;
+	background-position: 0px -345px;
+}
+
+.shortcut-bg-box4:hover,.shortcut-bg-box4.hover {
+	background-color: #1B89EA;
+	background-position: -115px -345px;
+}
+
+.shortcut-bg-box5 {
+	background-color: #5F3BB7;
+	background-position: 0px -460px;
+}
+
+.shortcut-bg-box5:hover,.shortcut-bg-box5.hover {
+	background-color: #1B89EA;
+	background-position: -115px -460px;
+}
+
+.shortcut-bg-box6 {
+	background-color: #5F3BB7;
+	background-position: 0px -575px;
+}
+
+.shortcut-bg-box6:hover,.shortcut-bg-box6.hover {
+	background-color: #1B89EA;
+	background-position: -115px -575px;
+}
+
+.shortcut-bg-box7 {
+	background-color: #5F3BB7;
+	background-position: 0px -690px;
+}
+
+.shortcut-bg-box7:hover,.shortcut-bg-box7.hover {
+	background-color: #1B89EA;
+	background-position: -115px -690px;
+}

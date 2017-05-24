@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root theme="defalut" path="/oz/webui/">
+	<!-- 
+	1）顶层的js、css节点merge属性默认为true，设为false则该文件不会参与ui组件中控制的文件合并。
+	2）由于css文件可能会引用到图片资源，而路径的引用是相对的，因此一般只能合并到源文件所在的路径下，
+	        否则会导致样式中的图片没法显示。
+	3）顶层ui的js、css子节点配置中：
+	   merge属性用于控制该ui的所有相关js、css文件是否合并为单一的js、css文件，默认为true；
+	   dir属性用于控制合并到的目录，没有指定则为最后引用的js、css文件所在的路径。
+	        合并后的文件统一带有前缀"m-"。
+	        默认情况下处于不同目录下的js、css文件不会进行混合合并，会自动分组分别合并到相应的js、css源文件所在的目录下，
+	        除非强制设置该节点的force属性为true，默认为false
+	 -->
+	 
+	<!-- js资源的定义 -->
+	<js id="jquery" src="/oz/webui/jquery/1.7.2/jquery.js" />
+
+	<!-- jquery 插件  -->
+	<js id="jquery-json" src="/oz/webui/jquery-plugins/json/2.4/jquery.json.js" />
+	<js id="jquery-cookie" src="/oz/webui/jquery-plugins/cookie/jquery.cookie.js" />
+	<js id="jquery-metadata" src="/oz/webui/jquery-plugins/metadata/jquery.metadata.js" />
+	<js id="jquery-bgiframe" src="/oz/webui/jquery-plugins/bgiframe/2.1.1/jquery.bgiframe.js" />
+	<js id="jquery-tmpl" src="/oz/webui/jquery-plugins/tmp/jquery.tmpl.js" />
+	<js id="jquery-mousewheel" src="/oz/webui/jquery-plugins/mousewheel/3.0.6/jquery.mousewheel.js" />
+	<js id="jquery-waypointsl" src="/oz/webui/jquery-plugins/waypoints/1.1/waypoints.js" />
+	<js id="jquery-lazyload" src="/oz/webui/jquery-plugins/lazyload/1.7.2/jquery.lazyload.js" />
+	
+	<!-- flash 上传 -->
+	<js id="swfupload" src="/oz/webui/swfupload/swfupload.js" />
+	<js id="swfupload-swfobject" src="/oz/webui/swfupload/plugins/swfupload.swfobject.js" />
+	
+	<js id="oz-jquery" src="/oz/webui/oz/core/oz.jquery.js" />
+	<js id="oz-core" src="/oz/webui/oz/core/oz.core.js" />
+	<js id="oz-lunar" src="/oz/webui/oz/core/oz.lunar.js" />
+	<js id="oz-ocx" src="/oz/webui/oz/core/oz.ocx.js" />
+	<js id="oz-office" src="/oz/webui/oz/core/oz.ocx.js" />
+	<js id="oz-graph" src="/oz/webui/oz/core/oz.graph.js" />
+	<js id="oz-currency" src="/oz/webui/oz/core/oz.currency.js" />
+	<js id="oz-formula" src="/oz/webui/oz/core/oz.formula.js" />
+	<js id="oz-currencyFormat" src="/oz/webui/oz/ui/js/oz.ui.currencyFormat.js" />
+	
+	<js id="oz-class" src="/oz/webui/oz/core/oz.class.js" />
+	<js id="oz-mouse" src="/oz/webui/oz/ui/js/oz.ui.mouse.js" />
+	<js id="oz-draggable" src="/oz/webui/oz/ui/js/oz.ui.draggable.js" />
+	<js id="oz-resizable" src="/oz/webui/oz/ui/js/oz.ui.resizable.js" />
+	
+	<!-- css资源的定义 -->
+	<css id="oz-common" href="/oz/webui/oz/css/default/oz-common.css" />
+	<css id="oz-icon" href="/oz/webui/oz/css/oz-icons.css" />
+	<css id="oz-app-icon" href="/oz/webui/oz/css/app-icons.css"/>
+	
+	<css id="oz-resizable" href="/oz/webui/oz/ui/css/default/oz-resizable.css" />
+	<css id="oz-page401" href="/oz/webui/oz/page/css/default/oz-page-401.css" />
+
+	<ui id="oz-core">
+		<js ref="jquery,oz-jquery,oz-core" />
+		<css ref="oz-common,oz-icon" />
+	</ui>
+	
+	<ui id="jquery-ui" js-ref="jquery,jquery-json,jquery-metadata">
+		<js src="/oz/webui/jquery-ui/1.8.22/js/jquery-ui.min.js" />
+		<js src="/oz/webui/jquery-ui/1.8.22/js/i18n/jquery.ui.datepicker-zh-CN.js" />
+		<css href="/oz/webui/jquery-ui/1.8.22/css/default/jquery-ui.css" />
+	</ui>
+
+	<ui id="easyui" js-ref="jquery,jquery-json,jquery-metadata">
+		<js src="/oz/webui/jquery-easyui/1.2.6/jquery.easyui.min.js" />
+		<js src="/oz/webui/jquery-easyui/1.2.6/locale/easyui-lang-zh_CN.js" />
+		<js src="/oz/webui/oz/core/oz.easyui.js" />
+		<css href="/oz/webui/jquery-easyui/1.2.6/css/default/easyui.css" />
+		<css href="/oz/webui/jquery-easyui/1.2.6/css/icon.css" />
+		<css href="/oz/webui/oz/css/default/oz-easyui.css" />
+	</ui>
+	
+	<ui id="highcharts">
+		<js src="/oz/webui/highcharts/2.1.8/highcharts.js" />
+		<js src="/oz/webui/highcharts/2.1.8/themes/grid.js" />
+	</ui>
+	
+	<!-- 各ui组件的定义(引用及依赖关系) -->
+	<ui id="oz-widget" dep="oz-core">
+		<js ref="jquery-json,jquery-metadata,oz-class"/>
+		<js id="oz-widget" src="/oz/webui/oz/ui/js/oz.ui.widget.js" />
+	</ui>
+	
+	<ui id="oz-toolbar" dep="oz-widget">
+		<js src="/oz/webui/oz/ui/js/oz.ui.toolbar2.js"/>
+		<css href="/oz/webui/oz/ui/css/default/oz-toolbar2.css"/>
+	</ui>
+	<ui id="oz-panel" dep="oz-widget">
+		<js ref="oz-mouse,oz-draggable,oz-resizable" />
+		<js src="/oz/webui/oz/ui/js/oz.ui.panel.js" />
+		<css ref="oz-resizable" />
+		<css href="/oz/webui/oz/ui/css/default/oz-panel.css" />
+	</ui>
+	<ui id="oz-grid" dep="oz-panel">
+		<js ref="jquery-tmpl,jquery-waypointsl,jquery-mousewheel"/>
+		<js src="/oz/webui/oz/ui/js/oz.ui.grid.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-grid.css" />
+	</ui>
+	<ui id="oz-editgrid" dep="oz-grid">
+		<js src="/oz/webui/oz/core/oz.currency.js"/>
+		<js src="/oz/webui/oz/page/oz.template.gridToolbar.js" />
+	</ui>
+	<ui id="oz-tabs" dep="oz-panel">
+		<js src="/oz/webui/oz/ui/js/oz.ui.tabs.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-tabs.css" />
+	</ui>
+	<ui id="oz-tree" dep="oz-widget">
+		<js src="/oz/webui/oz/ui/js/oz.ui.tree.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-tree.css" />
+	</ui>
+	<ui id="oz-window" dep="oz-panel,oz-linkbutton">
+		<js src="/oz/webui/oz/ui/js/oz.ui.window.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-window.css" />
+	</ui>
+	<ui id="oz-linkbutton" dep="oz-widget">
+		<js src="/oz/webui/oz/ui/js/oz.ui.linkbutton.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-linkbutton.css" />
+	</ui>
+	<ui id="oz-dialog" dep="oz-window,oz-linkbutton">
+		<js src="/oz/webui/oz/ui/js/oz.ui.dialog.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-dialog.css" />
+	</ui>
+	<ui id="oz-layout" dep="oz-panel">
+		<js src="/oz/webui/oz/ui/js/oz.ui.layout.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-layout.css" />
+	</ui>
+	<ui id="oz-messager" dep="oz-window">
+		<js src="/oz/webui/oz/ui/js/oz.ui.messager.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-messager.css" />
+	</ui>
+	<ui id="oz-datepicker" dep="jquery-ui">
+	</ui>
+	<ui id="oz-timepicker" dep="oz-datepicker">
+		<js src="/oz/webui/jquery-ui-plugins/timepicker/0.2.1/jquery.ui.timepicker.js" />
+		<js src="/oz/webui/jquery-ui-plugins/timepicker/0.2.1/i18n/jquery.ui.timepicker-zh-CN.js" />
+	</ui>
+	<ui id="oz-autocomplete" dep="jquery-ui">
+	</ui>
+	<ui id="oz-select" dep="oz-widget">
+		<js src="/oz/webui/oz/ui/js/oz.ui.select.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-select.css" />
+	</ui>
+	<ui id="oz-linkselect" dep="oz-core">
+		<js src="/oz/webui/oz/ui/js/oz.ui.linkselect.js" />
+	</ui>
+	<ui id="oz-richinput" dep="oz-widget">
+		<js ref="jquery-tmpl" />
+		<js ref="jquery-tmpl" />
+		<js src="/oz/webui/oz/ui/js/oz.ui.richinput.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-richinput.css" />
+	</ui>
+	<ui id="oz-combox" dep="oz-widget">
+		<js src="/oz/webui/oz/ui/js/oz.ui.combox.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-combox.css" />
+	</ui>
+	<ui id="oz-htmleditor" dep="oz-widget">
+		<js src="/oz/webui/editor/xheditor/1.1.10/xheditor-1.1.10-zh-cn.min.js" />
+		<js src="/oz/webui/editor/ueditor/ueditor1_2_6_1/ueditor.config.js"/>
+		<js src="/oz/webui/editor/ueditor/ueditor1_2_6_1/ueditor.all.js"/>
+		<js src="/oz/webui/editor/ueditor/ueditor1_2_6_1/lang/zh-cn/zh-cn.js"/>	
+	</ui>
+	<ui id="oz-attachment" dep="oz-core" js-ref="swfupload,swfupload-swfobject">
+		<js src="/oz/apps/attachment/AttachmentTag.js" />
+		<css href="/oz/themes/default/attachment.css" />
+	</ui>
+	<ui id="oz-log">
+		<js src="/oz/webui/oz/ui/js/oz.log.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-log.css" />
+	</ui>
+	
+	<ui id="oz-otabs" dep="oz-core">
+		<js src="/oz/webui/oz/ui/js/oz.ui.oTabs.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-oTabs.css" />
+	</ui>
+	
+	<ui id="oz-pagination" dep="oz-widget">
+		<js src="/oz/webui/oz/ui/js/oz.ui.pagination.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-pagination.css" />
+	</ui>
+	<ui id="oz-combobox" dep="oz-widget">
+		<js src="/oz/webui/oz/ui/js/oz.ui.combobox.js" />
+		<css href="/oz/webui/oz/ui/css/default/oz-combobox.css" />
+	</ui>
+	<ui id="oz-formValidator" js-ref="jquery">
+		<js src="/oz/webui/jquery-plugins/formValidator/1.7/js/jquery.validationEngine-cn.js" />
+		<js src="/oz/webui/jquery-plugins/formValidator/1.7/js/jquery.validationEngine.js" />
+		<css href="/oz/webui/jquery-plugins/formValidator/1.7/css/validationEngine.jquery.css" />
+		<css href="/oz/webui/jquery-plugins/formValidator/1.7/css/template.css" />
+	</ui>
+	<ui id="oz-tooltip" js-ref="jquery">
+		<js src="/oz/webui/jquery-plugins/tooltip/1.0.1/js/zebra_tooltips.js" />
+		<css href="/oz/webui/jquery-plugins/tooltip/1.0.1/css/zebra_tooltips.css" />
+	</ui>
+	
+	<ui id="bootstrap">
+		<js src="/oz/webui/bootstrap/2.3.2/js/bootstrap.js" />
+		<css href="/oz/webui/bootstrap/2.3.2/css/bootstrap.css" />
+		<css href="/oz/webui/bootstrap/fix/fix.css" />
+	</ui>
+	
+	<!-- ui模板的定义(引用及依赖关系) -->
+	<js id="oz-adapter" src="/oz/webui/oz/page/oz.adapter.js" />
+	<css id="oz-page" href="/oz/webui/oz/page/css/default/oz-page.css" />
+    <css id="themes" styleId="style_color"/>
+
+	<template id="page" ui-ref="oz-core" js-ref="oz-adapter" css-ref="oz-page">
+        <js src="/oz/webui/oz/page/oz.template.page.js" />
+        <css ref="themes"/>
+    </template>
+	
+	<template id="form" ui-ref="oz-toolbar" js-ref="oz-adapter" css-ref="oz-page">
+		<js src="/oz/webui/jquery-plugins/loadmask/jquery.loadmask.min.js" />
+		<css href="/oz/webui/jquery-plugins/loadmask/jquery.loadmask.css" />
+		<js src="/oz/webui/oz/page/oz.template.form.js" />
+        <css ref="themes"/>
+	</template>
+
+	<template id="view" ui-ref="oz-grid,oz-toolbar" js-ref="oz-adapter" css-ref="oz-page">
+		<js src="/oz/webui/jquery-plugins/loadmask/jquery.loadmask.min.js" />
+		<css href="/oz/webui/jquery-plugins/loadmask/jquery.loadmask.css" />
+		<js src="/oz/webui/oz/page/oz.template.view.js" />
+        <css ref="themes"/>
+	</template>
+
+	<template id="dialog" ui-ref="oz-toolbar" js-ref="oz-adapter" css-ref="oz-page">
+        <js src="/oz/webui/oz/page/oz.template.dialog.js" />
+        <css ref="themes"/>
+	</template>
+</root>

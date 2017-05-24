@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tdmap form="EMS_DM_INTOFACTORY_AND_CHECK" to="EMS.CUX_FA_TRANSACTION_T" method="apps.cux_fa_transaction_pkg.fa_capitalized">
+	<field source="EMS_DM_EQUIPMENT_DETAILS.ID" target="CUX_TRANSACTION_ID" />
+	<field source="EMS_DM_INTOFACTORY_AND_CHECK.ID" target="BATCH_ID" />
+	<field source="EMS_DM_INTOFACTORY_AND_CHECK.ORGANIZATION_ID" target="ORGANIZATION_ID" />
+	<field source="EMS_DM_EQUIPMENT_DETAILS.ASSET_ID" target="ASSET_ID" />
+	<field source="'intoFactoryCheck'" target="FA_TYPE" />
+</tdmap>

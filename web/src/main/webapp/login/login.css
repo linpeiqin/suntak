@@ -1,0 +1,179 @@
+/* 登录页面的样式控制文件 */
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
+	margin:0;padding:0;
+}
+body,div,span,dl,dt,dd,ul,ol,li,pre,form,fieldset,input,textarea,p,blockquote,th,td{
+	font-size:12px;
+	font-family:"宋体","Tahoma","verdana","arial","helvetica","sans-serif";
+}
+
+/*整体居中定位部分*/
+table.page{
+	width:100%; height:100%;
+	border: 0;margin: 0;padding: 0;
+	background-color: #ccc;
+}
+td.page-contentAlign{text-align: center; vertical-align: middle;}
+#box{
+	width: 900px; height: 500px;
+	border:0px solid #FBEC88;
+	position: relative;
+	overflow: visible;	
+}
+
+/*图标部分*/
+.login-icon{
+	display: block; text-indent: -99999px; overflow: hidden;
+	background-image: url(images/login.png);
+	background-repeat: no-repeat;
+	background-position:0 0;
+}
+
+/*登录按钮*/
+.login-icon-submit-default{
+	width: 95px; 
+	height: 30px;
+	background-position: 0 0;
+	color: white;
+	text-indent: 32px;
+	font-weight: bold;
+	text-decoration: none;
+}
+.login-icon-submit-mouseover{width: 95px; height: 30px;background-position: -95px 0;}
+.login-icon-submit-mousedown{width: 95px; height: 30px;background-position: -190px 0;}
+/*输入框*/
+.textInput{width: 190px; height: 30px; _line-height: 30px; padding-left:6px;font-size:14px;}
+.login-icon-input-default{
+	border: 0px solid #C8C8C8;
+	background: url(images/login.png) no-repeat 0 -30px;
+}
+.login-icon-input-active{
+	border: 0px solid #C8C8C8;
+	background: url(images/login.png) no-repeat -190px -30px;
+}
+.login-icon-input-safari{border: 1px solid #C8C8C8;}
+
+.value label{font-size:12px;}
+#auto{vertical-align: middle;margin-right: 1px;}
+
+
+/*信息输入部分*/
+ul{list-style:none;}
+ul.controls{
+	position:absolute;text-align:left;
+	width: 323px; height: 270px;
+	left: 440px; top: 120px;
+	border:0px solid #3E6EAC;
+}
+ul.controls li{font-size: 14px;}
+li.line {margin:0px;_height:30px;}
+li.first {margin-top: 30px;}
+li.cell{float: left;height: 30px;line-height: 30px;}
+li.label{float: left;width:80px;text-align: right;}
+li.value{float: left;}
+.clear{clear: both;height: 15px;}
+
+
+/*系统图标*/
+.systemIcon{position:absolute;width:70px;height:70px;left:15px;top:15px;background-position: -325px -60px;}
+/*系统名称*/
+.systemTitle{position:absolute;width:440px;height:50px;left:90px;top:25px;background-position: 0 -530px;}
+
+/*主图*/
+.mainImage{
+	position:absolute;
+	width:630px;
+	height:356px;
+	left:120px;
+	top:30px;
+	background-position: 0 -330px;
+}
+
+/*分割线*/
+.imageLine{position:absolute;width:900px;left:0;top:400px;}
+
+
+/*底部版权部分*/
+.copylight{
+	color: #AAAAAA;
+	position:absolute;width:100%;left:0px;top:410px;text-align:center;
+	font: normal normal normal 12px/1.5 Tahoma, Helvetica, Arial, 宋体, sans-serif;
+}
+
+/*将默认的提交按钮隐藏掉：注在IE6中不能设置dispaly=none或visibility=hidden,否则无法响应回车键提交表单*/
+#submitBtn{border:0;background-color: transparent;width:0;height:0;}
+
+/*选择登录角色部分*/
+#userRolesBox{
+	display: none;overflow:hidden;
+	border: 1px solid #B7AC94;
+	position: absolute;
+	width:303px;height: 209px !important;
+	width:305px;height: 211px;
+	left: 548px; top: 98px;
+	background-color: #FAFAFA;/*#FFFEDE;*/
+}
+#userRolesBox #selectRoleInfo{height: 30px;line-height: 30px;text-indent: 10px;
+	font-weight: bold;font-size:18px;color:#333333;
+	text-indent: 90px;float: left;display:block;
+	margin-top:4px;
+}
+#userRolesBox #cancelRoleSelect{
+	overflow: hidden;display:block;float: right;
+	width: 16px; height: 16px;
+	background-image: url(../oz/webui/themes/icons/oz-icons_16x16.png);
+	_background-image: url(../oz/webui/themes/icons/oz-icons_16x16.gif);
+	background-repeat: no-repeat;
+	background-position: -16px -16px;
+	margin:9px 4px 0 0;
+}
+#userRoles{
+	overflow-y: auto;
+	height: 179px;
+	/*background-color: gray;*/
+}
+#userRoles li{
+	display: block;
+	margin: 4px;
+	height: 30px;line-height:30px;
+	border: 1px solid #E58433;
+	cursor: pointer;font-size:14px;
+}
+#userRoles li span{
+	display: block; float:left; overflow: hidden;
+	width: 16px; height: 16px; margin:0 2px 2px 0;
+	background-image: url(../oz/webui/themes/icons/oz-icons_16x16.png);
+	_background-image: url(../oz/webui/themes/icons/oz-icons_16x16.gif);
+	background-repeat: no-repeat;
+	background-position: -624px -16px;
+	margin:7px 4px 0 4px;
+}
+.role-mouseover{background-color: #45FF76;}
+.role-mousedown{background-color: #FED900;}
+
+/*错误提示信息部分*/
+#msg{
+	position:absolute;width:900px;right:40px;bottom:100px;_bottom:105px;
+	border: 1px solid #E58433;padding:4px 4px 2px 4px;width:310px;_width:320px;
+	background-color: #FED90D;
+	font-size: 14px;font-weight:bold;font-style:oblique;
+	display: none;
+}
+#msg .icon-info{
+	display: block; float:left; overflow: hidden;
+	width: 16px; height: 16px; margin:0 2px 2px 0;
+	background-image: url(../oz/webui/themes/icons/oz-icons_16x16.png);
+	_background-image: url(../oz/webui/themes/icons/oz-icons_16x16.gif);
+	background-repeat: no-repeat;
+	background-position: -544px -32px;
+}
+#debug{
+	cursor:pointer;position:absolute;
+	overflow:hidden;width:16px;height:16px;
+	background-image: url(../oz/webui/themes/icons/oz-icons_16x16.png);
+	_background-image: url(../oz/webui/themes/icons/oz-icons_16x16.gif);
+	background-repeat: no-repeat;
+	background-position: -624px -16px;
+	/*left:2px;bottom:2px;*/
+	left:715px;top:158px;
+}

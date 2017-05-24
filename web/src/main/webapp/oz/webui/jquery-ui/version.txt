@@ -1,0 +1,11 @@
+1.8.18
+
+fix:
+
+1、日期选择中去除日期长度判定
+if (iValue < value.length){
+	//throw "Extra/unparsed characters found in date: " + value.substring(iValue);
+}
+
+2、当日期选择变化时fire focusout事件，进行校验，通常插入在inst.input.val(dateStr);这句之后
+$(inst.input).trigger("focusout");

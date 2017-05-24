@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tdmap form="EMS_DM_SCRAP" to="EMS.CUX_FA_TRANSACTION_T" method="apps.cux_fa_transaction_pkg.fa_retirement">
+	<field source="EMS_DM_EQUIPMENT_DETAILS.ID" target="CUX_TRANSACTION_ID" />
+	<field source="EMS_DM_SCRAP.ID" target="BATCH_ID" />
+	<field source="EMS_DM_SCRAP.ORGANIZATION_ID" target="ORGANIZATION_ID" />
+	<field source="EMS_DM_EQUIPMENT_DETAILS.ASSET_ID" target="ASSET_ID" />
+	<field source="EMS_DM_SCRAP.NEW_WORTH" target="COST" />
+	<field source="EMS_DM_SCRAP.TYPE" target="FA_TYPE" />
+</tdmap>

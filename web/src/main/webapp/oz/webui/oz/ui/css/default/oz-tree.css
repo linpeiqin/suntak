@@ -1,0 +1,121 @@
+.oz-tree{
+	font-size:12px;
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+.oz-tree ul{
+	font-size:12px;
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	display: block;
+}
+.oz-tree li{
+	white-space:nowrap;
+}
+.oz-tree li ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+.oz-tree-node{
+	height:18px;
+	white-space:nowrap;
+	cursor:pointer;
+}
+.oz-tree-fix{
+	display:inline-block;
+	width:1px;
+	height:1px;
+	vertical-align:middle;
+}
+.oz-tree-indent{
+	display:inline-block;
+	width:16px;
+	height:18px;
+	vertical-align:middle;
+}
+.oz-tree-hit{
+	cursor:pointer;
+}
+.oz-tree-expanded{
+	display:inline-block;
+	width:16px;
+	height:18px;
+	vertical-align:middle;
+	background:url('images/tree.gif') no-repeat -18px -16px;
+}
+.oz-tree-expanded-hover{
+	background:url('images/tree.gif') no-repeat -50px -16px;
+}
+.oz-tree-collapsed{
+	display:inline-block;
+	width:16px;
+	height:18px;
+	vertical-align:middle;
+	background:url('images/tree.gif') no-repeat 0px -16px;
+}
+.oz-tree-collapsed-hover{
+	background:url('images/tree.gif') no-repeat -32px -16px;
+}
+.oz-tree-folder{
+	display:inline-block;
+	background:url('images/tree.gif') no-repeat 0px -32px;
+	width:16px;
+	height:18px;
+	vertical-align:middle;
+}
+.oz-tree-folder-open{
+	background:url('images/tree.gif') no-repeat -16px -32px;
+}
+.oz-tree-file{
+	display:inline-block;
+	background:url('images/tree.gif') no-repeat -32px -32px;
+	width:16px;
+	height:18px;
+	vertical-align:middle;
+}
+.oz-tree-loading{
+	background:url('images/tree_loading.gif') no-repeat;
+}
+.oz-tree-title{
+	display:inline-block;
+	line-height:18px;
+	text-decoration:none;
+	vertical-align:middle;
+	padding:1px 2px 1px 2px;
+	white-space:nowrap;
+}
+
+.oz-tree-node-hover{
+	background:#fafafa;
+}
+.oz-tree-node-selected{
+	background:#FBEC88;
+}
+.oz-tree-checkbox{
+	display:inline-block;
+	width:16px;
+	height:18px;
+	vertical-align:middle;
+}
+.oz-tree-checkbox0{
+	background:url('images/tree.gif') no-repeat -32px 0px;
+}
+.oz-tree-checkbox1{
+	background:url('images/tree.gif') no-repeat -16px 0px;;
+}
+.oz-tree-checkbox2{
+	background:url('images/tree.gif') no-repeat 0px 0px;
+}
+
+.oz-tree-nocheckable .oz-tree-checkbox0{
+	background:url('images/tree.gif') no-repeat -80px 0px;
+}
+.oz-tree-nocheckable .oz-tree-checkbox1{
+	background:url('images/tree.gif') no-repeat -64px 0px;;
+}
+.oz-tree-nocheckable .oz-tree-checkbox2{
+	background:url('images/tree.gif') no-repeat -48px 0px;
+}

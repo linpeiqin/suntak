@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+	
+		<form-bean name="equipmentDetailsForm" type="org.apache.struts.validator.LazyValidatorForm">
+		</form-bean>
+		<form-bean name="technicalParamsForm" type="org.apache.struts.validator.LazyValidatorForm">
+		</form-bean>
+	</form-beans>
+
+	<action-mappings>
+		<action path="/ems/equipmentDetailsAction"
+				type="cn.suntak.ems.equipmentdetails.action.EquipmentDetailsAction"
+				name="equipmentDetailsForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="viewEquipmentDetails" path="/ems/equipmentdetails/V_EquipmentDetails.jsp"/>
+			<forward name="readEquipmentDetails" path="/ems/equipmentdetails/F_EquipmentDetails.jsp" />
+			<forward name="editEquipmentDetails" path="/ems/equipmentdetails/FE_EquipmentDetails.jsp" />
+			<forward name="createEquipmentDetails" path="/ems/equipmentdetails/New_EquipmentDetails.jsp" />
+			<forward name="attachEquipmentDetails" path="/ems/equipmentdetails/DetailsAttachment.jsp" />
+			<forward name="dlgEquipmentDetails" path="/ems/equipmentdetails/D_EquipmentDetails.jsp" />
+			<forward name="dlgEquipmentDetailsG" path="/ems/equipmentdetails/D_EquipmentDetailsG.jsp" />
+			<forward name="dlgEquipmentDetailsY" path="/ems/equipmentdetails/D_EquipmentDetailsY.jsp" />
+			<forward name="aidsEquipmentDetails" path="/ems/equipmentdetails/SV_EquipmentDetails.jsp" />
+			<forward name="HPEquipmentDetails" path="/ems/equipmentdetails/HP_EquipmentDetails.jsp" />
+		</action>
+		<action path="/ems/technicalParamsAction"
+				type="cn.suntak.ems.equipmentdetails.action.TechnicalParamsAction"
+				name="technicalParamsForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="viewTechnicalParams" path="/ems/equipmentdetails/V_TechnicalParams.jsp"/>
+			<forward name="readTechnicalParams" path="/ems/equipmentdetails/F_TechnicalParams.jsp" />
+			<forward name="editTechnicalParams" path="/ems/equipmentdetails/FE_TechnicalParams.jsp" />
+		</action>
+	</action-mappings>
+</struts-config>

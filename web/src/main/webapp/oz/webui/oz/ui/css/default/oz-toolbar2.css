@@ -1,0 +1,199 @@
+/* 
+ * 工具条的样式 
+ * 作者：CD826
+ * 版本：4.3.2
+ */
+.oz-tb {
+	border: 0;
+	padding: 0 4px 0 4px;
+	width: 100%;
+	height: 30px;
+	_height: 30px;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	background-repeat: repeat;
+	background-image: url(images/toolbar2/toolbar_bg.gif);
+}
+
+/* 分隔条 */
+.oz-tb .oz-btn-seperator {
+	float: left;
+	margin: 6px 2px 0 2px;
+	display: block;
+	text-indent: -99999px;
+	overflow: hidden;
+	width: 2px;
+	height: 16px;
+	background-image: url(images/toolbar2/toolbar.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+/* 按钮样式定义 */
+.oz-tb ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	height: 21px;
+	float: left;
+	margin-top: 4px;
+}
+
+.oz-tb ul li {
+	float: left;
+	height: 21px;
+	line-height: 21px;
+}
+
+.oz-btn .oz-btn-left {
+	width: 3px;
+}
+
+.oz-btn .oz-btn-right {
+	width: 3px;
+}
+
+.oz-btn .oz-btn-center {
+	
+}
+
+.oz-btn .oz-btn-center  span{
+	margin-left: 2px;
+}
+
+.oz-btn.mouseover .oz-btn-left {
+	background-image: url(images/toolbar2/toolbar-repeatX.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	width: 3px;
+}
+
+.oz-btn.mouseover .oz-btn-right {
+	background-image: url(images/toolbar2/toolbar-repeatX.gif);
+	background-repeat: no-repeat;
+	background-position: 0px -21px;
+	width: 3px;
+}
+
+.oz-btn.mouseover .oz-btn-center {
+	background-image: url(images/toolbar2/toolbar-repeatX.gif);
+	background-repeat: repeat-x;
+	background-position: 0px -42px;
+}
+
+.oz-btn.mousedown .oz-btn-left {
+	background-image: url(images/toolbar2/toolbar-repeatX.gif);
+	background-repeat: no-repeat;
+	background-position: 0px -63px;
+	width: 3px;
+}
+
+.oz-btn.mousedown .oz-btn-right {
+	background-image: url(images/toolbar2/toolbar-repeatX.gif);
+	background-repeat: no-repeat;
+	background-position: 0px -84px;
+	width: 3px;
+}
+
+.oz-btn.mousedown .oz-btn-center {
+	background-image: url(images/toolbar2/toolbar-repeatX.gif);
+	background-repeat: repeat-x;
+	background-position: 0px -105px;
+}
+
+.oz-tb .oz-btn-icon {
+	
+}
+
+.oz-tb ul .oz-btn-icon div {
+	width: 16px;
+	height: 16px;
+	margin-top: 3px;
+	overflow: hidden;
+}
+
+/* 查询按钮 */
+.oz-tb-searchbutton-wrap {
+	height: 22px;
+	float: right;
+	margin-top: 5px;
+}
+
+.oz-tb-searchbutton-wrap div {
+	width: 16px;
+	_width: 17px;
+	height: 17px;
+	_height: 18px;
+	overflow: hidden;
+	border: 0px solid #EBEDF2;
+	_border-width: 1px
+}
+
+.oz-tb-searchbutton-wrap ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	height: 21px;
+	float: right;
+}
+
+.oz-tb-searchbutton-wrap ul li {
+	list-style: none;
+	float: left;
+	height: 18;
+	line-height: 18px;
+}
+
+.oz-tb-searchbutton-wrap .searchquey {
+	width: 150px;
+	border: 1px solid #86A8C1;
+	margin-top: 0px;
+	_margin-top: -1px;
+}
+
+.oz-tb-searchbutton-wrap .oz-btn-search-tip{
+	padding: 0 3px;
+}
+.oz-tb-searchbutton-wrap .oz-btn-search {
+	width: 18px;
+	height: 18px;
+	background-image: url(images/toolbar2/toolbar-repeatX.gif);
+	background-repeat: repeat-x;
+	background-position: -0px -126px;
+	border-top: 1px solid #86A8C1;
+	border-right: 1px solid #86A8C1;
+	border-bottom: 1px solid #86A8C1;
+	cursor: pointer;
+}
+
+.oz-tb-searchbutton-wrap .oz-btn-search.mouseover {
+	width: 18px;
+	height: 18px;
+	background-image: url(images/toolbar2/toolbar-repeatX.gif);
+	background-repeat: repeat-x;
+	background-position: -0px -144px;
+	border-top: 1px solid #86A8C1;
+	border-right: 1px solid #86A8C1;
+	border-bottom: 1px solid #86A8C1;
+}
+
+.oz-tb-searchbutton-wrap .oz-btn-search.mousedown {
+	width: 18px;
+	height: 18px;
+	background-image: url(images/toolbar2/toolbar-repeatX.gif);
+	background-repeat: repeat-x;
+	background-position: -0px -162px;
+	border-top: 1px solid #86A8C1;
+	border-right: 1px solid #86A8C1;
+	border-bottom: 1px solid #86A8C1;
+}
+
+/* 按钮图标定义 */
+.oz-btn-center .oz-btn-icon {
+	background-repeat: no-repeat;
+}
+
+.oz-tb .oz-btn-center .btn-icon {
+	background-image: url(images/toolbar2/toolbar-buttons.gif);
+	background-position: 0px 0px;
+}

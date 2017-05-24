@@ -1,0 +1,156 @@
+.ui-tab-container-item .well {
+	margin: 10px 0 0 10px;
+	background-color: #fff;
+	max-width: 340px;
+	padding: 8px 0;
+}
+
+.ui-tab-container-item .well  .active .close,
+.ui-tab-container-item .well  .active a:hover .close {
+ 	color: white;
+ 	text-shadow: 0 1px 0 black;
+ 	opacity: 1;;
+}
+
+/* Chevrons */
+.ui-tab-container-item .well  .icon-chevron-right {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+  opacity: .25;
+}
+
+.ui-tab-container-item .well  a:hover .icon-chevron-right {
+  opacity: .5;
+}
+
+.ui-tab-container-item .well  .active .icon-chevron-right,
+.ui-tab-container-item .well  .active a:hover .icon-chevron-right {
+  opacity: 1;
+}
+
+/* Sidenav for Docs
+-------------------------------------------------- */
+.doc-activity-sidenav {
+  width: 200px;
+  margin: 10px 0 0 10px;
+  padding:0;
+  background-color: #fff;
+}
+
+.doc-activity-sidenav > li > a {
+  display: block;
+  *width: 190px;
+  margin: 0 0 -1px;
+  padding: 5px 14px;
+  border: 1px solid #e5e5e5;
+}
+
+.doc-activity-sidenav > li:first-child > a {
+  -webkit-border-radius: 6px 6px 0 0;
+     -moz-border-radius: 6px 6px 0 0;
+          border-radius: 6px 6px 0 0;
+}
+
+.doc-activity-sidenav > li:last-child > a {
+  -webkit-border-radius: 0 0 6px 6px;
+     -moz-border-radius: 0 0 6px 6px;
+          border-radius: 0 0 6px 6px;
+}
+
+.doc-activity-sidenav > .active > a {
+  position: relative;
+  z-index: 2;
+  padding: 6px 15px;
+  border: 0;
+}
+
+/* Chevrons */
+.doc-activity-sidenav .icon-chevron-right {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+  opacity: .25;
+}
+
+.doc-activity-sidenav > li > a:hover {
+  background-color: #f5f5f5;
+}
+
+.doc-activity-sidenav a:hover .icon-chevron-right {
+  opacity: .5;
+}
+
+.doc-activity-sidenav .active .icon-chevron-right,
+.doc-activity-sidenav .active a:hover .icon-chevron-right {
+  opacity: 1;
+}
+.doc-activity-sidenav.affix {
+  top: 40px;
+}
+.doc-activity-sidenav.affix-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 270px;
+}
+
+
+.doc-element-list .right-span{
+	width: 75px;
+	float: left;
+	min-height: 1px;
+	margin-left: 0;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+.ui-tab-container {
+	overflow: visible;
+}
+
+.doc-element-list .element-row {
+	line-height: 23px;
+	border-style:solid;
+	border-color:#76ABD3;
+	border-width: 1px 0;
+	margin-bottom: -1px;
+}
+
+.element-row .top{
+	font-weight: bold;
+	color: #D2512D;
+}
+.element-row .element-item {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	word-break: break-all;
+	white-space: nowrap;
+}
+
+.oz-page-form {
+	padding: 30px 0;
+}
+
+.oz-right-title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+	color: white;
+}
+
+.oz-right-read {
+	color: white;
+	color: #D2512D;
+}
+
+.oz-right-write {
+	color: white;
+	color: #5CA52C;
+}
+
+.oz-right-print {
+	color: white;
+	color: #5D39B6;
+}

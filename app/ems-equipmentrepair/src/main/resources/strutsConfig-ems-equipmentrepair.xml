@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="repairRecordForm" type="org.apache.struts.validator.LazyValidatorForm">
+			<form-property name="equipmentDetails" type="cn.suntak.ems.equipmentdetails.domain.EquipmentDetails"/>
+			<form-property name="maintenanceApplicant" type="cn.oz.FileAuthor"/>
+			<form-property name="distributor" type="cn.oz.FileAuthor"/>
+			<form-property name="maintenancePerson" type="cn.oz.FileAuthor"/>
+		</form-bean>
+		<form-bean name="partReplaceForm" type="org.apache.struts.validator.LazyValidatorForm">
+			<form-property name="repairRecord" type="cn.suntak.ems.equipmentrepair.domain.RepairRecord"/>
+			<form-property name="equipmentDetails" type="cn.suntak.ems.equipmentdetails.domain.EquipmentDetails"/>
+		</form-bean>
+	    <form-bean name="repairPlanForm" type="org.apache.struts.validator.LazyValidatorForm">
+			<form-property name="equipmentDetails" type="cn.suntak.ems.equipmentdetails.domain.EquipmentDetails"/>
+			<form-property name="maintenancePeson" type="cn.oz.FileAuthor"/>
+		</form-bean>
+		<form-bean name="faultDescForm" type="org.apache.struts.validator.LazyValidatorForm">
+		</form-bean>
+
+		<form-bean name="repairMonthPlanForm" type="org.apache.struts.validator.LazyValidatorForm">
+		</form-bean>
+		<form-bean name="monthPlanDetailForm" type="org.apache.struts.validator.LazyValidatorForm">
+		</form-bean>
+		
+		<form-bean name="repairYearPlanForm" type="org.apache.struts.validator.LazyValidatorForm">
+		</form-bean>
+		<form-bean name="yearPlanDetailForm" type="org.apache.struts.validator.LazyValidatorForm">
+		</form-bean>
+		
+		<form-bean name="maintainForm" type="org.apache.struts.validator.LazyValidatorForm">
+		    <form-property name="equipmentDetails" type="cn.suntak.ems.equipmentdetails.domain.EquipmentDetails"/>
+			<form-property name="maintainPerson" type="cn.oz.FileAuthor"/>
+		</form-bean>
+		
+		<form-bean name="maintainContentForm" type="org.apache.struts.validator.LazyValidatorForm">
+		    <form-property name="maintain" type="cn.suntak.ems.equipmentrepair.domain.Maintain"/>
+		</form-bean>
+	</form-beans>
+
+	<action-mappings>
+		<action path="/ems/repairRecordAction"
+				type="cn.suntak.ems.equipmentrepair.action.RepairRecordAction"
+				name="repairRecordForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="viewRepairRecord" path="/ems/equipmentrepair/V_RepairRecord.jsp"/>
+			<forward name="readRepairRecord" path="/ems/equipmentrepair/F_RepairRecord.jsp" />
+			<forward name="editRepairRecord" path="/ems/equipmentrepair/FE_RepairRecord.jsp" />
+			<forward name="showRepairRecord" path="/ems/equipmentrepair/SV_RepairRecord.jsp" />
+			<forward name="HPEquipmentRepair" path="/ems/equipmentrepair/HP_EquipmentRepair.jsp" />
+			<forward name="HPVEquipmentRepair" path="/ems/equipmentrepair/HPV_EquipmentRepair.jsp" />
+			<forward name="HPRepairRemind" path="/ems/equipmentrepair/HP_RepairReminder.jsp" />
+			<forward name="GroupView" path="/ems/equipmentrepair/V_GroupView.jsp" />
+		</action>
+		
+		<action path="/ems/partReplaceAction"
+				type="cn.suntak.ems.equipmentrepair.action.PartReplaceAction"
+				name="partReplaceForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="viewPartReplace" path="/ems/equipmentrepair/V_PartReplace.jsp"/>
+			<forward name="readPartReplace" path="/ems/equipmentrepair/F_PartReplace.jsp" />
+			<forward name="editPartReplace" path="/ems/equipmentrepair/FE_PartReplace.jsp" />
+		</action>
+		
+		<action path="/ems/repairPlanAction"
+				type="cn.suntak.ems.equipmentrepair.action.RepairPlanAction"
+				name="repairPlanForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="readRepairPlan" path="/ems/equipmentrepair/F_RepairPlan.jsp" />
+			<forward name="editRepairPlan" path="/ems/equipmentrepair/FE_RepairPlan.jsp" />
+			<forward name="viewRepairPlan" path="/ems/equipmentrepair/V_RepairPlan.jsp" />
+			<forward name="showRepairPlan" path="/ems/equipmentrepair/SV_RepairPlan.jsp" />
+			<forward name="viewRepairPlanMonth" path="/ems/equipmentrepair/V_RepairMonth.jsp" />
+			<forward name="viewRepairPlanTime" path="/ems/equipmentrepair/SV_RepairPlanTime.jsp" />
+		</action>
+		
+		<action path="/ems/faultDescAction"
+				type="cn.suntak.ems.equipmentrepair.action.FaultDescAction"
+				name="faultDescForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="readFaultDesc" path="/ems/equipmentrepair/F_FaultDesc.jsp" />
+			<forward name="editFaultDesc" path="/ems/equipmentrepair/FE_FaultDesc.jsp" />
+			<forward name="viewFaultDesc" path="/ems/equipmentrepair/V_FaultDesc.jsp" />
+			<forward name="dlgFaultDesc" path="/ems/equipmentrepair/D_FaultDesc.jsp" />
+			<forward name="dfFaultDesc" path="/ems/equipmentrepair/DF_FaultDesc.jsp" />
+		</action>
+
+		<action path="/ems/repairMonthPlanAction"
+				type="cn.suntak.ems.equipmentrepair.action.RepairMonthPlanAction"
+				name="repairMonthPlanForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="readRepairMonthPlan" path="/ems/monthplan/F_RepairMonthPlan.jsp" />
+			<forward name="editRepairMonthPlan" path="/ems/monthplan/FE_RepairMonthPlan.jsp" />
+			<forward name="viewRepairMonthPlan" path="/ems/monthplan/V_RepairMonthPlan.jsp" />
+		</action>
+		
+		<action path="/ems/monthPlanDetailAction"
+				type="cn.suntak.ems.equipmentrepair.action.MonthPlanDetailAction"
+				name="monthPlanDetailForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="readRepairMonthPlan" path="/ems/equipmentrepair/F_FaultDesc.jsp" />
+			<forward name="editRepairMonthPlan" path="/ems/equipmentrepair/FE_FaultDesc.jsp" />
+			<forward name="viewRepairMonthPlan" path="/ems/equipmentrepair/V_FaultDesc.jsp" />
+		</action>
+		
+		<action path="/ems/repairYearPlanAction"
+				type="cn.suntak.ems.equipmentrepair.action.RepairYearPlanAction"
+				name="repairYearPlanForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="viewRepairYearPlan" path="/ems/yearplan/V_RepairYearPlan.jsp" />
+			<forward name="editRepairYearPlan" path="/ems/yearplan/FE_RepairYearPlan.jsp" />
+		</action>
+		
+		<action path="/ems/yearPlanDetailAction"
+				type="cn.suntak.ems.equipmentrepair.action.YearPlanDetailAction"
+				name="yearPlanDetailForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="readRepairYearPlan" path="/ems/equipmentrepair/F_FaultDesc.jsp" />
+			<forward name="editRepairYearPlan" path="/ems/equipmentrepair/FE_FaultDesc.jsp" />
+			<forward name="viewRepairYearPlan" path="/ems/equipmentrepair/V_FaultDesc.jsp" />
+		</action>
+		
+
+		<action path="/ems/maintainAction"
+				type="cn.suntak.ems.equipmentrepair.action.MaintainAction"
+				name="maintainForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="viewMaintain" path="/ems/equipmentrepair/V_Maintain.jsp"/>
+			<forward name="readMaintain" path="/ems/equipmentrepair/F_Maintain.jsp" />
+			<forward name="editMaintain" path="/ems/equipmentrepair/FE_Maintain.jsp" />
+			<forward name="showMaintain" path="/ems/equipmentrepair/SV_Maintain.jsp" />
+		</action>
+		
+		<action path="/ems/maintainContentAction"
+				type="cn.suntak.ems.equipmentrepair.action.MaintainContentAction"
+				name="maintainContentForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="viewMaintainContent" path="/ems/equipmentrepair/V_MaintainContent.jsp"/>
+			<forward name="readMaintainContent" path="/ems/equipmentrepair/F_MaintainContent.jsp" />
+			<forward name="editMaintainContent" path="/ems/equipmentrepair/FE_MaintainContent.jsp" />
+		</action>
+	</action-mappings>
+</struts-config>

@@ -1,0 +1,214 @@
+.oz-tree-title {
+	padding: 0 2px 0 2px;
+}
+
+.oz-tree-node {
+	border-bottom: 1px solid #99BBE8;
+	background: #FFFFFF;
+	padding: 6px 0;
+}
+
+.oz-tree-node-selected {
+	
+}
+
+.oz-tree-node-hover {
+	
+}
+
+.tree-root-bg {
+	background-color: transparent;
+	font-weight: bold;
+}
+
+.oz-tree-node-ul {
+	
+}
+
+.tree-root-bg.oz-tree-node-hover {
+	background-position: 0 -100px;
+}
+
+.oz-tree-li-lt,.oz-tree-li-rt,.oz-tree-li-lb,.oz-tree-li-rb {
+	display: block;
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	background-image: url("images/radius.png");
+}
+
+.oz-tree-li-lt {
+	left: -1px;
+	top: -1px;
+	background-position: 0 0;
+}
+
+.oz-tree-li-rt {
+	right: -1px;
+	top: -1px;
+	background-position: right top;
+}
+
+.oz-tree-li-lb {
+	bottom: -1px;
+	left: -1px;
+	background-position: left bottom;
+}
+
+.oz-tree-li-rb {
+	bottom: -1px;
+	right: -1px;
+	background-position: right bottom;
+}
+
+/*new style*/
+.left-bg {
+	background-color: #D9DEE4;
+}
+
+.oz-tree li {
+	padding: 0px 0px
+}
+
+.oz-tree>li {
+	margin: 6px 6px;
+	/* border-radius: 5px; */
+	border: 1px solid #B5B9BC;
+	background-color: white;
+	border-image: initial;
+	position: relative;
+}
+
+.oz-tree-node {
+	position: relative;
+	background-color: transparent;
+}
+
+.oz-tree-node {
+	border-top: 1px solid #B5B9BC;
+}
+
+.oz-tree-node.tree-root-bg {
+	border-top-width: 0px;
+}
+
+.oz-tree-hit,.oz-tree-nothit {
+	position: absolute;
+	right: 0px;
+	top: 7px;
+}
+
+.tree-root-bg {
+	background-color: transparent;
+	background: none;
+}
+
+.oz-tree-title {
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+.oz-tree-node {
+	border-bottom: 0px solid #99BBE8;
+}
+
+.tree-root-bg .oz-tree-hit {
+	
+}
+
+.tree-root-bg .oz-tree-folder {
+	margin-left: 6px;
+}
+
+.oz-panel-header {
+	background: url("images/bg-h.gif") repeat-x 0 -26px;
+}
+
+.top-bg {
+	height: 100%;
+	width: 100%;
+	background: url('images/cnooc/top-bg.png') repeat-x 0 0;
+	overflow: hidden;
+}
+
+.top-bg-left {
+	width: 100%;
+	height: 100px;
+	text-align: left;
+	overflow: hidden;
+	background: url('images/cnooc/top-left.png') no-repeat 0 0;
+	float: left;
+}
+
+.top-bg-right {
+	width: 100%;
+	height: 100px;
+	text-align: left;
+	overflow: hidden;
+	background: url('images/cnooc/top-right.png') no-repeat right 0;
+	float: right;
+}
+
+.buttom-bg {
+	overflow: hidden;
+	background-color: #B4E3FD;
+}
+
+/*top的按钮div*/
+.top-btns {
+	
+}
+
+.top-btns li {
+	margin: 5px;
+	float: left;
+}
+
+.btn-switch {
+	background: url('images/switch.png') no-repeat right 0;
+	display: block;
+	width: 76px;
+	height: 24px;
+}
+
+.btn-logout {
+	background: url('images/logout.png') no-repeat right 0;
+	display: block;
+	width: 54px;
+	height: 24px;
+}
+
+.btn-help {
+	background: url('images/help.png') no-repeat right 0;
+	display: block;
+	width: 54px;
+	height: 24px;
+}
+
+/*top的信息div*/
+.top-info {
+	line-height: 23px;
+	color: #3d63a1;
+	font-weight: bold;
+}
+
+.top-info li {
+	margin: 5px;
+	float: left;
+}
+
+.info-icon {
+	background: url('images/profile.gif') no-repeat right 0;
+	display: block;
+	width: 24px;
+	height: 24px;
+}
+
+.alarm-icon {
+	background: url('images/alarm.gif') no-repeat right 0;
+	display: block;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<!--项目扩展的ui组件定义-->
+	<template id="mainPage" ui-ref="oz-panel,oz-linkbutton,oz-window,oz-dialog,oz-messager,oz-layout,oz-tabs,oz-tree,oz-log">
+		<js ref="jquery-cookie,jquery-bgiframe" />
+		<js src="/oz/webui/oz/page/oz.index.js" />
+		<css ref="oz-page" />
+	</template>
+</root>

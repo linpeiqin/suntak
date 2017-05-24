@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<bean id="seeyonDao" class="com.seeyon.www.dao.hibernate.SeeyonDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="seeyonService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.seeyon.www.service.impl.SeeyonServiceImpl">
+				<property name="equipmentLifeCycleService" ref="equipmentLifeCycleService" />
+			</bean>
+		</property>
+	</bean>
+	
+</beans>

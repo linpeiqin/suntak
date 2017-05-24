@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:task="http://www.springframework.org/schema/task"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd 
+    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+    <description>Spring基础配置文件</description>
+	
+	 <!-- 配置属性文件 -->
+    <!-- 定义受环境影响易变的变量 -->
+    <context:property-placeholder system-properties-mode="OVERRIDE" ignore-resource-not-found="true"
+        location="classpath:/application.properties,classpath:/jdbc.properties" />
+
+    <!-- 因为Oracle9i处理Clob的方式和别的数据库很不一样,甚至与Oracle10g都不兼容,所以这里要用spring提供的SimpleNativeJdbcExtractor -->
+    <bean id="nativeJdbcExtractor" lazy-init="true" class="org.springframework.jdbc.support.nativejdbc.SimpleNativeJdbcExtractor" />
+
+    <!-- Oracle10g用spring提供的DefaultLobHandler -->
+    <bean id="lobHandler" lazy-init="true" class="org.springframework.jdbc.support.lob.DefaultLobHandler" />
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="namingStrategy">
+            <bean class="org.hibernate.cfg.ImprovedNamingStrategy" />
+        </property>
+        <property name="lobHandler" ref="lobHandler" />
+        <property name="mappingLocations">
+            <list>
+                <value>classpath*:/hbm/**/*.hbm.xml</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+                <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+                <prop key="hibernate.query.substitutions">true 1, false 0, yes 'Y', no 'N', true 'Y', false 'N'</prop>
+                <prop key="hibernate.hbm2ddl.auto">none</prop>
+                <prop key="hibernate.cache.use_second_level_cache">true</prop>
+                <prop key="hibernate.cache.use_query_cache">true</prop>
+                <prop key="hibernate.cache.region.factory_class">net.sf.ehcache.hibernate.EhCacheRegionFactory</prop>
+                <prop key="net.sf.ehcache.configurationResourceName">ehcache/hibernate-ehcache.xml</prop>
+            </props>
+        </property>
+    </bean>
+	
+	<!-- 事务处理模板Bean的定义 -->	
+	<bean id="txProxyTemplate" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+		<property name="transactionManager" ref="transactionManager"/>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="add*">PROPAGATION_REQUIRED, -cn.oz.exception.OzException</prop>
+				<prop key="create*">PROPAGATION_REQUIRED</prop>
+				<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="load*">PROPAGATION_REQUIRED</prop>
+				<prop key="find*">PROPAGATION_REQUIRED</prop>
+				<prop key="has*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED,-cn.oz.exception.OzException</prop>
+				<prop key="search*">PROPAGATION_REQUIRED</prop>
+				<prop key="send*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED,-cn.oz.exception.OzException</prop>
+				<prop key="do*">PROPAGATION_REQUIRED,-cn.oz.exception.OzException</prop>
+				<prop key="execute*">PROPAGATION_REQUIRED,-cn.oz.exception.OzException</prop>
+				<prop key="update*">PROPAGATION_REQUIRED,-cn.oz.exception.OzException</prop>
+			</props>
+		</property>		
+	</bean>
+	
+	<!-- 使用annotation 保证@Required,@Autowired的属性被注入,并不自动注册bean-->
+	<context:annotation-config/>
+	
+	<!-- 使用annotation定义事务，也可使用上面的txProxyTemplate -->
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
+	
+	<!-- 定时器开关-->
+	<task:annotation-driven />
+	
+    <!-- 通用的hibernateTemplate -->
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+    <!-- 通用的jdbcTemplate -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <!-- 通用的simpleJdbcTemplate -->
+    <bean id="simpleJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
+        <constructor-arg ref="dataSource" />
+    </bean>
+
+
+
+</beans>

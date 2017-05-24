@@ -1,0 +1,143 @@
+.top-bg{
+	height: 100%;
+	width:100%;
+	background: url('images/cnooc/top-bg.png') repeat-x 0 0;
+	overflow: hidden;
+}
+
+.top-bg-left{
+	width:100%;
+	height:100px;
+	text-align: left;
+	overflow: hidden;
+	background: url('images/cnooc/top-left.png') no-repeat 0 0;
+	float: left;
+}
+
+.top-bg-right{
+	width:100%;
+	height:100px;
+	text-align: left;
+	overflow: hidden;
+	background: url('images/cnooc/top-right.png') no-repeat right 0;
+	float: right;
+}
+
+
+
+
+.buttom-bg{
+	overflow: hidden;
+	background-color: #B4E3FD;
+}
+
+.left-bg{
+	background-color: #F4FEFF;
+}
+
+/*top的按钮div*/
+.top-btns{
+	
+}
+
+.top-btns li{
+	margin:5px;
+	float:left;
+}
+.btn-switch{
+	background: url('images/switch.png') no-repeat right 0;
+	display:block;
+	width:76px;
+	height:24px;
+}
+
+.btn-logout{
+	background: url('images/logout.png') no-repeat right 0;
+	display:block;
+	width:54px;
+	height:24px;
+}
+.btn-help{
+	background: url('images/help.png') no-repeat right 0;
+	display:block;
+	width:54px;
+	height:24px;
+}
+
+/*top的信息div*/
+.top-info{
+	color:#3d63a1;
+	font-weight: bold;
+}
+.top-info li{
+	margin:5px;
+	float:left;
+}
+.info-icon{
+	background: url('images/user.png') no-repeat right 0;
+	display:block;
+	width:16px;
+	height:16px;
+}
+.alarm-icon{
+	background: url('images/alarm.gif') no-repeat right 0;
+	display:block;
+	width:16px;
+	height:16px;
+	cursor: pointer;
+}
+
+ul.oz-tabs-strip-top{
+	background: none;
+	
+}
+
+.oz-tabs-header{
+	border-width:0 0 0px 0;
+	padding-left: 300px;
+	background: none;
+	padding-bottom: 0px;
+	margin-bottom: -1px;
+}
+
+.oz-tabs-header-no-mainpage{
+	padding-left: 100px;
+}
+
+.body {
+	background: url('images/cnooc/top-left.png')  no-repeat  0 0 ;
+	background-color: #50ADE6;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.oz-tabs-scroller-left{
+	left:auto;
+	border-left:1px solid #8DB2E3; 
+}
+
+.oz-tabs-body-top {
+	border-top: 1px solid #8DB2E3; 
+}
+
+.oz-tree-node{
+	border-bottom: 1px solid #B5BFC1;
+	padding: 3px 0; 
+	background:#FFFFFF;
+}
+
+.oz-tree-node-selected{
+	background:#FBEC88;
+}
+
+.oz-tree-node-hover{
+	background:#EEEEEE;
+}
+
+.tree-root-bg{
+	background: url("images/bg-h.gif");
+}

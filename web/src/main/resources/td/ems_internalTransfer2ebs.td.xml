@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tdmap form="EMS_DM_INTERNALTRANSFER" to="EMS.CUX_FA_TRANSACTION_T" method="apps.cux_fa_transaction_pkg.fa_transfer">
+	<field source="EMS_DM_EQUIPMENT_DETAILS.ID" target="CUX_TRANSACTION_ID" />
+	<field source="EMS_DM_INTERNALTRANSFER.ID" target="BATCH_ID" />
+	<field source="EMS_DM_INTERNALTRANSFER.ORGANIZATION_ID" target="ORGANIZATION_ID" />
+	<field source="EMS_DM_EQUIPMENT_DETAILS.ASSET_ID" target="ASSET_ID" />
+	<field source="EMS_DM_INTERNALTRANSFER.TYPE" target="FA_TYPE" />
+
+
+	<field source="EMS_DM_INTERNALTRANSFER.ASCRIPTION_M_D_EBS" target="ADMINISTRATIVE_DEPARTMENT" />
+	<field source="EMS_DM_INTERNALTRANSFER.NEW_USE_D_EBS" target="NEW_DEPARTMENT" />
+	<field source="EMS_DM_INTERNALTRANSFER.NEW_INSTALLATION_LOCATION" target="NEW_INSTALLATION_SITE" />
+	<field source="EMS_DM_INTERNALTRANSFER.ORIGINAL_VALUE" target="COST" />
+	<field source="EMS_DM_INTERNALTRANSFER.CAN_USE_LIFE" target="NEW_LIFE_YEARS" />
+</tdmap>

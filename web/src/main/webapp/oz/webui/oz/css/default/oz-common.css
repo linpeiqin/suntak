@@ -1,0 +1,133 @@
+/*
+ * 全局样式控制
+ */
+
+/*-------------
+   YUI Reset
+-------------*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,legend,input,button,textarea,select,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0;font-size:12px}
+img{border:0}
+address,button,caption,cite,code,dfn,em,input,optgroup,option,select,strong,textarea,th,var{font:inherit}
+del,ins{text-decoration:none}
+li{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:baseline}
+sub{vertical-align:baseline}
+legend{color:#000}
+
+/* -------------
+   * commom *
+* ------------- */
+body{font-family: "微软雅黑","宋体",Arial,"Tahoma","verdana","helvetica","sans-serif"; font-size: 12px;color:#000; }
+/* html,body{height:100%;} */
+
+input,textarea{
+
+}
+textarea{
+	resize: none;
+}
+
+/* 在非IE6 IE7 情况下，使用box-sizing 使其他浏览器计算width 时，计算padding和border在内*/
+.oz-border-box .oz-reset, .oz-border-box .oz-reset * {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+
+/* body样式 */
+.oz-body{overflow: hidden;background-color: #FFFFFF;}/*#DEEBF4;}*/
+.oz-body-auto{overflow: auto;background-color: #FFFFFF;}/*#DEEBF4;}*/
+/* body样式:对话框 */
+.oz-body-dlg{overflow:hidden;background-color: #FFFFFF;}
+.oz-hidden{display: none;}
+.oz-font{font-size:12px}
+.oz-font-medium{font-size:14px}
+.oz-font-big{font-size:18px}
+
+.oz-pointer{
+	cursor: pointer;
+}
+/*数字字体*/
+.GeorgiaFont{font-family:Georgia, Times New Roman, Times, serif;}
+/*嘉瑶logo*/
+.oz-icon16 {background:url("images/logo16.gif") no-repeat scroll 0 0 transparent;}
+
+/*easyui样式的复写*/
+.datagrid-header td{
+	border-right-style:solid;
+	border-bottom-style:solid;
+	border-top-style:solid;
+}
+.datagrid-body td{
+	border-right-style:solid;
+	border-bottom-style:solid;
+}
+.datagrid-header td.last,.datagrid-body td.last{
+	border-right-width: 0;
+}
+.datagrid-row-alt{
+	background:#EEFAE2;
+}
+
+.datagrid-row-selected{
+	background:#9DCCE9;
+}
+
+.datagrid-row-over{
+	background:#D0E5F5;
+	background1:#FBEC88;
+	cursor:default;
+}
+
+.datagrid-resize-proxy{
+	position:absolute;
+	width:1px;
+	top:0;
+	height:10000px;
+	background:blue;
+	cursor:e-resize;
+	display:none;
+}
+
+/*首页日历某天具有相关日程安排的附加样式*/
+.oz-calendar-day-something{
+	position:absolute;left:0;top:0;width:7px;height:7px;line-height:0;font-size:0;
+	background-position:-116px -20px;z-index:100;
+}
+.ui-datepicker-calendar td a{_position: relative;}/*fixed ie6*/
+
+
+.richTextArea {
+	margin: 8px;
+	font-family: "宋体";
+	font-size: 12px;
+}
+
+.richTextArea table {
+	word-break: break-all;
+}
+
+.richTextArea li {
+	clear: both
+}
+
+.richTextArea p {
+	margin: .5em 0;
+}
+
+.richTextArea li p {
+	margin: 1em 09
+}
+
+.richTextArea .tableclear {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}

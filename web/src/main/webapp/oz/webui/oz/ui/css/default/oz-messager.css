@@ -1,0 +1,28 @@
+.oz-messager-body{
+	padding:5px 10px;
+}
+.oz-messager-button{
+	text-align:center;
+	padding-top:10px;
+}
+.oz-messager-icon{
+	float:left;
+	width:47px;
+	height:35px;
+}
+.oz-messager-error{
+	background:url('images/messager_error.gif') no-repeat scroll left top;
+}
+.oz-messager-info{
+	background:url('images/messager_info.gif') no-repeat scroll left top;
+}
+.oz-messager-question{
+	background:url('images/messager_question.gif') no-repeat scroll left top;
+}
+.oz-messager-warning{
+	background:url('images/messager_warning.gif') no-repeat scroll left top;
+}
+.oz-messager-input{
+	width: 262px;
+	border:1px solid #ccc;
+}

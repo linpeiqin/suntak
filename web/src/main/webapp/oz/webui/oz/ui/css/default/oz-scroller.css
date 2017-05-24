@@ -1,0 +1,46 @@
+.oz-docked {
+	position: absolute;
+	z-index: 1;
+}
+
+.oz-scroller-panel-body {
+	border: 1px solid #99BBE8;
+	overflow: hidden;
+}
+
+.oz-vertical-scroller-present {
+	border-right: none;
+}
+
+.oz-horizontal-scroller-present {
+	border-bottom: none;
+}
+
+.oz-scroller-vertical {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	border: 1px solid #99BBE8;
+	border-top-color: #C5C5C5;
+}
+
+.oz-scroller-horizontal {
+	overflow-y: hidden;
+	overflow-x: scroll;
+	border: 1px solid #99BBE8;
+}
+
+.oz-docked-right {
+	border-left-width: 0 !important;
+}
+
+.oz-docked-left {
+	border-right-width: 0 !important;
+}
+
+.oz-docked-top {
+	border-bottom-width: 0 !important;
+}
+
+.oz-docked-bottom {
+	border-top-width: 0 !important;
+}

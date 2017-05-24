@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<bean id="equipmentLifeCycleDao" class="cn.suntak.ems.equipmentlifecycle.dao.hibernate.EquipmentLifeCycleDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="equipmentLifeCycleService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentlifecycle.service.impl.EquipmentLifeCycleServiceImpl">
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ebsViewDao" class="cn.suntak.ems.equipmentlifecycle.dao.hibernate.EbsViewDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="ebsViewService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentlifecycle.service.impl.EbsViewServiceImpl">
+			</bean>
+		</property>
+	</bean>
+</beans>

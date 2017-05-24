@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" package="cn.suntak.ems.equipmentlifecycle.domain">
+	<class name="EquipmentLifeCycle" table="EMS_DM_LIFE_CYCLE">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="startTime" column="START_TIME"/>
+		<property name="endTime" column="END_TIME"/>
+		<property name="type" column="TYPE"/>
+		<property name="ebsDate" column="EBS_DATE"/>
+		<property name="ebsType" column="EBS_TYPE"/>
+		<property name="oaDate" column="OA_DATE"/>
+		<property name="oaType" column="OA_TYPE"/>
+		<property name="createdBy" column="CREATED_BY"/>
+		<property name="createdDate" column="CREATED_DATE"/>
+		<property name="remark" column="REMARK"/>
+		<property name="updatedDate" column="UPDATED_DATE"/>
+		<property name="updatedBy" column="UPDATED_BY"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<property name="processId" column="PROCESS_ID"/>
+
+        <one-to-one name="internalTransfer" class="cn.suntak.ems.internaltransfer.domain.InternalTransfer" property-ref="equipmentLifeCycle" cascade="all"></one-to-one>
+        <one-to-one name="intoFactory" class="cn.suntak.ems.intofactory.domain.IntoFactory" property-ref="equipmentLifeCycle" cascade="all"></one-to-one>
+        <one-to-one name="intoFactoryCheck" class="cn.suntak.ems.intofactorycheck.domain.IntoFactoryCheck" property-ref="equipmentLifeCycle" cascade="all"></one-to-one>
+        <one-to-one name="renewal" class="cn.suntak.ems.renewal.domain.Renewal" property-ref="equipmentLifeCycle" cascade="all"></one-to-one>
+        <one-to-one name="renewalCheck" class="cn.suntak.ems.renewalcheck.domain.RenewalCheck" property-ref="equipmentLifeCycle" cascade="all"></one-to-one>
+        <one-to-one name="scrap" class="cn.suntak.ems.scrap.domain.Scrap" property-ref="equipmentLifeCycle" cascade="all"></one-to-one>
+        <one-to-one name="sell" class="cn.suntak.ems.sell.domain.Sell" property-ref="equipmentLifeCycle" cascade="all"></one-to-one>
+		<one-to-one name="completion" class="cn.suntak.ems.completion.domain.Completion" property-ref="equipmentLifeCycle" cascade="all"></one-to-one>
+		<one-to-one name="completionCheck" class="cn.suntak.ems.completioncheck.domain.CompletionCheck" property-ref="equipmentLifeCycle" cascade="all"></one-to-one>
+		<one-to-one name="intoFactoryAndCheck" class="cn.suntak.ems.intofactoryandcheck.domain.IntoFactoryAndCheck" property-ref="equipmentLifeCycle" cascade="all"></one-to-one>
+		<one-to-one name="renewalAndCheck" class="cn.suntak.ems.renewalandcheck.domain.RenewalAndCheck" property-ref="equipmentLifeCycle" cascade="all"></one-to-one>
+		<set name="equipmentDetails" inverse="false" cascade="save-update merge" table="EMS_DM_EL_CONFIGURE">
+            <key column="LC_ID"></key>
+            <many-to-many class="cn.suntak.ems.equipmentdetails.domain.EquipmentDetails"
+                column="EQ_ID"></many-to-many>
+        </set>
+		
+	</class>
+	
+</hibernate-mapping>

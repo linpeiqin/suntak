@@ -1,0 +1,1042 @@
+-- 序列定义
+CREATE SEQUENCE HIBERNATE_SEQUENCE
+  INCREMENT BY 1                   -- 每次加几个
+  START WITH 1                     -- 从1开始计数
+  NOMAXVALUE                       -- 不设置最大值
+  NOCYCLE                          -- 一直累加，不循环
+  CACHE 10;
+
+/* oz-config ========================================================================================================*/
+/*==============================================================*/
+/* Table: OZ_CFG_CONFIG -- 系统全局配置数据表                   */
+/*==============================================================*/
+CREATE TABLE OZ_CFG_CONFIG  (
+   ID                   NUMBER(19)                      NOT NULL,
+   LASTMODIFIER         VARCHAR2(255),
+   LASTMODIFIER_ID      VARCHAR2(36),
+   LASTMODIFIED_DATE    DATE,
+   UNIT_ID              VARCHAR2(36),
+   CFG_KEY              VARCHAR2(255)                   NOT NULL,
+   CFG_VALUE            VARCHAR2(4000),
+   DESCRIPTION          VARCHAR2(255),
+   CONSTRAINT PK_OZ_CFG_CONFIG PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CFG_CONFIG IS '系统配置表';
+COMMENT ON COLUMN OZ_CFG_CONFIG.LASTMODIFIER IS '最后修改者';
+COMMENT ON COLUMN OZ_CFG_CONFIG.LASTMODIFIER_ID IS '最后修改者的ID';
+COMMENT ON COLUMN OZ_CFG_CONFIG.LASTMODIFIED_DATE IS '最后修改时间';
+COMMENT ON COLUMN OZ_CFG_CONFIG.UNIT_ID IS '配置所属单位ID';
+COMMENT ON COLUMN OZ_CFG_CONFIG.CFG_KEY IS '名称';
+COMMENT ON COLUMN OZ_CFG_CONFIG.CFG_VALUE IS '值';
+COMMENT ON COLUMN OZ_CFG_CONFIG.DESCRIPTION IS '配置信息说明';
+
+
+/*==============================================================*/
+/* Table: OZ_CFG_SCHEDULINGJOB -- 定时任务管理表                */
+/*==============================================================*/
+CREATE TABLE OZ_CFG_SCHEDULINGJOB  (
+   ID                   NUMBER(19)                      NOT NULL,
+   LASTMODIFIER         VARCHAR2(255),
+   LASTMODIFIER_ID      VARCHAR2(36),
+   LASTMODIFIED_DATE    DATE,
+   UNIT_ID              VARCHAR2(36),
+   JOB_ID               VARCHAR2(255)                   NOT NULL,
+   JOB_NAME             VARCHAR2(255)                   NOT NULL,
+   JOB_GROUP            VARCHAR2(255),
+   JOB_STATUS           NUMBER(1)                       NOT NULL,
+   JOB_CRONEXPRESSION   VARCHAR2(255)                   NOT NULL,
+   DESCRIPTION          VARCHAR2(4000),
+   CONSTRAINT PK_OZ_CFG_SCHEDULINGJOB PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CFG_SCHEDULINGJOB IS '定时任务管理表';
+COMMENT ON COLUMN OZ_CFG_SCHEDULINGJOB.LASTMODIFIER IS '最后修改者';
+COMMENT ON COLUMN OZ_CFG_SCHEDULINGJOB.LASTMODIFIER_ID IS '最后修改者的ID';
+COMMENT ON COLUMN OZ_CFG_SCHEDULINGJOB.LASTMODIFIED_DATE IS '最后修改时间';
+COMMENT ON COLUMN OZ_CFG_SCHEDULINGJOB.UNIT_ID IS '配置所属单位ID';
+COMMENT ON COLUMN OZ_CFG_SCHEDULINGJOB.JOB_ID IS '任务的ID,Bean的ID';
+COMMENT ON COLUMN OZ_CFG_SCHEDULINGJOB.JOB_NAME IS '任务名称';
+COMMENT ON COLUMN OZ_CFG_SCHEDULINGJOB.JOB_GROUP IS '任务所属组';
+COMMENT ON COLUMN OZ_CFG_SCHEDULINGJOB.JOB_STATUS IS '任务状态(0:启用;1:禁用;2:删除)';
+COMMENT ON COLUMN OZ_CFG_SCHEDULINGJOB.JOB_CRONEXPRESSION IS '任务运行时间表达式';
+COMMENT ON COLUMN OZ_CFG_SCHEDULINGJOB.DESCRIPTION IS '任务描述';
+
+
+/*==============================================================*/
+/* Table: OZ_CFG_OPTIONGROUP -- 选项分组                        */
+/*==============================================================*/
+CREATE TABLE OZ_CFG_OPTIONGROUP  (
+   ID                   NUMBER(19)                      NOT NULL,
+   NAME                 VARCHAR2(255),
+   CODE                 VARCHAR2(255),
+   INNER_FLAG           VARCHAR2(1),
+   CONSTRAINT PK_OZ_CFG_OPTIONGROUP PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CFG_OPTIONGROUP IS '选项分组';
+COMMENT ON COLUMN OZ_CFG_OPTIONGROUP.NAME IS '名称';
+COMMENT ON COLUMN OZ_CFG_OPTIONGROUP.CODE IS '编码';
+COMMENT ON COLUMN OZ_CFG_OPTIONGROUP.INNER_FLAG IS '是否内置';
+
+
+/*==============================================================*/
+/* Table: OZ_CFG_OPTIONENTRY -- 可选项配置/数据字典             */
+/*==============================================================*/
+CREATE TABLE OZ_CFG_OPTIONENTRY  (
+   ID                   NUMBER(19)                      NOT NULL,
+   LASTMODIFIER         VARCHAR2(255),
+   LASTMODIFIER_ID      VARCHAR2(36),
+   LASTMODIFIED_DATE    DATE,
+   UNIT_ID              VARCHAR2(36),
+   GROUP_NAME           VARCHAR2(255)                   NOT NULL,
+   GROUP_CODE           VARCHAR2(255)                   NOT NULL,
+   NAME                 VARCHAR2(255)                   NOT NULL,
+   VALUE                VARCHAR2(255)                   NOT NULL,
+   IS_DEFAULT           VARCHAR2(1)                     NOT NULL,
+   ORDER_NO             VARCHAR2(255),
+   CONSTRAINT PK_OZ_CFG_OPTIONENTRY PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CFG_OPTIONENTRY IS '可选项配置';
+COMMENT ON COLUMN OZ_CFG_OPTIONENTRY.LASTMODIFIER IS '最后修改者';
+COMMENT ON COLUMN OZ_CFG_OPTIONENTRY.LASTMODIFIER_ID IS '最后修改者的ID';
+COMMENT ON COLUMN OZ_CFG_OPTIONENTRY.LASTMODIFIED_DATE IS '最后修改时间';
+COMMENT ON COLUMN OZ_CFG_OPTIONENTRY.UNIT_ID IS '配置所属单位ID';
+COMMENT ON COLUMN OZ_CFG_OPTIONENTRY.GROUP_NAME IS '组名称';
+COMMENT ON COLUMN OZ_CFG_OPTIONENTRY.GROUP_CODE IS '组编码';
+COMMENT ON COLUMN OZ_CFG_OPTIONENTRY.NAME IS '名称';
+COMMENT ON COLUMN OZ_CFG_OPTIONENTRY.VALUE IS '值';
+COMMENT ON COLUMN OZ_CFG_OPTIONENTRY.IS_DEFAULT IS '是否缺省值';
+COMMENT ON COLUMN OZ_CFG_OPTIONENTRY.ORDER_NO IS '排序';
+
+
+
+
+/* oz-component =====================================================================================================*/
+/*==============================================================*/
+/* Table: OZ_CMPN_ATTRIBUTE -- 扩展属性表                       */
+/*==============================================================*/
+CREATE TABLE OZ_CMPN_ATTRIBUTE  (
+   ID                   NUMBER(19)                      NOT NULL,
+   PARENT_ID            VARCHAR2(255),
+   ATTR_NAME            VARCHAR2(255),
+   ATTR_VALUE           VARCHAR2(255),
+   CONSTRAINT PK_OZ_CMPN_ATTRIBUTE PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CMPN_ATTRIBUTE IS '扩展属性表';
+COMMENT ON COLUMN OZ_CMPN_ATTRIBUTE.PARENT_ID IS '属性所属对象的ID';
+COMMENT ON COLUMN OZ_CMPN_ATTRIBUTE.ATTR_NAME IS '属性名称';
+COMMENT ON COLUMN OZ_CMPN_ATTRIBUTE.ATTR_VALUE IS '属性值';
+
+CREATE INDEX IDX_OZ_CMPN_ATTR_P ON OZ_CMPN_ATTRIBUTE (PARENT_ID ASC);
+
+
+/*==============================================================*/
+/* Table: OZ_CMPN_USERLOG -- 用户操作日志表                     */
+/*==============================================================*/
+CREATE TABLE OZ_CMPN_USERLOG  (
+   ID                   NUMBER(19)                      NOT NULL,
+   AUTHOR               VARCHAR2(255)                   NOT NULL,
+   AUTHOR_ID            VARCHAR2(36)                    NOT NULL,
+   CREATED_DATE         DATE                            NOT NULL,
+   SOURCE               VARCHAR2(255)                   NOT NULL,
+   ACTION               VARCHAR2(255)                   NOT NULL,
+   LOG_CONTEXT          VARCHAR2(4000)                  NOT NULL,
+   DOC_ID               VARCHAR2(36),
+   DOC_TYPE             VARCHAR2(255),
+   CLIENT_IP            VARCHAR2(255),
+   CLIENT_NAME          VARCHAR2(255),
+   CLIENT_BROWSER       VARCHAR2(255),
+   SERVER_IP            VARCHAR2(255),
+   SERVER_NAME          VARCHAR2(255),
+   SERVER_URL           VARCHAR2(255),
+   CONSTRAINT PK_OZ_CMPN_USERLOG PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CMPN_USERLOG IS '用户操作日志表';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.AUTHOR IS '作者姓名';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.AUTHOR_ID IS '作者ID';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.CREATED_DATE IS '日志时间';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.SOURCE IS '日志来源';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.ACTION IS '操作名称';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.LOG_CONTEXT IS '日志内容';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.DOC_ID IS '源文档ID';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.DOC_TYPE IS '源文档类型';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.CLIENT_IP IS '客户端IP';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.CLIENT_NAME IS '客户端名称';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.CLIENT_BROWSER IS '客户端浏览器';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.SERVER_IP IS '服务器IP';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.SERVER_NAME IS '服务器名称';
+COMMENT ON COLUMN OZ_CMPN_USERLOG.SERVER_URL IS '服务器Url';
+
+CREATE INDEX IDX_OZ_CMPN_USERLOG ON OZ_CMPN_USERLOG (SOURCE ASC);
+CREATE INDEX IDX_OZ_CMPN_USERLOG_AUTHOR ON OZ_CMPN_USERLOG (AUTHOR_ID ASC);
+
+	  
+/*==============================================================*/
+/* Table: OZ_CMPN_PROFILE -- 用户个性化配置表                   */
+/*==============================================================*/
+CREATE TABLE OZ_CMPN_PROFILE  (
+   ID                   NUMBER(19)                      NOT NULL,
+   USER_ID              VARCHAR2(36)                    NOT NULL,
+   PROFILE_KEY          VARCHAR2(255)                   NOT NULL,
+   PROFILE_VALUE        VARCHAR2(255),
+   CONSTRAINT PK_OZ_CMPN_PROFILE PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CMPN_PROFILE IS '用户个性化配置表';
+COMMENT ON COLUMN OZ_CMPN_PROFILE.USER_ID IS '用户ID';
+COMMENT ON COLUMN OZ_CMPN_PROFILE.PROFILE_KEY IS '用户动作';
+COMMENT ON COLUMN OZ_CMPN_PROFILE.PROFILE_VALUE IS '动作相应的数据';
+
+CREATE INDEX IDX_OZ_CMPN_PROFILE ON OZ_CMPN_PROFILE (USER_ID ASC);
+
+
+/* 附件管理组件 ===========================================================================================================*/
+/*==============================================================*/
+/* Table: OZ_CMPN_ATTACHMENT -- 附件信息表                      */
+/*==============================================================*/
+CREATE TABLE OZ_CMPN_ATTACHMENT  (
+   ID                   NUMERIC(19)                     NOT NULL,
+   AUTHOR               VARCHAR2(255),
+   AUTHOR_ID            VARCHAR2(36)                    NOT NULL,
+   CREATED_DATE         DATE                            NOT NULL,
+   SUBJECT              VARCHAR2(255)                   NOT NULL,
+   FILE_NAME            VARCHAR2(255)                   NOT NULL,
+   CANONICAL_PATH       VARCHAR2(255)                   NOT NULL,
+   FORMAT               VARCHAR2(255)                   NOT NULL,
+   FILESIZE             VARCHAR2(255),
+   GROUPNAME            VARCHAR2(255),
+   PARENT_ID            VARCHAR2(36)                    NOT NULL,
+   PARNET_DOCTYPE       VARCHAR2(255)                   NOT NULL,
+   CONSTRAINT PK_OZ_CMPN_ATTACHMENT PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CMPN_ATTACHMENT IS '附件信息表';
+COMMENT ON COLUMN OZ_CMPN_ATTACHMENT.AUTHOR IS '上传者姓名';
+COMMENT ON COLUMN OZ_CMPN_ATTACHMENT.AUTHOR_ID IS '上传者ID';
+COMMENT ON COLUMN OZ_CMPN_ATTACHMENT.CREATED_DATE IS '上传日期';
+COMMENT ON COLUMN OZ_CMPN_ATTACHMENT.SUBJECT IS '文件标题';
+COMMENT ON COLUMN OZ_CMPN_ATTACHMENT.FILE_NAME IS '文件名称';
+COMMENT ON COLUMN OZ_CMPN_ATTACHMENT.CANONICAL_PATH IS '存储路径';
+COMMENT ON COLUMN OZ_CMPN_ATTACHMENT.FORMAT IS '文件格式';
+COMMENT ON COLUMN OZ_CMPN_ATTACHMENT.FILESIZE IS '文件大小';
+COMMENT ON COLUMN OZ_CMPN_ATTACHMENT.GROUPNAME IS '附件分组信息';
+COMMENT ON COLUMN OZ_CMPN_ATTACHMENT.PARENT_ID IS '所属老爸的ID';
+COMMENT ON COLUMN OZ_CMPN_ATTACHMENT.PARNET_DOCTYPE IS '所属老爸的类型';
+
+CREATE INDEX IDX_OZ_CMPN_ATM_PARENT ON OZ_CMPN_ATTACHMENT (PARENT_ID ASC, PARNET_DOCTYPE ASC);
+
+
+
+/*==============================================================*/
+/* Table: OZ_CMPN_RELATIONSHIP -- 关联关系表                    */
+/*==============================================================*/
+CREATE TABLE OZ_CMPN_RELATIONSHIP  (
+   ID                   NUMBER(19)                      NOT NULL,
+   LH_ID                NUMBER(19)                      NOT NULL,
+   RH_ID                NUMBER(19)                      NOT NULL,
+   RELATIONSHIP         VARCHAR2(255),
+   CONSTRAINT PK_OZ_CMPN_RELATIONSHIP PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CMPN_RELATIONSHIP IS '关联关系表';
+COMMENT ON COLUMN OZ_CMPN_RELATIONSHIP.LH_ID IS 'LH_ID';
+COMMENT ON COLUMN OZ_CMPN_RELATIONSHIP.RH_ID IS 'RH_ID';
+COMMENT ON COLUMN OZ_CMPN_RELATIONSHIP.RELATIONSHIP IS '关联类型';
+
+CREATE INDEX IDX_OZ_CMPN_RELATIONSHIPPID ON OZ_CMPN_RELATIONSHIP (LH_ID ASC);
+CREATE INDEX IDX_OZ_CMPN_RELATIONSHIPCID ON OZ_CMPN_RELATIONSHIP (RH_ID ASC);
+
+ALTER TABLE OZ_CMPN_RELATIONSHIP
+      ADD CONSTRAINT FK_OZ_CMPN_RS_REF_LHAO FOREIGN KEY (LH_ID)
+      REFERENCES OZ_CMPN_ASSOCIATEOBJ (ID);
+ALTER TABLE OZ_CMPN_RELATIONSHIP
+      ADD CONSTRAINT FK_OZ_CMPN_RS_REF_RHAO FOREIGN KEY (RH_ID)
+      REFERENCES OZ_CMPN_ASSOCIATEOBJ (ID);
+
+
+
+
+/* 访问控制组件 ===========================================================================================================*/
+/*==============================================================*/
+/* Table: OZ_CMPN_ACL -- 文档条目访问控制列表                   */
+/*==============================================================*/
+CREATE TABLE OZ_CMPN_ACL  (
+   ID                   NUMBER(19)                      NOT NULL,
+   ENTITY_CLAZZ         VARCHAR2(255)                   NOT NULL,
+   ENTITY_ID            VARCHAR2(36)                    NOT NULL,
+   CONSTRAINT PK_OZ_CMPN_ACL PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CMPN_ACL IS '文档条目访问控制列表';
+COMMENT ON COLUMN OZ_CMPN_ACL.ENTITY_CLAZZ IS '相应文档的类名称';
+COMMENT ON COLUMN OZ_CMPN_ACL.ENTITY_ID IS '相应文档的ID';
+
+CREATE INDEX IDX_OZ_ACL_ACL_ENTITY ON OZ_CMPN_ACL (ENTITY_CLAZZ ASC, ENTITY_ID ASC);
+
+
+/*==============================================================*/
+/* Table: OZ_CMPN_ACL_ACE -- 文档条目访问控制项                 */
+/*==============================================================*/
+CREATE TABLE OZ_CMPN_ACL_ACE  (
+   ID                   NUMBER(19)                      NOT NULL,
+   PARENT_ID            NUMBER(19),
+   MASK                 NUMBER(10)                      NOT NULL,
+   SID                  VARCHAR2(36)                    NOT NULL,
+   SID_NAME             VARCHAR2(255),
+   CONSTRAINT PK_OZ_CMPN_ACL_ACE PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CMPN_ACL_ACE IS '文档条目访问控制项';
+COMMENT ON COLUMN OZ_CMPN_ACL_ACE.PARENT_ID IS '所属ACL的ID';
+COMMENT ON COLUMN OZ_CMPN_ACL_ACE.MASK IS '权限的值';
+COMMENT ON COLUMN OZ_CMPN_ACL_ACE.SID IS 'SID';
+COMMENT ON COLUMN OZ_CMPN_ACL_ACE.SID_NAME IS 'SID的名称';
+
+CREATE INDEX IDX_OZ_CMPN_ACE_ACL ON OZ_CMPN_ACL_ACE (PARENT_ID ASC);
+CREATE INDEX IDX_OZ_CMPN_ACE_SID ON OZ_CMPN_ACL_ACE (SID ASC);
+
+ALTER TABLE OZ_CMPN_ACL_ACE
+      ADD CONSTRAINT FK_OZ_CMPN_ACE_REF_ACL FOREIGN KEY (PARENT_ID)
+      REFERENCES OZ_CMPN_ACL (ID);
+
+	  
+/*==============================================================*/
+/* Table: OZ_CMPN_ACL_FP -- 业务方法授权列表                    */
+/*==============================================================*/
+CREATE TABLE OZ_CMPN_ACL_FP  (
+   ID                   NUMBER(19)                      NOT NULL,
+   FUNCTION_ID          VARCHAR2(255)                   NOT NULL,
+   CONSTRAINT PK_OZ_CMPN_ACL_FP PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CMPN_ACL_FP IS '业务方法授权列表';
+COMMENT ON COLUMN OZ_CMPN_ACL_FP.FUNCTION_ID IS '业务功能的Id';
+
+CREATE INDEX IDX_OZ_CMPN_ACL_FPACL ON OZ_CMPN_ACL_FP (FUNCTION_ID ASC);
+
+
+/*==============================================================*/
+/* Table: OZ_CMPN_ACL_FP_ACE -- 业务方法授权项                  */
+/*==============================================================*/
+CREATE TABLE OZ_CMPN_ACL_FP_ACE  (
+   ID                   NUMBER(19)                      NOT NULL,
+   PARENT_ID            NUMBER(19),
+   SID                  VARCHAR2(36)                    NOT NULL,
+   SID_NAME             VARCHAR2(255),
+   PERMISSION_TYPE      VARCHAR2(1)                     NOT NULL,
+   CONSTRAINT PK_OZ_CMPN_ACL_FP_ACE PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CMPN_ACL_FP_ACE IS '业务方法授权项';
+COMMENT ON COLUMN OZ_CMPN_ACL_FP_ACE.PARENT_ID IS '所属业务授权对象';
+COMMENT ON COLUMN OZ_CMPN_ACL_FP_ACE.SID IS 'SID';
+COMMENT ON COLUMN OZ_CMPN_ACL_FP_ACE.SID_NAME IS 'SID名称';
+COMMENT ON COLUMN OZ_CMPN_ACL_FP_ACE.PERMISSION_TYPE IS '授权方式:Y--授权;N--反授权';
+
+CREATE INDEX IDX_OZ_CMPN_ACL_FP_ACE ON OZ_CMPN_ACL_FP_ACE (PARENT_ID ASC);
+
+ALTER TABLE OZ_CMPN_ACL_FP_ACE
+      ADD CONSTRAINT FK_OZ_CMPN_FP_ACE_REF_ACL FOREIGN KEY (PARENT_ID)
+      REFERENCES OZ_CMPN_ACL_FP (ID);
+
+
+/*==============================================================*/
+/* Table: OZ_CMPN_ACL_DP_RESOURCE -- 数据权限授权资源表         */
+/*==============================================================*/
+CREATE TABLE OZ_CMPN_ACL_DP_RESOURCE  (
+   ID                   NUMBER(19)                      NOT NULL,
+   RESOURCE_NAME        VARCHAR2(255)                   NOT NULL,
+   RESOURCE_ID          VARCHAR2(255)                   NOT NULL,
+   DATASCOPE_TYPE       NUMBER(2)                       NOT NULL,
+   CONSTRAINT PK_OZ_CMPN_ACL_DP_RESOURCE PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CMPN_ACL_DP_RESOURCE IS '数据权限授权资源表';
+COMMENT ON COLUMN OZ_CMPN_ACL_DP_RESOURCE.RESOURCE_NAME IS '资源名称';
+COMMENT ON COLUMN OZ_CMPN_ACL_DP_RESOURCE.RESOURCE_ID IS '资源Id';
+COMMENT ON COLUMN OZ_CMPN_ACL_DP_RESOURCE.DATASCOPE_TYPE IS '授权数据范围类型';
+
+
+/*==============================================================*/
+/* Table: OZ_CMPN_ACL_DP -- 数据权限授权列表                    */
+/*==============================================================*/
+CREATE TABLE OZ_CMPN_ACL_DP  (
+   ID                   NUMBER(19)                      NOT NULL,
+   SID                  VARCHAR2(36)                    NOT NULL,
+   SID_NAME             VARCHAR2(255),
+   RESOURCE_ID          VARCHAR2(255)                   NOT NULL,
+   SCOPE_TYPE           NUMBER(2)                       NOT NULL,
+   CONSTRAINT PK_OZ_CMPN_ACL_DP PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CMPN_ACL_DP IS '数据权限授权列表';
+COMMENT ON COLUMN OZ_CMPN_ACL_DP.SID IS 'SID';
+COMMENT ON COLUMN OZ_CMPN_ACL_DP.SID_NAME IS 'SID名称';
+COMMENT ON COLUMN OZ_CMPN_ACL_DP.RESOURCE_ID IS '授权的资源ID';
+COMMENT ON COLUMN OZ_CMPN_ACL_DP.SCOPE_TYPE IS '数据权限类型';
+
+CREATE INDEX IDX_OZ_CMPN_ACL_DP_SID ON OZ_CMPN_ACL_DP (SID ASC);
+CREATE INDEX IDX_OZ_CMPN_ACL_DP_RESOURCE ON OZ_CMPN_ACL_DP (RESOURCE_ID ASC);
+
+
+/*==============================================================*/
+/* Table: OZ_CMPN_ACL_DP_ACE -- 数据权限授权项                  */
+/*==============================================================*/
+CREATE TABLE OZ_CMPN_ACL_DP_ACE  (
+   ID                   NUMBER(19)                      NOT NULL,
+   PARENT_ID            NUMBER(19),
+   DATASCOPE            VARCHAR2(36)                    NOT NULL,
+   PERMISSION_TYPE      VARCHAR2(1)                     NOT NULL,
+   CONSTRAINT PK_OZ_CMPN_ACL_DP_ACE PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_CMPN_ACL_DP_ACE IS '数据权限授权项';
+COMMENT ON COLUMN OZ_CMPN_ACL_DP_ACE.PARENT_ID IS '所属授权的ID';
+COMMENT ON COLUMN OZ_CMPN_ACL_DP_ACE.DATASCOPE IS '授权权限范围';
+COMMENT ON COLUMN OZ_CMPN_ACL_DP_ACE.PERMISSION_TYPE IS '授权方式:Y--授权;N--反授权';
+
+CREATE INDEX IDX_OZ_CMPN_ACL_DP_ACE ON OZ_CMPN_ACL_DP_ACE (PARENT_ID ASC);
+
+ALTER TABLE OZ_CMPN_ACL_DP_ACE
+      ADD CONSTRAINT FK_OZ_CMPN_DP_ACE_REF_ACL FOREIGN KEY (PARENT_ID)
+      REFERENCES OZ_CMPN_ACL_DP (ID);
+
+	  
+/* oz-module ========================================================================================================*/
+/*==============================================================*/
+/* Table: OZ_SEC_PERMISSIONS -- 权限配置表                      */
+/*==============================================================*/
+CREATE TABLE OZ_SEC_PERMISSIONS  (
+   ID                   NUMBER(19)                      NOT NULL,
+   PARENT_ID            NUMBER(19),
+   STATUS               NUMBER(1)                       NOT NULL,
+   TYPE                 NUMBER(2)                       NOT NULL,
+   INNER_FLAG           VARCHAR2(255)                   NOT NULL,
+   NAME                 VARCHAR2(255)                   NOT NULL,
+   CODE                 VARCHAR2(255)                   NOT NULL,
+   URL_PATH             VARCHAR2(255),
+   CSS_CLASS            VARCHAR2(255),
+   ORDER_NO             VARCHAR2(255),
+   UNIT_ID              VARCHAR2(36),
+   DESCRIPTION          VARCHAR2(255),
+   CONSTRAINT PK_OZ_SEC_PERMISSIONS PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_SEC_PERMISSIONS IS '权限配置表';
+COMMENT ON COLUMN OZ_SEC_PERMISSIONS.PARENT_ID IS '所属老爸的ID';
+COMMENT ON COLUMN OZ_SEC_PERMISSIONS.STATUS IS '配置状态(0-活动;1-禁用;2-删除)';
+COMMENT ON COLUMN OZ_SEC_PERMISSIONS.TYPE IS '权限类型';
+COMMENT ON COLUMN OZ_SEC_PERMISSIONS.INNER_FLAG IS '是否内建权限(Y/N)';
+COMMENT ON COLUMN OZ_SEC_PERMISSIONS.NAME IS '权限名称';
+COMMENT ON COLUMN OZ_SEC_PERMISSIONS.CODE IS '权限编码';
+COMMENT ON COLUMN OZ_SEC_PERMISSIONS.URL_PATH IS '执行路径';
+COMMENT ON COLUMN OZ_SEC_PERMISSIONS.CSS_CLASS IS 'CSS样式';
+COMMENT ON COLUMN OZ_SEC_PERMISSIONS.ORDER_NO IS '权限排序号';
+COMMENT ON COLUMN OZ_SEC_PERMISSIONS.UNIT_ID IS '所属单位ID';
+COMMENT ON COLUMN OZ_SEC_PERMISSIONS.DESCRIPTION IS '权限描述';
+
+CREATE INDEX IDX_OZ_SEC_PERMISSION_PARENT ON OZ_SEC_PERMISSIONS (PARENT_ID ASC);
+
+ALTER TABLE OZ_SEC_PERMISSIONS
+      ADD CONSTRAINT FK_OZ_SEC_PERMISSIONS_REF_P FOREIGN KEY (PARENT_ID)
+      REFERENCES OZ_SEC_PERMISSIONS (ID);
+
+
+/*==============================================================*/
+/* Table: OZ_SEC_ROLE -- 角色配置表                             */
+/*==============================================================*/
+CREATE TABLE OZ_SEC_ROLE  (
+   ID                   NUMBER(19)                      NOT NULL,
+   STATUS               NUMBER(1)                       NOT NULL,
+   INNER_FLAG           VARCHAR2(1)                     NOT NULL,
+   NAME                 VARCHAR2(255)                   NOT NULL,
+   CODE                 VARCHAR2(255)                   NOT NULL,
+   UNIT_ID              VARCHAR2(36),
+   DESCRIPTION          VARCHAR2(255),
+   CONSTRAINT PK_OZ_SEC_ROLE PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_SEC_ROLE IS '角色配置表';
+COMMENT ON COLUMN OZ_SEC_ROLE.STATUS IS '配置状态(0-活动;1-禁用;2-删除)';
+COMMENT ON COLUMN OZ_SEC_ROLE.INNER_FLAG IS '是否内建角色(Y/N)';
+COMMENT ON COLUMN OZ_SEC_ROLE.NAME IS '角色名称';
+COMMENT ON COLUMN OZ_SEC_ROLE.CODE IS '角色代码';
+COMMENT ON COLUMN OZ_SEC_ROLE.UNIT_ID IS '所属单位ID';
+COMMENT ON COLUMN OZ_SEC_ROLE.DESCRIPTION IS '角色说明';
+
+
+/*==============================================================*/
+/* Table: OZ_SEC_ROLE_PERMISSON -- 角色权限关联表               */
+/*==============================================================*/
+CREATE TABLE OZ_SEC_ROLE_PERMISSON  (
+   PERMISSION_ID        NUMBER(19)                      NOT NULL,
+   ROLE_ID              NUMBER(19)                      NOT NULL,
+   CONSTRAINT PK_OZ_SEC_ROLE_PERMISSON PRIMARY KEY (PERMISSION_ID, ROLE_ID)
+);
+COMMENT ON TABLE OZ_SEC_ROLE_PERMISSON IS '角色权限关联表';
+COMMENT ON COLUMN OZ_SEC_ROLE_PERMISSON.PERMISSION_ID IS '权限ID';
+COMMENT ON COLUMN OZ_SEC_ROLE_PERMISSON.ROLE_ID IS '角色ID';
+
+CREATE INDEX IDX_OZ_SEC_RP_ROLE ON OZ_SEC_ROLE_PERMISSON (ROLE_ID ASC);
+CREATE INDEX IDX_OZ_SEC_RP_PERMISSION ON OZ_SEC_ROLE_PERMISSON (PERMISSION_ID ASC);
+
+ALTER TABLE OZ_SEC_ROLE_PERMISSON
+      ADD CONSTRAINT FK_OZ_SEC_RP_REF_P FOREIGN KEY (PERMISSION_ID)
+      REFERENCES OZ_SEC_PERMISSIONS (ID);
+ALTER TABLE OZ_SEC_ROLE_PERMISSON
+      ADD CONSTRAINT FK_OZ_SEC_RP_REF_R FOREIGN KEY (ROLE_ID)
+      REFERENCES OZ_SEC_ROLE (ID);
+
+
+/*==============================================================*/
+/* Table: OZ_SEC_USER -- 用户管理表                             */
+/*==============================================================*/
+CREATE TABLE OZ_SEC_USER  (
+   ID                   NUMBER(19)                      NOT NULL,
+   NAME                 VARCHAR2(255)                   NOT NULL,
+   NAME_PINYIN          VARCHAR2(255),
+   LOGIN_NAME           VARCHAR2(255)                   NOT NULL,
+   LOGIN_PASSWORD       VARCHAR2(255)                   NOT NULL,
+   LOGIN_TYPE           VARCHAR2(255),
+   USER_TYPE            VARCHAR2(255),
+   MEMOS                VARCHAR2(255),
+   STATUS               NUMBER(1)                       NOT NULL,
+   IS_TMPUSER           VARCHAR2(1)                     NOT NULL,
+   VS_DATE              DATE,
+   VE_DATE              DATE,
+   PV_DATE              DATE,
+   LOCK_COUNT           NUMBER(2),
+   LOCKED_DATE          DATE,
+   CONSTRAINT PK_OZ_SEC_USER PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_SEC_USER IS '用户管理表';
+COMMENT ON COLUMN OZ_SEC_USER.NAME IS '姓名';
+COMMENT ON COLUMN OZ_SEC_USER.NAME_PINYIN IS '姓名拼音';
+COMMENT ON COLUMN OZ_SEC_USER.LOGIN_NAME IS '登录名';
+COMMENT ON COLUMN OZ_SEC_USER.LOGIN_PASSWORD IS '登录口令(MD5加密)';
+COMMENT ON COLUMN OZ_SEC_USER.LOGIN_TYPE IS '登录方式';
+COMMENT ON COLUMN OZ_SEC_USER.USER_TYPE IS '用户类型';
+COMMENT ON COLUMN OZ_SEC_USER.MEMOS IS '备注信息';
+COMMENT ON COLUMN OZ_SEC_USER.STATUS IS '状态(0-活动;1-禁用;2-删除)';
+COMMENT ON COLUMN OZ_SEC_USER.IS_TMPUSER IS '是否是临时用户(Y/N)';
+COMMENT ON COLUMN OZ_SEC_USER.VS_DATE IS '有效起始日期';
+COMMENT ON COLUMN OZ_SEC_USER.VE_DATE IS '有效结束日期';
+COMMENT ON COLUMN OZ_SEC_USER.PV_DATE IS '口令有效日期';
+COMMENT ON COLUMN OZ_SEC_USER.LOCK_COUNT IS '口令锁定次数';
+COMMENT ON COLUMN OZ_SEC_USER.LOCKED_DATE IS '口令锁定时间';
+
+CREATE INDEX IDX_OZ_SEC_USERLOGINNAME ON OZ_SEC_USER (LOGIN_NAME ASC);
+
+
+/*==============================================================*/
+/* Table: OZ_SEC_USER_ROLE -- 用户角色对应表                    */
+/*==============================================================*/
+CREATE TABLE OZ_SEC_USER_ROLE  (
+   ROLE_ID              NUMBER(19)                      NOT NULL,
+   USER_ID              NUMBER(19)                      NOT NULL,
+   CONSTRAINT PK_OZ_SEC_USER_ROLE PRIMARY KEY (USER_ID, ROLE_ID)
+);
+COMMENT ON TABLE OZ_SEC_USER_ROLE IS '用户角色对应表';
+COMMENT ON COLUMN OZ_SEC_USER_ROLE.ROLE_ID IS '角色ID';
+COMMENT ON COLUMN OZ_SEC_USER_ROLE.USER_ID IS '用户ID';
+
+CREATE INDEX IDX_OZ_SEC_UR_USER ON OZ_SEC_USER_ROLE (USER_ID ASC);
+CREATE INDEX IDX_OZ_SEC_UR_ROLE ON OZ_SEC_USER_ROLE (ROLE_ID ASC);
+
+ALTER TABLE OZ_SEC_USER_ROLE
+      ADD CONSTRAINT FK_OZ_SEC_UR_REF_R FOREIGN KEY (ROLE_ID)
+      REFERENCES OZ_SEC_ROLE (ID);
+ALTER TABLE OZ_SEC_USER_ROLE
+      ADD CONSTRAINT FK_OZ_SEC_UR_REF_U FOREIGN KEY (USER_ID)
+      REFERENCES OZ_SEC_USER (ID);
+
+	  
+/*==============================================================*/
+/* Table: OZ_SEC_USER_PERMISSION -- 用户权限关联表              */
+/*==============================================================*/
+CREATE TABLE OZ_SEC_USER_PERMISSION  (
+   USER_ID              NUMBER(19)                      NOT NULL,
+   PERMISSION_ID        NUMBER(19)                      NOT NULL,
+   CONSTRAINT PK_OZ_SEC_USER_PERMISSION PRIMARY KEY (PERMISSION_ID, USER_ID)
+);
+COMMENT ON TABLE OZ_SEC_USER_PERMISSION IS '用户权限关联表';
+COMMENT ON COLUMN OZ_SEC_USER_PERMISSION.USER_ID IS '用户ID';
+COMMENT ON COLUMN OZ_SEC_USER_PERMISSION.PERMISSION_ID IS '权限ID';
+
+CREATE INDEX IDX_OZ_SEC_UP_USER ON OZ_SEC_USER_PERMISSION (USER_ID ASC);
+CREATE INDEX IDX_OZ_SEC_UP_PERMISSION ON OZ_SEC_USER_PERMISSION (PERMISSION_ID ASC);
+
+ALTER TABLE OZ_SEC_USER_PERMISSION
+      ADD CONSTRAINT FK_OZ_SEC_UP_REF_U FOREIGN KEY (USER_ID)
+      REFERENCES OZ_SEC_USER (ID);
+ALTER TABLE OZ_SEC_USER_PERMISSION
+      ADD CONSTRAINT FK_OZ_SEC_UP_REF_P FOREIGN KEY (PERMISSION_ID)
+      REFERENCES OZ_SEC_PERMISSIONS (ID);
+
+
+/*==============================================================*/
+/* Table: OZ_SEC_USER_MAPPING -- 用户登录信息映射表             */
+/*==============================================================*/	  
+CREATE TABLE OZ_SEC_USER_MAPPING  (
+   ID                   NUMBER(19)                      NOT NULL,
+   LOGIN_NAME           VARCHAR2(255)                   NOT NULL,
+   M_SYSTEMID           VARCHAR2(255)                   NOT NULL,
+   M_LOGINNAME          VARCHAR2(255),
+   M_USERID             VARCHAR2(255),
+   M_USERNAME           VARCHAR2(255),
+   M_PASSWORD           VARCHAR2(255),
+   LOGIN_URL            VARCHAR2(255),
+   MEMOS                VARCHAR2(255),
+   CONSTRAINT PK_OZ_SEC_USER_MAPPING PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_SEC_USER_MAPPING IS '用户登录信息映射表';
+COMMENT ON COLUMN OZ_SEC_USER_MAPPING.LOGIN_NAME IS '登录名';
+COMMENT ON COLUMN OZ_SEC_USER_MAPPING.M_SYSTEMID IS '映射到的系统';
+COMMENT ON COLUMN OZ_SEC_USER_MAPPING.M_LOGINNAME IS '映射的登录名称';
+COMMENT ON COLUMN OZ_SEC_USER_MAPPING.M_USERID IS '映射的用户ID';
+COMMENT ON COLUMN OZ_SEC_USER_MAPPING.M_USERNAME IS '映射的用户姓名';
+COMMENT ON COLUMN OZ_SEC_USER_MAPPING.M_PASSWORD IS '映射的登录口令';
+COMMENT ON COLUMN OZ_SEC_USER_MAPPING.LOGIN_URL IS '登录的地址';
+COMMENT ON COLUMN OZ_SEC_USER_MAPPING.MEMOS IS '备注信息';
+
+CREATE INDEX IDX_OZ_SEC_USERMAPPING_LN ON OZ_SEC_USER_MAPPING (LOGIN_NAME ASC);
+CREATE INDEX IDX_OZ_SEC_USERMAPPING_SID ON OZ_SEC_USER_MAPPING (M_SYSTEMID ASC);
+	  
+
+/*==============================================================*/
+/* Table: OZ_ORG_JOBTITLE -- 职务配置表                         */
+/*==============================================================*/
+CREATE TABLE OZ_ORG_JOBTITLE  (
+   ID                   NUMBER(19)                      NOT NULL,
+   NAME                 VARCHAR2(255)                   NOT NULL,
+   CODE                 VARCHAR2(255)                   NOT NULL,
+   UNIT_ID              VARCHAR2(36),
+   DESCRIPTION          VARCHAR2(255),
+   CONSTRAINT PK_OZ_ORG_JOBTITLE PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_ORG_JOBTITLE IS '职务配置表';
+COMMENT ON COLUMN OZ_ORG_JOBTITLE.NAME IS '职务名称';
+COMMENT ON COLUMN OZ_ORG_JOBTITLE.CODE IS '排序编码';
+COMMENT ON COLUMN OZ_ORG_JOBTITLE.UNIT_ID IS '所属单位ID';
+COMMENT ON COLUMN OZ_ORG_JOBTITLE.DESCRIPTION IS '职务说明';
+
+
+/*==============================================================*/
+/* Table: OZ_ORG_JOBLEVEL -- 职务级别配置表                     */
+/*==============================================================*/
+CREATE TABLE OZ_ORG_JOBLEVEL  (
+   ID                   NUMBER(19)                      NOT NULL,
+   NAME                 VARCHAR2(255)                   NOT NULL,
+   JOBLEVEL             NUMBER(4)                       NOT NULL,
+   UNIT_ID              VARCHAR2(36),
+   DESCRIPTION          VARCHAR2(255),
+   CONSTRAINT PK_OZ_ORG_JOBLEVEL PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_ORG_JOBLEVEL IS '职务级别配置表';
+COMMENT ON COLUMN OZ_ORG_JOBLEVEL.NAME IS '级别名称';
+COMMENT ON COLUMN OZ_ORG_JOBLEVEL.JOBLEVEL IS '级别';
+COMMENT ON COLUMN OZ_ORG_JOBLEVEL.UNIT_ID IS '所属单位ID';
+COMMENT ON COLUMN OZ_ORG_JOBLEVEL.DESCRIPTION IS '备注说明';
+	  
+	  
+/*==============================================================*/
+/* Table: OZ_ORG_OUINFO -- 组织架构配置表                       */
+/*==============================================================*/
+CREATE TABLE OZ_ORG_OUINFO  (
+   ID                   NUMBER(19)                      NOT NULL,
+   UNIT_ID              NUMBER(19),
+   PARENT_ID            NUMBER(19),
+   STATUS               NUMBER(1)                       NOT NULL,
+   OU_TYPE              VARCHAR2(255),
+   NAME                 VARCHAR2(255)                   NOT NULL,
+   NAME_PINYIN          VARCHAR2(255)                   NOT NULL,
+   CODE                 VARCHAR2(255),
+   TYPE                 VARCHAR2(2),
+   ORDER_NO             VARCHAR2(255),
+   OU_RANK              NUMBER(2)                       NOT NULL,
+   TMP_OU               VARCHAR2(1),
+   VS_DATE              DATE,
+   VE_DATE              DATE,
+   ADDRESS              VARCHAR2(255),
+   ZIPCODE              VARCHAR2(255),
+   TELEPHONE            VARCHAR2(255),
+   EMAIL                VARCHAR2(255),
+   MEMOS                VARCHAR2(255),
+   CONSTRAINT PK_OZ_ORG_OUINFO PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_ORG_OUINFO IS '组织架构配置表';
+COMMENT ON COLUMN OZ_ORG_OUINFO.UNIT_ID IS '所属单位ID';
+COMMENT ON COLUMN OZ_ORG_OUINFO.PARENT_ID IS '上级ID';
+COMMENT ON COLUMN OZ_ORG_OUINFO.STATUS IS '状态(0-活动;1-禁用;2-删除)';
+COMMENT ON COLUMN OZ_ORG_OUINFO.OU_TYPE IS '组织架构的类型';
+COMMENT ON COLUMN OZ_ORG_OUINFO.NAME IS 'OU名称';
+COMMENT ON COLUMN OZ_ORG_OUINFO.NAME_PINYIN IS 'OU名称拼音';
+COMMENT ON COLUMN OZ_ORG_OUINFO.CODE IS 'OU编码';
+COMMENT ON COLUMN OZ_ORG_OUINFO.TYPE IS 'OU类型';
+COMMENT ON COLUMN OZ_ORG_OUINFO.ORDER_NO IS '排序号';
+COMMENT ON COLUMN OZ_ORG_OUINFO.OU_RANK IS 'OU所处层次,起始为0';
+COMMENT ON COLUMN OZ_ORG_OUINFO.TMP_OU IS '是否是临时组织';
+COMMENT ON COLUMN OZ_ORG_OUINFO.VS_DATE IS '起始有效日期';
+COMMENT ON COLUMN OZ_ORG_OUINFO.VE_DATE IS '有效结束日期';
+COMMENT ON COLUMN OZ_ORG_OUINFO.ADDRESS IS '地址';
+COMMENT ON COLUMN OZ_ORG_OUINFO.ZIPCODE IS '邮政编码';
+COMMENT ON COLUMN OZ_ORG_OUINFO.TELEPHONE IS '联系电话';
+COMMENT ON COLUMN OZ_ORG_OUINFO.EMAIL IS '电子邮件';
+COMMENT ON COLUMN OZ_ORG_OUINFO.MEMOS IS '备注';
+
+CREATE INDEX IDX_OZ_ORG_OUINFO_TYPE ON OZ_ORG_OUINFO (OU_TYPE ASC);
+CREATE INDEX IDX_OZ_ORG_OUINFO_CODE ON OZ_ORG_OUINFO (CODE ASC);
+CREATE INDEX IDX_OZ_ORG_OUINFO_PARENT ON OZ_ORG_OUINFO (PARENT_ID ASC);
+CREATE INDEX IDX_OZ_ORG_OUINFO_UNIT ON OZ_ORG_OUINFO (UNIT_ID ASC);
+
+ALTER TABLE OZ_ORG_OUINFO
+      ADD CONSTRAINT FK_OZ_ORG_OU_REF_UNIT FOREIGN KEY (UNIT_ID)
+      REFERENCES OZ_ORG_OUINFO (ID);
+ALTER TABLE OZ_ORG_OUINFO
+      ADD CONSTRAINT FK_OZ_ORG_OU_REF_PARENT FOREIGN KEY (PARENT_ID)
+      REFERENCES OZ_ORG_OUINFO (ID);
+	  
+	  
+/*==============================================================*/
+/* Table: OZ_ORG_OUPERMISSION -- 组织架构权限关联表             */
+/*==============================================================*/
+CREATE TABLE OZ_ORG_OUPERMISSION  (
+   ID                   NUMBER(19)                      NOT NULL,
+   OUINFO_ID            NUMBER(19),
+   PERMISSION_CODE      VARCHAR2(255),
+   CONSTRAINT PK_OZ_ORG_OUPERMISSION PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_ORG_OUPERMISSION IS '组织架构权限关联表';
+COMMENT ON COLUMN OZ_ORG_OUPERMISSION.OUINFO_ID IS '组织架构的ID';
+COMMENT ON COLUMN OZ_ORG_OUPERMISSION.PERMISSION_CODE IS '权限编码';
+
+CREATE INDEX IDX_OZ_ORG_OP_OUINFO ON OZ_ORG_OUPERMISSION (OUINFO_ID ASC);
+
+ALTER TABLE OZ_ORG_OUPERMISSION
+      ADD CONSTRAINT FK_OZ_ORG_OP_REF_OU FOREIGN KEY (OUINFO_ID)
+      REFERENCES OZ_ORG_OUINFO (ID);
+
+	  
+/*==============================================================*/
+/* Table: OZ_ORG_GROUP -- 岗位配置表                            */
+/*==============================================================*/
+CREATE TABLE OZ_ORG_GROUP  (
+   ID                   NUMBER(19)                      NOT NULL,
+   OUINFO_ID            NUMBER(19),
+   STATUS               NUMBER(1)                       NOT NULL,
+   INNER_FLAG           VARCHAR2(1)                     NOT NULL,
+   NAME                 VARCHAR2(255)                   NOT NULL,
+   NAME_PINYIN          VARCHAR2(255),
+   CODE                 VARCHAR2(255),
+   GROUP_TYPE           VARCHAR2(255),
+   MEMOS                VARCHAR2(255),
+   CONSTRAINT PK_OZ_ORG_GROUP PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_ORG_GROUP IS '岗位配置表';
+COMMENT ON COLUMN OZ_ORG_GROUP.OUINFO_ID IS '所属OU的ID';
+COMMENT ON COLUMN OZ_ORG_GROUP.STATUS IS '岗位状态(0-活动;1-禁用;2-删除)';
+COMMENT ON COLUMN OZ_ORG_GROUP.INNER_FLAG IS '是否内建岗位(Y/N)';
+COMMENT ON COLUMN OZ_ORG_GROUP.NAME IS '岗位名称';
+COMMENT ON COLUMN OZ_ORG_GROUP.NAME_PINYIN IS '名称拼音';
+COMMENT ON COLUMN OZ_ORG_GROUP.CODE IS '岗位编码';
+COMMENT ON COLUMN OZ_ORG_GROUP.GROUP_TYPE IS '岗位类型';
+COMMENT ON COLUMN OZ_ORG_GROUP.MEMOS IS '岗位描述';
+
+CREATE INDEX IDX_OZ_ORG_GROUP_OU ON OZ_ORG_GROUP (OUINFO_ID ASC);
+CREATE INDEX IDX_OZ_ORG_GROUP ON OZ_ORG_GROUP (NAME ASC);
+
+ALTER TABLE OZ_ORG_GROUP
+      ADD CONSTRAINT FK_OZ_ORG_GROUP_REF_OU FOREIGN KEY (OUINFO_ID)
+      REFERENCES OZ_ORG_OUINFO (ID);
+	  
+
+/*==============================================================*/
+/* Table: OZ_ORG_USERINFO -- 人员信息                           */
+/*==============================================================*/
+CREATE TABLE OZ_ORG_USERINFO  (
+   ID                   NUMBER(19)                      NOT NULL,
+   OUINFO_ID            NUMBER(19),
+   NAME                 VARCHAR2(255)                   NOT NULL,
+   NAME_PINYIN          VARCHAR2(255),
+   LOGIN_NAME           VARCHAR2(255)                   NOT NULL,
+   USERINFO_TITLE       VARCHAR2(255),
+   ORDER_NO             VARCHAR2(255),
+   STATUS               NUMBER(1)                       NOT NULL,
+   IS_DEFAULT           VARCHAR2(1),
+   JOBTITLE_ID          NUMBER(19),
+   JOBLEVEL_ID          NUMBER(19),
+   MOBILE               VARCHAR2(255),
+   TELEPHONE            VARCHAR2(255),
+   EMAIL                VARCHAR2(255),
+   HOMENO               VARCHAR2(255),
+   FAXNO                VARCHAR2(255),
+   ADDRESS              VARCHAR2(255),
+   ZIP_CODE             VARCHAR2(255),
+   OFFICE               VARCHAR2(255),
+   CARD_ID              VARCHAR2(18),
+   GENDER               VARCHAR2(8),
+   BIRTHDAY             DATE,
+   WORK_DATE            DATE,
+   EMPLOYER_ID          VARCHAR2(36),
+   EMPLOYED_DATE        DATE,
+   MEMOS                VARCHAR2(255),
+   CONSTRAINT PK_OZ_ORG_USERINFO PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_ORG_USERINFO IS '人员信息';
+COMMENT ON COLUMN OZ_ORG_USERINFO.OUINFO_ID IS '组织架构ID';
+COMMENT ON COLUMN OZ_ORG_USERINFO.NAME IS '用户姓名';
+COMMENT ON COLUMN OZ_ORG_USERINFO.NAME_PINYIN IS '用户姓名拼音';
+COMMENT ON COLUMN OZ_ORG_USERINFO.LOGIN_NAME IS '登录名称';
+COMMENT ON COLUMN OZ_ORG_USERINFO.USERINFO_TITLE IS '人员称谓';
+COMMENT ON COLUMN OZ_ORG_USERINFO.ORDER_NO IS '排序号';
+COMMENT ON COLUMN OZ_ORG_USERINFO.STATUS IS '岗位状态(0-活动;1-禁用;2-删除)';
+COMMENT ON COLUMN OZ_ORG_USERINFO.IS_DEFAULT IS '是否为缺省信息';
+COMMENT ON COLUMN OZ_ORG_USERINFO.JOBTITLE_ID IS '用户职务ID';
+COMMENT ON COLUMN OZ_ORG_USERINFO.JOBLEVEL_ID IS '职务级别ID';
+COMMENT ON COLUMN OZ_ORG_USERINFO.MOBILE IS '手机号码';
+COMMENT ON COLUMN OZ_ORG_USERINFO.TELEPHONE IS '联系电话';
+COMMENT ON COLUMN OZ_ORG_USERINFO.EMAIL IS '电子邮件';
+COMMENT ON COLUMN OZ_ORG_USERINFO.HOMENO IS '家庭电话';
+COMMENT ON COLUMN OZ_ORG_USERINFO.FAXNO IS '传真号码';
+COMMENT ON COLUMN OZ_ORG_USERINFO.ADDRESS IS '联系地址';
+COMMENT ON COLUMN OZ_ORG_USERINFO.ZIP_CODE IS '邮政编码';
+COMMENT ON COLUMN OZ_ORG_USERINFO.OFFICE IS '办公室';
+COMMENT ON COLUMN OZ_ORG_USERINFO.CARD_ID IS '身份证号码';
+COMMENT ON COLUMN OZ_ORG_USERINFO.GENDER IS '性别';
+COMMENT ON COLUMN OZ_ORG_USERINFO.BIRTHDAY IS '出生日期';
+COMMENT ON COLUMN OZ_ORG_USERINFO.WORK_DATE IS '参加工作日期';
+COMMENT ON COLUMN OZ_ORG_USERINFO.EMPLOYER_ID IS '工作证号码';
+COMMENT ON COLUMN OZ_ORG_USERINFO.EMPLOYED_DATE IS '入职日期';
+COMMENT ON COLUMN OZ_ORG_USERINFO.MEMOS IS '备注信息';
+
+CREATE INDEX IDX_OZ_ORG_USERINFO_OUINFO ON OZ_ORG_USERINFO (OUINFO_ID ASC);
+CREATE INDEX IDX_OZ_ORG_USERINFO_LOGINNAME ON OZ_ORG_USERINFO (LOGIN_NAME ASC);
+
+ALTER TABLE OZ_ORG_USERINFO
+      ADD CONSTRAINT FK_OZ_ORG_USERINFO_REF_JT FOREIGN KEY (JOBTITLE_ID)
+      REFERENCES OZ_ORG_JOBTITLE (ID);
+ALTER TABLE OZ_ORG_USERINFO
+      ADD CONSTRAINT FK_OZ_ORG_USERINFO_REF_JL FOREIGN KEY (JOBLEVEL_ID)
+      REFERENCES OZ_ORG_JOBLEVEL (ID);
+ALTER TABLE OZ_ORG_USERINFO
+      ADD CONSTRAINT FK_OZ_ORG_USERINFO_REF_OU FOREIGN KEY (OUINFO_ID)
+      REFERENCES OZ_ORG_OUINFO (ID);
+	  
+
+/*==============================================================*/
+/* Table: OZ_ORG_USERINFO_SUBORDINATES -- 人员分管信息(下属)    */
+/*==============================================================*/
+CREATE TABLE OZ_ORG_USERINFO_SUBORDINATES  (
+   USERINFO_ID          NUMBER(19)                      NOT NULL,
+   SUBORDINATE_ID       NUMBER(19)                      NOT NULL,
+   CONSTRAINT PK_OZ_ORG_USERINFO_SUBORDINATE PRIMARY KEY (USERINFO_ID, SUBORDINATE_ID)
+);
+COMMENT ON TABLE OZ_ORG_USERINFO_SUBORDINATES IS '人员分管信息(下属)';
+COMMENT ON COLUMN OZ_ORG_USERINFO_SUBORDINATES.USERINFO_ID IS '人员ID';
+COMMENT ON COLUMN OZ_ORG_USERINFO_SUBORDINATES.SUBORDINATE_ID IS '下属ID';
+
+CREATE INDEX IDX_OZ_ORG_US_USERINFO ON OZ_ORG_USERINFO_SUBORDINATES (USERINFO_ID ASC);
+CREATE INDEX IDX_OZ_ORG_US_SUBORDINATE ON OZ_ORG_USERINFO_SUBORDINATES (SUBORDINATE_ID ASC);
+
+ALTER TABLE OZ_ORG_USERINFO_SUBORDINATES
+      ADD CONSTRAINT FK_OZ_ORG_US_REF_US FOREIGN KEY (SUBORDINATE_ID)
+      REFERENCES OZ_ORG_USERINFO (ID);
+ALTER TABLE OZ_ORG_USERINFO_SUBORDINATES
+      ADD CONSTRAINT FK_OZ_ORG_US_REF_U FOREIGN KEY (USERINFO_ID)
+      REFERENCES OZ_ORG_USERINFO (ID);
+
+	  
+/*==============================================================*/
+/* Table: OZ_ORG_OUMANAGER -- 部门管理员信息配置表              */
+/*==============================================================*/
+CREATE TABLE OZ_ORG_OUMANAGER  (
+   ID                   NUMBER(19)                      NOT NULL,
+   MGR_INDEX            NUMBER(4),
+   OUINFO_ID            NUMBER(19),
+   USERINFO_ID          NUMBER(19)                      NOT NULL,
+   MANAGER_TYPE         VARCHAR2(255)                   NOT NULL,
+   CONSTRAINT PK_OZ_ORG_OUMANAGER PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_ORG_OUMANAGER IS '部门管理员信息配置表';
+COMMENT ON COLUMN OZ_ORG_OUMANAGER.MGR_INDEX IS '排序号';
+COMMENT ON COLUMN OZ_ORG_OUMANAGER.OUINFO_ID IS '组织架构ID';
+COMMENT ON COLUMN OZ_ORG_OUMANAGER.USERINFO_ID IS '人员ID';
+COMMENT ON COLUMN OZ_ORG_OUMANAGER.MANAGER_TYPE IS '管理类型';
+
+CREATE INDEX IDX_OZ_ORG_OM_OUINFO ON OZ_ORG_OUMANAGER (OUINFO_ID ASC);
+CREATE INDEX IDX_OZ_ORG_OM_USERINFO ON OZ_ORG_OUMANAGER (USERINFO_ID ASC);
+
+ALTER TABLE OZ_ORG_OUMANAGER
+      ADD CONSTRAINT FK_OZ_ORG_OM_REF_U FOREIGN KEY (USERINFO_ID)
+      REFERENCES OZ_ORG_USERINFO (ID);
+ALTER TABLE OZ_ORG_OUMANAGER
+      ADD CONSTRAINT FK_OZ_ORG_OM_REF_OU FOREIGN KEY (OUINFO_ID)
+      REFERENCES OZ_ORG_OUINFO (ID);
+	  
+
+/*==============================================================*/
+/* Table: OZ_ORG_USERINFO_GROUP -- 人员岗位关联表               */
+/*==============================================================*/
+CREATE TABLE OZ_ORG_USERINFO_GROUP  (
+   USERINFO_ID          NUMBER(19)                      NOT NULL,
+   GROUP_ID             NUMBER(19)                      NOT NULL,
+   CONSTRAINT PK_OZ_ORG_USERINFO_GROUP PRIMARY KEY (GROUP_ID, USERINFO_ID)
+);
+COMMENT ON TABLE OZ_ORG_USERINFO_GROUP IS '人员岗位关联表';
+COMMENT ON COLUMN OZ_ORG_USERINFO_GROUP.USERINFO_ID IS '人员ID';
+COMMENT ON COLUMN OZ_ORG_USERINFO_GROUP.GROUP_ID IS '岗位ID';
+
+CREATE INDEX IDX_OZ_ORG_UG_G ON OZ_ORG_USERINFO_GROUP (GROUP_ID ASC);
+CREATE INDEX IDX_OZ_ORG_UG_U ON OZ_ORG_USERINFO_GROUP (USERINFO_ID ASC);
+
+ALTER TABLE OZ_ORG_USERINFO_GROUP
+      ADD CONSTRAINT FK_OZ_ORG_UG_REF_U FOREIGN KEY (USERINFO_ID)
+      REFERENCES OZ_ORG_USERINFO (ID);
+ALTER TABLE OZ_ORG_USERINFO_GROUP
+      ADD CONSTRAINT FK_OZ_ORG_UG_REF_G FOREIGN KEY (GROUP_ID)
+      REFERENCES OZ_ORG_GROUP (ID);
+	  
+	  
+/*==============================================================*/
+/* Table: OZ_ORG_GROUP_ROLE -- 岗位角色关联表                   */
+/*==============================================================*/
+CREATE TABLE OZ_ORG_GROUP_ROLE  (
+   GROUP_ID             NUMBER(19)                      NOT NULL,
+   ROLE_ID              NUMBER(19)                      NOT NULL,
+   CONSTRAINT PK_OZ_ORG_GROUP_ROLE PRIMARY KEY (GROUP_ID, ROLE_ID)
+);
+COMMENT ON TABLE OZ_ORG_GROUP_ROLE IS '岗位角色关联表';
+COMMENT ON COLUMN OZ_ORG_GROUP_ROLE.GROUP_ID IS '岗位ID';
+COMMENT ON COLUMN OZ_ORG_GROUP_ROLE.ROLE_ID IS '角色ID';
+
+CREATE INDEX IDX_OZ_ORG_GR_G ON OZ_ORG_GROUP_ROLE (GROUP_ID ASC);
+CREATE INDEX IDX_OZ_ORG_GR_R ON OZ_ORG_GROUP_ROLE (ROLE_ID ASC);
+
+ALTER TABLE OZ_ORG_GROUP_ROLE
+      ADD CONSTRAINT FK_OZ_ORG_GR_REF_G FOREIGN KEY (GROUP_ID)
+      REFERENCES OZ_ORG_GROUP (ID);
+ALTER TABLE OZ_ORG_GROUP_ROLE
+      ADD CONSTRAINT FK_OZ_ORG_GR_REF_R FOREIGN KEY (ROLE_ID)
+      REFERENCES OZ_SEC_ROLE (ID);
+	  
+	  
+/*==============================================================*/
+/* Table: OZ_ORG_GROUPMANAGER -- 岗位负责人信息配置表           */
+/*==============================================================*/
+CREATE TABLE OZ_ORG_GROUPMANAGER  (
+   ID                   NUMBER(19)                      NOT NULL,
+   MGR_INDEX            NUMBER(4),
+   GROUP_ID             NUMBER(19),
+   USERINFO_ID          NUMBER(19)                      NOT NULL,
+   CONSTRAINT PK_OZ_ORG_GROUPMANAGER PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_ORG_GROUPMANAGER IS '岗位负责人信息配置表';
+COMMENT ON COLUMN OZ_ORG_GROUPMANAGER.MGR_INDEX IS '排序号';
+COMMENT ON COLUMN OZ_ORG_GROUPMANAGER.GROUP_ID IS '岗位ID';
+COMMENT ON COLUMN OZ_ORG_GROUPMANAGER.USERINFO_ID IS '人员ID';
+
+CREATE INDEX IDX_OZ_ORG_GM_GROUP ON OZ_ORG_GROUPMANAGER (GROUP_ID ASC);
+CREATE INDEX IDX_OZ_ORG_GM_USERINFO ON OZ_ORG_GROUPMANAGER (USERINFO_ID ASC);
+
+ALTER TABLE OZ_ORG_GROUPMANAGER
+      ADD CONSTRAINT FK_OZ_ORG_GM_REF_U FOREIGN KEY (USERINFO_ID)
+      REFERENCES OZ_ORG_USERINFO (ID);
+ALTER TABLE OZ_ORG_GROUPMANAGER
+      ADD CONSTRAINT FK_OZ_ORG_GM_REF_G FOREIGN KEY (GROUP_ID)
+      REFERENCES OZ_ORG_GROUP (ID);
+
+
+/* oz-module-portalmgm ==============================================================================================*/	  
+/*==============================================================*/
+/* Table: OZ_PORTAL_HOMEPAGE_LAYOUT -- 门户首页布局模板管理     */
+/*==============================================================*/
+CREATE TABLE OZ_PORTAL_HOMEPAGE_LAYOUT  (
+   ID                   NUMBER(19)                      NOT NULL,
+   NAME                 VARCHAR2(255),
+   STATUS               NUMBER(2),
+   HTML_DOM             CLOB,
+   ICON_CLAZZ           VARCHAR2(255),
+   CONSTRAINT PK_OZ_PORTAL_HOMEPAGE_LAYOUT PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_PORTAL_HOMEPAGE_LAYOUT IS '门户首页布局模板管理';
+COMMENT ON COLUMN OZ_PORTAL_HOMEPAGE_LAYOUT.NAME IS '布局名称';
+COMMENT ON COLUMN OZ_PORTAL_HOMEPAGE_LAYOUT.STATUS IS '配置状态：1-禁用;0-启用';
+COMMENT ON COLUMN OZ_PORTAL_HOMEPAGE_LAYOUT.HTML_DOM IS '布局结构';
+COMMENT ON COLUMN OZ_PORTAL_HOMEPAGE_LAYOUT.ICON_CLAZZ IS '显示图标';
+
+
+/*==============================================================*/
+/* Table: OZ_PORTAL_PORTLET -- 门户首页布局的可选模块           */
+/*==============================================================*/
+CREATE TABLE OZ_PORTAL_PORTLET  (
+   ID                   NUMBER(19)                      NOT NULL,
+   NAME                 VARCHAR2(255),
+   STATUS               NUMBER(2),
+   CODE                 VARCHAR2(255),
+   URL_PATH             VARCHAR2(255),
+   ICON                 VARCHAR2(255),
+   MAX_WINDOW           VARCHAR2(1),
+   MIN_WINDOW           VARCHAR2(1),
+   HREF_MORE            VARCHAR2(255),
+   PERMISSION_CODES     VARCHAR2(255),
+   MEMOS                VARCHAR2(255),
+   CONSTRAINT PK_OZ_PORTAL_PORTLET PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_PORTAL_PORTLET IS '门户首页布局的可选模块';
+COMMENT ON COLUMN OZ_PORTAL_PORTLET.NAME IS '模块名称';
+COMMENT ON COLUMN OZ_PORTAL_PORTLET.STATUS IS '配置状态：1-禁用;0-启用';
+COMMENT ON COLUMN OZ_PORTAL_PORTLET.CODE IS '模块编码';
+COMMENT ON COLUMN OZ_PORTAL_PORTLET.URL_PATH IS '相应URL地址';
+COMMENT ON COLUMN OZ_PORTAL_PORTLET.ICON IS '模块图标';
+COMMENT ON COLUMN OZ_PORTAL_PORTLET.MAX_WINDOW IS '是否可用最大化';
+COMMENT ON COLUMN OZ_PORTAL_PORTLET.MIN_WINDOW IS '是否可用最小化';
+COMMENT ON COLUMN OZ_PORTAL_PORTLET.HREF_MORE IS '更多的链接';
+COMMENT ON COLUMN OZ_PORTAL_PORTLET.PERMISSION_CODES IS '权限编码';
+COMMENT ON COLUMN OZ_PORTAL_PORTLET.MEMOS IS '备注说明';
+
+
+/*==============================================================*/
+/* Table: OZ_PORTAL_HOMEPAGE -- 门户首页管理表                  */
+/*==============================================================*/
+CREATE TABLE OZ_PORTAL_HOMEPAGE  (
+   ID                   NUMBER(19)                      NOT NULL,
+   AUTHOR               VARCHAR2(255),
+   AUTHOR_ID            VARCHAR2(36),
+   CREATED_DATE         DATE,
+   NAME                 VARCHAR2(255),
+   STATUS               NUMBER(2),
+   LAYOUT_ID            NUMBER(19),
+   CFG_TYPE             VARCHAR2(255),
+   CONFIG_DATA          VARCHAR2(4000),
+   MEMOS                VARCHAR2(255),
+   CONSTRAINT PK_OZ_PORTAL_HOMEPAGE PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_PORTAL_HOMEPAGE IS '门户首页管理表';
+COMMENT ON COLUMN OZ_PORTAL_HOMEPAGE.AUTHOR IS '作者';
+COMMENT ON COLUMN OZ_PORTAL_HOMEPAGE.AUTHOR_ID IS '作者ID';
+COMMENT ON COLUMN OZ_PORTAL_HOMEPAGE.CREATED_DATE IS '创建时间';
+COMMENT ON COLUMN OZ_PORTAL_HOMEPAGE.NAME IS '首页名称';
+COMMENT ON COLUMN OZ_PORTAL_HOMEPAGE.STATUS IS '配置状态：1-禁用;0-启用';
+COMMENT ON COLUMN OZ_PORTAL_HOMEPAGE.LAYOUT_ID IS '所使用的布局';
+COMMENT ON COLUMN OZ_PORTAL_HOMEPAGE.CFG_TYPE IS '配置的类型';
+COMMENT ON COLUMN OZ_PORTAL_HOMEPAGE.CONFIG_DATA IS '配置的数据';
+COMMENT ON COLUMN OZ_PORTAL_HOMEPAGE.MEMOS IS '备注说明';
+
+CREATE INDEX IDX_OZ_PORTAL_AUTHOR ON OZ_PORTAL_HOMEPAGE (AUTHOR_ID ASC);
+
+ALTER TABLE OZ_PORTAL_HOMEPAGE
+      ADD CONSTRAINT FK_OZ_PORTAL_HP_REF_LAYOUT FOREIGN KEY (LAYOUT_ID)
+      REFERENCES OZ_PORTAL_HOMEPAGE_LAYOUT (ID);
+
+
+/*==============================================================*/
+/* Table: OZ_PROTAL_HOMEPAGE_PART -- 首页内容信息配置           */
+/*==============================================================*/
+CREATE TABLE OZ_PROTAL_HOMEPAGE_PART  (
+   ID                   NUMBER(19)                      NOT NULL,
+   HOMEPAGE_ID          NUMBER(19),
+   CONTAINTER_ID        VARCHAR2(255),
+   PORLET_ID            NUMBER(19),
+   ORDER_NO             NUMBER(2),
+   CONSTRAINT PK_OZ_PROTAL_HOMEPAGE_PART PRIMARY KEY (ID)
+);
+COMMENT ON TABLE OZ_PROTAL_HOMEPAGE_PART IS '首页内容信息配置';
+COMMENT ON COLUMN OZ_PROTAL_HOMEPAGE_PART.HOMEPAGE_ID IS '所属主页';
+COMMENT ON COLUMN OZ_PROTAL_HOMEPAGE_PART.CONTAINTER_ID IS '相应容器的ID';
+COMMENT ON COLUMN OZ_PROTAL_HOMEPAGE_PART.PORLET_ID IS '相应portlet的ID';
+COMMENT ON COLUMN OZ_PROTAL_HOMEPAGE_PART.ORDER_NO IS '排序号';
+
+CREATE INDEX IDX_OZ_PORTAL_HPP_HP ON OZ_PROTAL_HOMEPAGE_PART (HOMEPAGE_ID ASC);
+
+ALTER TABLE OZ_PROTAL_HOMEPAGE_PART
+      ADD CONSTRAINT FK_OZ_PORTAL_HPP_REF_HP FOREIGN KEY (HOMEPAGE_ID)
+      REFERENCES OZ_PORTAL_HOMEPAGE (ID);
+ALTER TABLE OZ_PROTAL_HOMEPAGE_PART
+      ADD CONSTRAINT FK_OZ_PORTAL_HPP_REF_PORTLET FOREIGN KEY (PORLET_ID)
+      REFERENCES OZ_PORTAL_PORTLET (ID);

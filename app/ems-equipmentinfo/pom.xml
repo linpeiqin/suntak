@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>cn.suntak.ems</groupId>
+		<artifactId>ems-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		
+	</parent>
+
+	<!-- 设备信息 -->
+	<artifactId>ems-equipmentinfo</artifactId>
+	<packaging>jar</packaging>
+	<name>ems equipmentinfo</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>cn.suntak.ems</groupId>
+			<artifactId>ems-common</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-component-acl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>cn.suntak.ems</groupId>
+			<artifactId>ems-filenumber</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.suntak.ems</groupId>
+			<artifactId>ems-filenumber</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+        <dependency>
+            <groupId>cn.oz</groupId>
+            <artifactId>oz-component-attachment</artifactId>
+        </dependency>
+	</dependencies>
+</project>

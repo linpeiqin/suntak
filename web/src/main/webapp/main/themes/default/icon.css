@@ -1,0 +1,322 @@
+
+/*导航树的节点图标：16x16*/
+.oz-permission {
+	display: inline-block; text-indent: -99999px; overflow: hidden;
+	width: 16px; height: 16px; 
+	background-image: url(../../../oz/webui/oz/css/icons/oz-icons_16x16.png);
+	_background-image: url(../../../oz/webui/oz/css/icons/oz-icons_16x16.gif);
+	background-repeat: no-repeat;
+	background-position:0 0;
+}
+
+.oz-permission-grsw {background-position:-208px -192px;}   					/* 个人事务 */
+.oz-permission-work-dbsy {background-position:-576px -128px;}   			/* 待办事宜 */
+.oz-permission-work-wdcg {background-position:-480px -112px;}   			/* 我的草稿 */
+.oz-permission-work-jbsy {background-position:-464px -144px;}   			/* 经办事宜 */
+
+.oz-permission-calendar-rcap {background-position:-400px -96px;}   			/* 日程安排 */
+.oz-permission-bulletin-dzgg {background-position:-224px -32px;}   			/* 电子公告 */
+.oz-permission-proxymgm-wcsq {background-position:-576px -80px;}   			/* 外出授权 */
+.oz-permission-systemmessage-xttx {background-position:-592px -160px;}   	/* 系统提醒 */
+.oz-permission-search-zhcx {background-position:-256px -16px;}   			/* 综合查询 */
+.oz-permission-contacts  {background-position:-576px -128px;}  			/* 通讯录 */
+
+.oz-permission-rwgl {background-position:-640px -208px;}					/* 任务管理 */
+.oz-permission-rwgl-wdrw {background-position:-576px -128px;}				/* 我的任务 */
+.oz-permission-rwgl-wbzdrw {background-position:-592px -128px;}				/* 我布置的任务 */
+
+.oz-permission-zsgl {background-position:-112px -208px;}   					/* 知识管理 */
+.oz-permission-zsgl-zsk {background-position:-176px -144px;}   				/* 知识库 */
+.oz-permission-zsgl-zsbqy {background-position:-16px -208px;}   			/* 知识标签云 */
+.oz-permission-zsgl-dspzs {background-position:-16px -144px;}   			/* 待审批知识 */
+.oz-permission-zsgl-wtjdzs {background-position:-64px -144px;}   			/* 我提交的知识 */
+.oz-permission-zsgl-wscdzs {background-position:-160px -144px;}   			/* 我收藏的知识 */
+.oz-permission-zsgl-flgl {background-position:-96px -144px;}   				/* 分类管理 */
+
+.oz-permission-xtgl {background-position:-96px -144px;}   					/* 系统管理 */
+.oz-permission-userlog-yhrz {background-position:-624px -16px;}   			/* 用户日志 */
+
+.oz-permission-security-qxgl {background-position:-320px -128px;}   		/* 权限管理 */
+.oz-permission-security-qxpz {background-position:-336px -128px;}   		/* 权限配置 */
+.oz-permission-security-sjqxgl {background-position:-336px -128px;}   		/* 数据权限管理 */
+.oz-permission-security-ywqxgl {background-position:-336px -128px;}			/* 业务权限管理 */
+.oz-permission-security-jsgl {background-position:-64px -32px;}				/* 角色管理 */
+
+.oz-permission-organize-zzjggl {background-position:-352px -48px;}   		/* 组织架构管理 */
+.oz-permission-organize-zzjg {background-position:-560px -112px;}			/* 组织架构 */
+.oz-permission-organize-gwgl {background-position:-112px -32px;}			/* 岗位管理 */
+.oz-permission-organize-yhgl {background-position:-32px -32px;}				/* 用户管理 */
+.oz-permission-organize-zwgl {background-position:-608px -32px;}			/* 职务管理 */
+.oz-permission-organize-zwjb {background-position:-64px -32px;}				/* 职务级别 */
+
+.oz-permission-documentdef-wzgl {background-position:-64px -80px;}			/* 文种管理 */
+.oz-permission-documentdef-wzpz {background-position:-464px -128px;}   		/* 文种配置 */
+.oz-permission-bpm-lcpz {background-position:-96px -144px;}   				/* 流程配置 */
+.oz-permission-form-bdpz {background-position:-320px -192px;}   			/* 表单配置 */
+.oz-permission-documentdef-slgl {background-position:-96px -160px;}   		/* 实例管理 */
+.oz-permission-documentdef-xnjc {background-position:-240px -48px;}   		/* 效能监察 */
+
+.oz-permission-infomgm {background-position:-512px -96px;}					/* 信息发布管理 */
+.oz-permission-infomgm-lmgl {background-position:-256px -144px;}			/* 栏目管理 */
+.oz-permission-infomgm-xxdy {background-position:-464px -192px;}			/* 信息定义 */
+
+.oz-permission-systemcfg-xtpz {background-position:-16px -48px;}   			/* 系统配置 */
+.oz-permission-systemcfg-jcsjpz {background-position:-208px -128px;}   		/* 基础数据配置 */
+.oz-permission-systemcfg-wdlx {background-position:-304px -160px;}			/* 文档类型 */
+.oz-permission-systemcfg-xtkxx {background-position:-336px -112px;}   		/* 系统可选项 */
+.oz-permission-systemcfg-xtcl {background-position:-592px -48px;}			/* 系统策略 */
+.oz-permission-systemcfg-sypz {background-position:-240px -32px;}   		/* 首页配置 */
+.oz-permission-systemcfg-gzsj {background-position:-288px -128px;}			/* 工作时间 */
+.oz-permission-systemcfg-dsrw {background-position:-624px -160px;}			/* 定时任务 */
+
+.oz-permission-wdcs {background-position:-464px -80px;}   /*我的测试*/
+.oz-permission-wdcs-ssotest {background-position:-592px -80px;}   /*单点登录测试*/
+.oz-permission-wdcs-csym {background-position:-640px -96px;}   /*测试页面*/
+
+.oz-permission-grsw-gggl   {background-position:-272px -144px;}   /*公告管理*/
+
+.oz-permission-grsw-wjcx {background-position:-256px -16px;}   /*公文查询*/
+.oz-permission-sjbb {background-position:-240px -144px;}   /*数据报表*/
+.oz-permission-sjbb-dwxx {background-position:-368px -128px;}   /*单位数据信息*/
+.oz-permission-sjbb-rytj {background-position:-192px -144px;}   /*单位人员统计*/
+.oz-permission-txl {background-position:-592px -128px;}  /*通讯录*/
+.oz-permission-grsw-grtxl {background-position:-592px -128px;}   /*个人通讯录*/
+.oz-permission-grsw-xttxl {background-position:-592px -128px;}   /*局通讯录*/
+
+
+ .oz-permission-document-wjcx {background-position:-352px -160px;}
+
+/*项目管理*/
+.oz-permission-xmgl {background-position:-64px -80px;}
+.oz-permission-xmgl-wdxm {background-position:-112px -80px;}
+.oz-permission-xmgl-wdxm-wdxmwgldxm {background-position:-64px -96px;}
+.oz-permission-xmgl-wdxm-wdxmwcydxm {background-position:-64px -96px;}
+.oz-permission-xmgl-xmlb {background-position:-48px -96px;}
+.oz-permission-xmgl-xmlb-xmlbzh {background-position:-64px -96px;}
+.oz-permission-xmgl-xmlb-xmlbcz {background-position:-64px -96px;}
+.oz-permission-xmgl-gzxm {background-position:-256px -80px;}
+.oz-permission-xmgl-xmjk {background-position:-208px -144px;}
+.oz-permission-xmgl-xmjk-xmjk_jd {background-position:-64px -96px;}
+.oz-permission-xmgl-xmjk-xmjk_rl {background-position:-64px -96px;}
+.oz-permission-xmgl-xmjk-xmjk_fy {background-position:-64px -96px;}
+.oz-permission-xmgl-xmtj {background-position:-400px -48px;}
+.oz-permission-xmgl-xmgl {background-position:-368px -80px;}
+.oz-permission-xmgl-syxm {background-position:-400px -80px;}
+.oz-permission-xmgl-xmwd {background-position:-64px -80px;}
+
+/*公文管理*/
+.oz-permission-gwgl{background-position:-64px -80px;}
+.oz-permission-gwgl-zggl{background-position:-608px -32px;}
+.oz-permission-gwgl-zhgl{background-position:-176px -224px;}
+.oz-permission-gwgl-ztcgl{background-position:-400px -224px;}
+
+/*收发管理*/
+.oz-permission-sfgl {background-position:-480px -192px;}
+.oz-permission-sfgl-dzgl   {background-position:-16px -192px;}
+.oz-permission-sfgl-dzqzgl   {background-position:-32px -192px;}
+.oz-permission-sfgl-jsgl   {background-position:-160px -144px;}
+.oz-permission-sfgl-sfk  {background-position:-16px -144px;}
+
+/**信息化管理*/
+.oz-permission-itreport {background-position:-432px -80px;}
+.oz-permission-itreport-xxhyb {background-position:-272px -160px;}
+.oz-permission-itreport-xxhyb-txgzyb {background-position:-144px -160px;}
+.oz-permission-itreport-xxhyb-wdcg {background-position:-160px -192px;}
+.oz-permission-itreport-xxhyb-dsh {background-position:-80px -192px;}
+.oz-permission-itreport-xxhyb-ysh{background-position:-544px -96px;}
+.oz-permission-itreport-xxhyb-yth  {background-position:-96px -192px;}
+.oz-permission-itreport-xxhyb-ysb {background-position:-128px -192px;}
+.oz-permission-itreport-xxhyb-splcck {background-position:-80px -224px;}
+.oz-permission-itreport-leader {background-position:-432px -32px;}
+.oz-permission-itreport-leader-report {background-position:-272px -160px;}
+.oz-permission-itreport-leader-bdw {background-position:-32px -192px;}
+.oz-permission-itreport-ybhz {background-position:-320px -16px;}
+.oz-permission-itreport-gdyb  {background-position:-80px -80px;}
+.oz-permission-itreport-jbzl {background-position:-32px -192px;}
+
+.oz-permission-xinxifabu  {background-position:-32px -80px;}
+.oz-permission-xinxifabu-tzgg {background-position:-128px -64px;}
+.oz-permission-xinxifabu-tpxw {background-position:-64px -96px;}
+
+.oz-permission-gonggongziyuan  {background-position:-16px -144px;}
+.oz-permission-gonggongziyuan-bgxz {background-position:-640px -192px;}
+
+/*请假管理*/
+.oz-permission-qjgl{background-position:-272px -208px;}
+.oz-permission-qjgl-dtck{background-position:-16px -192px;}
+.oz-permission-qjgl-yftj{background-position:-272px -160px;}
+.oz-permission-qjgl-lxtj{background-position:-272px -160px;}
+
+/*HSE管理*/
+.oz-permission-hse {background-position:-640px -16px;}
+.oz-permission-hse-user{background-position:-208px -32px;}
+.oz-permission-hse-user-userInfo {background-position:-608px -32px;}
+.oz-permission-hse-user-userCertificate {background-position:-592px -128px;}
+.oz-permission-hse-acci{background-position:-528px -32px;}
+.oz-permission-hse-acci-wdcg{background-position:-160px -192px;}
+.oz-permission-hse-acci-dfb {background-position:-80px -192px;}
+.oz-permission-hse-acci-yfb{background-position:-128px -192px;}
+.oz-permission-hse-acci-statistic {background-position:-480px -48px;}
+.oz-permission-hse-acci-statistic-date  {background-position:-272px -160px;}
+.oz-permission-hse-acci-statistic-unit  {background-position:-272px -160px;}
+.oz-permission-hse-acci-statistic-accistatus {background-position:-272px -160px;}
+.oz-permission-hse-cutivate {background-position:-272px -176px;}
+.oz-permission-hse-cutivate-wdcg{background-position:-160px -192px;}
+.oz-permission-hse-cutivate-dfb {background-position:-80px -192px;}
+.oz-permission-hse-cutivate-yfb{background-position:-128px -192px;}
+.oz-permission-hse-suppe {background-position:-32px -224px;}
+.oz-permission-hse-suppe-wdcg{background-position:-160px -192px;}
+.oz-permission-hse-suppe-dfb {background-position:-80px -192px;}
+.oz-permission-hse-suppe-yfb{background-position:-128px -192px;}
+
+/*我的邮件*/
+.oz-permission-mail-shoujianxiang{background-position:-112px -16px;}
+.oz-permission-mail-fajianxiang{background-position:-208px -16px;}
+.oz-permission-mail-suoyouyoujian{background-position:-320px -16px;}
+.oz-permission-mail-guidangyoujian{background-position:-224px -16px;}
+.oz-permission-mail-caogao{background-position:-96px -16px;}
+
+/*待办事宜*/
+.oz-permission-daiban-daipishiwu{background-position:-256px -112px;}
+.oz-permission-daiban-daiyeshiwu{background-position:-96px -16px;}
+.oz-permission-daiban-daibaoshiwu{background-position:-464px -176px;}
+.oz-permission-daiban-jingbanshiwu{background-position:-112px -32px;}
+.oz-permission-daiban-wodedubanshixiang{background-position:-48px -208px;}
+
+/*公文处理*/
+.oz-permission-gongwenchuli{background-position:-368px -80px;}
+.oz-permission-gongwenchuli-shouwenchuli{background-position:-352px -176px;}
+.oz-permission-gongwenchuli-shouwenchuli_daiban{background-position:-336px -176px;}
+.oz-permission-gongwenchuli-shouwenchuli_yiban{background-position:-224px -192px;}
+.oz-permission-gongwenchuli-fawenchuli{background-position:-400px -176px;}
+.oz-permission-gongwenchuli-fawenchuli_daiban{background-position:-400px -176px;}
+.oz-permission-gongwenchuli-fawenchuli_yiban{background-position:-352px -192px;}
+.oz-permission-gongwenchuli-wenjiantongji{background-position:-400px -48px;}
+
+
+/*报告工作*/
+.oz-permission-baogaogongzuo{background-position:-592px -128px;}
+.oz-permission-baogaogongzuo-zjlgzyb{background-position:-32px -32px;}
+.oz-permission-baogaogongzuo-jhgzyb{background-position:-64px -144px;}
+
+/*申请与批复*/
+.oz-permission-shenqingyupifu{background-position:-384px -112px;}
+.oz-permission-shenqingyupifu-qjsq{background-position:-48px -64px;}
+.oz-permission-shenqingyupifu-bgzysq{background-position:-608px -112px;}
+.oz-permission-shenqingyupifu-bgzysq-sqdn{background-position:-96px -96px;}
+.oz-permission-shenqingyupifu-bgzysq-sqvpn{background-position:-64px -64px;}
+.oz-permission-shenqingyupifu-bgzysq-sqwl{background-position:-144px -64px;}
+.oz-permission-shenqingyupifu-bgzysq-sqwx{background-position:-256px -64px;}
+.oz-permission-shenqingyupifu-hysq{background-position:-272px -192px;}
+.oz-permission-shenqingyupifu-sphysq{background-position:-592px -16px;}
+
+/*信息发布*/
+.oz-permission-xinxifabu{background-position:-224px -192px;}
+.oz-permission-shenqingyupifu-gsdt{background-position:-320px -16px;}
+.oz-permission-shenqingyupifu-ldjh{background-position:-16px -32px;}
+.oz-permission-shenqingyupifu-xwbd{background-position:-16px -192px;}
+.oz-permission-shenqingyupifu-tpxw{background-position:-112px -224px;}
+.oz-permission-shenqingyupifu-gswj{background-position:-400px -80px;}
+.oz-permission-shenqingyupifu-qjsq{background-position:-240px -112px;}
+
+/*办公资源*/
+.oz-permission-bangongziyuan-rjaz{background-position:-160px -128px;}
+
+/*在线沟通*/
+.oz-permission-zaixiangongtong{background-position:-432px -112px;}
+.oz-permission-zaixiangongtong-wzly{background-position:-144px -48px;}
+.oz-permission-zaixiangongtong-yytx{background-position:-512px -48px;}
+.oz-permission-zaixiangongtong-sptx{background-position:-432px -80px;}
+.oz-permission-zaixiangongtong-dxfs{background-position:-272px -192px;}
+
+/*体系文件*/
+.oz-permission-tixiwenjian{background-position:-128px -80px;}
+
+/*常用工具*/
+.oz-permission-gongyonggongju{background-position:-576px -160px;}
+
+/*专业事务*/
+.oz-permission-zhuanyeshiwu{background-position:-304px -128px;}
+.oz-permission-zhuanyeshiwu-fxglyd{background-position:-16px -208px;}
+.oz-permission-zhuanyeshiwu-cbgl{background-position:-80px -224px;}
+.oz-permission-zhuanyeshiwu-htgl{background-position:-192px -32px;}
+.oz-permission-gongwenliuzhuan{background-position:-96px -64px;}
+.oz-permission-zhuanyeshiwu-gysgl{background-position:-496px -32px;}
+.oz-permission-zhuanyeshiwu-gysglwj{background-position:-16px -80px;}
+.oz-permission-zhuanyeshiwu-glbf{background-position:-576px -112px;}
+.oz-permission-zhuanyeshiwu-gysklb{background-position:-496px -112px;}
+.oz-permission-zhuanyeshiwu-hggys{background-position:-432px -32px;}
+.oz-permission-zhuanyeshiwu-ycxgys{background-position:-368px -32px;}
+.oz-permission-zhuanyeshiwu-qtlb{background-position:-400px -32px;}
+.oz-permission-zhuanyeshiwu-gysglyd{background-position:-64px -32px;}
+.oz-permission-zhuanyeshiwu-ssxxfb{background-position:-64px -80px;}
+.oz-permission-zhuanyeshiwu-jyhjy{background-position:-464px -16px;}
+.oz-permission-infomgm-qbxxzxt{background-position:-304px -112px;}
+.oz-permission-shengchanguanli{background-position:-400px -48px;}
+.oz-permission-shengchanguanli-txwj{background-position:-624px -144px;}
+.oz-permission-shengchanguanli-scyb{background-position:-400px -96px;}
+.oz-permission-shengchanguanli-zdzydt{background-position:-560px -80px;}
+.oz-permission-shengchanguanli-schyjy{background-position:-448px -224px;}
+.oz-permission-shengchanguanli-zjk{background-position:-576px -112px;}
+.oz-permission-flk{background-position:-640px -144px;}
+.oz-permission-flk-fcgl{background-position:-368px -64px;}
+.oz-permission-flk-cgl{background-position:-368px -64px;}
+.oz-permission-hwswgl{background-position:-80px -208px;}
+.oz-permission-hwswgl-txwj{background-position:-32px -80px;}
+.oz-permission-hwswgl-xxfb{background-position:-192px -192px;}
+.oz-permission-hwswgl-zlk{background-position:-48px -192px;}
+.oz-permission-qt{background-position:-16px -80px;}
+.oz-permission-qt1{background-position:-240px -80px;}
+
+
+
+/*客户关系管理*/
+.oz-permission-ems{background-position:-112px -32px;}
+.oz-permission-ems-khgh{background-position:-592px -128px;}
+.oz-permission-ems-vipkhzl{background-position:-112px -80px;}
+.oz-permission-ems-vipkhghfa{background-position:-336px -64px;}
+.oz-permission-ems-jrpz{background-position:-576px -192px;}
+.oz-permission-ems-hdfapz{background-position:-32px -208px;}
+.oz-permission-ems-khzlgl{background-position:-112px -208px;}
+.oz-permission-ems-khqyzl{background-position:-128px -96px;}
+.oz-permission-ems-khgrzl{background-position:-336px -112px;}
+.oz-permission-ems-jzdszl{background-position:-16px -192px;}
+.oz-permission-ems-xmgzgl{background-position:-272px -144px;}
+.oz-permission-ems-xmzljl{background-position:-432px -160px;}
+.oz-permission-ems-xmgzjl{background-position:-48px -64px;}
+
+/**供应商管理*/
+.oz-permission-vendor {background-position:-32px -224px;}
+.oz-permission-vendor-member {background-position:-64px -32px;}
+
+/**  督办信息 */
+.oz-permission-tasksupervision{background-position:-64px -48px;}
+.oz-permission-tasksupervision_author{background-position:-32px -16px;}
+.oz-permission-tasksupervision_author_publish{background-position:-48px -16px;}
+.oz-permission-tasksupervision_author_finish  {background-position:-128px -192px;}
+.oz-permission-tasksupervision_todo {background-position:-112px -32px;}
+.oz-permission-tasksupervision_schedule_todo_todo {background-position:-144px -96px;}
+.oz-permission-tasksupervision_schedule_todo_finish  {background-position:-128px -192px;}
+.oz-permission-tasksupervision_all {background-position:-256px -80px;}
+.oz-permission-tasksupervision_schedule_all_publish {background-position:-160px -96px;}
+.oz-permission-tasksupervision_schedule_all_finish {background-position:-128px -192px;}
+.oz-permission-tasksupervision_config{background-position:-304px -16px;}
+
+/* 公司文件*/
+.oz-permission-gswj  {background-position:-608px -128px;}
+.oz-permission-gswj-gswj  {background-position:-432px -224px;}
+.oz-permission-gswj-bmwj  {background-position:-432px -224px;}
+.oz-permission-gswj-tz {background-position:-576px -192px;}
+.oz-permission-gswj-sywj  {background-position:-480px -224px;}
+.oz-permission-gswj-wjtj {background-position:-480px -48px;}
+.oz-permission-gswj-wjtj-abmtj  {background-position:-272px -160px;}
+.oz-permission-gswj-wjtj-ayftj  {background-position:-272px -160px;}
+
+/* 会议纪要*/
+.oz-permission-meetingminutes {background-position:-224px -128px;}
+.oz-permission-meetingminutes-zbhyjy{background-position:-496px -208px;}
+.oz-permission-meetingminutes-zthyjy{background-position:-496px -208px;}
+.oz-permission-meetingminutes-rshyjy {background-position:-496px -208px;}
+.oz-permission-meetingminutes-twhyjy {background-position:-496px -208px;}
+.oz-permission-meetingminutes-gzjb  {background-position:-288px -144px;}
+.oz-permission-meetingminutes-syhyjy{background-position:-496px -208px;}

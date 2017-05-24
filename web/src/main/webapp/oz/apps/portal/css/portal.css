@@ -1,0 +1,308 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.oz-portlet-container {
+	overflow: hidden;
+	height: auto;
+	padding: 0;
+	margin: 0;
+}
+
+.loading-msg {
+	text-align: center;
+	padding: 4px;
+}
+
+/*展现模式*/
+.oz-portlet-container.full-mode {
+	width: auto;
+}
+
+.oz-portlet-container.wide-mode {
+	width: 920px;
+}
+
+.oz-portlet-container.petty-mode {
+	width: 725px;
+}
+
+/*对齐方式 */
+.oz-portlet-container.center-align {
+	margin: 0 auto;
+}
+
+.oz-portlet-container.left-align {
+	margin: 0 0 0 0;
+}
+
+.oz-portlet-container.right-align {
+	margin: 0 0 0 auto;
+}
+
+/*布局的列*/
+.columns {
+	width: 100%;
+	table-layout: fixed;
+	border-width: 0px;
+	padding: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.columns td {
+	vertical-align: top;
+}
+
+.layoutRegion {
+	
+}
+/*end*/
+
+/*部件样式*/
+.oz-portlet-box {
+	
+}
+
+.oz-portlet-outerbox {
+	margin: 3px;
+	margin-bottom: 6px;
+}
+
+.oz-portlet-innerbox {
+	z-index: 1;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.oz-portlet-box-content {
+	border: 1px solid #99B7EB;
+}
+
+.oz-portlet-titleBar {
+	background-color: #D4E6FC;
+	overflow: hidden;
+	font-size: 12px;
+	height: 25px;
+	font-weight: bold;
+	position: relative;
+}
+
+.oz-portlet-titleBar .oz-portlet-title {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 14px;
+	left: 8px;
+	top: 0px;
+	line-height: 25px;
+	padding-left: 5px;
+	color: #224499;
+}
+
+.oz-portlet-titleBar .oz-portlet-title .oz-portlet-icon {
+	vertical-align: middle;
+	margin: 0 3px;
+}
+
+.oz-portlet-body-outer {
+	border-top: 1px solid #99B7EB;
+	background-color: white;
+	overflow: hidden;
+	position: relative;
+	padding: 3px;
+}
+
+.oz-portlet-body {
+	display: block;
+	position: relative;
+	overflow: auto;
+}
+
+.oz-portlet-body  a {
+	text-decoration: none;
+}
+/*end*/
+
+/*不显示标题栏*/
+.oz-portlet-nohead .oz-portlet-box-content {
+	border-width: 0;
+}
+
+.oz-portlet-nohead .oz-portlet-body-outer {
+	border-top-width: 0;
+	padding: 0;
+}
+
+.oz-portlet-nohead .oz-portlet-titleBar {
+	display: none;
+}
+/*end*/
+
+/*右边按钮的容器*/
+.oz-portlet-buttonBar {
+	position: absolute;
+	right: 5px;
+	top: 3px;
+	white-space: nowrap;
+	display: none;
+	/* 	background: url("../images/oz-portal-title-bg.png") repeat-x; */
+}
+
+/*右边按钮样式*/
+.oz-portlet-buttonBar .oz-portlet-btn {
+	background-image: url('../images/icons.png');
+	background-repeat: no-repeat;
+	height: 14px;
+	width: 14px;
+	float: right;
+	margin-left: 3px;
+	margin-top: 3px;
+	overflow: hidden;
+	position: relative;
+	z-index: 3;
+	cursor: pointer;
+	display: inline;
+}
+
+.oz-portlet-buttonBar .state-btn {
+	background-position: -401px -53px;
+}
+
+.oz-portlet-buttonBar .refresh-btn{
+	background-position: -554px 0px;
+}
+
+.oz-portlet-buttonBar .close-btn{
+	background-position: -398px -15px;
+}
+
+/*展现模式的更多容器*/
+.oz-portlet-btn-more {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 25px;
+	white-space: nowrap;
+	font-weight: normal;
+	background: url("../images/oz-portal-title-more-bg.png") no-repeat;
+	line-height: 25px;
+	padding-left: 15px;
+	padding-right: 5px;
+	display: none;
+	/* 	background-color: #EBF2FA; */
+}
+
+.oz-portlet-btn-more a {
+	color: #249;
+	text-decoration: none;
+}
+
+.oz-portlet-btn-more a:hover {
+	font-weight: bold;
+}
+
+.oz-portlet-btn-more a:visited {
+	color: #249;
+}
+
+.oz-portlet-hasmore .oz-portlet-buttonBar {
+	right: 60px;
+}
+
+.oz-portlet-hasmore .oz-portlet-btn-more {
+	display: block;
+}
+
+/*鼠标效果*/
+.oz-portlet-box-hover .oz-portlet-buttonBar {
+	display: block;
+}
+
+/*供内容使用的样式*/
+.oz-portlet-grid {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.oz-portlet-grid td {
+	line-height:21px;
+	padding : 2px;
+	border: 1px solid #D8E3EA;
+}
+
+.oz-portlet-grid td a {
+	text-decoration: none;
+}
+
+.oz-portlet-grid .oz-grid-head {
+	font-weight: bolder;
+	background-color: #F2F2F2;
+	text-align: center;
+}
+
+.oz-portlet-grid .oz-grid-head td {
+	
+}
+
+.oz-portlet-grid .oz-grid-content {
+	
+}
+
+.oz-portlet-grid .oz-grid-content-even {
+	background-color: #FAFAFA;
+}
+
+.oz-portlet-grid  a {
+	text-decoration: none;
+	color: black;
+}
+
+.oz-portlet-grid a:hover {
+	font-weight: bold;
+}
+
+.oz-portlet-list {
+	width: 100%;
+	list-style: none;
+}
+
+.oz-portlet-list li {
+	margin: 4px 0 2px 0;
+	border-bottom: 1px solid #ccc;
+	line-height: 25px;
+}
+
+.oz-portlet-list a {
+	text-decoration: none;
+	color: black;
+}
+
+.oz-portlet-list a:hover {
+	font-weight: bold;
+}
+/*end*/
+
+/*展开，缩小*/
+.oz-portlet-expanded {
+	
+}
+
+.oz-portlet-collapsed {
+	
+}
+
+.oz-portlet-collapsed  .oz-portlet-body-outer {
+	border-top-width: 0px;
+	padding: 0;
+}
+
+.oz-portlet-expanded .state-btn {
+	
+}
+
+.oz-portlet-collapsed .state-btn {
+	background-position: -401px -70px;
+}

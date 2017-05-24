@@ -1,0 +1,88 @@
+.ui-tab a {
+	color: #07F;
+	cursor: pointer;
+	text-decoration: none;
+	outline: none;
+}
+
+.ui-tab {
+	overflow: hidden;
+	border-image: initial;
+	width: 100%;
+}
+
+.ui-tab-trigger {
+	height: 35px;
+	background-color: white;
+}
+
+.ui-tab-container {
+	overflow: auto;
+	position: relative;
+}
+
+.ui-tab-trigger-inner,.ui-tab-trigger-item,.ui-tab-trigger-item span,.ui-tab-trigger-item a {
+	background: url(images/bg-tab.png) no-repeat scroll 0 0 transparent;
+	color: #4D4D4D;
+}
+
+.ui-tab-trigger-inner .ui-tab-trigger-item a {
+	background-position: 0 -181px;
+	display: block;
+	float: left;
+	height: 100%;
+}
+
+.ui-tab-trigger-inner .ui-tab-trigger-item.current a,.ui-tab-trigger-inner .ui-tab-trigger-item.current a:hover {
+	font-weight: 700;
+	background-position: right -349px;
+}
+
+.ui-tab-trigger-inner {
+	background-position: 0 -143px;
+	background-repeat: repeat-x;
+	height: 28px;
+	line-height: 31px;
+	margin: 0;
+	overflow: hidden;
+	padding-left: 8px;
+	border-top: 0px;
+}
+
+.ui-tab-trigger-inner ul {
+	position: relative;
+	top: 1px;
+	overflow: hidden;
+	padding-top: 3px;
+}
+
+.ui-tab-trigger-item {
+	cursor: pointer;
+	float: left;
+	font-size: 12px;
+	line-height: 24px;
+	margin-right: 2px;
+	overflow: hidden;
+}
+
+.ui-tab-trigger-inner .ui-tab-trigger-item span {
+	background-position: right -215px;
+	display: block;
+	float: left;
+	text-align: center;
+	white-space: nowrap;
+	height: 100%;
+	width: 80px;
+}
+
+.ui-tab-trigger-inner .ui-tab-trigger-item.current span,.ui-tab-trigger-inner .ui-tab-trigger-item.current a:hover span {
+	background-position: 0 -349px;
+}
+
+.ui-tab-container-item {
+	display: none;
+}
+
+.ui-tab-container-item.current {
+	display: block;
+}

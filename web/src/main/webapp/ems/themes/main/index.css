@@ -1,0 +1,138 @@
+body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+/* 	background: url('images/index_bgx.png') repeat-x 0 -288px; */
+}
+
+/*layout*/
+.oz-layout-region .oz-panel-body {
+	border-color: #99BBE8; 
+}
+
+#mainPage {
+	height: 100%;
+	width: auto;
+	overflow: hidden;
+	border: none;
+	margin: 0 auto;
+	max-width: auto;
+	background-color: #eefdec;
+}
+
+/*top*/
+.top-logo {
+	display: block;
+	width: 50%;
+	height: 60px;
+	display: block;
+	padding-left: 5px;
+	display: block;
+}
+
+.top-right {
+	width: 50%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+}
+
+.top-right a {
+	color: #3d63a1;
+	text-decoration: none;
+}
+
+.top-right a:hover {
+	text-decoration: underline;
+}
+
+.main-left {
+	background:#f0efef;
+	/* border: 1px solid #21910e; */
+}
+
+/*加载提示*/
+#loadingCover {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1000000;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	/* background: #B4D9F1; */
+	background-color: #DF5115;
+}
+
+#loadingLogo {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -30px 0 0 -75px;
+	width: 150px;
+	height: 85px;
+	background: url(./images/loading_logo.png);
+}
+
+#loadingText {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: 80px 0 0 -80px;
+	width: 160px;
+	height: 50px;
+	font-family: Arial, Tahoma, 微软雅黑;
+	font-size: 20px;
+	color: white;
+	text-shadow: #666 0 0 3px;
+	text-align: center;
+	cursor: default;
+}
+
+#loadingBarContainer {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: 120px 0 0 -51px;
+	width: 100px;
+	height: 2px;
+	overflow: hidden;
+	font-size: 0;
+	border: 1px solid #999;
+	background: #666;
+	border-image: initial;
+}
+
+#loadingBar {
+	width: 0;
+	height: 2px;
+	overflow: hidden;
+	font-size: 0;
+	background: #FE780A url("./images/loading_bar.gif");
+}
+
+#loadingTips {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: 112px 0 0 60px;
+	width: 40px;
+	height: 20px;
+	overflow: hidden;
+	color: #666;
+	font-size: 12px;
+	font-family: tahoma;
+}
+
+/*字体调整*/
+body,
+.oz-panel, 
+.oz-tree, 
+.oz-tree ul,
+.oz-tabs-strip span.oz-tabs-strip-text {
+	font-size: 12px;
+}

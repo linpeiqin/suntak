@@ -1,0 +1,121 @@
+.oz-layout{
+	position:relative;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+}
+
+.oz-layout-body{
+	overflow:auto;
+	background:#fff;
+}
+
+.oz-layout-region{
+	position:absolute;
+	overflow:hidden;
+	padding: 0px;
+}
+
+/**调整大小时遮罩的样式**/
+.oz-layout-mask{
+	position:absolute;
+	background:#fafafa;
+	filter:alpha(opacity=10);
+	opacity:0.10;
+	z-index:4;
+}
+
+.oz-drag-overlay{
+	background-color: #cccccc;
+}
+
+/**调整宽度条的样式**/
+.oz-layout-split{
+    position:absolute;
+    height:5px;
+    width:5px;
+    line-height:1px;
+    font-size:1px;
+    z-index:3;
+    background-color:transparent;
+    overflow: hidden;
+}
+/* IE6 strict won't drag w/out a color */
+.oz-ie .oz-layout-split{
+    background-color: #fff !important;
+    filter: alpha(opacity=100);
+}
+.oz-layout-split-v{
+	position: absolute;
+	cursor: n-resize;
+}
+.oz-layout-split-h{
+	position: absolute;
+	cursor: e-resize;
+}
+
+.oz-layout-split-proxy-h{
+	position:absolute;
+	background:#ccc;
+	font-size:1px;
+	cursor:e-resize;
+	display:none;
+	z-index:5;
+}
+.oz-layout-split-proxy-v{
+	position:absolute;
+	background:#ccc;
+	font-size:1px;
+	cursor:n-resize;
+	display:none;
+	z-index:5;
+}
+
+/**缩小的按钮样式**/
+.oz-layout-mini {
+    position:absolute;
+    top:0;
+    left:0;
+    display:block;
+    width:5px;
+    height:35px;
+    cursor:pointer;
+    opacity:.5;
+    -moz-opacity:.5;
+    filter:alpha(opacity=50);
+    line-height:0px;
+}
+.oz-layout-mini-over, .oz-layout-collapsed-over .oz-layout-mini{
+    opacity:1;
+    -moz-opacity:1;
+    filter:none;
+}
+
+.oz-layout-mini-west {
+    top:50%;
+    margin-top:-17px;
+    background-image:url(images/layout-mini-left.gif);
+}
+.oz-layout-mini-east {
+    top:50%;
+    margin-top:-17px;
+    background-image:url(images/layout-mini-right.gif);
+}
+.oz-layout-mini-north {
+    left:50%;
+    height:5px;
+    width:35px;
+    margin-left:-17px;
+    background-image:url(images/layout-mini-top.gif);
+}
+.oz-layout-mini-south {
+    left:50%;
+    height:5px;
+    width:35px;
+    margin-left:-17px;
+    background-image:url(images/layout-mini-bottom.gif);
+}
+
+.oz-splitbar-disabled,.oz-splitbar2-disabled{
+	cursor: default;
+}

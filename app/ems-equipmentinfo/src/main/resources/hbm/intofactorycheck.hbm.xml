@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" package="cn.suntak.ems.intofactorycheck.domain">
+	<class name="IntoFactoryCheck" table="EMS_DM_INTOFACTORY_CHECK">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="type" column="TYPE"/>
+		<property name="number" column="EMS_NUMBER"/>
+		<property name="contractNumber" column="CONTRACT_NUMBER"/>
+		<property name="fixedAssetsName" column="FIXED_ASSETS_NAME"/>
+		<property name="specificationModel" column="SPECIFICATION_MODEL"/>
+		<property name="fixedAssetsType" column="FIXED_ASSETS_TYPE"/>
+		<property name="fixedAssetsNo" column="FIXED_ASSETS_NO"/>
+		<property name="assetsNumber" column="ASSETS_NUMBER"/>
+		<property name="agent" column="AGENT"/>
+		<property name="origin" column="ORIGIN"/>
+		<property name="manufacturer" column="MANUFACTURER"/>
+		<property name="customsNo" column="CUSTOMS_NO"/>
+		<property name="isImported" column="IS_IMPORTED"/>
+		<property name="isDevelop" column="IS_DEVELOP"/>
+		<property name="customsPerson" column="CUSTOMS_PERSON"/>
+		<property name="RDPerson" column="R_D_PERSON"/>
+		<property name="WPATI" column="W_P_A_T_I"/>
+		<property name="intoFactoryTime" column="INTO_FACTORY_TIME"/>
+		<property name="ascriptionMD" column="ASCRIPTION_M_D"/>
+		<property name="installationLocation" column="INSTALLATION_LOCATION"/>
+		<property name="useD" column="USE_D"/>
+		<property name="installationPersonnel" column="INSTALLATION_PERSONNEL"/>
+		<property name="estimateUsefulLife" column="ESTIMATE_USEFUL_LIFE"/>
+		<property name="mainRecordIndex" column="MAIN_RECORD_INDEX"/>
+		<property name="testRecord" column="TEST_RECORD"/>
+		<property name="conclusion" column="CONCLUSION"/>
+		<property name="acceptancePersonT" column="ACCEPTANCE_PERSON_T"/>
+		<property name="technicalMH" column="TECHNICAL_M_H"/>
+		<property name="putUnderD" column="PUT_UNDER_D"/>
+		<property name="acceptancePersonM" column="ACCEPTANCE_PERSON_M"/>
+		<property name="putUnderDMH" column="PUT_UNDER_D_M_H"/>
+		<property name="useDOpinion" column="USE_D_OPINION"/>
+		<property name="useDCharge" column="USE_D_CHARGE"/>
+		<property name="useDMH" column="USE_D_M_H"/>
+		<property name="originalValue" column="ORIGINAL_VALUE"/>
+		<property name="installationCost" column="INSTALLATION_COST"/>
+		<property name="tariff" column="TARIFF"/>
+		<property name="other" column="OTHER"/>
+		<property name="totalValue" column="TOTAL_VALUE"/>
+		<property name="financeFillPerson" column="FINANCE_FILL_PERSON"/>
+		<property name="financeDMH" column="FINANCE_D_M_H"/>
+		<property name="GM" column="G_M"/>
+		<property name="chairman" column="CHAIRMAN"/>
+		<property name="createdDate" column="CREATED_DATE"/>
+		<property name="createdBy" column="CREATED_BY"/>
+		<property name="updatedDate" column="UPDATED_DATE"/>
+		<property name="updatedBy" column="UPDATED_BY"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<property name="processId" column="PROCESS_ID"/>
+		<property name="processState" column="PROCESS_STATE"/>
+		<property name="fixedAssetsTypeId" column="FIXED_ASSETS_TYPE_ID"/>
+		<property name="agentId" column="AGENT_ID"/>
+		<property name="manufacturerId" column="MANUFACTURER_ID"/>
+		<property name="serialNumber" column="SERIAL_NUMBER"/>
+		<property name="ascriptionMDebs" column="ASCRIPTION_M_D_EBS"/>
+		<property name="ascriptionMDname" column="ASCRIPTION_M_D_NAME"/>
+		<property name="useDebs" column="USE_D_EBS"/>
+		<property name="useDname" column="USE_D_NAME"/>
+		<many-to-one name="equipmentLifeCycle" column="LIFE_CYCLE_ID" class="cn.suntak.ems.equipmentlifecycle.domain.EquipmentLifeCycle" lazy="false"/>
+	</class>
+	
+</hibernate-mapping>

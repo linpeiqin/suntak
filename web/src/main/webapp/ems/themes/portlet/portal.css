@@ -1,0 +1,117 @@
+/*table头部背景色*/
+.oz-portlet-grid .oz-grid-head{
+	background:#E2F1DC;
+	}
+	
+.oz-grid-header{
+	background:url(images/portal/column-header-bg.gif) repeat-x;
+	}	
+	
+.oz-panel-default .oz-panel-body{
+	border-top:1px solid #d5d5d5;
+	}
+
+/*边框颜色*/
+.oz-portlet-box-content {
+    border: 1px solid #C8C8C8;
+}
+
+.oz-portlet-body-outer {
+    background-color: white;
+    border-top: 1px solid #C8C8C8;
+    overflow: hidden;
+    padding: 3px;
+    position: relative;
+}
+
+.oz-qiickstart-body {
+    border: 1px solid #C8C8C8;
+    padding: 3px;
+}
+/*标题栏的样式*/
+
+.oz-portlet-box  .oz-portlet-titleBar {
+	background-image: url('images/portal/portlet_title_bg_1.png');
+	background-repeat: repeat-x;
+}
+
+.oz-portlet-box  .oz-portlet-title {
+	color: #249;
+	font-size: 14px;
+}
+
+.oz-portlet-box  .title {
+	padding-right: 5px;
+	display: inline-block;
+}
+
+.oz-portlet-box  .subtitle {
+	padding-left: 3px;
+	display: inline-block;
+}
+
+.oz-portlet-box  .oz-portlet-btn-more {
+	background-image: none;
+	right: 2px;
+}
+
+.oz-portlet-box .oz-portlet-buttonBar {
+	
+}
+
+.oz-portlet-buttonBar .state-btn {
+	background-image: url('images/portal/state_btn.png');
+	background-repeat: no-repeat;
+	background-position: 0 -13px;
+	width: 13px;
+	height: 13px;
+}
+
+.oz-portlet-collapsed .state-btn {
+	background-position: 0 0;
+}
+
+.oz-portlet-btn-more a {
+	color: #000000;
+}
+
+.oz-portlet-grid .oz-grid-content {
+	background-color: #FFFFFF;
+}
+
+.oz-portlet-grid .oz-grid-content-even {
+	background-color: #FFFFFF;
+}
+.oz-portlet-collapsed  .oz-portlet-body-outer {
+	border-top-width: 1px;
+	padding:1px;
+	background-color: #ECEEEF;
+}
+.oz-portlet-buttonBar {
+/* 鼠标移上去折叠、展开的图标才显示 */
+/* 	display: block; */
+}
+
+.oz-portlet-box2  .oz-portlet-titleBar {
+	background-image: url('images/portal/portlet_title_bg_2.png');
+	background-repeat: repeat-x;
+}
+
+.oz-portlet-box3  .oz-portlet-titleBar {
+	background-image: url('images/portal/portlet_title_bg_3.png');
+	background-repeat: repeat-x;
+}
+
+/*常用信息*/
+.pTool li {
+	background: url("images/portal/toos_bg.png");
+}
+
+/*字体调整*/
+body,
+table,
+.oz-panel, 
+.oz-tree, 
+.oz-tree ul {
+	font-size: 12px;
+}

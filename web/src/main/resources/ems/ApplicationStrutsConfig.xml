@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" default-lazy-init="true">
+	
+	<description>Struts 配置加载</description>
+	
+	<bean id="strutsConfig" class="cn.oz.web.struts.util.StrutsConfigLoader">
+		<property name="configs">
+			<list>
+				<!-- 平台核心(Core) -->
+				<value>classpath:/strutsConfig-core-web.xml</value>
+				<value>classpath:/strutsConfig-config.xml</value>
+				
+				<!-- 组件(Component) -->
+				<value>classpath:/strutsConfig-component-acl.xml</value>
+				<value>classpath:/strutsConfig-component-attachment.xml</value>
+				<value>classpath:/strutsConfig-component-relationShip.xml</value>
+				<value>classpath:/strutsConfig-component-userlog.xml</value>
+				<value>classpath:/strutsConfig-component-sms.xml</value>
+				<value>classpath:/strutsConfig-component-mail.xml</value>
+				<value>classpath:/strutsConfig-component-rtx.xml</value>
+				<!-- 模块(Module) -->
+				<value>classpath:/strutsConfig-module-common.xml</value>
+				<value>classpath:/strutsConfig-module-security.xml</value>			
+				<value>classpath:/strutsConfig-module-organize.xml</value>
+				<value>classpath:/strutsConfig-module-portalmgm.xml</value>
+				<value>classpath:/strutsConfig-sys-admin.xml</value>
+				<value>classpath:/strutsConfig-web.xml</value>
+				<value>classpath:/strutsConfig-zop-web.xml</value>
+				<value>classpath:/strutsConfig-module-personalschedule.xml</value>
+				<value>classpath:/strutsConfig-module-systemmessage.xml</value>
+
+				<!-- EMS(Module) -->
+				<value>classpath:/strutsConfig-ems-common.xml</value>
+				<value>classpath:/strutsConfig-ems-intofactory.xml</value>
+				<value>classpath:/strutsConfig-ems-intofactoryandcheck.xml</value>
+				<value>classpath:/strutsConfig-ems-completion.xml</value>
+				<value>classpath:/strutsConfig-ems-internaltransfer.xml</value>
+				<value>classpath:/strutsConfig-ems-scrap.xml</value>
+				<value>classpath:/strutsConfig-ems-renewal.xml</value>
+				<value>classpath:/strutsConfig-ems-renewalandcheck.xml</value>
+				<value>classpath:/strutsConfig-ems-equipmentdetails.xml</value>
+				<value>classpath:/strutsConfig-ems-intofactorycheck.xml</value>
+				<value>classpath:/strutsConfig-ems-completioncheck.xml</value>
+				<value>classpath:/strutsConfig-ems-renewalcheck.xml</value>
+				<value>classpath:/strutsConfig-ems-sell.xml</value>
+				<value>classpath:/strutsConfig-ems-equipmentlifecycle.xml</value>
+				<value>classpath:/strutsConfig-ems-partinfo.xml</value>
+				<value>classpath:/strutsConfig-ems-equipmentrepair.xml</value>
+				<value>classpath:/strutsConfig-ems-seeyon.xml</value>
+				<value>classpath:/strutsConfig-ems-filenumber.xml</value>
+			</list>
+		</property>
+	</bean>
+</beans>

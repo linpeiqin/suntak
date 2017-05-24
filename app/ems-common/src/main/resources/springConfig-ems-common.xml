@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	
+	<bean id="departmentVDao" class="cn.suntak.ems.common.dao.hibernate.DepartmentVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="departmentVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.DepartmentVServiceImpl">
+				<property name="departmentVDao" ref="departmentVDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="categoriesVDao" class="cn.suntak.ems.common.dao.hibernate.CategoriesVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="groupDao" class="cn.suntak.ems.common.dao.hibernate.EmsUserInfoDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="categoriesVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.CategoriesVServiceImpl">
+				<property name="categoriesVDao" ref="categoriesVDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="userVDao" class="cn.suntak.ems.common.dao.hibernate.UserVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="userVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.UserVServiceImpl">
+				<property name="userVDao" ref="userVDao"/> 
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="suppliersVDao" class="cn.suntak.ems.common.dao.hibernate.SuppliersVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="suppliersVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.SuppliersVServiceImpl">
+				<property name="suppliersVDao" ref="suppliersVDao"/> 
+			</bean>
+		</property>
+	</bean>
+	<bean id="currencyVDao" class="cn.suntak.ems.common.dao.hibernate.CurrencyVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="currencyVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.CurrencyVServiceImpl">
+				<property name="currencyVDao" ref="currencyVDao"/> 
+			</bean>
+		</property>
+	</bean>
+	<bean id="employeeVDao" class="cn.suntak.ems.common.dao.hibernate.EmployeeVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="employeeVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.EmployeeVServiceImpl">
+				<property name="employeeVDao" ref="employeeVDao"/> 
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="employeesVDao" class="cn.suntak.ems.common.dao.hibernate.EmployeesVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="employeesVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.EmployeesVServiceImpl">
+				<property name="employeesVDao" ref="employeesVDao"/> 
+			</bean>
+		</property>
+	</bean>
+	<bean id="lineTypeVDao" class="cn.suntak.ems.common.dao.hibernate.LineTypeVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="lineTypeVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.LineTypeVServiceImpl">
+				<property name="lineTypeVDao" ref="lineTypeVDao"/> 
+			</bean>
+		</property>
+	</bean>
+	<bean id="orgVDao" class="cn.suntak.ems.common.dao.hibernate.OrgVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="orgVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.OrgVServiceImpl">
+				<property name="orgVDao" ref="orgVDao"/> 
+			</bean>
+		</property>
+	</bean>
+	<bean id="shipToLocationVDao" class="cn.suntak.ems.common.dao.hibernate.ShipToLocationVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="shipToLocationVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.ShipToLocationVServiceImpl">
+				<property name="shipToLocationVDao" ref="shipToLocationVDao"/> 
+			</bean>
+		</property>
+	</bean>
+	<bean id="poMethodVDao" class="cn.suntak.ems.common.dao.hibernate.PoMethodVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="poMethodVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.PoMethodVServiceImpl">
+				<property name="poMethodVDao" ref="poMethodVDao"/> 
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="vendorSitePersVDao" class="cn.suntak.ems.common.dao.hibernate.VendorSitePersVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="vendorSitePersVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.VendorSitePersVServiceImpl">
+				<property name="vendorSitePersVDao" ref="vendorSitePersVDao"/> 
+			</bean>
+		</property>
+	</bean>
+	<bean id="vendorSiteAddrVDao" class="cn.suntak.ems.common.dao.hibernate.VendorSiteAddrVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="vendorSiteAddrVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.VendorSiteAddrVServiceImpl">
+				<property name="vendorSiteAddrVDao" ref="vendorSiteAddrVDao"/> 
+			</bean>
+		</property>
+	</bean>
+	<bean id="pRLinesVDao" class="cn.suntak.ems.common.dao.hibernate.PRLinesVDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="pRLinesVService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.common.service.impl.PRLinesVServiceImpl">
+				<property name="pRLinesVDao" ref="pRLinesVDao"/>
+			</bean>
+		</property>
+	</bean>
+</beans>

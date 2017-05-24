@@ -1,0 +1,160 @@
+/******编辑设计页面时使用到的样式******/
+.oz-add-portlet{
+	border: 1px solid #B8B8B8;
+	margin: 3px;
+	cursor: pointer;
+	height: 30px;
+	padding-top: 3px;
+}
+
+.oz-add-portlet div{
+	width:24px;
+	height:24px;	
+	background-image: url("../images/oz-portal-add-portlet-gray.png");
+}
+
+.oz-add-portlet-hover{
+	border: 1px solid #3599FF;
+}
+
+.oz-add-portlet-hover div{
+	width:24px;
+	height:24px;
+	background-image: url("../images/oz-portal-add-portlet.png");
+}
+/*end*/
+
+/*遮罩div*/
+.divMask{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	background: -webkit-radial-gradient(center,rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 1) 80%);
+	background: -moz-radial-gradient(center,rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 1) 80%);
+	background: radial-gradient(center,rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 1) 80%);
+	opacity: 0.6;
+	filter: alpha(opacity=40);
+}
+/*控制div*/
+.divMain{
+	position:relative;
+	margin:auto;
+	top:100px;
+	width:500px;
+	border: 1px solid #6198c7;
+	background-color: white;
+}
+
+.divMain-title{
+	width:100%;
+	height:42px;
+	background-image: url("../images/oz-portal-title-bg.png");
+	background-color: #CDE4F9;
+}
+
+/* 布局图标 */
+.oz-icon-layout {
+	width:36px;height:24px;
+	background-image:url(../images/oz-icons-layout.png);
+}
+.oz-icon-layout-1 {
+	background-position:0px -38px;
+}
+.oz-icon-layout-2 {
+	background-position:-36px -38px;
+}
+.oz-icon-layout-3 {
+	background-position:-72px -38px;
+}
+.oz-icon-layout-4 {
+	background-position:-108px -38px;
+}
+.oz-icon-layout-5 {
+	background-position:-144px -38px;
+}
+.oz-icon-layout-6 {
+	background-position:-180px -38px;
+}
+.oz-icon-layout-7 {
+	background-position:-216px -38px;
+}
+.oz-icon-layout-8 {
+	background-position:-252px -38px;
+}
+.oz-icon-layout-9 {
+	background-position:-288px -38px;
+}
+.oz-icon-layout-10 {
+	background-position:-324px -38px;
+}
+.oz-icon-layout-11 {
+	background-position:0px -320px;
+}
+
+.layoutIcon {
+	list-style: none outside none;
+	width: 64px;
+	background-position: -57px -63px;
+	cursor: pointer;
+	margin-bottom: 2px
+}
+.layoutIcon span{display: block;}
+
+/* 布局、模块的图标 */
+li.moduleIcon {
+	list-style: none outside none;
+	margin: 0 0 5px 0px;
+	width: 57px;
+	background-position: -57px -63px;
+	cursor: pointer;
+	
+}
+li.moduleIcon {cursor: move;}
+li.moduleIcon span {display: block;margin: 9px auto 3px;}
+li.moduleIcon a {display: block;outline: medium none;text-align: center;}
+/*模块的样式*/
+
+/*设计模式下的样式*/
+.desginClass{
+	
+}
+.desginClass .dragdrop-handle{
+	cursor: move;
+}
+/*区域背景的颜色*/
+.desginClass .layoutRegion{
+	background-color: #EAEAEA;
+	padding-bottom: 2px;
+	min-height:200px;
+	_min-height:200px;
+}
+/*拖动模块时的区域背景提示*/
+.desginClass .custom-droppable-state-active { background-color: #fbf9ee; }
+.desginClass .custom-droppable-state-hover { background-color: #FBEC88;}
+
+/*排序模块时的提示*/
+.desginClass .custom-sortable-placeholder {height:4px;background-color: #DE8A63;position: relative;line-height:1px;}
+.desginClass .custom-sortable-placeholder * {
+	visibility: hidden;
+}
+.desginClass .custom-sortable-helper {
+	height:20px;
+	width:100px;
+	padding:10px;
+	border:2px solid red;
+	-moz-opacity:0.5;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	background-color:#CCC;
+}
+
+.desginClass .oz-portlet-btn-more{
+	display: none;
+}
+.desginClass .oz-portlet-buttonBar {
+	
+}
+/*end*/

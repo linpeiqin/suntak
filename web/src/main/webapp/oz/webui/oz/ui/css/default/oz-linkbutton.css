@@ -1,0 +1,68 @@
+a.oz-l-btn{
+	color:#444;
+	background:url('images/button_r_bg.gif') no-repeat top right;
+	font-size:12px;
+	text-decoration:none;
+	display:inline-block;
+	zoom:1;
+	height:24px;
+	padding-right:10px;
+	cursor:pointer;
+	outline:none;
+	margin: 0 1px;
+}
+a.oz-l-btn-plain{
+	background:transparent;
+	padding-right:5px;
+	border:1px solid transparent;
+	_border:0px solid #efefef;
+	_padding:1px 6px 1px 1px;
+}
+
+a.oz-l-btn-disabled{
+	color:#ccc;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	cursor:default;
+}
+a.oz-l-btn span.oz-l-btn-left{
+	display:block;
+	background:url('images/button_l_bg.gif') no-repeat top left;
+	padding:4px 0px 4px 10px;
+	line-height:16px;
+}
+a.oz-l-btn-plain span.oz-l-btn-left{
+	background:transparent;
+	padding-left:5px;
+}
+
+a.oz-l-btn span span.oz-l-btn-text{
+	display:inline-block;
+	height:16px;
+	line-height:16px;
+	padding:0px;
+}
+a.oz-l-btn span span span.oz-l-btn-empty{
+	display:inline-block;
+	padding:0px;
+	width:16px;
+}
+a:hover.oz-l-btn{
+	background-position: center  right;
+	outline:none;
+}
+a:hover.oz-l-btn span.oz-l-btn-left{
+	background-position: center  left;
+}
+
+a:hover.oz-l-btn-plain{
+	border:1px solid #7eabcd;
+	background:url('images/button_plain_hover.png') repeat-x left bottom;
+	_padding:0px 5px 0px 0px;
+}
+a:hover.oz-l-btn-disabled{
+	background-position:top right;
+}
+a:hover.oz-l-btn-disabled span.oz-l-btn-left{
+	background-position:top left;
+}

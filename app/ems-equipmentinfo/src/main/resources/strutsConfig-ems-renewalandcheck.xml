@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+	
+		<form-bean name="renewalAndCheckForm" type="org.apache.struts.validator.LazyValidatorForm">
+		</form-bean>
+	
+	</form-beans>
+
+	<action-mappings>
+	
+		<action path="/ems/renewalAndCheckAction"
+				type="cn.suntak.ems.renewalandcheck.action.RenewalAndCheckAction"
+				name="renewalAndCheckForm"
+				scope="request"
+				validate="false" 
+				parameter="action">
+			<forward name="viewRenewalAndCheck" path="/ems/renewalandcheck/V_RenewalAndCheck.jsp"/>
+			<forward name="readRenewalAndCheck" path="/ems/renewalandcheck/F_RenewalAndCheck.jsp" />
+			<forward name="editRenewalAndCheck" path="/ems/renewalandcheck/FE_RenewalAndCheck.jsp" />
+		</action>
+	</action-mappings>
+</struts-config>

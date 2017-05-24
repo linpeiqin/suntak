@@ -1,0 +1,288 @@
+.oz-clear {
+	clear: both;
+	height: 0;
+	overflow: hidden;
+	line-height: 0;
+	font-size: 0;
+}
+
+.oz-tabs-panel {
+	overflow: hidden;
+}
+
+.oz-tabPanel {
+	overflow: hidden;
+	font-size: 12px;
+}
+
+.oz-tabs-header { /* background: #deecfd; */
+	/* 	border: 1px solid #8db2e3; */
+	overflow: hidden;
+	zoom: 1;
+	margin-top: 2px;
+}
+
+.oz-tabs-strip-wrap {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	zoom: 1;
+}
+
+ul.oz-tabs-strip {
+	list-style-type: none;
+	display: block;
+	width: 5000px;
+	zoom: 1;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.oz-tabs-strip-top {
+	padding-top: 0px;
+	/* background: url(images/tabs4index/tab-strip-bg.gif) #cedff5 repeat-x bottom; */
+	background: transparent;
+	/* border-bottom: 1px solid #8db2e3; */
+}
+
+.oz-tabs-header-plain .oz-tabs-strip-top {
+	background: transparent !important;
+	padding-top: 0 !important;
+}
+
+.oz-tabs-header-plain {
+	background: transparent !important;
+	border-width: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.oz-tabs-header-plain .oz-tabs-strip-spacer {
+	border: 1px solid #8db2e3;
+	height: 2px;
+	background: #deecfd;
+	font-size: 1px;
+	line-height: 1px;
+}
+
+.oz-tabs-header-plain .oz-tabs-strip-spacer {
+	border-top: 0 none;
+}
+
+ul.oz-tabs-strip li {
+	float: left;
+	margin-left: 2px;
+}
+
+/*tabs的最右边的样式*/
+ul.oz-tabs-strip li.oz-tabs-edge {
+	float: left;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 none !important;
+	font-size: 1px !important;
+	line-height: 1px !important;
+	overflow: hidden;
+	zoom: 1;
+	background: transparent !important;
+	width: 1px;
+}
+
+.oz-tabs-strip .oz-tabs-text {
+	display: block;
+	text-decoration: none !important;
+	-moz-outline: none;
+	outline: none;
+	cursor: pointer;
+	padding: 3px 8px 4px;
+	line-height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	color: white;
+}
+
+.oz-tabs-strip-over .oz-tabs-text {
+	color: black;
+}
+
+.oz-tabs-strip-active,.oz-tabs-strip-active .oz-tabs-text {
+	cursor: default;
+}
+
+.oz-tabs-strip-active .oz-tabs-text {
+	cursor: default;
+	color: #15428b;
+	font-weight: bold;
+}
+
+.oz-tabs-strip-disabled .oz-tabss-text {
+	cursor: default;
+	color: #aaaaaa;
+}
+
+.oz-ie .oz-tabs-strip .oz-tabs-text {
+	position: relative;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-active .oz-tabs-text {
+	margin-bottom: -1px;
+	color: black;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-inner {
+	
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-over .oz-tabs-text {
+	background: #F8F8F8;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-active .oz-tabs-text {
+	background: #F8F8F8;
+}
+
+.oz-tabs-strip .oz-tabs-strip-close {
+	display: none;
+	width: 0px;
+	height: 0px;
+	padding: 0;
+	margin: 0;
+}
+
+.oz-tabs-strip-closable {
+	position: relative;
+}
+
+.oz-tabs-strip-closable .oz-tabs-text {
+	padding-right: 16px;
+}
+
+.oz-tabs-strip .oz-tabs-strip-closable a.oz-tabs-strip-close {
+	background-image: url(images/tabs4index/tab-close.gif);
+	opacity: .6;
+	-moz-opacity: .6;
+	background-repeat: no-repeat;
+	display: block;
+	width: 11px;
+	height: 11px;
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.oz-tabs-strip .oz-tabs-strip-active a.oz-tabs-strip-close {
+	opacity: .8;
+	-moz-opacity: .8;
+}
+
+.oz-tabs-strip .oz-tabs-strip-closable a.oz-tabs-strip-close:hover {
+	background-image: url(images/tabs4index/tab-close.gif);
+	opacity: 1;
+	-moz-opacity: 1;
+}
+
+/*内容区域的样式*/
+.oz-tabs-body {
+	overflow: hidden;
+	border: 1px solid #8db2e3;
+	background: #fff;
+}
+
+.oz-tabs-body-top {
+	border-top: 0 none;
+}
+
+.oz-tabs-body-bottom {
+	border-bottom: 0 none;
+}
+
+.oz-tabs-bwrap {
+	overflow: hidden;
+}
+
+/**左右滚动的按钮**/
+.oz-tabs-scroller-left {
+	background: transparent url(images/tabs4index/scroll-left.gif) no-repeat
+		-18px 0;
+	border-bottom: 1px solid #8db2e3;
+	width: 18px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	cursor: pointer;
+	display: none;
+	height: 24px;
+}
+
+.oz-tabs-scroller-left-over {
+	background-position: 0 0;
+}
+
+.oz-tabs-scroller-left-disabled {
+	background-position: -18px 0;
+	opacity: .5;
+	-moz-opacity: .5;
+	filter: alpha(opacity =             50);
+	cursor: default;
+}
+
+.oz-tabs-scroller-right {
+	background: transparent url(images/tabs4index/scroll-right.gif)
+		no-repeat 0 0;
+	border-bottom: 1px solid #8db2e3;
+	width: 18px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 10;
+	cursor: pointer;
+	display: none;
+	height: 24px;
+}
+
+.oz-tabs-scroller-right-over {
+	background-position: -18px 0;
+}
+
+.oz-tabs-scroller-right-disabled {
+	background-position: 0 0;
+	opacity: .5;
+	-moz-opacity: .5;
+	filter: alpha(opacity =             50);
+	cursor: default;
+}
+
+.oz-tabs-scrolling .oz-tabs-strip-wrap {
+	margin-left: 18px;
+	margin-right: 18px;
+}
+
+.oz-tabs-scrolling {
+	position: relative;
+}
+
+.oz-tabs-scrolling .oz-tabs-scroller-left,.oz-tabs-scrolling .oz-tabs-scroller-right
+	{
+	display: block;
+}
+
+.oz-tabs-overflow-auto {
+	overflow: auto;
+}
+
+.oz-tabs-overflow-hidden {
+	overflow: hidden;
+}
+
+.oz-tabs-overflow-scroll {
+	overflow: scroll;
+}
+
+.tab-content .oz-panel {
+	height: 100%;
+	width: 100%;
+}

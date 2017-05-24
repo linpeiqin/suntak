@@ -1,0 +1,755 @@
+html {
+	overflow: hidden
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	background: #F8F8F8;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+#desktop {
+	border: 0 solid red;
+	width: 100%;
+	height: 100%;
+	zoom: 1;
+	font: 12px/1.5 tahoma, helvetica, clean, sans-serif;
+	color: #333;
+	cursor: default;
+}
+
+#desktopsContainer {
+	position: absolute;
+	top: 0;
+	left: 0
+}
+
+.desktopsContainer .desktopContainer {
+	left: 2000px;
+	position: absolute;
+	overflow: auto;
+}
+
+.desktopsContainer .desktop-current {
+	display: block;
+	left: 0
+}
+/*效果*/
+
+.webkit #desktopsContainer {
+	-webkit-perspective: 800px
+}
+
+.webkit #desktopWrapper .desktopsContainerEx {
+	-webkit-perspective: none
+}
+
+.webTop #desktopsContainer {
+	-webkit-perspective: none
+}
+
+.webkit .desktopsContainer .desktopContainer {
+	display: none
+}
+
+.webkit .desktopsContainer .desktop-current {
+	opacity: 1;
+	display: block
+}
+
+.webkit .desktopsContainer .desktop-current-noanimation {
+	left: 0 !important;
+	-webkit-transform: none
+}
+
+.webkit .desktopsContainer .desktop-disappear-prepare1 {
+	-webkit-transform: rotateY(0deg);
+	-webkit-transform-origin: center left;
+	opacity: 1;
+	left: 0 !important;
+	display: block
+}
+
+.webkit .desktopsContainer .desktop-disappear-animation1 {
+	opacity: 0;
+	-webkit-transform: rotateY(135deg);
+	-webkit-transition: -webkit-transform .8s linear, opacity .5s linear,
+		left 0s linear .8s
+}
+
+.webkit .desktopsContainer .desktop-show-prepare1 {
+	opacity: 0
+}
+
+.webkit .desktopsContainer .desktop-show-animation1 {
+	left: 0 !important;
+	opacity: 1;
+	-webkit-transition: left .5s linear .2s, opacity .25s linear .4s
+}
+
+.webkit .desktopsContainer .desktop-disappear-prepare2 {
+	opacity: 1;
+	display: block
+}
+
+.webkit .desktopsContainer .desktop-disappear-animation2 {
+	opacity: 0;
+	-webkit-transition: left .5s linear, opacity .25s linear
+}
+
+.webkit .desktopsContainer .desktop-show-prepare2 {
+	-webkit-transform: rotateY(135deg);
+	opacity: 0;
+	left: 0 !important
+}
+
+.webkit .desktopsContainer .desktop-show-animation2 {
+	opacity: 1;
+	-webkit-transform: none;
+	-webkit-transform-origin: center left;
+	-webkit-transition: -webkit-transform .8s linear, opacity .5s linear
+}
+
+.firefox .desktopsContainer .desktop-disappear-prepare1 {
+	left: 0;
+	opacity: 1
+}
+
+.firefox .desktopsContainer .desktop-disappear-animation1 {
+	opacity: 0;
+	left: -2000px;
+	-moz-transition: left .5s linear, opacity .2s linear
+}
+
+.firefox .desktopsContainer .desktop-show-prepare1 {
+	left: 2000px;
+	opacity: 0
+}
+
+.firefox .desktopsContainer .desktop-show-animation1 {
+	left: 0;
+	opacity: 1;
+	-moz-transition: left .5s linear, opacity .2s linear .25s
+}
+
+.firefox .desktopsContainer .desktop-disappear-prepare2 {
+	left: 0;
+	opacity: 1
+}
+
+.firefox .desktopsContainer .desktop-disappear-animation2 {
+	left: 2000px;
+	opacity: 0;
+	-moz-transition: left .5s linear, opacity .2s linear
+}
+
+.firefox .desktopsContainer .desktop-show-prepare2 {
+	left: -2000px;
+	opacity: 0
+}
+
+.firefox .desktopsContainer .desktop-show-animation2 {
+	left: 0;
+	opacity: 1;
+	-moz-transition: left .5s linear, opacity .2s linear .25s
+}
+.appListContainer {
+	-webkit-user-select: none;
+}
+
+.appListContainer,.windowContainer {
+	min-width: 100px;
+	min-height: 100px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	overflow-y: auto;
+}
+
+.appListContainer {
+	overflow-y: hidden;
+	position: relative;
+	margin-top: 40px;
+}
+
+.appListContainer .gs_w,.appListContainer .preview-holder {
+	list-style: none;
+}
+
+#navbar {
+	position: relative;
+	top: 3px;
+	text-align: center;
+	width: 265px;
+	z-index: 11;
+}
+
+.indicator-wrapper {
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 25px;
+}
+
+.indicator-container {
+	height: 100%;
+	margin: 0 4px;
+}
+
+.indicator {
+	background-position: 10000px 10000px;
+	cursor: pointer;
+	display: inline-block;
+	float: left;
+	height: 20px;
+	margin: 5px 3px 0;
+	width: 20px;
+	color: #fff;
+	line-height: 1.5;
+	outline: 0;
+	position: relative;
+}
+
+.indicator-icon-bg {
+	display: none;
+	width: 26px;
+	height: 26px;
+	position: absolute;
+	z-index: 1;
+	top: -6px;
+	left: -6px;
+}
+
+.indicator-icon {
+	float: left;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 1;
+	position: relative;
+}
+
+.indicator:hover {
+	color: #8EEF37;
+	font-weight: bold;
+}
+
+.indicator.nav-current .indicator-icon {
+	background-image:url("../images/sprite.png");
+	background-position: -160px -40px
+}
+
+.indicator-edit {
+	background-position: -218px -38px;
+	margin: 2px 8px 2px 0;
+}
+
+.indicator-edit:hover {
+	background-position: -218px -62px;
+}
+
+.editing .indicator-edit {
+	background-position: -242px -38px;
+}
+
+.editing .indicator-edit:hover {
+	background-position: -242px -62px;
+}
+
+.indicator-manage {
+	background-position: -187px -38px;
+	margin: 2px 5px;
+}
+
+.indicator-manage:hover {
+	background-position: -187px -62px;
+}
+
+.indicator-manage, .indicator-edit, .indicator-save {
+	float: right;
+	width: 24px;
+	height: 24px;
+}
+
+.gridster {
+	width: 940px;
+	margin: 0 auto;
+}
+
+.gridster .player {
+	
+}
+
+.gridster .preview-holder {
+	border: none !important;
+	border-radius: 0 !important;
+	background: rgba(255, 255, 255, .2) !important;
+}
+
+.gridster .gs-w {
+	
+}
+
+.gridster .app-shortcut {
+	-webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+	display: inline;
+	cursor: pointer;
+	float: left;
+	width: 112px;
+	height: 112px;
+	color: white;
+	font-size: 12px;
+	position: relative;
+	cursor: pointer;
+}
+
+.app-shortcut .app-shortcut-icon {
+	margin: 10px auto 0;
+	width: 64px;
+	height: 64px;
+	overflow: hidden;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	position: relative;
+}
+
+.app-shortcut .app-shortcut-name {
+	height: 20px;
+	margin: 5px 0 0 0;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.app-shortcut .app-shortcut-delete ,.app-widget .app-widget-delete{
+	display: none;
+	font-size: 0;
+	z-index: 10;
+	line-height: 1;
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+	cursor: pointer;
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	background: url("../images/sprite.png") no-repeat -36px -60px;
+}
+
+.app-widget .app-widget-delete{
+	top: -5px;
+	right: -5px;
+}
+
+.editing .app-shortcut-delete ,.editing .app-widget-delete{
+	display: block;
+}
+
+.gridster .app-widget {
+	width: 100%;
+	height: 100%;
+}
+
+.app-widget {
+	display: block;
+	padding: 0;
+	overflow: hidden;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none
+}
+
+.widget-outer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	padding: 5px
+}
+
+.widget-inner {
+	position: relative;
+	width: 100%;
+	height: 100%
+}
+
+.widget-titleBar {
+	height: 24px;
+	cursor: default;
+	-moz-border-radius: 3px 3px 0 0;
+	-webkit-border-radius: 3px 3px 0 0;
+	-o-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+	border-bottom: 1px solid #C8C8C8;
+}
+
+.widget-title {
+	overflow: hidden;
+	letter-spacing: 1px;
+	line-height: 28px;
+}
+
+.widget-main-title {
+	height:24px;
+	line-height:24px;
+	vertical-align:middle;
+}
+
+.ie6-0 .widget-title {
+	word-break: break-all
+}
+
+.widget-title-icon {
+	display: inline-block;
+	height: 100%;
+	margin-right: 5px;
+	width: 16px
+}
+
+.ie7-0 .widget-title-icon,.ie6-0 .widget-title-icon {
+	display: inline;
+	zoom: 1
+}
+
+.widget-content {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	-o-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+	border: 1px solid #C8C8C8
+}
+
+.widget-has-controlArea .widget-content {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px
+}
+
+.widget-bodyOuter {
+	border-top: 1px solid #ccc;
+	top: 30px;
+	bottom: 0;
+	width: 100%;
+	position: absolute
+}
+
+.widget-toolBar {
+	height: 28px;
+	background: #e9e9e9;
+	display: none;
+	position: relative;
+	border-bottom: 1px solid #b2c3cc;
+	z-index: 10
+}
+
+.widget-bodyArea {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	overflow: hidden;
+	background: #EFEFEF;
+}
+
+.widget-div {
+	background: #000;
+	color: #FFF;
+	height: 100%;
+	width: 100%
+}
+
+img.widget-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%
+}
+
+a.widget-close {
+	display: none;
+	float: right;
+	margin-left: 4px;
+	height: 16px;
+	width: 16px;
+	cursor: pointer
+}
+
+a.widget-max {
+	display: none;
+	float: right;
+	margin-left: 4px;
+	height: 16px;
+	width: 16px;
+	cursor: pointer
+}
+
+a.widget-refresh {
+	display: none;
+	float: right;
+	margin-left: 4px;
+	height: 16px;
+	width: 16px;
+	cursor: pointer
+}
+
+a.widget-min {
+	display: none;
+	float: right;
+	margin-left: 4px;
+	height: 16px;
+	width: 16px;
+	cursor: pointer
+}
+
+.widget-controlArea {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	padding: 3px 0 0 0;
+	height: 26px;
+	width: 100%;
+	border-top: 1px solid #ccc;
+	-moz-border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 0 0 3px 3px;
+	-o-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px
+}
+
+a.widget-button {
+	display: none;
+	float: right;
+	margin-left: 10px;
+	height: 23px;
+	width: 66px;
+	cursor: pointer;
+	color: #333;
+	text-align: center;
+	line-height: 23px
+}
+
+a.widget-button-disabled {
+	color: #CCC !important;
+	cursor: default
+}
+
+.widget-frame {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: none
+}
+
+.widget-ajax {
+	width: 100%;
+	height: 100%;
+	overflow: auto
+}
+
+.widget-bigIframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent
+}
+
+/* widget bg*/
+.widget-bg-container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	padding: 0;
+	margin: 0
+}
+
+.widget-current .widget-bg-container-ipad {
+	background-color: rgba(232, 232, 232, 1)
+}
+
+.widget-bg-container-ipad {
+	display: none;
+	position: absolute;
+	left: -4px;
+	top: -4px;
+	right: -4px;
+	bottom: -5px;
+	z-index: -1;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	background-color: rgba(232, 232, 232, .8);
+	-webkit-border-radius: 4px;
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6)
+}
+
+.widget-bg {
+	position: absolute;
+	display: none;
+	border: 0;
+	padding: 0;
+	margin: 0
+}
+
+.widget-center {
+	width: 100%;
+	height: 100%
+}
+
+.widget-t {
+	top: -10px;
+	left: 0;
+	width: 100%;
+	height: 10px;
+	overflow: hidden
+}
+
+.widget-current .widget-t {
+	top: -10px;
+	left: 0;
+	width: 100%;
+	height: 10px;
+	overflow: hidden
+}
+
+.widget-rt {
+	top: -10px;
+	right: -10px;
+	width: 10px;
+	height: 10px;
+	overflow: hidden
+}
+
+.widget-current .widget-rt {
+	top: -10px;
+	right: -10px;
+	width: 10px;
+	height: 10px;
+	overflow: hidden
+}
+
+.widget-r {
+	right: -10px;
+	height: 100%;
+	width: 10px;
+	overflow: hidden
+}
+
+.widget-current .widget-r {
+	right: -10px;
+	height: 100%;
+	width: 10px;
+	overflow: hidden
+}
+
+.widget-rb {
+	bottom: -10px;
+	right: -10px;
+	width: 10px;
+	height: 10px;
+	overflow: hidden
+}
+
+.widget-current .widget-rb {
+	bottom: -10px;
+	right: -10px;
+	width: 10px;
+	height: 10px;
+	overflow: hidden
+}
+
+.widget-b {
+	bottom: -10px;
+	left: 0;
+	width: 100%;
+	height: 10px;
+	overflow: hidden
+}
+
+.widget-current .widget-b {
+	bottom: -10px;
+	left: 0;
+	width: 100%;
+	height: 10px;
+	overflow: hidden
+}
+
+.widget-lb {
+	bottom: -10px;
+	left: -10px;
+	width: 10px;
+	height: 10px;
+	overflow: hidden
+}
+
+.widget-current .widget-lb {
+	bottom: -10px;
+	left: -10px;
+	width: 10px;
+	height: 10px;
+	overflow: hidden
+}
+
+.widget-l {
+	left: -10px;
+	height: 100%;
+	width: 10px;
+	overflow: hidden
+}
+
+.widget-current .widget-l {
+	left: -10px;
+	height: 100%;
+	width: 10px;
+	overflow: hidden
+}
+
+.widget-lt {
+	top: -10px;
+	left: -10px;
+	width: 10px;
+	height: 10px;
+	overflow: hidden
+}
+
+.widget-current .widget-lt {
+	top: -10px;
+	left: -10px;
+	width: 10px;
+	height: 10px;
+	overflow: hidden
+}
+
+.widget-loading {
+	padding: 4px;
+	font-weight: bold;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.loading {
+	margin-top:3px;
+	width:16px;
+	display:inline-block;
+	background-image: url("../../../webui/oz/images/loading.gif");
+	background-repeat: no-repeat;
+}

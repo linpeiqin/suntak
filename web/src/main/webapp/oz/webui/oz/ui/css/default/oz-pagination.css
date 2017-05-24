@@ -1,0 +1,50 @@
+.oz-pagination{
+	zoom:1;
+}
+.oz-pagination table{
+	float:left;
+}
+.oz-pagination-btn-separator{
+	float:left;
+	height:24px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #fff;
+	margin:3px 1px;
+}
+.oz-pagination-num{
+	border:1px solid #ccc;
+	margin:0 2px;
+}
+.oz-pagination-page-list{
+	margin:0px 6px;
+}
+.oz-pagination-info{
+	float:right;
+	padding-right:6px;
+	padding-top:8px;
+	font-size:12px;
+}
+.oz-pagination span{
+	font-size:12px;
+}
+.oz-pagination-first{
+	background:url('images/pagination_first.gif') no-repeat;
+}
+.oz-pagination-prev{
+	background:url('images/pagination_prev.gif') no-repeat;
+}
+.oz-pagination-next{
+	background:url('images/pagination_next.gif') no-repeat;
+}
+.oz-pagination-last{
+	background:url('images/pagination_last.gif') no-repeat;
+}
+.oz-pagination-load{
+	background:url('images/pagination_load.png') no-repeat;
+}
+.oz-pagination-loading{
+	background:url('images/pagination_loading.gif') no-repeat;
+}
+
+.oz-pagination table td{
+	padding: 0px;

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+	default-lazy-init="true">
+	<description>主配置文件，导入其他模块的配置文件信息</description>
+	<!-- 数据基础配置 -->
+	<import resource="classpath:/config/springConfig-base.xml"/>
+	<import resource="classpath:/config/springConfig-define.xml"/>
+	<import resource="classpath:/config/springConfig-db-link.xml"/>
+	<!-- Struts -->
+	<import resource="classpath:/ems/ApplicationStrutsConfig.xml"/>
+	<!-- 自定义配置区域 -->
+	<import resource="classpath:/strutsConfig-standard.xml"/>
+	<import resource="classpath:/springConfig-standard.xml"/>
+	<!-- 平台核心(Core) -->
+	<import resource="classpath:/springConfig-core.xml"/>
+	<import resource="classpath:/springConfig-core-web.xml"/>
+	<import resource="classpath:/springConfig-config.xml"/>
+	<!-- 组件(Component)  -->
+	<import resource="classpath:/springConfig-component-acl.xml"/>
+	<import resource="classpath:/springConfig-component-attachment.xml"/>
+	<import resource="classpath:/springConfig-component-attribute.xml"/>
+	<import resource="classpath:/springConfig-component-cache.xml"/>
+	<import resource="classpath:/springConfig-component-profile.xml"/>
+	<import resource="classpath:/springConfig-component-relationShip.xml"/>
+	<import resource="classpath:/springConfig-component-userlog.xml"/>
+	<import resource="classpath:/springConfig-component-sms.xml"/>
+	<import resource="classpath:/springConfig-component-mail.xml"/>
+	<import resource="classpath:/springConfig-component-rtx.xml"/>
+
+
+    <import resource="classpath:/springConfig-web.xml"/>    
+    <import resource="classpath:/springConfig-apps.xml"/>
+
+	<!-- 平台模块(Module)  -->
+	<import resource="classpath:/springConfig-module-common.xml"/>	
+	<import resource="classpath:/springConfig-module-security.xml"/>
+	<import resource="classpath:/springConfig-module-organize.xml"/>
+	<import resource="classpath:/springConfig-module-portalmgm.xml"/>
+	<import resource="classpath:/springConfig-module-personalschedule.xml"/>
+	<import resource="classpath:/springConfig-module-systemmessage.xml"/>
+	<import resource="classpath:/springConfig-sys-admin.xml"/>
+	<!--ZOP-->
+	<import resource="classpath:/springConfig-zop.xml"/>
+	<import resource="classpath:/springConfig-open-api.xml"/>
+	<import resource="classpath:/springConfig-zop-web.xml"/>
+	<!-- EMS平台(Module)  -->
+	<import resource="classpath:/springConfig-ems-common.xml"/>
+	<import resource="classpath:/springConfig-ems-transdata.xml"/>
+	<import resource="classpath:/springConfig-ems-intofactory.xml"/>
+	<import resource="classpath:/springConfig-ems-intofactoryandcheck.xml"/>
+	<import resource="classpath:/springConfig-ems-completion.xml"/>
+	<import resource="classpath:/springConfig-ems-internaltransfer.xml"/>
+	<import resource="classpath:/springConfig-ems-scrap.xml"/>
+	<import resource="classpath:/springConfig-ems-renewal.xml"/>
+	<import resource="classpath:/springConfig-ems-renewalandcheck.xml"/>
+	<import resource="classpath:/springConfig-ems-equipmentdetails.xml"/>
+	<import resource="classpath:/springConfig-ems-intofactorycheck.xml"/>
+	<import resource="classpath:/springConfig-ems-completioncheck.xml"/>
+	<import resource="classpath:/springConfig-ems-renewalcheck.xml"/>
+	<import resource="classpath:/springConfig-ems-sell.xml"/>
+	<import resource="classpath:/springConfig-ems-equipmentlifecycle.xml"/>
+	<import resource="classpath:/springConfig-ems-partinfo.xml"/>
+	<import resource="classpath:/springConfig-ems-equipmentrepair.xml"/>
+	<import resource="classpath:/springConfig-ems-webapi.xml"/>
+	<import resource="classpath:/springConfig-ems-seeyon.xml"/>
+	<import resource="classpath:/springConfig-ems-filenumber.xml"/>
+	<import resource="classpath:/springConfig-ems-oa.xml"/>
+</beans>

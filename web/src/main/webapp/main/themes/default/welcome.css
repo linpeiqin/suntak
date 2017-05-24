@@ -1,0 +1,21 @@
+﻿.oz-tree-node {
+	border-bottom: 1px solid #B5BFC1;
+	padding: 3px 0;
+	background: #FFFFFF;
+}
+
+.oz-tree-node-selected {
+	background: #FBEC88;
+}
+
+.oz-tree-node-hover {
+	background: #EEEEEE;
+}
+
+.tree-root-bg {
+	background: url("images/bg-h.gif");
+}
+
+.oz-panel-header {
+	background: url("images/bg-h.gif") repeat-x 0 -26px;
+}

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" package="cn.suntak.ems.equipmentrepair.domain">
+	<class name="RepairRecord" table="EMS_DM_REPAIR_RECORD">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+
+		<component name="maintenanceApplicant" class="cn.oz.FileAuthor">
+			<property name="id" column="MAINTENANCE_APLLICANT_ID" />
+			<property name="name" column="MAINTENANCE_APLLICANT" />
+		</component>
+
+		<component name="maintenancePerson" class="cn.oz.FileAuthor">
+			<property name="id" column="MAINTENANCE_PERSON_ID" />
+			<property name="name" column="MAINTENANCE_PERSON" />
+		</component>
+
+		<component name="distributor" class="cn.oz.FileAuthor">
+			<property name="id" column="DISTRIBUTION_ID" />
+			<property name="name" column="DISTRIBUTION_BY" />
+		</component>
+
+		<property name="eDegree" column="E_DEGREE"/>
+		<property name="maintenanceNo" column="MAINTENANCE_NO"/>
+
+		<property name="maintenanceTime" column="MAINTENANCE_TIME"/>
+		<property name="faultDescription" column="FAULT_DESCRIPTION"/>
+		<property name="maintenanceUnit" column="MAINTENANCE_UNIT"/>
+
+        <property name="maintenaceState" column="MAINTENANCE_STATE"/>
+        <property name="maintenaceLevel" column="MAINTENANCE_LEVE"/>
+        <property name="faultClass" column="FAULT_CLASS"/>
+        <property name="startTime" column="START_TIME"/>
+        <property name="endTime" column="END_TIME"/>
+        <property name="maintenanceCost" column="MAINTENANCE_COST"/>
+        <property name="downTime" column="DOWN_TIME"/>
+        <property name="timeCost" column="TIME_COST"/>
+        <property name="faultSolve" column="FAULT_SOLVE"/>
+        <property name="userScore" column="USER_SCORE"/>
+        <property name="userOpinion" column="USER_OPINION"/>
+        <property name="createdDate" column="CREATED_DATE"/>
+        <property name="createdBy" column="CREATED_BY"/>
+        <property name="updatedDate" column="UPDATED_DATE"/>
+        <property name="updatedBy" column="UPDATED_BY"/>
+        <property name="organizationId" column="ORGANIZATION_ID"/>
+        <property name="status" column="STATUS"/>
+        <property name="distributionDate" column="DISTRIBUTION_DATE"/>
+        <property name="repairMode" column="REPAI_MODE"/>
+        <property name="billMode" column="BILL_MODE"/>
+        <property name="timeOccupy" column="TIME_OCCUPY"/>
+        <set name="partReplaces" inverse="true" cascade="all delete-orphan" >
+            <key  column="REPAIR_ID"/>
+            <one-to-many class="PartReplace" />
+        </set>
+	   <many-to-one name="equipmentDetails" column="EQUIPMENT_ID" class="cn.suntak.ems.equipmentdetails.domain.EquipmentDetails" lazy="false"/>
+	</class>
+	<class name="PartReplace" table="EMS_DM_PART_REPLACE">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="partName" column="PART_NAME"/>
+		<property name="lineTypeId" column="LINE_TYPE_ID"/>
+		<property name="price" column="PRICE"/>
+		<property name="totalPrice" column="TOTAL_PRICE"/>
+		<property name="partNo" column="PART_NO"/>
+		<property name="partId" column="PART_ID"/>
+		<property name="qty" column="qty"/>
+		<property name="section" column="SECTION"/>
+		<property name="equipmentId" column="EQUIPMENT_ID"/>
+		<property name="itemId" column="ITEM_ID"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<many-to-one name="repairRecord" column="REPAIR_ID" class="RepairRecord" lazy="false"/>
+	</class>
+	<class name="RepairPlan" table="EMS_DM_REPAIR_PLAN">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<component name="maintenancePeson" class="cn.oz.FileAuthor">
+			<property name="id" column="MAINTENANCE_PERSON_ID" />
+			<property name="name" column="MAINTENANCE_PERSON" />
+		</component>
+		<property name="type" column="TYPE"/>
+		<property name="lastTime" column="LAST_REPAIR"/>
+		<property name="nextTime" column="NEXT_REPAIR"/>
+		<property name="maintenanceUnit" column="MAINTENANCE_UNIT"/>
+		<property name="state" column="STATE"/>
+		<property name="maintenanceProject" column="MAINTENANCE_PROJECT"/>
+		<property name="maintenanceStandard" column="MAINTENANCE_STANDARD"/>
+		<property name="workDescription" column="WORK_DESCRIPTION"/>
+		<property name="createdDate" column="CREATED_DATE"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<property name="isOff" column="IS_OFF"/>
+		<property name="maintainId" column="MAINTAIN_ID"/>
+		<property name="startIndex" column="START_INDEX"/>
+		<many-to-one name="equipmentDetails" column="EQUIPMENT_ID" class="cn.suntak.ems.equipmentdetails.domain.EquipmentDetails" lazy="false"/>
+		<list name="repairPlanRules" table="EMS_DM_REPAIR_PLAN_RULE" cascade="all">  
+            <key column="PLAN_ID"></key>  
+            <index column="INDEX_" type="string"></index>  
+            <one-to-many class="cn.suntak.ems.equipmentrepair.domain.RepairPlanRule" />  
+        </list>  
+	</class>
+	
+	<class name="RepairPlanRule" table="EMS_DM_REPAIR_PLAN_RULE">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="maintenaceLevel" column="MAINTENACE_LEVEL"/>
+		<property name="circulationMode" column="CIRCULATION_MODE"/>
+		<property name="dayNum" column="DAY_NUM"/>
+		<property name="interval" column="INTERVAL"/>
+	    <property name="status" column="STATUS"/>
+		<many-to-one name="repairPlan" column="PLAN_ID" class="cn.suntak.ems.equipmentrepair.domain.RepairPlan" lazy="false"/>
+		<list name="repairPlanTimes" table="EMS_DM_REPAIT_PLAN_TIME" cascade="all">  
+            <key column="PLAN_RULE_ID"></key>  
+            <index column="INDEX_" type="string"></index>  
+            <one-to-many class="cn.suntak.ems.equipmentrepair.domain.RepairPlanTime" />  
+        </list>  
+	</class>
+	
+	<class name="RepairPlanTime" table="EMS_DM_REPAIR_PLAN_TIME">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="planDate" column="PLAN_DATE"/>
+		<property name="actualDate" column="ACTUAL_DATE"/>
+		<property name="status" column="STATUS"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<many-to-one name="repairPlanRule" column="PLAN_RULE_ID" class="cn.suntak.ems.equipmentrepair.domain.RepairPlanRule" lazy="false"/>
+	</class>
+	
+	<class name="FaultDesc" table="EMS_DM_FAULT_DESC">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="faultType" column="FAULT_TYPE"/>
+		<property name="appearanceSummary" column="APPEARANCE_SUMMARY"/>
+		<property name="apearanceDetail" column="APPEARANCE_DETAIL"/>
+		<property name="dealSummary" column="DEAL_SUMMARY"/>
+		<property name="dealDetail" column="DEAL_DETAIL"/>
+	</class>
+	
+	<class name="RepairMonthPlan" table="EMS_DM_REPAIR_MONTH_PLAN">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="planMonth" column="PLAN_MONTH"/>
+		<property name="planTime" column="PLAN_TIME"/>
+		<property name="remark" column="REMARK"/>
+		<property name="status" column="STATUS"/>
+		<property name="plannerName" column="PLANNER_NAME"/>
+		<property name="plannerId" column="PLANNER_ID"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<set name="monthPlanDetails" inverse="true" cascade="all">
+			<key column="PLAN_ID"/>
+			<one-to-many class="MonthPlanDetail" />
+		</set>
+	</class>
+	
+	<class name="MonthPlanDetail" table="EMS_DM_MONTH_PLAN_DETAIL">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="procedure" column="PROCEDURE"/>
+		<property name="equipmentId" column="EQUIPMENT_ID"/>
+		<property name="equipmentName" column="EQUIPMENT_NAME"/>
+		<property name="equipmentNo" column="EQUIPMENT_NO"/>
+		<property name="maintenaceLevel" column="MAINTENACE_LEVEL"/>
+		<property name="maintenaceDate" column="MAINTENACE_DATE"/>
+		<property name="maintenaceDay" column="MAINTENACE_DAY"/>
+		<property name="factMaintenaceDate" column="FACT_MAINTENACE_DATE"/>
+		<property name="factMaintenaceDay" column="FACT_MAINTENACE_DAY"/>
+		<many-to-one name="repairMonthPlan" class="RepairMonthPlan" lazy="false" column="PLAN_ID"/>
+	</class>
+	
+	<class name="RepairYearPlan" table="EMS_DM_REPAIR_YEAR_PLAN">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="planYear" column="PLAN_YEAR"/>
+		<property name="planTime" column="PLAN_TIME"/>
+		<property name="remark" column="REMARK"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<set name="yearPlanDetails" inverse="true" cascade="all">
+			<key column="PLAN_ID"/>
+			<one-to-many class="YearPlanDetail" />
+		</set>
+	</class>
+	
+	<class name="YearPlanDetail" table="EMS_DM_YEAR_PLAN_DETAIL">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="procedure" column="PROCEDURE"/>
+		<property name="equipmentId" column="EQUIPMENT_ID"/>
+		<property name="equipmentName" column="EQUIPMENT_NAME"/>
+		<property name="equipmentNo" column="EQUIPMENT_NO"/>
+		<property name="maintenaceLevel" column="MAINTENACE_LEVEL"/>
+		<property name="maintenaceMonth" column="MAINTENACE_MONTH"/>
+		
+		<many-to-one name="repairYearPlan" class="RepairYearPlan" lazy="false" column="PLAN_ID"/>
+	</class>
+	
+
+	<class name="MaintainContent" table="EMS_DM_MAINTAIN_CONTENT">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="content" column="CONTENT"/>
+		<property name="mCheck" column="M_CHECK"/>
+		<property name="mClear" column="M_CLEAR"/>
+		<property name="mAdjust" column="M_ADJUST"/>
+		<property name="mLubric" column="M_LUBRIC"/>
+		<property name="mRepair" column="M_REPAIR"/>
+		<property name="mChange" column="M_CHANGE"/>
+		<many-to-one name="maintain" column="MAINTAIN_ID" class="cn.suntak.ems.equipmentrepair.domain.Maintain" lazy="false"/>
+	</class>
+	<class name="Maintain" table="EMS_DM_MAINTAIN">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="maintainLevel" column="MAINTAIN_LEVEL"/>
+		<property name="planDate" column="PLAN_DATE"/>
+		<property name="executTime" column="EXECUTE_TIME"/>
+		<component name="maintainPerson" class="cn.oz.FileAuthor">
+			<property name="id" column="MAINTAIN_PERSON_ID" />
+			<property name="name" column="MAINTAIN_PERSON" />
+		</component>
+		<!-- <property name="number" column="NUMBER"/> -->
+		<property name="maintainResult" column="MAINTAIN_RESULT"/>
+		<property name="mltUseState" column="MLT_USE_STATE"/>
+		<property name="processAccept" column="PROCESS_ACCEPT"/>
+		<property name="acceptDate" column="ACCEPT_DATE"/>
+		<property name="processValidate" column="PROCESS_VALIDATE"/>
+		<property name="validateDate" column="VALIDATE_DATE"/>
+		<property name="qaVerificate" column="QA_VERIFICATE"/>
+		<property name="verificateDate" column="VERIFICATE_DATE"/>
+		<property name="equipmentRP" column="EQUIPMENT_R_P"/>
+		<property name="rpDate" column="R_P_DATE"/>
+		<property name="equipmentAudit" column="EUQIPMENT_AUDIT"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<property name="status" column="STATUS"/>
+		<property name="repairTimeId" column="REPAIR_TIME_ID"/>
+		<property name="auditDate" column="AUDIT_DATE"/>
+	<!--	<set name="maintainContents" inverse="true" cascade="all">
+			<key column="MAINTAIN_ID"></key>
+			<one-to-many class="MaintainContent"/>
+		</set>-->
+		<list name="maintainContents" cascade="all">
+			<key column="MAINTAIN_ID"></key>
+			<index column="INDEX_"></index><!-- 注意index是数据库中的关键字要避免与其冲突，此处index_对应元素在List中的索引 -->
+			<one-to-many class="MaintainContent"/>
+		</list>
+		<many-to-one name="equipmentDetails" column="EQUIPMENT_ID" class="cn.suntak.ems.equipmentdetails.domain.EquipmentDetails" lazy="false"/>
+	</class>
+</hibernate-mapping>

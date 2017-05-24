@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="allServiceApi" class="cn.suntak.ems.webapi.service.AllServiceApi">
+		<property name="equipmentDetailsService" ref="equipmentDetailsService"/>
+		<property name="completionCheckService" ref="completionCheckService"/>
+		<property name="completionService" ref="completionService"/>
+		<property name="internalTransferService" ref="internalTransferService"/>
+		<property name="intoFactoryCheckService" ref="intoFactoryCheckService"/>
+		<property name="intoFactoryService" ref="intoFactoryService"/>
+		<property name="renewalCheckService" ref="renewalCheckService"/>
+		<property name="renewalService" ref="renewalService"/>
+		<property name="scrapService" ref="scrapService"/>
+		<property name="sellService" ref="sellService"/>
+		<property name="transDataService" ref="transDataService"/>
+		<property name="equipmentLifeCycleService" ref="equipmentLifeCycleService"/>
+		<property name="intoFactoryAndCheckService" ref="intoFactoryAndCheckService"/>
+		<property name="renewalAndCheckService" ref="renewalAndCheckService"/>
+	</bean>
+</beans>

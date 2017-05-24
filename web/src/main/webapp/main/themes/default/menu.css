@@ -1,0 +1,103 @@
+.ozpanel_shadow {
+	-webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.35);
+	box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.35);
+	background: white;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.contextmenu {
+	display: none;
+	background: #F0F0F0 url(images/contextmenu/menu_bg.gif) left repeat-y;
+	border: 1px solid #718BB7;
+	padding: 2px 0;
+	position: absolute;
+	z-index: 99997;
+	left: 0px;
+	top: 0px;
+	outline: none;
+}
+
+.contextmenu a {
+	color: #000000;
+	text-decoration: none;
+	padding: 2px 3px 2px 25px;
+	line-height: 16px;
+	position: relative;
+}
+
+.contextmenu ul {
+	margin: 0px;
+}
+
+.contextmenu li {
+	padding: 3px 2px;
+	margin: 0 2px 0 3px;
+	cursor: normal;
+}
+
+.contextmenu li.hover {
+	background-color: #3399FF;
+	background: url(images/contextmenu/m_item.gif) repeat-x bottom;
+	border: 1px solid #AACCF6;
+	padding: 2px 1px;
+}
+
+.contextmenu .disabled  a {
+	color: #808080;
+}
+
+.accountmenu {
+	position: absolute;
+	border: 1px solid #C3C3C3;
+	background-color: white;
+	display: none;
+	outline: none;
+	padding: 5px;
+	z-index: 100;
+}
+
+.accountmenu ul {
+	margin: 0;
+	padding: 0;
+    list-style: none;
+}
+
+.accountmenu li {
+	padding: 3px 2px;
+	margin: 0 2px 0 3px;
+	cursor: normal;
+}
+
+.accountmenu a {
+	display: block;
+	padding: 2px 6px;
+	color: black;
+	text-decoration: none;
+}
+
+.accountmenu  a:hover {
+	background-color: #5D99CE;
+	color: white;
+}
+
+.contextmenu b{
+	position: absolute;
+	left: 0px;
+	top:2px;
+}
+
+.closeMenu b{
+	background-image: url(images/close.gif);
+}
+
+.closeOtherMenu b{
+	background-image: url(images/close_other.gif);
+}
+
+.closeAllMenu b{
+	background-image: url(images/close_all.gif);
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" package="cn.suntak.ems.scrap.domain">
+	<class name="Scrap" table="EMS_DM_SCRAP">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="type" column="TYPE"/>
+		<property name="number" column="EMS_NUMBER"/>
+		<property name="contractNumber" column="CONTRACT_NUMBER"/>
+		<property name="fixedAssetsName" column="FIXED_ASSETS_NAME"/>
+		<property name="specificationModel" column="SPECIFICATION_MODEL"/>
+		<property name="fixedAssetsType" column="FIXED_ASSETS_TYPE"/>
+		<property name="fixedAssetsNo" column="FIXED_ASSETS_NO"/>
+		<property name="assetsNumber" column="ASSETS_NUMBER"/>
+		<property name="agent" column="AGENT"/>
+		<property name="origin" column="ORIGIN"/>
+		<property name="manufacturer" column="MANUFACTURER"/>
+		<property name="isImported" column="IS_IMPORTED"/>
+		<property name="customsNo" column="CUSTOMS_NO"/>
+		<property name="customsPerson" column="CUSTOMS_PERSON"/>
+		<property name="isDevelop" column="IS_DEVELOP"/>
+		<property name="RDPerson" column="R_D_PERSON"/>
+		<property name="faTechnicalIndex" column="FA_TECHNICAL_INDEX"/>
+		<property name="startTime" column="START_TIME"/>
+		<property name="ascriptionMD" column="ASCRIPTION_M_D"/>
+		<property name="installationLocation" column="INSTALLATION_LOCATION"/>
+		<property name="useD" column="USE_D"/>
+		<property name="usefulLife" column="USEFUL_LIFE"/>
+		<property name="canUseLife" column="CAN_USE_LIFE"/>
+		<property name="faDescription" column="FA_DESCRIPTION"/>
+		<property name="putUnderCharge" column="PUT_UNDER_CHARGE"/>
+		<property name="putUnderDMH" column="PUT_UNDER_D_M_H"/>
+		<property name="sectorOpinion" column="SECTOR_OPINION"/>
+		<property name="useDCharge" column="USE_D_CHARGE"/>
+		<property name="useDMH" column="USE_D_M_H"/>
+		<property name="originalValue" column="ORIGINAL_VALUE"/>
+		<property name="netWorth" column="NEW_WORTH"/>
+		<property name="financeFillPerson" column="FINANCE_FILL_PERSON"/>
+		<property name="financeDMH" column="FINANCE_D_M_H"/>
+		<property name="faApprovalOpinion" column="FA_APPROVAL_OPINION"/>
+		<property name="GM" column="G_M"/>
+		<property name="chairman" column="CHAIRMAN"/>
+		<property name="faPlaceOfStorage" column="FA_PLACE_OF_STORAGE"/>
+		<property name="createdDate" column="CREATED_DATE"/>
+		<property name="createdBy" column="CREATED_BY"/>
+		<property name="updatedDate" column="UPDATED_DATE"/>
+		<property name="updatedBy" column="UPDATED_BY"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<property name="processId" column="PROCESS_ID"/>
+		<property name="processState" column="PROCESS_STATE"/>
+		<property name="fixedAssetsTypeId" column="FIXED_ASSETS_TYPE_ID"/>
+		<property name="agentId" column="AGENT_ID"/>
+		<property name="manufacturerId" column="MANUFACTURER_ID"/>
+		<property name="serialNumber" column="SERIAL_NUMBER"/>
+		<property name="ascriptionMDebs" column="ASCRIPTION_M_D_EBS"/>
+		<property name="ascriptionMDname" column="ASCRIPTION_M_D_NAME"/>
+		<property name="useDebs" column="USE_D_EBS"/>
+		<property name="useDname" column="USE_D_NAME"/>
+		<many-to-one name="equipmentLifeCycle" column="LIFE_CYCLE_ID" class="cn.suntak.ems.equipmentlifecycle.domain.EquipmentLifeCycle" lazy="false"/>
+	</class>
+	
+</hibernate-mapping>

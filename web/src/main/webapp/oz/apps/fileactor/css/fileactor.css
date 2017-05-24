@@ -1,0 +1,80 @@
+.oz-fileactor-container {
+	font-size: 12px;
+	position: relative;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+}
+
+.oz-fileactor-container .oz-actor-items {
+	margin: 0;
+	padding: 0;
+	cursor: text;
+	overflow: hidden;
+	height: auto !important;
+	height: 1%;
+	position: relative;
+}
+
+.oz-fileactor-container.on-edit .oz-actor-items {
+	padding-bottom: 15px;
+}
+
+.oz-fileactor-container .oz-actor-items .oz-actor-btns {
+	white-space: nowrap;
+	margin: 2px 0 2px 4px;
+}
+
+.oz-fileactor-container .oz-actor-items  li {
+	float: left;
+	list-style: none;
+}
+
+.oz-fileactor-container .oz-actor-items  .oz-actor-item {
+	color: #333;
+	line-height: 12px;
+	padding: 3px;
+	margin: 1px 0 1px 2px;
+	position: relative;
+	cursor: default;
+}
+
+.oz-fileactor-container .oz-actor-items  .oz-actor-item.item-hover {
+	background-color: #f4f4f4;
+	border: 1px solid #aaaaaa;
+	padding: 2px;
+}
+.oz-fileactor-container .oz-actor-items  .oz-actor-item .item-toolbar{
+	display: none;
+	position: absolute;
+	right: -1px;
+	bottom: -12px;
+	font-size: 1px;
+	z-index: 1000;
+	background-color: #f4f4f4;
+	border: 1px solid #aaaaaa;
+	border-top-width: 0;
+}
+.oz-fileactor-container .oz-actor-items  .oz-actor-item:hover .item-toolbar{
+	display: block;
+}
+
+.oz-fileactor-container .oz-actor-items  .oz-actor-item .item-close {
+	display: block;
+	width: 12px;
+	height: 12px;
+	font-size: 1px;
+	background: url(fileactor-sprite.png) right top no-repeat;
+	float: right;
+}
+.oz-fileactor-container .oz-actor-items  .oz-actor-item .item-close:hover {
+  background-position: right -11px;
+}
+
+.oz-fileactor-container .oz-actor-items .placeHolder{
+	width:2px;
+	color: #333;
+	line-height: 12px;
+	padding: 3px;
+	margin: 1px 0 1px 2px;
+}

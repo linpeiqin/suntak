@@ -1,0 +1,41 @@
+jquery 1.6.1
+
+修复jquery的问题:
+1、添加ID选择器中包含(.)的选择符
+quickExpr = /^(?:[^#<]*(<[\w\W]+>)[^>]*$|#([\w\-\.]*)$)/,
+	
+2、dataAttr中,添加对 elem.getAttribute 的函数验证
+if ( data === undefined && elem.nodeType === 1 &&  elem.getAttribute ) {
+
+3、acceptData也对 elem.getAttribute进行判定
+acceptData: function( elem ) {
+	if ( elem.nodeName ) {
+		var match = jQuery.noData[ elem.nodeName.toLowerCase() ];
+
+		if ( match ) {
+			return !(match === true || elem.getAttribute==null ||elem.getAttribute("classid") !== match);
+		}
+	}
+	return true;
+}
+
+jquery 1.7.2
+
+修复jquery的问题:
+1、添加ID选择器中包含(.)的选择符
+quickExpr = /^(?:[^#<]*(<[\w\W]+>)[^>]*$|#([\w\-\.]*)$)/,
+	
+2、dataAttr中,添加对 elem.getAttribute 的函数验证
+if ( data === undefined && elem.nodeType === 1 &&  elem.getAttribute ) {
+
+3、acceptData也对 elem.getAttribute进行判定
+acceptData: function( elem ) {
+	if ( elem.nodeName ) {
+		var match = jQuery.noData[ elem.nodeName.toLowerCase() ];
+
+		if ( match ) {
+			return !(match === true || elem.getAttribute==null ||elem.getAttribute("classid") !== match);
+		}
+	}
+	return true;
+}

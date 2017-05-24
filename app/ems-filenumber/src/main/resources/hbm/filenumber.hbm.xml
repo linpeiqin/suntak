@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" package="cn.suntak.ems.filenumber.domain">
+	<class name="FileNumber" table="EMS_MDU_FILENUMBER">
+    	<id name="id" column="ID" unsaved-value="-1">
+    		<generator class="native" />
+    	</id>
+    	<component name="author" class="cn.oz.Author" >
+			<property name="id" column="AUTHOR_ID"/>
+			<property name="name" column="AUTHOR"/>
+		</component>
+		<property name="createdDate" column="CREATED_DATE"/>
+		
+    	<property name="numberName" column="NUMBER_NAME"/>
+    	<property name="numberCode" column="NUMBER_CODE"/>
+    	<property name="numberPrefix" column="NUMBER_PREFIX"/>
+    	<property name="numberPostfix" column="NUMBER_POSTFIX"/>
+    	
+    	<property name="serial" column="SERIAL_" />
+
+    	<property name="numberRule" column="NUMBER_RULE"/>
+    	<property name="status" column="STATUS"/>
+    	<property name="numberDate" column="NUMBER_DATE"/>
+    	<property name="numberLength" column="NUMBER_LENGTH"/>    	
+    	<property name="numberOrder" column="NUMBER_ORDER"/>
+    	
+        
+		<property name="unitId" column="UNIT_ID"/>
+  	</class>
+  	
+</hibernate-mapping>

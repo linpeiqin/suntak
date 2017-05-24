@@ -1,0 +1,218 @@
+.inner,#innerFooter {
+	border-color: #B7D8ED;
+}
+
+#xbar { /**background-color: #D2EAF6*/
+	
+}
+
+#sortList li a {
+	color: #0958FF
+}
+
+#sortList li a:hover {
+	color: #670FF9;
+	background-color: #efefef;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	height: 100%;
+	max-height: 100%;
+	background: #fff;
+	font-size: 12px;
+}
+
+body {
+	height: 100%;
+	line-height: 1.6em;
+	max-height: 100%;
+	overflow: hidden;
+}
+
+h3 {
+	font-size: 14px;
+}
+
+img {
+	border-style: none;
+}
+
+#header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 80px;
+	z-index: 21;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 60px;
+	z-index: 21;
+}
+
+#innerHeader {
+	margin: 12px 15px;
+	height: 48px;
+	background-color: #efefef;
+}
+
+#innerFooter {
+	margin: 12px 15px;
+	padding: 8px;
+	border-width: 1px;
+	border-style: solid;
+}
+
+#sortList,#selector {
+	position: absolute;
+	left: 15px;
+	width: 180px;
+}
+
+#tools,#status,#gird,#pages {
+	position: absolute;
+	left: 200px;
+	right: 15px;
+}
+
+#xbar {
+	position: absolute;
+	top: 70px;
+	bottom: 60px;
+	left: 195px;
+	width: 5px;
+	cursor: e-resize;
+}
+
+#sortList {
+	top: 70px;
+	height: 46px;
+	z-index: 19;
+}
+
+#sortList li {
+	
+}
+
+#selector {
+	top: 126px;
+	bottom: 68px;
+	z-index: 16;
+}
+
+#tools {
+	top: 70px;
+	z-index: 15;
+}
+
+#status {
+	top: 110px;
+	z-index: 14;
+}
+
+#gird {
+	top: 150px;
+	bottom: 102px;
+	z-index: 9;
+}
+
+#pages {
+	bottom: 60px;
+	z-index: 12;
+}
+
+#selector .inner {
+	height: 100%;
+}
+
+#status .inner,#tools .inner,#pages .inner {
+	line-height: 24px;
+	height: 24px;
+}
+
+#gird .inner {
+	height: 100%;
+	overflow: auto;
+}
+
+.inner {
+	border-width: 1px;
+	border-style: solid;
+	padding: 3px;
+	background-color: #fff;
+	overflow: auto;
+}
+
+#sortList .inner {
+	padding: 0px;
+}
+
+* html #sortList .inner {
+	height: 48px
+}
+
+#sortList li {
+	float: left;
+	width: 100%;
+}
+
+#sortList li a {
+	line-height: 20px;
+	display: block;
+	padding: 3px 0 0px 25px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.folder a {
+	background: url(../images/folder.gif) no-repeat 5px 3px;
+}
+
+.tags a {
+	background: url(../images/tags.gif) no-repeat 5px 3px;
+}
+
+#pages {
+	text-align: right;
+}
+
+* html #selector {
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	border-top: 126px solid #fff;
+	border-bottom: 60px solid #fff;
+}
+
+* html #gird {
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	border-top: 150px solid #fff;
+	border-bottom: 96px solid #fff;
+}
+
+* html #xbar {
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	border-top: 70px solid #fff;
+	border-bottom: 60px solid #fff;
+}
+
+* html #tools .inner,* html #status .inner,* html #pages .inner {
+	height: 34px
+}

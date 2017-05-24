@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tdmap form="EMS_DM_INTOFACTORY_AND_CHECK" to="EMS.CUX_INTOFACTORY_T" method="apps.cux_intofactory_import.main">
+	<field source="EMS_DM_EQUIPMENT_DETAILS.ID" target="CUX_TRANSACTION_ID" />
+	<field source="EMS_DM_INTOFACTORY_AND_CHECK.ID" target="BATCH_ID" />
+	<field source="EMS_DM_INTOFACTORY_AND_CHECK.ORGANIZATION_ID" target="ORGANIZATION_ID" />
+	<field source="sysdate" target="INVOICE_DATE" />
+	<field source="EMS_DM_INTOFACTORY_AND_CHECK.TOTAL_VALUE" target="INVOICE_AMOUNT" />
+	<field source="EMS_DM_INTOFACTORY_AND_CHECK.AGENT_ID" target="VENDOR_ID" />
+	<field source="'1'" target="LINE_NUMBER" />
+	<field source="EMS_DM_INTOFACTORY_AND_CHECK.TOTAL_VALUE" target="AMOUNT" />
+	<field source="FIXED_ASSETS_NAME" target="ASSET_NAME" />
+	<field source="FIXED_ASSETS_TYPE" target="ASSET_CATEGORY" />
+	<field source="EMS_DM_EQUIPMENT_DETAILS.EQUIPMENT_NO" target="SERIAL_NUMBER" />
+	<field source="IS_IMPORTED" target="IMPORT_FLAG" />
+	<field source="'1'" target="FA_QUANTITY" />
+	<field source="EMS_DM_INTOFACTORY_AND_CHECK.MANUFACTURER" target="MANUFACTURER_NAME" />
+	<field source="EMS_DM_INTOFACTORY_AND_CHECK.SPECIFICATION_MODEL" target="MODEL_NUMBER" />
+	<field source="'1'" target="FIXED_ASSETS_UNITS" />
+	<field source="TOTAL_VALUE" target="COST" />
+	<field source="ESTIMATE_USEFUL_LIFE" target="LIFE_YEARS" />
+	<field source="ASCRIPTION_M_D_EBS" target="ADMINISTRATIVE_DEPARTMENT" />
+	<field source="EMS_DM_INTOFACTORY_AND_CHECK.USE_D_EBS" target="USER_DEPARTMENT" />
+	<field source="EMS_DM_INTOFACTORY_AND_CHECK.INSTALLATION_LOCATION" target="INSTALLATION_SITE" />
+	<field source="EMS_DM_INTOFACTORY_AND_CHECK.CURRENCY" target="CURRENCY_CODE" />
+	<field source="EMS_DM_INTOFACTORY_AND_CHECK.CUSTOMS_NO" target="CUSTOMS_NUMBER" />
+	<field source="to_char(EMS_DM_INTOFACTORY_AND_CHECK.INTO_FACTORY_TIME,'YYYY-MM-DD')" target="INTOFACTORY_DATE" />
+</tdmap>

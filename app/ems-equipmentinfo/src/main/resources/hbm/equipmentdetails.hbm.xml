@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" package="cn.suntak.ems.equipmentdetails.domain">
+	<class name="EquipmentDetails" table="EMS_DM_EQUIPMENT_DETAILS">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="equipmentName" column="EQUIPMENT_NAME"/>
+		<property name="equipmentNo" column="EQUIPMENT_NO"/>
+		<property name="specificationModel" column="SPECIFICATION_MODEL"/>
+		<property name="equipmentType" column="EQUIPMENT_TYPE"/>
+		<property name="manufacturer" column="MANUFACTURER"/>
+		<property name="suppliers" column="SUPPLIERS"/>
+		<property name="startTime" column="START_TIME"/>
+		<property name="acquisitionMode" column="ACQUISITION_MODE"/>
+		<property name="financeDMH" column="FINANCE_D_M_H"/>
+		<property name="deprectationMethod" column="DEPRECTATION_METHOD"/>
+		<property name="originalValue" column="ORIGINAL_VALUE"/>
+		<property name="residualRate" column="RESIDUAL_RATE"/>
+		<property name="fixedAssetLife" column="FIXED_ASSET_LIFE"/>
+		<property name="lastRepair" column="LAST_REPAIR"/>
+		<property name="isUse" column="IS_USE"/>
+		<property name="useD" column="USE_D"/>
+		<property name="operator" column="OPERATOR"/>
+		<property name="installationLocation" column="INSTALLATION_LOCATION"/>
+		<property name="remark" column="REMARK"/>
+		<property name="type" column="TYPE"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<property name="assetId" column="ASSET_ID" update="false" insert="false"/>
+		<property name="contractNo" column="CONTRACT_NO"/>
+		<property name="managerD" column="MANAGER_D"/>
+		<property name="scrapState" column="SCRAP_STATE"/>
+		<property name="serialNo" column="SERIAL_NO"/>
+		<property name="parentId" column="PARENT_ID"/>
+
+		<property name="suppliersId" column="SUPPLIERS_ID"/>
+		<property name="equipmentAlias" column="EQUIPMENT_ALIAS"/>
+		<property name="currency" column="CURRENCY"/>
+		<property name="tax" column="TAX"/>
+		<property name="procedure" column="PROCEDURE" />
+		<property name="brand" column="BRAND" />
+        <set name="technicalParams" inverse="true" cascade="all delete-orphan" >
+            <key  column="EQUIPMENT_ID"/>
+            <one-to-many class="cn.suntak.ems.equipmentdetails.domain.TechnicalParams" />
+        </set>
+
+        <set name="equipmentLifeCycles" inverse="false" cascade="save-update" table="EMS_DM_EL_CONFIGURE" lazy="true">
+            <key column="EQ_ID"></key>
+            <many-to-many class="cn.suntak.ems.equipmentlifecycle.domain.EquipmentLifeCycle"
+                column="LC_ID"></many-to-many>
+        </set>
+
+		<set name="renewalContracts" inverse="false" cascade="save-update" table="EMS_DM_ER_CONFIG" lazy="true">
+			<key column="EQ_ID"></key>
+			<many-to-many class="cn.suntak.ems.renewal.domain.RenewalContract" column="RC_ID"></many-to-many>
+		</set>
+		<many-to-one name="ebsEntity" column="ASSET_ID" unique="true"  />
+	</class>
+	<class name="TechnicalParams" table="EMS_DM_TECHNICAL_PARAMS">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="technicalParam" column="TECHNICAL_PARAM"/>
+		<property name="paramValue" column="PARAM_VALUE"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<many-to-one name="equipmentDetails" column="EQUIPMENT_ID" class="cn.suntak.ems.equipmentdetails.domain.EquipmentDetails" lazy="false"/>
+	</class>
+
+</hibernate-mapping>

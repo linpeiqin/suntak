@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tdmap form="EMS_DM_PR_HEAD" to="ems.cux_requisitions_t" method="apps.cux_requisitions_import_pkg.main" subTable="EMS_DM_PR_LINE">
+		<field source="EMS_EBS_SEQUENCE.NEXTVAL" target="CUX_PR_ID" dynatic="true"/>
+	    <field source="EMS_DM_PR_LINE.ID" target="EMS_LINE_ID" />
+		<field source="ORG_ID" target="ORGANIZATION_ID" />
+		<field source="'测试接口'" target="DESCRIPTION" />
+		<field source="'货物'" target="LINE_TYPE" />
+		<field source="CURRENCY_CODE" target="CURRENCY_CODE" />
+		<field source="ROWNUM" target="LINE_NUMBER" />
+		<field source="ITEM_ID" target="ITEM_ID" />
+		<field source="ITEM_NO" target="ITEM_SEGMENT1" />
+		<field source="ITEM_NAME" target="ITEM_DESCRIPTION" />
+		<field source="ITEM_UNIT" target="UNIT_OF_MEASURE" />
+		<field source="QTY" target="QUANTITY" />
+		<field source="PRICE" target="UNIT_PRICE" />
+		<field source="IS_URGENT" target="URGENT_FLAG" />
+		<field source="PROMISED_DATE" target="NEED_BY_DATE" />
+<!-- 		<field source="NEED_DATE" target="NEED_BY_DATE" />
+        <field source="''" target="NOTE_TO_BUYER" />
+		<field source="''" target="BUYER_ID" />
+		<field source="''" target="BUYER_NAME" /> -->
+		<field source="APPL_BY" target="DELIVER_TO_REQUESTOR_ID" />
+		<field source="APPL_BY_NAME" target="DELIVER_TO_REQUESTOR_NAME" />
+<!-- 		<field source="''" target="VENDOR_ID" />
+		<field source="''" target="VENDOR_NAME" /> -->
+</tdmap>

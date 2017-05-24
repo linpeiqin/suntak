@@ -1,0 +1,66 @@
+/**
+* 插件内容区域的样式,供参考
+*/
+.widget-app-list {
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 20px;
+	color: #333333;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+.widget-app-list .app-list-container {
+	padding-bottom: 10px;
+}
+
+.widget-app-list .app-list-item {
+	min-height: 2.0em;
+	padding: .60em .8em;
+	border-bottom: 1px solid #C7C7C7;
+	background-color: #F7F7F7;
+}
+
+.widget-app-list .app-list-item .avatar {
+	float: left;
+	border: 0;
+	width: 3px;
+	height: 38px;
+	background-color: #E4E4E4;
+}
+
+.widget-app-list .app-list-item .extend {
+	float: right;
+}
+
+.widget-app-list .app-list-item .title {
+	margin-left: 17px;
+	color: #747474;
+}
+
+.widget-app-list .app-list-item .info {
+	margin-left: 17px;
+	color: #A8A8A8;
+}
+
+.widget-app-list .app-list-item.new { /* color: #3A87AD;
+	background-color: #D9EDF7;
+	border-color: #BCE8F1; */
+	font-weight: bold;
+}
+
+.widget-app-list .app-list-item.new .avatar {
+	background-color: #00ABA9;
+}
+
+.widget-app-list .app-list-item.new .title { /* color: #3A87AD; */
+	
+}
+
+.widget-app-list .app-list-item.new .info { /* color: #3A87AD; */
+	
+}

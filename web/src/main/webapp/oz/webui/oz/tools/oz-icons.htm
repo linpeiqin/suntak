@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>图标库展示</title>
+	<link rel="stylesheet" type="text/css" href="../jquery-ui/1.8.22/css/default/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="../css/default/oz-common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/oz-icons.css" />
+	<style type="text/css">
+		.iconsPage{margin: 10px;}
+		.iconsHeader { margin-bottom: 5px;font-size: 22px;}
+		ul#icons {margin: 0; padding: 0;width:1232px;}
+		ul#icons li.default {
+			margin: 2px; 
+			cursor: pointer; 
+			float: left;  
+			list-style: none; 
+			border:1px solid #C5DBEC;
+			padding: 4px;
+		}
+		ul#icons li.active {border-color:#79b7e7;background-color: #FBEC88;}
+		ul#icons span.oz-icon {float: left; margin: 0;}
+	</style>	
+</head>
+<body class="oz-body" style="overflow: auto;">
+<div class="iconsPage">
+<h2 class="iconsHeader">图标库</h2>
+<p>样式文件: themes/oz-icons.css</p>
+<p>图片文件: themes/icons/oz-icons_16x16.gif或oz-icons_16x16.png</p>
+<div style="clear: both;width: 600px;">
+<input  id="selectStyleName" style="width: 400px;padding: 10px;">
+</div>
+<ul id="icons">
+</ul>
+<div style="clear: both;"></div>
+<textarea id="cssDefinition" style="width:1000px;height:200px;clear:both;min-height:200px;max-height:600px;overflow: auto;"></textarea>
+</div>
+</body>
+<script type="text/javascript" src="../../jquery/1.7.2/jquery.js"></script>
+<script type="text/javascript">
+jQuery(function($){
+	//格式化为0101格式
+	function formatNum(num){
+		return ("" + (num/100).toFixed(2)).substr(2);
+	}
+	function format2Num(row,column){
+		return formatNum(row) + formatNum(column);
+	}
+	
+	//定义处理的行数和列数（从0起）
+	var rows = 18,columns = 41;
+	
+	//生成演示dom
+	var $ul = $("#icons");
+	var t,num,i,j;
+	t = [];
+	for(i=0;i<rows;i++){
+		t.push('<li><ul>');
+		for(j=0;j<columns;j++){
+			num = format2Num(i,j);//格式化为0101格式
+			t.push('<li title="oz-icon-'+num+'" class="default" data-row="'+i+'" data-col="'+j+'"><span class="oz-icon oz-icon-'+num+'"></span></li>');
+		}
+		t.push('</li></ul>');
+	}
+	$ul.append(t.join(""));
+	//控制鼠标的悬停
+	$ul.find(".default").hover(
+		function () {
+			if(!$(this).hasClass("active"))$(this).addClass("active");
+		},
+		function () {
+			$(this).removeClass("active");
+		}
+	).click(function(){
+		if($.browser.msie){
+			window.clipboardData.setData('text',$(this).find("span").attr("class")); 
+		}else{
+			$("#selectStyleName").val($(this).find("span").attr("class") +"  "+ fun($(this).data("row"),$(this).data("col")));
+		}
+	});
+
+	var fun = function(i,j){
+		var x,y;
+		y = (i == 0) ? "0" : (-16*i) + 'px';
+		x = (j == 0) ? "0" : (-16*j) + 'px';
+		return ' {background-position:' + x + ' ' + y + ';}';
+	}
+	//生成css文件需要的文件内容
+	var $css = $("#cssDefinition").empty();
+	var x,y;
+	for(i=0;i<rows;i++){
+		t = [];
+		for(j=0;j<columns;j++){
+			y = (i == 0) ? "0" : (-16*i) + 'px';
+			x = (j == 0) ? "0" : (-16*j) + 'px';
+			num = format2Num(i,j);
+			t.push('.oz-icon-' + num + ' {background-position:' + x + ' ' + y + ';}\r\n');
+		}
+		t.push("\r\n");
+		$css.html($css.html() + t.join(""));
+	}
+	
+});
+</script>
+</html>

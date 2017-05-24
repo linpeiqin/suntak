@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<bean id="eqAdminVerifier" class="cn.oz.impl.security.PermissionVerifierImpl">
+		<property name="permissionCode">
+			<value>PID_EQUIPMENT_DETAILS_ADMINISTRATOR</value>
+		</property>
+	</bean>
+
+	<bean id="equipmentDetailsDao" class="cn.suntak.ems.equipmentdetails.dao.hibernate.EquipmentDetailsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="equipmentDetailsService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentdetails.service.impl.EquipmentDetailsServiceImpl">
+				<property name="equipmentLifeCycleService" ref="equipmentLifeCycleService"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="technicalParamsDao" class="cn.suntak.ems.equipmentdetails.dao.hibernate.TechnicalParamsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="technicalParamsService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentdetails.service.impl.TechnicalParamsServiceImpl">
+			</bean>
+		</property>
+	</bean>
+</beans>

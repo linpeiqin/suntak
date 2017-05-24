@@ -1,0 +1,86 @@
+.ct {
+	border-bottom: 1px solid #c6c6c6;
+}
+
+.title {
+	color: #355E9E;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #EAEFF2;
+	padding: 6px;
+	border-bottom: 1px solid #c6c6c6;
+}
+
+.list {
+	list-style: none;
+	display: block;
+}
+
+.ali {
+	float: left;
+	margin: 6px;
+	white-space: nowrap;
+	font: normal normal normal 14px/1.5 arial;
+}
+
+/*新建按钮*/
+.abtn {
+	font-size: 12px;
+	height: 24px;
+	padding: 0 3px;
+	position: relative;
+}
+
+.alink {
+	display: block;
+	height: 24px;
+	line-height: 24px;
+	padding: 0 8px 0  15px;
+	color: black;
+	vertical-align: baseline;
+	text-decoration: none;
+	outline: 0;
+	overflow: hidden;
+	background-image: url("images/bgx.png");
+	background-position: 0 -0px;
+	font-size: 14px; 
+}
+
+.alink-rc {
+	background-image: url("images/bg.png");
+	background-repeat: no-repeat;
+	width: 3px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	cursor: pointer;
+}
+
+.alink-rc-l {
+	left: 0px;
+	background-position: -2px -2px;
+	width: 15px;
+}
+
+.alink-rc-r {
+	right: 0px;
+	background-position: -20px -2px;
+}
+
+.alink:hover {
+	background-position: 0 -24px;
+}
+.alink:hover .alink-rc-l {
+	background-position: -28px -2px;
+}
+.alink:hover .alink-rc-r{
+	background-position: -46px -2px;
+}
+
+.oz-clear {
+	clear: both;
+	font-size: 0px;
+	height: 0px;
+	line-height: 0;
+	overflow: hidden;
+}

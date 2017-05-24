@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" package="cn.suntak.ems.equipmentlifecycle.domain">
+	<class name="EBSEntity" table="EMS_FA_DETAIL">
+		<id name="id" column="ASSET_ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="usefulLife" column="YET_LIFE_YEARS"/>
+		<property name="canUseLife" column="REMAINING_LIFE_YEARS"/>
+		<property name="originalValue" column="ORIGINAL_COST"/>
+		<property name="netWorth" column="NET_BOOK_VALUE"/>
+		<property name="cost" column="COST"/>
+
+		<property name="managerDId" column="ADMINISTRATIVE_DEPARTMENT_CODE"/>
+		<property name="managerD" column="ADMINISTRATIVE_DEPARTMENT"/>
+		<property name="userDId" column="USER_DEPARTMENT_CODE"/>
+		<property name="userD" column="USER_DEPARTMENT"/>
+		<property name="installSite" column="INSTALLATION_SITE"/>
+		<property name="deprectationMethod" column="DEPRN_METHOD_CODE"/>
+		<!--<property name="cost" column="COST"/>--><!-- 净残率-->
+		<property name="specificationModel" column="MODEL_NUMBER"/>
+		<property name="fixedAssetsType" column="ATTRIBUTE_CATEGORY_CODE"/>
+		<property name="serialNumber" column="SERIAL_NUMBER"/>
+		<property name="manufacturerName" column="MANUFACTURER_NAME"/>
+		<property name="startTime" column="CREATION_DATE"/>
+	</class>
+	
+</hibernate-mapping>

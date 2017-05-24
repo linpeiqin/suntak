@@ -1,0 +1,30 @@
+/* 表单的页签相关设置 */
+.oz-form-tabs .border {
+    width:100%;
+    margin:0px;
+    min-height: 30px;
+    border-width: 0px;
+    background-color: white;
+}
+.oz-layout-split-north{
+    border-top: solid 1px #8db2e3;
+    width: 100%;
+    height: 5px;
+}
+
+.oz-layout-mini-north {
+    left:50%;
+    height:5px;
+    width:35px;
+    margin-left:-17px;
+    background-image:url(/ems/oz/webui/oz/ui/css/default/images/layout-mini-top.gif);
+    position: relative;
+}
+.oz-layout-mini-south {
+    left:50%;
+    height:5px;
+    width:35px;
+    margin-left:-17px;
+    background-image:url(/ems/oz/webui/oz/ui/css/default/images/layout-mini-bottom.gif);
+    position: relative;
+}

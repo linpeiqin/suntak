@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent> 
+		<groupId>cn.suntak.ems</groupId>
+		<artifactId>ems-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>ems-parent</relativePath>
+	</parent> 
+
+	<artifactId>ems-project</artifactId>
+	<packaging>pom</packaging>
+	<name>ems Project</name>
+
+	<modules>
+		<!--所有模块父级引用-->
+		<module>ems-parent</module>
+		<!--EBS接口模块-->
+		<module>ems-transdata</module>
+		<!--EBS文件编号模块-->
+		<module>ems-filenumber</module>
+		
+		<!--OA发送接口模块-->
+		<module>ems-seeyon</module>
+		<!--公共模块-->
+		<module>ems-common</module>
+		<!--设备信息-->
+		<module>ems-equipmentinfo</module>	
+		<!--配件详细信息-->
+		<module>ems-partinfo</module>
+        <!--设备维修-->
+		<module>ems-equipmentrepair</module>
+		<!--OA接受接口模块-->
+		<module>ems-webapi</module>
+	</modules>
+</project>
+
+

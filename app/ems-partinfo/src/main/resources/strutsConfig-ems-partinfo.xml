@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="partInfoForm" type="org.apache.struts.validator.LazyValidatorForm">
+		</form-bean>
+
+		<form-bean name="EPUnionForm" type="org.apache.struts.validator.LazyValidatorForm">
+			<form-property name="partInfo" type="cn.suntak.ems.partinfo.domain.PartInfo"/>
+		</form-bean>
+
+		<form-bean name="orderHeadForm" type="org.apache.struts.validator.LazyValidatorForm">
+			<form-property name="equipmentDetails" type="cn.suntak.ems.equipmentdetails.domain.EquipmentDetails"/>
+		</form-bean>
+
+		<form-bean name="orderHeadTempForm" type="org.apache.struts.validator.LazyValidatorForm">
+			<form-property name="equipmentDetails" type="cn.suntak.ems.equipmentdetails.domain.EquipmentDetails"/>
+			<form-property name="useP" type="cn.oz.FileAuthor"/>
+		</form-bean>
+		
+		<form-bean name="orderLineForm" type="org.apache.struts.validator.LazyValidatorForm">
+			<form-property name="orderHead" type="cn.suntak.ems.partinfo.domain.OrderHead"/>
+		</form-bean>
+
+		<form-bean name="partInfoTreeForm" type="org.apache.struts.validator.LazyValidatorForm">
+			<form-property name="parent" type="cn.suntak.ems.partinfo.domain.PartInfoTree"/>
+		</form-bean>
+		
+		<form-bean name="pRHeadForm" type="org.apache.struts.validator.LazyValidatorForm">
+		   
+		</form-bean>
+		
+		<form-bean name="pRLineForm" type="org.apache.struts.validator.LazyValidatorForm">
+			<form-property name="pRHead" type="cn.suntak.ems.partinfo.domain.PRHead"/>
+		</form-bean>
+		
+		<form-bean name="partQualityForm" type="org.apache.struts.validator.LazyValidatorForm">
+		</form-bean>
+	</form-beans>
+
+	<action-mappings>
+	
+		<action path="/ems/partInfoAction"
+				type="cn.suntak.ems.partinfo.action.PartInfoAction"
+				name="partInfoForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="viewPartInfo" path="/ems/partinfo/V_PartInfo.jsp"/>
+			<forward name="readPartInfo" path="/ems/partinfo/F_PartInfo.jsp" />
+			<forward name="editPartInfo" path="/ems/partinfo/FE_PartInfo.jsp" />
+			<forward name="dlgPartInfo" path="/ems/partinfo/D_PartInfo.jsp" />
+			<forward name="attachPartInfo" path="/ems/partinfo/PartInfoAttachment.jsp" />
+			<forward name="HPPartInfo" path="/ems/partinfo/HP_PartInfo.jsp" />
+		</action>
+
+		<action path="/ems/partInfoTreeAction"
+				type="cn.suntak.ems.partinfo.action.PartInfoTreeAction"
+				name="partInfoTreeForm"
+				scope="request"
+				validate="false"
+				parameter="action">
+			<forward name="viewPartInfoTree" path="/ems/partinfotree/V_PartInfoTree.jsp"/>
+			<forward name="readPartInfoTree" path="/ems/partinfotree/F_PartInfoTree.jsp" />
+			<forward name="editPartInfoTree" path="/ems/partinfotree/FE_PartInfoTree.jsp" />
+			<forward name="partDisplay" path="/ems/partinfotree/VP_PartInfoTree.jsp" />
+			<forward name="customCreate" path="/ems/partinfotree/FC_PartInfoTree.jsp" />
+		</action>
+		
+		<action path="/ems/orderHeadAction"
+				type="cn.suntak.ems.partinfo.action.OrderHeadAction"
+				name="orderHeadForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="viewOrderHead" path="/ems/partinfo/V_OrderHead.jsp"/>
+			<forward name="readOrderHead" path="/ems/partinfo/F_OrderHead.jsp" />
+			<forward name="editOrderHead" path="/ems/partinfo/FE_OrderHead.jsp" />
+		</action>
+
+		<action path="/ems/orderHeadTempAction"
+				type="cn.suntak.ems.partinfo.action.OrderHeadTempAction"
+				name="orderHeadTempForm"
+				scope="request"
+				validate="false"
+				parameter="action">
+			<forward name="editOrderHeadTemp" path="/ems/partinfo/FE_OrderHeadTemp.jsp" />
+			<forward name="viewOrderHeadTemp" path="/ems/partinfo/V_OrderHeadTemp.jsp" />
+		</action>
+		
+		<action path="/ems/orderLineAction"
+				type="cn.suntak.ems.partinfo.action.OrderLineAction"
+				name="orderLineForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="viewOrderLine" path="/ems/partinfo/V_OrderLine.jsp"/>
+			<forward name="readOrderLine" path="/ems/partinfo/F_OrderLine.jsp" />
+			<forward name="editOrderLine" path="/ems/partinfo/FE_OrderLine.jsp" />
+		</action>
+		
+		<action path="/ems/pRLineAction"
+				type="cn.suntak.ems.partinfo.action.PRLineAction"
+				name="pRLineForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="viewPRLine" path="/ems/partinfo/V_PRLine.jsp"/>
+			<forward name="readPRLine" path="/ems/partinfo/F_PRLine.jsp" />
+			<forward name="editPRLine" path="/ems/partinfo/FE_PRLine.jsp" />
+		</action>
+		
+		<action path="/ems/pRHeadAction"
+				type="cn.suntak.ems.partinfo.action.PRHeadAction"
+				name="pRHeadForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="viewPRHead" path="/ems/partinfo/V_PRHead.jsp"/>
+			<forward name="readPRHead" path="/ems/partinfo/F_PRHead.jsp" />
+			<forward name="editPRHead" path="/ems/partinfo/FE_PRHead.jsp" />
+			<forward name="HPPartRemind" path="/ems/partinfo/HP_PartRemind.jsp" />
+		</action>
+		
+		<action path="/ems/partQualityAction"
+				type="cn.suntak.ems.partinfo.action.PartQualityAction"
+				name="partQualityForm"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="viewPartQuality" path="/ems/partinfo/V_PartQuality.jsp"/>
+			<forward name="readPartQuality" path="/ems/partinfo/F_PartQuality.jsp" />
+			<forward name="editPartQuality" path="/ems/partinfo/FE_PartQuality.jsp" />
+		</action>
+
+		<action path="/ems/groupInventoryAction"
+				type="cn.suntak.ems.partinfo.action.GroupInventoryAction"
+				scope="request"
+				validate="false"
+				parameter="action">
+			<forward name="viewGroupInventory" path="/ems/partinfo/V_GroupInventory.jsp"/>
+		</action>
+	</action-mappings>
+</struts-config>

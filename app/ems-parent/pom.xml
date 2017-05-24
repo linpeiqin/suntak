@@ -1,0 +1,167 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>cn.oz</groupId>
+		<artifactId>oz-parent</artifactId>
+		<version>5.2.1</version>
+		<relativePath></relativePath>
+	</parent>
+
+	<groupId>cn.suntak.ems</groupId>
+	<artifactId>ems-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>suntak ems Parent POM</name>
+
+	<!-- 定义属性 -->
+	<properties>
+		<platform.groupId>cn.oz</platform.groupId>		
+	</properties>
+
+	<!-- 预定义依赖项的version,scope与exclusions, 子项目中只需定义groupId和artifactId即可 -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- Platform begin -->
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-core</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-core-web</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-apps</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-taglib</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-config</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-web</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-component-acl</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-component-attachment</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-component-attribute</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-component-cache</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-component-idgenerator</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-component-profile</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-component-relationship</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-component-ldap</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-component-userlog</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-module-common</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+	
+
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-module-security</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-module-organize</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-module-portalmgm</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-system-admin</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-system-admin</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-zop-core</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-zop-server</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.oz</groupId>
+			<artifactId>oz-open-api</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- Maven Plugins -->
+	<build>
+		<defaultGoal>package</defaultGoal>
+		<pluginManagement>
+
+		</pluginManagement>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</testResource>
+		</testResources>
+	</build>
+</project>

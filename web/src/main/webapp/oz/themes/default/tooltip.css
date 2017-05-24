@@ -1,0 +1,557 @@
+body{ 
+	padding:0px; 
+	margin:0px; 
+	overflow:hidden;
+}
+
+diy, td{
+	font-family: "微软雅黑","宋体",Arial,"Tahoma","verdana","helvetica","sans-serif"; font-size: 12px;
+}
+
+.oz-tooltip-icon, .oz-tooltip-toolsbarBg div, .oz-tooltip-top div, .oz-tooltip-page div{ 
+	background-image:url(images/calendar/calendar-icon.gif);
+}
+
+.oz-tooltipInfo-wrap{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+}
+
+.oz-tooltipInfo-wrap table{ 
+	table-layout:fixed;
+	word-wrap: break-word; 
+	word-break: break-all;
+}
+
+.oz-tooltip-toolsbarBg{ 
+	background-position:0px -261px; 
+	background-repeat:repeat-x;
+	height: 29px;
+}
+
+.oz-tooltip-toolsbarBg div{ 
+	cursor:pointer;
+}
+
+.oz-tooltip-previous{
+	width:29px; 
+	height:17px;
+}
+
+.oz-tooltip-next{
+	width:29px; 
+	height:17px; 
+	background-position:0px -19px;
+}
+
+.oz-tooltip-date{ 
+	text-align:center; 
+	font-weight:bold;
+	font-size: 14px; 
+	line-height:22px;
+}
+
+.oz-tooltip-dateSelect{
+	width:16px; 
+	height:20px; 
+	background-position:-0px -300px;
+	margin-top: 0px;
+}
+
+.oz-tooltip-today{
+	width:45px; 
+	height:22px; 
+	background-position:0px -45px; 
+	line-height:22px; 
+	text-align:center;
+}
+
+.oz-tooltip-todayRead{
+	width:45px; 
+	height:22px; 
+	background-position:0px -68px;
+	line-height:22px; 
+	text-align:center; 
+	color:#999999;
+}
+
+.oz-tooltip-add{
+	width:57px; 
+	height:22px; 
+	background-position:0px -91px; 
+	line-height:22px; 
+	text-align:right;
+}
+
+.oz-tooltip-group{
+	width:57px; 
+	height:22px; 
+	background-position:0px -182px; 
+	line-height:22px; 
+	text-align:right;
+}
+
+.oz-tooltip-delete-reminder{
+	position: relative;
+	float:left;
+	display: block;
+	width:16px;
+	margin-top:3px;
+	background-position:-32px 0px;
+	cursor: pointer; 
+}
+
+.oz-tooltip-add-reminder{
+	clear: both; 
+	height:22px;
+	padding-top: 4px;
+	color: blue;
+}
+
+.oz-tooltip-add-reminder A{
+	color: blue;
+}
+
+.oz-tooltip-add-reminder A:VISITED{
+	color: blue;
+}
+
+.oz-tooltip-mode-2day{
+	width:33px; 
+	height:22px; 
+	background-position:0px -114px; 
+	line-height:22px; 
+	text-align:center; 
+	font-weight:bold; 
+	border:1px solid #8CA1AE;
+}
+
+.oz-tooltip-mode-2dayDown{
+	width:33px; 
+	height:22px; 
+	background-color:#FFFFFF; 
+	background-position:-33px -114px; 
+	line-height:22px; 
+	text-align:center; 
+	font-weight:bold; 
+	border-top:1px solid #8CA1AE;
+	border-right:1px solid #B8C8D0;
+	border-bottom:1px solid #B8C8D0;
+	border-left:1px solid #8CA1AE;
+}
+
+.oz-tooltip-mode-week{
+	width:33px; 
+	height:22px; 
+	background-position:0px -137px; 
+	line-height:22px; 
+	text-align:center; 
+	font-weight:bold; 
+	border:1px solid #8CA1AE;
+}
+
+.oz-tooltip-mode-weekDown{
+	width:33px; 
+	height:22px; 
+	background-color:#FFFFFF; 
+	background-position:-33px -137px; 
+	line-height:22px; 
+	text-align:center; 
+	font-weight:bold; 
+	border-top:1px solid #8CA1AE;
+	border-right:1px solid #B8C8D0;
+	border-bottom:1px solid #B8C8D0;
+	border-left:1px solid #8CA1AE;
+}
+
+.oz-tooltip-mode-week{
+	width:33px; 
+	height:22px; 
+	background-position:0px -137px; 
+	line-height:22px; 
+	text-align:center; 
+	font-weight:bold; 
+	border:1px solid #8CA1AE;
+}
+
+.oz-tooltip-mode-weekDown{
+	width:33px; 
+	height:22px; 
+	background-color:#FFFFFF; 
+	background-position:-33px -137px; 
+	line-height:22px; 
+	text-align:center; 
+	font-weight:bold; 
+	border-top:1px solid #8CA1AE;
+	border-right:1px solid #B8C8D0;
+	border-bottom:1px solid #B8C8D0;
+	border-left:1px solid #8CA1AE;
+}
+
+.oz-tooltip-mode-month{
+	width:33px; 
+	height:22px; 
+	background-position:0px -160px; 
+	line-height:22px; 
+	text-align:center; 
+	font-weight:bold; 
+	border:1px solid #8CA1AE;
+}
+
+.oz-tooltip-mode-monthDown{
+	width:33px; 
+	height:22px; 
+	background-color:#FFFFFF; 
+	background-position:-33px -160px; 
+	line-height:22px; 
+	text-align:center; 
+	font-weight:bold; 
+	border-top:1px solid #8CA1AE;
+	border-right:1px solid #B8C8D0;
+	border-bottom:1px solid #B8C8D0;
+	border-left:1px solid #8CA1AE;
+}
+.oz-tooltip-erectTop td{
+	background-color:#C3D9FF; 
+	border-top:1px solid #A9BFD3; 
+	border-bottom:1px solid #CECACA; 
+	border-right:1px solid #A9BFD3; 
+	text-align:center;
+}
+
+.oz-tooltip-erectTopSunday{
+	background-color:#C3D9FF; 
+	border-top:1px solid #A9BFD3;
+	border-bottom:1px solid #A9BFD3;
+	text-align:center;
+}
+
+.oz-tooltip-erectTopSunday span{
+	font-size:14px;
+}
+
+.oz-tooltip-erectMain, .oz-tooltip-erectTop, .oz-tooltip-month{ 
+	table-layout:fixed;
+}
+
+.oz-tooltip-erectMain td{
+	border-right:1px solid #CECACA;
+}
+
+.oz-tooltip-erectMain div, .oz-tooltip-erectTop div, .sdfsdfsdfsdf div, .oz-tooltipinfo-C div{
+	text-indent:5px;
+	overflow:hidden;
+	width:100%;
+	line-height:20px;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	-icab-text-overflow: ellipsis;
+	-khtml-text-overflow: ellipsis;
+	-moz-text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	white-space:nowrap;
+}
+
+.oz-tooltip-titleDiv{
+	background-color:#E8EEF7;
+	overflow:hidden;
+	width:100%; 
+	height:20px; 
+}
+
+.oz-tooltip-contentMainDiv{
+	overflow:auto;
+	width:100%;
+}
+
+.oz-tooltip-daybg{ 
+	background-color:#F9F9D9;
+}
+
+.oz-tooltip-month td{
+	border-right:1px solid #CECACA;
+	border-bottom:1px solid #CECACA;
+}
+
+.oz-tooltip-monthMain *{
+	font-size:12px;
+}
+
+.oz-tooltip-weekMain *{
+	font-size:12px;
+}
+
+.oz-tooltip-monthTop{ 
+	height:20px;
+	
+}
+
+.oz-tooltip-monthTopNonego{ 
+	background-color:#E5E3E1; 
+	color:#989694;
+}
+
+.oz-tooltip-week-wrap{
+	width:100%; 
+	height:20px; 
+	background-color:#CCDDED;
+}
+
+.oz-tooltip-week-wrap .tooltip-week-td{ 
+	width:14.3%; 
+	height:20px; 
+	line-height:20px; 
+	text-align:center; 
+	border-bottom:1px solid #B8D0E6;
+	border-right:1px solid #B8D0E6;
+}
+
+.oz-tooltipInfo-wrap {
+	position:absolute;
+	left:243px;
+	top:168px;
+	width:380px;
+	height:264px;
+}
+
+.oz-tooltipInfo-wrap *{ 
+	font-size:12px;
+}
+
+.oz-tooltip-v{ 
+	background-image:url(images/tooltip/repeatY.gif);
+}
+
+.oz-tooltip-a{ 
+	background-image:url(images/tooltip/repeatX.gif);
+}
+
+.oz-tooltipInfo-wrap .info-top-C, .oz-tooltipInfo-wrap .info-main-C, .oz-tooltipInfo-wrap .info-bottom-C{
+	width:416px;
+}
+
+.oz-tooltipInfo-wrap .tooltipInfo-top{
+	width:480px;
+	height:32px;
+}
+
+.tooltipInfo-top .info-top-L{
+	width:32px;
+	height:32px; 
+	float:left; 
+	background-position:0px 0px;
+}
+
+.tooltipInfo-top .info-top-C{
+	height:32px; 
+	float:left; 
+	background-position:0px 0px;
+}
+
+.tooltipInfo-top .info-top-R{
+	width:32px;
+	height:32px; 
+	float:left; 
+	background-position:-32px 0px;
+}
+
+.oz-tooltipInfo-wrap .tooltipInfo-main{
+	width:480px;
+	height:200px;
+}
+
+.tooltipInfo-main .info-main-L,.tooltipInfo-main .info-main-C,.tooltipInfo-main .info-main-R{
+	height:200px
+}
+
+.tooltipInfo-main .info-main-L{
+	width:32px;
+	float:left; 
+	background-position:-64px 0px;
+}
+
+.tooltipInfo-main .info-main-C{
+	float:left; 
+	background-color:#FFFFFF;
+}
+
+.tooltipInfo-main .info-main-R{
+	width:32px;
+	float:left; 
+	background-position:-96px 0px;
+}
+
+.oz-tooltipInfo-wrap .tooltipInfo-bottom{
+	width:480px; 
+	height:32px;
+}
+
+.tooltipInfo-bottom .info-bottom-L{
+	width:32px;
+	height:32px;
+	float:left; 
+	background-position:0px -32px;
+}
+
+.tooltipInfo-bottom .info-bottom-C{
+	height:32px; 
+	float:left; 
+	background-position:0px -32px;
+}
+
+.tooltipInfo-bottom .info-bottom-R{
+	width:32px;
+	height:32px; 
+	float:left; 
+	background-position:-32px -32px;
+}
+
+.info-top-C div, .info-main-R div, .info-bottom-R div, .info-main-L div{
+}
+
+.oz-tooltip-corner-top{ 
+	background-image:url(images/tooltip/repeatX.gif); 
+	background-repeat:no-repeat;
+	background-position:0px -84px; 
+	width:52px; 
+	height:32px;
+}
+
+.oz-tooltip-corner-right{ 
+	background-image:url(images/tooltip/repeatX.gif); 
+	background-repeat:no-repeat;
+	background-position:-52px -64px; 
+	width:32px; 
+	height:52px;
+}
+
+.oz-tooltip-corner-bottom{
+	background-image:url(images/tooltip/repeatX.gif);
+	background-repeat:no-repeat;
+	background-position:-52px -116px;
+	width:52px;
+	height:32px;
+	float:right;
+}
+
+.oz-tooltip-corner-left{
+	background-image:url(images/tooltip/repeatX.gif);
+	background-repeat:no-repeat;
+	background-position:-20px -116px;
+	width:32px;
+	height:52px;
+	margin-top:148px;
+}
+
+.oz-tooltip-close{
+	background-position:-128px 0px;
+	width:17px;
+	height:17px;
+	float:right;
+	cursor:pointer;
+}
+
+.oz-tooltip-link{
+	text-align:right;
+}
+
+.oz-tooltip-link span{
+	color:#0066CC; 
+	text-decoration:underline; 
+	cursor:pointer;
+}
+
+.oz-tooltipinfo-T{
+	font-weight:bold; 
+	color:#004A80; 
+	heigth:100%;
+	valign:center;
+	float:left;
+	text-indent:5px;
+}
+
+.oz-tooltipinfo-D{
+	color:#A0410A;
+}
+
+.oz-tooltipinfo-C{
+	width:100%;
+	height:172px;
+	overflow:auto;
+}
+
+.oz-tooltipinfo-C div{
+	width:280px;
+}
+
+.oz-tooltipinfo-C a{
+	TEXT-DECORATION:none;
+	color: blue
+}
+
+.oz-tooltip-blue{
+	color:#0071BC;
+}
+
+.oz-tooltip-green{
+	color:#66991A;
+}
+	
+.oz-tooltip-clock{
+	background-position:-48px 0px;
+	width:16px;
+	height:16px;
+}
+
+.oz-tooltip-clockT{
+	color:#006699;
+	float:left;
+}
+
+.oz-tooltip-dateTime{
+	color:#CC3300;
+}
+
+.oz-tooltip-title{
+	color:#006699;
+}
+
+.oz-tooltip-listTitle span{
+	color:#006699;
+	cursor:pointer;
+}
+
+.oz-tooltip-hh{
+	word-break:break-all;
+}
+
+.oz-tooltip-datepicker{
+	width:16px;
+	height:16px;
+	margin-top:3px;
+	font-size:0;
+	background-color:transparent;
+   	cursor: pointer;
+  	background-image:url(../../webui/themes/default/images/calendar/date.gif);
+  	background-repeat: no-repeat;
+	border:0px solid #74a6d5;
+	background-position: 99% center;
+}
+
+.oz-tooltip-single{
+	border-bottom:1px dotted #CCCCCC;
+	cursor:pointer;
+}
+
+.oz-tooltip-double{
+	border-bottom:1px dotted #CCCCCC;
+	cursor:pointer;
+}
+
+.oz-tooltip-content{
+	margin: 2px;
+	border: 1px solid #A9ABFE;
+	background-color: #E3E3FF;
+}

@@ -1,0 +1,34 @@
+h1, h2, h3, h4, h5, h6{
+	margin: 0 0;
+}
+body {
+  font-family: "微软雅黑","宋体","Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+
+label,
+input,
+button,
+select,
+textarea {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+input, button, select, textarea {
+     font-family: "微软雅黑","宋体","Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 2px 0 0;
+}
+
+.navbar .nav > li > a {
+  text-shadow: none;
+}
+
+.navbar-search .search-query {
+  font-family: "微软雅黑","宋体","Helvetica Neue", Helvetica, Arial, sans-serif;
+}

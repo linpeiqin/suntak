@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" package="cn.suntak.ems.renewal.domain">
+	<class name="RenewalContract" table="EMS_DM_RENEWAL_CONTRACT">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="contractNo" column="CONTRACT_NO"/>
+		<property name="worth" column="WORTH"/>
+		<property name="currency" column="CURRENCY"/>
+		<property name="supplier" column="SUPPLIER"/>
+		<property name="supplierId" column="SUPPLIER_ID"/>
+		<property name="state" column="STATE"/>
+
+		<set name="equipmentDetails" inverse="false" cascade="save-update merge" table="EMS_DM_ER_CONFIG" lazy="true">
+			<key column="RC_ID"></key>
+			<many-to-many class="cn.suntak.ems.equipmentdetails.domain.EquipmentDetails"
+						  column="EQ_ID"></many-to-many>
+		</set>
+
+	</class>
+	
+</hibernate-mapping>

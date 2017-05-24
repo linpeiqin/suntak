@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="fileNumberForm" type="org.apache.struts.validator.LazyValidatorForm">
+			<form-property name="author" type="cn.oz.Author"/>
+		</form-bean>
+	</form-beans>
+	<action-mappings>
+		<action path  = "/ems/fileNumberAction"
+				type      = "cn.suntak.ems.filenumber.action.FileNumberAction"
+				name      = "fileNumberForm"
+				scope     = "request"
+				validate  = "false"
+				parameter = "action">
+			<forward name = "viewFileNumber" path="/ems/filenumber/V_FileNumber.jsp" />
+			<forward name = "readFileNumber" path="/ems/filenumber/F_FileNumber.jsp" />
+			<forward name = "editFileNumber" path="/ems/filenumber/FE_FileNumber.jsp" />
+		</action>
+	</action-mappings>
+</struts-config>

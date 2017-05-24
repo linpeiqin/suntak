@@ -1,0 +1,33 @@
+autogrow-textarea	自动改变textarea大小的控件
+bgiframe		iframe背景插件，遮挡重型控件
+chosen			下拉框控件，可多选。
+cleditor		el编辑器
+colorbox		颜色选择器
+colortip		颜色选择
+cookie			cookies控件
+dataTables		数据表格渲染控件
+dragsort		拖拽排序控件
+elfinder		el文件浏览器
+flexigrid		表格控件
+flot			
+formValidator		表单验证控件
+gridster		流水布局控件
+history			历史记录控件
+hotkeys			热键控件
+iphone-toggle		iphone的颜色切换控件
+json			Json控件
+lazyload		图片懒加载控件
+loadmask		遮罩控件
+metadata		
+mousewheel		鼠标滚动事件监听
+noty			消息通知控件
+pjax			a web page 的控件
+placeholder		输入框提示控件
+raty			评分控件
+selectBox		选择框
+tmp
+tools
+tooltip			消息提示控件
+uniform			
+uploadify		多附件上传控件
+waypoints		

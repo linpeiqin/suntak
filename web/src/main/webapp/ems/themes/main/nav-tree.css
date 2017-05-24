@@ -1,0 +1,119 @@
+/*普通样式*/
+.main-left {
+	
+}
+
+.oz-tree-title {
+	padding: 0 2px 0 2px;
+}
+
+/*调整右边图标定位*/
+/*
+.oz-tree-node {
+	padding: 4px 0;
+	color: #000;
+	background: #FFFFFF;
+	position: relative;
+}
+*/
+.oz-tree-node {
+	padding: 4px 0;
+	background: #FFFFFF;
+	position: relative;
+	border: solid #E6E6E6;
+	border-width: 1px 0;
+	margin-bottom: -1px;
+}
+
+
+.oz-tree-folder,.oz-tree-file {
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+/*调整展开状态的位置*/
+.oz-tree-hit,.oz-tree-nothit {
+	position: absolute;
+	right: 0px;
+	top: 5px;
+}
+
+/*
+.oz-tree-collapsed {
+	background: url("images/tree.gif") no-repeat scroll 0 -16px transparent;
+}
+
+.oz-tree-expanded {
+	background: url("images/tree.gif") no-repeat scroll -16px -16px
+		transparent;
+}
+*/
+.oz-tree-li-lt,.oz-tree-li-rt,.oz-tree-li-lb,.oz-tree-li-rb {
+	display: none;
+}
+.oz-tree{
+	margin: 2px 3px;
+}
+
+/*第一层的演示*/
+/*
+.tree-depth-0 {
+	background: url("images/nav_menu_bg.png") repeat-x scroll #E6E6E6;
+	border: 0 solid #E6E6E6;
+	border-width: 1px 0;
+	color: #FFFFFF;
+	margin: 2px 0;
+}
+
+.tree-depth-0.oz-tree-node-selected {
+	color: #FFF;
+}
+*/
+.tree-root-bg {
+	background: url(images/bg_left.jpg) #E6E6E6 repeat-x 0 -30px;
+}
+
+.tree-root-bg.oz-tree-node-selected .oz-tree-title  {
+	color: black;
+}
+
+
+.tree-depth-0 .oz-tree-title {
+	font-weight: bold;
+}
+
+.tree-depth-0 .oz-tree-folder,.tree-root-bg .oz-tree-file {
+	
+}
+
+/*
+.tree-depth-1 {
+	background: #ededed;
+	border-bottom: 1px solid #d3d3d3;
+}
+
+.tree-depth-2 {
+	border-bottom: 1px dashed #cccccc;
+}
+*/
+/*
+.oz-tree-node-selected {
+	background-color: #9dda32;
+	font-weight: bold;
+}
+*/
+.oz-tree-node-selected {
+	background-color: #345797;
+	font-weight: bold;
+}
+.oz-tree-node-selected .oz-tree-title {
+	color: white;
+}
+/*
+.tree-depth-1.oz-tree-node-hover ,.tree-depth-2.oz-tree-node-hover {
+	background: #9dda32;
+}
+*/
+.tree-depth-1.oz-tree-node-hover ,.tree-depth-2.oz-tree-node-hover {
+	background: #EEEEEE;
+}

@@ -1,0 +1,1033 @@
+/**图标样式**/
+.oz-icon-firstTab {
+	background-image:url('icons/house.gif') !important;
+}
+.oz-icon-default {
+	background-image:url('icons/application.gif') !important;
+}
+.oz-icon-tab {
+	background-image:url('icons/tab.png') !important;	
+}
+
+.oz-linkbutton-ap {
+	text-decoration:none;
+	padding: 3px 6px 2px 6px;
+	border: 1px solid #F7F7F7
+}
+
+a.oz-linkbutton-ap:hover{
+	text-decoration:none;	
+	padding: 3px 6px 2px 6px;
+	background-color: #EDEDED;
+	border: 1px solid #CCCCCC;
+}
+
+.oz-linkbutton-icon {
+	display: inline-block;
+	overflow: hidden;
+	width: 16px; 
+	height: 16px;
+	line-height: 16px;
+	vertical-align: text-top;
+	background-repeat: no-repeat;
+}
+
+.oz-icon-add{
+	background:url('icons/edit_add.png') no-repeat;
+}
+.oz-icon-edit2{
+	background:url('icons/pencil.png') no-repeat;
+}
+.oz-icon-remove{
+	background:url('icons/cancel.png') no-repeat;
+}
+.oz-icon-filesave{
+	background:url('icons/save.png') no-repeat;
+}
+.oz-icon-save-new{
+	background:url('icons/savenew.png') no-repeat;
+}
+.oz-icon-cut{
+	background:url('icons/cut.png') no-repeat;
+}
+.oz-icon-ok{
+	background:url('icons/ok.png') no-repeat;
+}
+.oz-icon-sms{
+    background:url('icons/sms.png') no-repeat;
+}
+.oz-icon-no{
+	background:url('icons/no.png') no-repeat;
+}
+.oz-icon-cancel{
+	background:url('icons/cancel.png') no-repeat;
+}
+.oz-icon-reload{
+	background:url('icons/reload.png') no-repeat;
+}
+.oz-icon-search{
+	background:url('icons/search.png') no-repeat;
+}
+.oz-icon-print{
+	background:url('icons/print.png') no-repeat;
+}
+.oz-icon-help{
+	background:url('icons/help.png') no-repeat;
+}
+.oz-icon-undo{
+	background:url('icons/undo.png') no-repeat;
+}
+.oz-icon-redo{
+	background:url('icons/redo.png') no-repeat;
+}
+.oz-icon-back{
+	background:url('icons/back.png') no-repeat;
+}
+.oz-icon-comment{
+	background:url('icons/comment.png') no-repeat;
+}
+.oz-icon-loading {
+	background:url('icons/loading.gif') no-repeat;
+}
+.oz-icon-viewData {
+	background:url('icons/view_data.png') no-repeat;	
+}
+
+/*对话框内的空白按钮*/
+.form-button-default{
+	background-image:url(images/page/button-default.gif);
+	border:0px;
+	width:62px; 
+	height:21px;
+}
+
+/* 16x16图标库
+ * 命名格式：.oz-icon-[rowNumber][columnNumber]
+ * 如.oz-icon-0203代表图中第2行第3列对应的图标
+ */
+.oz-icon {
+	display: inline-block;
+	overflow: hidden;
+	width: 16px; height: 16px; 
+	background-image: url(icons/oz-icons_16x16.png);
+	background-repeat: no-repeat;
+	background-position:0 0;
+}
+.oz-icon-0000 {background-position:0 0;}
+.oz-icon-0001 {background-position:-16px 0;}
+.oz-icon-0002 {background-position:-32px 0;}
+.oz-icon-0003 {background-position:-48px 0;}
+.oz-icon-0004 {background-position:-64px 0;}
+.oz-icon-0005 {background-position:-80px 0;}
+.oz-icon-0006 {background-position:-96px 0;}
+.oz-icon-0007 {background-position:-112px 0;}
+.oz-icon-0008 {background-position:-128px 0;}
+.oz-icon-0009 {background-position:-144px 0;}
+.oz-icon-0010 {background-position:-160px 0;}
+.oz-icon-0011 {background-position:-176px 0;}
+.oz-icon-0012 {background-position:-192px 0;}
+.oz-icon-0013 {background-position:-208px 0;}
+.oz-icon-0014 {background-position:-224px 0;}
+.oz-icon-0015 {background-position:-240px 0;}
+.oz-icon-0016 {background-position:-256px 0;}
+.oz-icon-0017 {background-position:-272px 0;}
+.oz-icon-0018 {background-position:-288px 0;}
+.oz-icon-0019 {background-position:-304px 0;}
+.oz-icon-0020 {background-position:-320px 0;}
+.oz-icon-0021 {background-position:-336px 0;}
+.oz-icon-0022 {background-position:-352px 0;}
+.oz-icon-0023 {background-position:-368px 0;}
+.oz-icon-0024 {background-position:-384px 0;}
+.oz-icon-0025 {background-position:-400px 0;}
+.oz-icon-0026 {background-position:-416px 0;}
+.oz-icon-0027 {background-position:-432px 0;}
+.oz-icon-0028 {background-position:-448px 0;}
+.oz-icon-0029 {background-position:-464px 0;}
+.oz-icon-0030 {background-position:-480px 0;}
+.oz-icon-0031 {background-position:-496px 0;}
+.oz-icon-0032 {background-position:-512px 0;}
+.oz-icon-0033 {background-position:-528px 0;}
+.oz-icon-0034 {background-position:-544px 0;}
+.oz-icon-0035 {background-position:-560px 0;}
+.oz-icon-0036 {background-position:-576px 0;}
+.oz-icon-0037 {background-position:-592px 0;}
+.oz-icon-0038 {background-position:-608px 0;}
+.oz-icon-0039 {background-position:-624px 0;}
+.oz-icon-0040 {background-position:-640px 0;}
+
+.oz-icon-0100 {background-position:0 -16px;}
+.oz-icon-0101,.oz-icon-back {background-position:-16px -16px;}
+.oz-icon-0102,.oz-icon-new {background-position:-32px -16px;}
+.oz-icon-0103,.oz-icon-edit {background-position:-48px -16px;}
+.oz-icon-0104 {background-position:-64px -16px;}
+.oz-icon-0105 {background-position:-80px -16px;}
+.oz-icon-0106 {background-position:-96px -16px;}
+.oz-icon-0107 {background-position:-112px -16px;}
+.oz-icon-0108 {background-position:-128px -16px;}
+.oz-icon-0109 {background-position:-144px -16px;}
+.oz-icon-0110 {background-position:-160px -16px;}
+.oz-icon-0111 {background-position:-176px -16px;}
+.oz-icon-0112 {background-position:-192px -16px;}
+.oz-icon-0113 {background-position:-208px -16px;}
+.oz-icon-0114 {background-position:-224px -16px;}
+.oz-icon-0115 {background-position:-240px -16px;}
+.oz-icon-0116,.oz-icon-search {background-position:-256px -16px;}
+.oz-icon-0117 {background-position:-272px -16px;}
+.oz-icon-0118 {background-position:-288px -16px;}
+.oz-icon-0119 {background-position:-304px -16px;}
+.oz-icon-0120 {background-position:-320px -16px;}
+.oz-icon-0121 {background-position:-336px -16px;}
+.oz-icon-0122 {background-position:-352px -16px;}
+.oz-icon-0123 {background-position:-368px -16px;}
+.oz-icon-0124 {background-position:-384px -16px;}
+.oz-icon-0125 {background-position:-400px -16px;}
+.oz-icon-0126 {background-position:-416px -16px;}
+.oz-icon-0127 {background-position:-432px -16px;}
+.oz-icon-0128 {background-position:-448px -16px;}
+.oz-icon-0129 {background-position:-464px -16px;}
+.oz-icon-0130 {background-position:-480px -16px;}
+.oz-icon-0131 {background-position:-496px -16px;}
+.oz-icon-0132 {background-position:-512px -16px;}
+.oz-icon-0133 {background-position:-528px -16px;}
+.oz-icon-0134 {background-position:-544px -16px;}
+.oz-icon-0135 {background-position:-560px -16px;}
+.oz-icon-0136 {background-position:-576px -16px;}
+.oz-icon-0137 {background-position:-592px -16px;}
+.oz-icon-0138 {background-position:-608px -16px;}
+.oz-icon-0139 {background-position:-624px -16px;}
+.oz-icon-0140 {background-position:-640px -16px;}
+
+.oz-icon-0200 {background-position:0 -32px;}
+.oz-icon-0201 {background-position:-16px -32px;}
+.oz-icon-0202 {background-position:-32px -32px;}
+.oz-icon-0203 {background-position:-48px -32px;}
+.oz-icon-0204 {background-position:-64px -32px;}
+.oz-icon-0205 {background-position:-80px -32px;}
+.oz-icon-0206 {background-position:-96px -32px;}
+.oz-icon-0207 {background-position:-112px -32px;}
+.oz-icon-0208 {background-position:-128px -32px;}
+.oz-icon-0209 {background-position:-144px -32px;}
+.oz-icon-0210 {background-position:-160px -32px;}
+.oz-icon-0211 {background-position:-176px -32px;}
+.oz-icon-0212 {background-position:-192px -32px;}
+.oz-icon-0213 {background-position:-208px -32px;}
+.oz-icon-0214 {background-position:-224px -32px;}
+.oz-icon-0215 {background-position:-240px -32px;}
+.oz-icon-0216 {background-position:-256px -32px;}
+.oz-icon-0217 {background-position:-272px -32px;}
+.oz-icon-0218 {background-position:-288px -32px;}
+.oz-icon-0219 {background-position:-304px -32px;}
+.oz-icon-0220 {background-position:-320px -32px;}
+.oz-icon-0221 {background-position:-336px -32px;}
+.oz-icon-0222 {background-position:-352px -32px;}
+.oz-icon-0223 {background-position:-368px -32px;}
+.oz-icon-0224 {background-position:-384px -32px;}
+.oz-icon-0225 {background-position:-400px -32px;}
+.oz-icon-0226 {background-position:-416px -32px;}
+.oz-icon-0227 {background-position:-432px -32px;}
+.oz-icon-0228 {background-position:-448px -32px;}
+.oz-icon-0229 {background-position:-464px -32px;}
+.oz-icon-0230 {background-position:-480px -32px;}
+.oz-icon-0231 {background-position:-496px -32px;}
+.oz-icon-0232 {background-position:-512px -32px;}
+.oz-icon-0233 {background-position:-528px -32px;}
+.oz-icon-0234 {background-position:-544px -32px;}
+.oz-icon-0235 {background-position:-560px -32px;}
+.oz-icon-0236 {background-position:-576px -32px;}
+.oz-icon-0237 {background-position:-592px -32px;}
+.oz-icon-0238 {background-position:-608px -32px;}
+.oz-icon-0239 {background-position:-624px -32px;}
+.oz-icon-0240 {background-position:-640px -32px;}
+
+.oz-icon-0300 {background-position:0 -48px;}
+.oz-icon-0301 {background-position:-16px -48px;}
+.oz-icon-0302 {background-position:-32px -48px;}
+.oz-icon-0303 {background-position:-48px -48px;}
+.oz-icon-0304 {background-position:-64px -48px;}
+.oz-icon-0305 {background-position:-80px -48px;}
+.oz-icon-0306 {background-position:-96px -48px;}
+.oz-icon-0307 {background-position:-112px -48px;}
+.oz-icon-0308 {background-position:-128px -48px;}
+.oz-icon-0309 {background-position:-144px -48px;}
+.oz-icon-0310 {background-position:-160px -48px;}
+.oz-icon-0311 {background-position:-176px -48px;}
+.oz-icon-0312 {background-position:-192px -48px;}
+.oz-icon-0313 {background-position:-208px -48px;}
+.oz-icon-0314 {background-position:-224px -48px;}
+.oz-icon-0315 {background-position:-240px -48px;}
+.oz-icon-0316 {background-position:-256px -48px;}
+.oz-icon-0317 {background-position:-272px -48px;}
+.oz-icon-0318 {background-position:-288px -48px;}
+.oz-icon-0319 {background-position:-304px -48px;}
+.oz-icon-0320 {background-position:-320px -48px;}
+.oz-icon-0321 {background-position:-336px -48px;}
+.oz-icon-0322 {background-position:-352px -48px;}
+.oz-icon-0323 {background-position:-368px -48px;}
+.oz-icon-0324 {background-position:-384px -48px;}
+.oz-icon-0325 {background-position:-400px -48px;}
+.oz-icon-0326 {background-position:-416px -48px;}
+.oz-icon-0327 {background-position:-432px -48px;}
+.oz-icon-0328 {background-position:-448px -48px;}
+.oz-icon-0329 {background-position:-464px -48px;}
+.oz-icon-0330 {background-position:-480px -48px;}
+.oz-icon-0331 {background-position:-496px -48px;}
+.oz-icon-0332 {background-position:-512px -48px;}
+.oz-icon-0333 {background-position:-528px -48px;}
+.oz-icon-0334 {background-position:-544px -48px;}
+.oz-icon-0335 {background-position:-560px -48px;}
+.oz-icon-0336 {background-position:-576px -48px;}
+.oz-icon-0337 {background-position:-592px -48px;}
+.oz-icon-0338 {background-position:-608px -48px;}
+.oz-icon-0339 {background-position:-624px -48px;}
+.oz-icon-0340 {background-position:-640px -48px;}
+
+.oz-icon-0400 {background-position:0 -64px;}
+.oz-icon-0401 {background-position:-16px -64px;}
+.oz-icon-0402 {background-position:-32px -64px;}
+.oz-icon-0403 {background-position:-48px -64px;}
+.oz-icon-0404 {background-position:-64px -64px;}
+.oz-icon-0405 {background-position:-80px -64px;}
+.oz-icon-0406 {background-position:-96px -64px;}
+.oz-icon-0407 {background-position:-112px -64px;}
+.oz-icon-0408 {background-position:-128px -64px;}
+.oz-icon-0409 {background-position:-144px -64px;}
+.oz-icon-0410 {background-position:-160px -64px;}
+.oz-icon-0411 {background-position:-176px -64px;}
+.oz-icon-0412 {background-position:-192px -64px;}
+.oz-icon-0413 {background-position:-208px -64px;}
+.oz-icon-0414 {background-position:-224px -64px;}
+.oz-icon-0415 {background-position:-240px -64px;}
+.oz-icon-0416 {background-position:-256px -64px;}
+.oz-icon-0417 {background-position:-272px -64px;}
+.oz-icon-0418 {background-position:-288px -64px;}
+.oz-icon-0419 {background-position:-304px -64px;}
+.oz-icon-0420 {background-position:-320px -64px;}
+.oz-icon-0421 {background-position:-336px -64px;}
+.oz-icon-0422 {background-position:-352px -64px;}
+.oz-icon-0423 {background-position:-368px -64px;}
+.oz-icon-0424 {background-position:-384px -64px;}
+.oz-icon-0425 {background-position:-400px -64px;}
+.oz-icon-0426 {background-position:-416px -64px;}
+.oz-icon-0427 {background-position:-432px -64px;}
+.oz-icon-0428 {background-position:-448px -64px;}
+.oz-icon-0429 {background-position:-464px -64px;}
+.oz-icon-0430 {background-position:-480px -64px;}
+.oz-icon-0431 {background-position:-496px -64px;}
+.oz-icon-0432 {background-position:-512px -64px;}
+.oz-icon-0433 {background-position:-528px -64px;}
+.oz-icon-0434 {background-position:-544px -64px;}
+.oz-icon-0435 {background-position:-560px -64px;}
+.oz-icon-0436 {background-position:-576px -64px;}
+.oz-icon-0437 {background-position:-592px -64px;}
+.oz-icon-0438 {background-position:-608px -64px;}
+.oz-icon-0439 {background-position:-624px -64px;}
+.oz-icon-0440 {background-position:-640px -64px;}
+
+.oz-icon-0500 {background-position:0 -80px;}
+.oz-icon-0501 {background-position:-16px -80px;}
+.oz-icon-0502 {background-position:-32px -80px;}
+.oz-icon-0503 {background-position:-48px -80px;}
+.oz-icon-0504 {background-position:-64px -80px;}
+.oz-icon-0505 {background-position:-80px -80px;}
+.oz-icon-0506 {background-position:-96px -80px;}
+.oz-icon-0507 {background-position:-112px -80px;}
+.oz-icon-0508 {background-position:-128px -80px;}
+.oz-icon-0509 {background-position:-144px -80px;}
+.oz-icon-0510 {background-position:-160px -80px;}
+.oz-icon-0511 {background-position:-176px -80px;}
+.oz-icon-0512 {background-position:-192px -80px;}
+.oz-icon-0513 {background-position:-208px -80px;}
+.oz-icon-0514 {background-position:-224px -80px;}
+.oz-icon-0515 {background-position:-240px -80px;}
+.oz-icon-0516 {background-position:-256px -80px;}
+.oz-icon-0517 {background-position:-272px -80px;}
+.oz-icon-0518 {background-position:-288px -80px;}
+.oz-icon-0519 {background-position:-304px -80px;}
+.oz-icon-0520 {background-position:-320px -80px;}
+.oz-icon-0521 {background-position:-336px -80px;}
+.oz-icon-0522 {background-position:-352px -80px;}
+.oz-icon-0523 {background-position:-368px -80px;}
+.oz-icon-0524 {background-position:-384px -80px;}
+.oz-icon-0525 {background-position:-400px -80px;}
+.oz-icon-0526 {background-position:-416px -80px;}
+.oz-icon-0527 {background-position:-432px -80px;}
+.oz-icon-0528 {background-position:-448px -80px;}
+.oz-icon-0529 {background-position:-464px -80px;}
+.oz-icon-0530 {background-position:-480px -80px;}
+.oz-icon-0531 {background-position:-496px -80px;}
+.oz-icon-0532 {background-position:-512px -80px;}
+.oz-icon-0533 {background-position:-528px -80px;}
+.oz-icon-0534 {background-position:-544px -80px;}
+.oz-icon-0535 {background-position:-560px -80px;}
+.oz-icon-0536 {background-position:-576px -80px;}
+.oz-icon-0537 {background-position:-592px -80px;}
+.oz-icon-0538 {background-position:-608px -80px;}
+.oz-icon-0539 {background-position:-624px -80px;}
+.oz-icon-0540 {background-position:-640px -80px;}
+
+.oz-icon-0600 {background-position:0 -96px;}
+.oz-icon-0601 {background-position:-16px -96px;}
+.oz-icon-0602 {background-position:-32px -96px;}
+.oz-icon-0603 {background-position:-48px -96px;}
+.oz-icon-0604 {background-position:-64px -96px;}
+.oz-icon-0605 {background-position:-80px -96px;}
+.oz-icon-0606 {background-position:-96px -96px;}
+.oz-icon-0607 {background-position:-112px -96px;}
+.oz-icon-0608 {background-position:-128px -96px;}
+.oz-icon-0609 {background-position:-144px -96px;}
+.oz-icon-0610 {background-position:-160px -96px;}
+.oz-icon-0611 {background-position:-176px -96px;}
+.oz-icon-0612 {background-position:-192px -96px;}
+.oz-icon-0613 {background-position:-208px -96px;}
+.oz-icon-0614 {background-position:-224px -96px;}
+.oz-icon-0615 {background-position:-240px -96px;}
+.oz-icon-0616 {background-position:-256px -96px;}
+.oz-icon-0617 {background-position:-272px -96px;}
+.oz-icon-0618 {background-position:-288px -96px;}
+.oz-icon-0619 {background-position:-304px -96px;}
+.oz-icon-0620 {background-position:-320px -96px;}
+.oz-icon-0621 {background-position:-336px -96px;}
+.oz-icon-0622 {background-position:-352px -96px;}
+.oz-icon-0623 {background-position:-368px -96px;}
+.oz-icon-0624 {background-position:-384px -96px;}
+.oz-icon-0625 {background-position:-400px -96px;}
+.oz-icon-0626 {background-position:-416px -96px;}
+.oz-icon-0627 {background-position:-432px -96px;}
+.oz-icon-0628 {background-position:-448px -96px;}
+.oz-icon-0629 {background-position:-464px -96px;}
+.oz-icon-0630 {background-position:-480px -96px;}
+.oz-icon-0631 {background-position:-496px -96px;}
+.oz-icon-0632 {background-position:-512px -96px;}
+.oz-icon-0633 {background-position:-528px -96px;}
+.oz-icon-0634 {background-position:-544px -96px;}
+.oz-icon-0635 {background-position:-560px -96px;}
+.oz-icon-0636 {background-position:-576px -96px;}
+.oz-icon-0637 {background-position:-592px -96px;}
+.oz-icon-0638 {background-position:-608px -96px;}
+.oz-icon-0639 {background-position:-624px -96px;}
+.oz-icon-0640 {background-position:-640px -96px;}
+
+.oz-icon-0700 {background-position:0 -112px;}
+.oz-icon-0701 {background-position:-16px -112px;}
+.oz-icon-0702 {background-position:-32px -112px;}
+.oz-icon-0703 {background-position:-48px -112px;}
+.oz-icon-0704 {background-position:-64px -112px;}
+.oz-icon-0705 {background-position:-80px -112px;}
+.oz-icon-0706 {background-position:-96px -112px;}
+.oz-icon-0707 {background-position:-112px -112px;}
+.oz-icon-0708 {background-position:-128px -112px;}
+.oz-icon-0709 {background-position:-144px -112px;}
+.oz-icon-0710 {background-position:-160px -112px;}
+.oz-icon-0711,.oz-icon-delete {background-position:-176px -112px;}
+.oz-icon-0712 {background-position:-192px -112px;}
+.oz-icon-0713 {background-position:-208px -112px;}
+.oz-icon-0714 {background-position:-224px -112px;}
+.oz-icon-0715 {background-position:-240px -112px;}
+.oz-icon-0716 {background-position:-256px -112px;}
+.oz-icon-0717 {background-position:-272px -112px;}
+.oz-icon-0718 {background-position:-288px -112px;}
+.oz-icon-0719 {background-position:-304px -112px;}
+.oz-icon-0720 {background-position:-320px -112px;}
+.oz-icon-0721 {background-position:-336px -112px;}
+.oz-icon-0722 {background-position:-352px -112px;}
+.oz-icon-0723 {background-position:-368px -112px;}
+.oz-icon-0724 {background-position:-384px -112px;}
+.oz-icon-0725 {background-position:-400px -112px;}
+.oz-icon-0726 {background-position:-416px -112px;}
+.oz-icon-0727 {background-position:-432px -112px;}
+.oz-icon-0728 {background-position:-448px -112px;}
+.oz-icon-0729 {background-position:-464px -112px;}
+.oz-icon-0730 {background-position:-480px -112px;}
+.oz-icon-0731 {background-position:-496px -112px;}
+.oz-icon-0732 {background-position:-512px -112px;}
+.oz-icon-0733 {background-position:-528px -112px;}
+.oz-icon-0734 {background-position:-544px -112px;}
+.oz-icon-0735 {background-position:-560px -112px;}
+.oz-icon-0736 {background-position:-576px -112px;}
+.oz-icon-0737 {background-position:-592px -112px;}
+.oz-icon-0738 {background-position:-608px -112px;}
+.oz-icon-0739 {background-position:-624px -112px;}
+.oz-icon-0740 {background-position:-640px -112px;}
+
+.oz-icon-0800 {background-position:0 -128px;}
+.oz-icon-0801 {background-position:-16px -128px;}
+.oz-icon-0802 {background-position:-32px -128px;}
+.oz-icon-0803 {background-position:-48px -128px;}
+.oz-icon-0804 {background-position:-64px -128px;}
+.oz-icon-0805 {background-position:-80px -128px;}
+.oz-icon-0806 {background-position:-96px -128px;}
+.oz-icon-0807 {background-position:-112px -128px;}
+.oz-icon-0808 {background-position:-128px -128px;}
+.oz-icon-0809 {background-position:-144px -128px;}
+.oz-icon-0810 {background-position:-160px -128px;}
+.oz-icon-0811 {background-position:-176px -128px;}
+.oz-icon-0812 {background-position:-192px -128px;}
+.oz-icon-0813 {background-position:-208px -128px;}
+.oz-icon-0814 {background-position:-224px -128px;}
+.oz-icon-0815 {background-position:-240px -128px;}
+.oz-icon-0816 {background-position:-256px -128px;}
+.oz-icon-0817 {background-position:-272px -128px;}
+.oz-icon-0818 {background-position:-288px -128px;}
+.oz-icon-0819 {background-position:-304px -128px;}
+.oz-icon-0820 {background-position:-320px -128px;}
+.oz-icon-0821 {background-position:-336px -128px;}
+.oz-icon-0822 {background-position:-352px -128px;}
+.oz-icon-0823 {background-position:-368px -128px;}
+.oz-icon-0824 {background-position:-384px -128px;}
+.oz-icon-0825 {background-position:-400px -128px;}
+.oz-icon-0826 {background-position:-416px -128px;}
+.oz-icon-0827 {background-position:-432px -128px;}
+.oz-icon-0828 {background-position:-448px -128px;}
+.oz-icon-0829 {background-position:-464px -128px;}
+.oz-icon-0830 {background-position:-480px -128px;}
+.oz-icon-0831 {background-position:-496px -128px;}
+.oz-icon-0832 {background-position:-512px -128px;}
+.oz-icon-0833 {background-position:-528px -128px;}
+.oz-icon-0834 {background-position:-544px -128px;}
+.oz-icon-0835,.oz-icon-print {background-position:-560px -128px;}
+.oz-icon-0836 {background-position:-576px -128px;}
+.oz-icon-0837 {background-position:-592px -128px;}
+.oz-icon-0838 {background-position:-608px -128px;}
+.oz-icon-0839 {background-position:-624px -128px;}
+.oz-icon-0840 {background-position:-640px -128px;}
+
+.oz-icon-0900 {background-position:0 -144px;}
+.oz-icon-0901 {background-position:-16px -144px;}
+.oz-icon-0902 {background-position:-32px -144px;}
+.oz-icon-0903 {background-position:-48px -144px;}
+.oz-icon-0904 {background-position:-64px -144px;}
+.oz-icon-0905 {background-position:-80px -144px;}
+.oz-icon-0906 {background-position:-96px -144px;}
+.oz-icon-0907 {background-position:-112px -144px;}
+.oz-icon-0908 {background-position:-128px -144px;}
+.oz-icon-0909 {background-position:-144px -144px;}
+.oz-icon-0910 {background-position:-160px -144px;}
+.oz-icon-0911 {background-position:-176px -144px;}
+.oz-icon-0912 {background-position:-192px -144px;}
+.oz-icon-0913 {background-position:-208px -144px;}
+.oz-icon-0914 {background-position:-224px -144px;}
+.oz-icon-0915 {background-position:-240px -144px;}
+.oz-icon-0916 {background-position:-256px -144px;}
+.oz-icon-0917 {background-position:-272px -144px;}
+.oz-icon-0918 {background-position:-288px -144px;}
+.oz-icon-0919 {background-position:-304px -144px;}
+.oz-icon-0920 {background-position:-320px -144px;}
+.oz-icon-0921,.oz-icon-save {background-position:-336px -144px;}
+.oz-icon-0922,.oz-icon-saveAs {background-position:-352px -144px;}
+.oz-icon-0923 {background-position:-368px -144px;}
+.oz-icon-0924 {background-position:-384px -144px;}
+.oz-icon-0925 {background-position:-400px -144px;}
+.oz-icon-0926,.oz-icon-refresh {background-position:-416px -144px;}
+.oz-icon-0927 {background-position:-432px -144px;}
+.oz-icon-0928 {background-position:-448px -144px;}
+.oz-icon-0929 {background-position:-464px -144px;}
+.oz-icon-0930,.oz-icon-search-clear {background-position:-480px -144px;}
+.oz-icon-0931 {background-position:-496px -144px;}
+.oz-icon-0932 {background-position:-512px -144px;}
+.oz-icon-0933 {background-position:-528px -144px;}
+.oz-icon-0934 {background-position:-544px -144px;}
+.oz-icon-0935 {background-position:-560px -144px;}
+.oz-icon-0936 {background-position:-576px -144px;}
+.oz-icon-0937 {background-position:-592px -144px;}
+.oz-icon-0938 {background-position:-608px -144px;}
+.oz-icon-0939 {background-position:-624px -144px;}
+.oz-icon-0940 {background-position:-640px -144px;}
+
+.oz-icon-1000 {background-position:0 -160px;}
+.oz-icon-1001 {background-position:-16px -160px;}
+.oz-icon-1002 {background-position:-32px -160px;}
+.oz-icon-1003 {background-position:-48px -160px;}
+.oz-icon-1004 {background-position:-64px -160px;}
+.oz-icon-1005 {background-position:-80px -160px;}
+.oz-icon-1006 {background-position:-96px -160px;}
+.oz-icon-1007 {background-position:-112px -160px;}
+.oz-icon-1008 {background-position:-128px -160px;}
+.oz-icon-1009 {background-position:-144px -160px;}
+.oz-icon-1010 {background-position:-160px -160px;}
+.oz-icon-1011,.oz-icon-xls {background-position:-176px -160px;}
+.oz-icon-1012 {background-position:-192px -160px;}
+.oz-icon-1013 {background-position:-208px -160px;}
+.oz-icon-1014 {background-position:-224px -160px;}
+.oz-icon-1015 {background-position:-240px -160px;}
+.oz-icon-1016 {background-position:-256px -160px;}
+.oz-icon-1017 {background-position:-272px -160px;}
+.oz-icon-1018 {background-position:-288px -160px;}
+.oz-icon-1019 {background-position:-304px -160px;}
+.oz-icon-1020 {background-position:-320px -160px;}
+.oz-icon-1021 {background-position:-336px -160px;}
+.oz-icon-1022 {background-position:-352px -160px;}
+.oz-icon-1023 {background-position:-368px -160px;}
+.oz-icon-1024 {background-position:-384px -160px;}
+.oz-icon-1025,.oz-icon-pdf {background-position:-400px -160px;}
+.oz-icon-1026 {background-position:-416px -160px;}
+.oz-icon-1027 {background-position:-432px -160px;}
+.oz-icon-1028 {background-position:-448px -160px;}
+.oz-icon-1029 {background-position:-464px -160px;}
+.oz-icon-1030,.oz-icon-doc {background-position:-480px -160px;}
+.oz-icon-1031 {background-position:-496px -160px;}
+.oz-icon-1032 {background-position:-512px -160px;}
+.oz-icon-1033 {background-position:-528px -160px;}
+.oz-icon-1034 {background-position:-544px -160px;}
+.oz-icon-1035 {background-position:-560px -160px;}
+.oz-icon-1036 {background-position:-576px -160px;}
+.oz-icon-1037 {background-position:-592px -160px;}
+.oz-icon-1038,.oz-icon-search-advance {background-position:-608px -160px;}
+.oz-icon-1039 {background-position:-624px -160px;}
+.oz-icon-1040 {background-position:-640px -160px;}
+
+.oz-icon-1100 {background-position:0 -176px;}
+.oz-icon-1101 {background-position:-16px -176px;}
+.oz-icon-1102 {background-position:-32px -176px;}
+.oz-icon-1103 {background-position:-48px -176px;}
+.oz-icon-1104 {background-position:-64px -176px;}
+.oz-icon-1105 {background-position:-80px -176px;}
+.oz-icon-1106 {background-position:-96px -176px;}
+.oz-icon-1107 {background-position:-112px -176px;}
+.oz-icon-1108 {background-position:-128px -176px;}
+.oz-icon-1109 {background-position:-144px -176px;}
+.oz-icon-1110 {background-position:-160px -176px;}
+.oz-icon-1111 {background-position:-176px -176px;}
+.oz-icon-1112 {background-position:-192px -176px;}
+.oz-icon-1113 {background-position:-208px -176px;}
+.oz-icon-1114 {background-position:-224px -176px;}
+.oz-icon-1115 {background-position:-240px -176px;}
+.oz-icon-1116 {background-position:-256px -176px;}
+.oz-icon-1117 {background-position:-272px -176px;}
+.oz-icon-1118 {background-position:-288px -176px;}
+.oz-icon-1119 {background-position:-304px -176px;}
+.oz-icon-1120 {background-position:-320px -176px;}
+.oz-icon-1121 {background-position:-336px -176px;}
+.oz-icon-1122 {background-position:-352px -176px;}
+.oz-icon-1123 {background-position:-368px -176px;}
+.oz-icon-1124 {background-position:-384px -176px;}
+.oz-icon-1125 {background-position:-400px -176px;}
+.oz-icon-1126 {background-position:-416px -176px;}
+.oz-icon-1127 {background-position:-432px -176px;}
+.oz-icon-1128 {background-position:-448px -176px;}
+.oz-icon-1129 {background-position:-464px -176px;}
+.oz-icon-1130 {background-position:-480px -176px;}
+.oz-icon-1131 {background-position:-496px -176px;}
+.oz-icon-1132 {background-position:-512px -176px;}
+.oz-icon-1133 {background-position:-528px -176px;}
+.oz-icon-1134 {background-position:-544px -176px;}
+.oz-icon-1135 {background-position:-560px -176px;}
+.oz-icon-1136 {background-position:-576px -176px;}
+.oz-icon-1137 {background-position:-592px -176px;}
+.oz-icon-1138 {background-position:-608px -176px;}
+.oz-icon-1139 {background-position:-624px -176px;}
+.oz-icon-1140 {background-position:-640px -176px;}
+
+.oz-icon-1200 {background-position:0 -192px;}
+.oz-icon-1201,.oz-icon-bpm-take, .oz-icon-bpm-signal {background-position:-16px -192px;}
+.oz-icon-1202,.oz-icon-bpm-circulate {background-position:-32px -192px;}
+.oz-icon-1203,.oz-icon-bpm-circulatelog {background-position:-48px -192px;}
+.oz-icon-1204,.oz-icon-bpm-signalback {background-position:-64px -192px;}
+.oz-icon-1205,.oz-icon-bpm-processlog {background-position:-80px -192px;}
+.oz-icon-1206,.oz-icon-bpm-pause {background-position:-96px -192px;}
+.oz-icon-1207,.oz-icon-bpm-proxyretrieve {background-position:-112px -192px;}
+.oz-icon-1208,.oz-icon-bpm-resume {background-position:-128px -192px;}
+.oz-icon-1209,.oz-icon-bpm-retrieve {background-position:-144px -192px;}
+.oz-icon-1210,.oz-icon-bpm-sendback {background-position:-160px -192px;}
+.oz-icon-1211,.oz-icon-bpm-take4free {background-position:-176px -192px;}
+.oz-icon-1212,.oz-icon-bpm-complete {background-position:-192px -192px;}
+.oz-icon-1213 {background-position:-208px -192px;}
+.oz-icon-1214 {background-position:-224px -192px;}
+.oz-icon-1215,.oz-icon-bpm-claim {background-position:-240px -192px;}
+.oz-icon-1216 {background-position:-256px -192px;}
+.oz-icon-1217 {background-position:-272px -192px;}
+.oz-icon-1218 {background-position:-288px -192px;}
+.oz-icon-1219 {background-position:-304px -192px;}
+.oz-icon-1220 {background-position:-320px -192px;}
+.oz-icon-1221 {background-position:-336px -192px;}
+.oz-icon-1222 {background-position:-352px -192px;}
+.oz-icon-1223 {background-position:-368px -192px;}
+.oz-icon-1224 {background-position:-384px -192px;}
+.oz-icon-1225 {background-position:-400px -192px;}
+.oz-icon-1226 {background-position:-416px -192px;}
+.oz-icon-1227 {background-position:-432px -192px;}
+.oz-icon-1228 {background-position:-448px -192px;}
+.oz-icon-1229 {background-position:-464px -192px;}
+.oz-icon-1230 {background-position:-480px -192px;}
+.oz-icon-1231 {background-position:-496px -192px;}
+.oz-icon-1232 {background-position:-512px -192px;}
+.oz-icon-1233,.oz-icon-bpm-transfer {background-position:-528px -192px;}
+.oz-icon-1234 {background-position:-544px -192px;}
+.oz-icon-1235 {background-position:-560px -192px;}
+.oz-icon-1236, .oz-icon-bpm-manualremind {background-position:-576px -192px;}
+.oz-icon-1237 {background-position:-592px -192px;}
+.oz-icon-1238 {background-position:-608px -192px;}
+.oz-icon-1239 {background-position:-624px -192px;}
+.oz-icon-1240 {background-position:-640px -192px;}
+
+.oz-icon-1300 {background-position:0 -208px;}
+.oz-icon-1301 {background-position:-16px -208px;}
+.oz-icon-1302 {background-position:-32px -208px;}
+.oz-icon-1303 {background-position:-48px -208px;}
+.oz-icon-1304 {background-position:-64px -208px;}
+.oz-icon-1305 {background-position:-80px -208px;}
+.oz-icon-1306 {background-position:-96px -208px;}
+.oz-icon-1307 {background-position:-112px -208px;}
+.oz-icon-1308 {background-position:-128px -208px;}
+.oz-icon-1309 {background-position:-144px -208px;}
+.oz-icon-1310 {background-position:-160px -208px;}
+.oz-icon-1311 {background-position:-176px -208px;}
+.oz-icon-1312 {background-position:-192px -208px;}
+.oz-icon-1313 {background-position:-208px -208px;}
+.oz-icon-1314 {background-position:-224px -208px;}
+.oz-icon-1315 {background-position:-240px -208px;}
+.oz-icon-1316 {background-position:-256px -208px;}
+.oz-icon-1317 {background-position:-272px -208px;}
+.oz-icon-1318 {background-position:-288px -208px;}
+.oz-icon-1319 {background-position:-304px -208px;}
+.oz-icon-1320 {background-position:-320px -208px;}
+.oz-icon-1321 {background-position:-336px -208px;}
+.oz-icon-1322 {background-position:-352px -208px;}
+.oz-icon-1323 {background-position:-368px -208px;}
+.oz-icon-1324 {background-position:-384px -208px;}
+.oz-icon-1325 {background-position:-400px -208px;}
+.oz-icon-1326 {background-position:-416px -208px;}
+.oz-icon-1327 {background-position:-432px -208px;}
+.oz-icon-1328 {background-position:-448px -208px;}
+.oz-icon-1329 {background-position:-464px -208px;}
+.oz-icon-1330 {background-position:-480px -208px;}
+.oz-icon-1331 {background-position:-496px -208px;}
+.oz-icon-1332 {background-position:-512px -208px;}
+.oz-icon-1333 {background-position:-528px -208px;}
+.oz-icon-1334 {background-position:-544px -208px;}
+.oz-icon-1335 {background-position:-560px -208px;}
+.oz-icon-1336 {background-position:-576px -208px;}
+.oz-icon-1337 {background-position:-592px -208px;}
+.oz-icon-1338 {background-position:-608px -208px;}
+.oz-icon-1339 {background-position:-624px -208px;}
+.oz-icon-1340 {background-position:-640px -208px;}
+
+.oz-icon-1400 {background-position:0 -224px;}
+.oz-icon-1401 {background-position:-16px -224px;}
+.oz-icon-1402 {background-position:-32px -224px;}
+.oz-icon-1403 {background-position:-48px -224px;}
+.oz-icon-1404 {background-position:-64px -224px;}
+.oz-icon-1405 {background-position:-80px -224px;}
+.oz-icon-1406 {background-position:-96px -224px;}
+.oz-icon-1407 {background-position:-112px -224px;}
+.oz-icon-1408 {background-position:-128px -224px;}
+.oz-icon-1409 {background-position:-144px -224px;}
+.oz-icon-1410 {background-position:-160px -224px;}
+.oz-icon-1411 {background-position:-176px -224px;}
+.oz-icon-1412 {background-position:-192px -224px;}
+.oz-icon-1413 {background-position:-208px -224px;}
+.oz-icon-1414 {background-position:-224px -224px;}
+.oz-icon-1415 {background-position:-240px -224px;}
+.oz-icon-1416 {background-position:-256px -224px;}
+.oz-icon-1417 {background-position:-272px -224px;}
+.oz-icon-1418 {background-position:-288px -224px;}
+.oz-icon-1419 {background-position:-304px -224px;}
+.oz-icon-1420 {background-position:-320px -224px;}
+.oz-icon-1421 {background-position:-336px -224px;}
+.oz-icon-1422 {background-position:-352px -224px;}
+.oz-icon-1423 {background-position:-368px -224px;}
+.oz-icon-1424 {background-position:-384px -224px;}
+.oz-icon-1425 {background-position:-400px -224px;}
+.oz-icon-1426 {background-position:-416px -224px;}
+.oz-icon-1427 {background-position:-432px -224px;}
+.oz-icon-1428 {background-position:-448px -224px;}
+.oz-icon-1429 {background-position:-464px -224px;}
+.oz-icon-1430 {background-position:-480px -224px;}
+.oz-icon-1431 {background-position:-496px -224px;}
+.oz-icon-1432 {background-position:-512px -224px;}
+.oz-icon-1433 {background-position:-528px -224px;}
+.oz-icon-1434 {background-position:-544px -224px;}
+.oz-icon-1435 {background-position:-560px -224px;}
+.oz-icon-1436 {background-position:-576px -224px;}
+.oz-icon-1437 {background-position:-592px -224px;}
+.oz-icon-1438 {background-position:-608px -224px;}
+.oz-icon-1439 {background-position:-624px -224px;}
+.oz-icon-1440 {background-position:-640px -224px;}
+
+.oz-icon-1500 {background-position:0 -240px;}
+.oz-icon-1501 {background-position:-16px -240px;}
+.oz-icon-1502 {background-position:-32px -240px;}
+.oz-icon-1503 {background-position:-48px -240px;}
+.oz-icon-1504 {background-position:-64px -240px;}
+.oz-icon-1505 {background-position:-80px -240px;}
+.oz-icon-1506 {background-position:-96px -240px;}
+.oz-icon-1507 {background-position:-112px -240px;}
+.oz-icon-1508 {background-position:-128px -240px;}
+.oz-icon-1509 {background-position:-144px -240px;}
+.oz-icon-1510 {background-position:-160px -240px;}
+.oz-icon-1511 {background-position:-176px -240px;}
+.oz-icon-1512 {background-position:-192px -240px;}
+.oz-icon-1513 {background-position:-208px -240px;}
+.oz-icon-1514 {background-position:-224px -240px;}
+.oz-icon-1515 {background-position:-240px -240px;}
+.oz-icon-1516 {background-position:-256px -240px;}
+.oz-icon-1517 {background-position:-272px -240px;}
+.oz-icon-1518 {background-position:-288px -240px;}
+.oz-icon-1519 {background-position:-304px -240px;}
+.oz-icon-1520 {background-position:-320px -240px;}
+.oz-icon-1521 {background-position:-336px -240px;}
+.oz-icon-1522 {background-position:-352px -240px;}
+.oz-icon-1523 {background-position:-368px -240px;}
+.oz-icon-1524 {background-position:-384px -240px;}
+.oz-icon-1525 {background-position:-400px -240px;}
+.oz-icon-1526 {background-position:-416px -240px;}
+.oz-icon-1527 {background-position:-432px -240px;}
+.oz-icon-1528 {background-position:-448px -240px;}
+.oz-icon-1529 {background-position:-464px -240px;}
+.oz-icon-1530 {background-position:-480px -240px;}
+.oz-icon-1531 {background-position:-496px -240px;}
+.oz-icon-1532 {background-position:-512px -240px;}
+.oz-icon-1533 {background-position:-528px -240px;}
+.oz-icon-1534 {background-position:-544px -240px;}
+.oz-icon-1535 {background-position:-560px -240px;}
+.oz-icon-1536 {background-position:-576px -240px;}
+.oz-icon-1537 {background-position:-592px -240px;}
+.oz-icon-1538 {background-position:-608px -240px;}
+.oz-icon-1539 {background-position:-624px -240px;}
+.oz-icon-1540 {background-position:-640px -240px;}
+
+.oz-icon-1600 {background-position:0 -256px;}
+.oz-icon-1601 {background-position:-16px -256px;}
+.oz-icon-1602 {background-position:-32px -256px;}
+.oz-icon-1603 {background-position:-48px -256px;}
+.oz-icon-1604 {background-position:-64px -256px;}
+.oz-icon-1605 {background-position:-80px -256px;}
+.oz-icon-1606 {background-position:-96px -256px;}
+.oz-icon-1607 {background-position:-112px -256px;}
+.oz-icon-1608 {background-position:-128px -256px;}
+.oz-icon-1609 {background-position:-144px -256px;}
+.oz-icon-1610 {background-position:-160px -256px;}
+.oz-icon-1611 {background-position:-176px -256px;}
+.oz-icon-1612 {background-position:-192px -256px;}
+.oz-icon-1613 {background-position:-208px -256px;}
+.oz-icon-1614 {background-position:-224px -256px;}
+.oz-icon-1615 {background-position:-240px -256px;}
+.oz-icon-1616 {background-position:-256px -256px;}
+.oz-icon-1617 {background-position:-272px -256px;}
+.oz-icon-1618 {background-position:-288px -256px;}
+.oz-icon-1619 {background-position:-304px -256px;}
+.oz-icon-1620 {background-position:-320px -256px;}
+.oz-icon-1621 {background-position:-336px -256px;}
+.oz-icon-1622 {background-position:-352px -256px;}
+.oz-icon-1623 {background-position:-368px -256px;}
+.oz-icon-1624 {background-position:-384px -256px;}
+.oz-icon-1625 {background-position:-400px -256px;}
+.oz-icon-1626 {background-position:-416px -256px;}
+.oz-icon-1627 {background-position:-432px -256px;}
+.oz-icon-1628 {background-position:-448px -256px;}
+.oz-icon-1629 {background-position:-464px -256px;}
+.oz-icon-1630 {background-position:-480px -256px;}
+.oz-icon-1631 {background-position:-496px -256px;}
+.oz-icon-1632 {background-position:-512px -256px;}
+.oz-icon-1633 {background-position:-528px -256px;}
+.oz-icon-1634 {background-position:-544px -256px;}
+.oz-icon-1635 {background-position:-560px -256px;}
+.oz-icon-1636 {background-position:-576px -256px;}
+.oz-icon-1637 {background-position:-592px -256px;}
+.oz-icon-1638 {background-position:-608px -256px;}
+.oz-icon-1639 {background-position:-624px -256px;}
+.oz-icon-1640 {background-position:-640px -256px;}
+
+.oz-tree-node-unit .oz-tree-folder {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -224px -32px;
+}
+.oz-tree-node-unit .oz-tree-file {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -224px -32px;
+}
+
+.oz-tree-node-department .oz-tree-folder {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -256px -32px;
+}
+.oz-tree-node-department .oz-tree-file {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -256px -32px;
+}
+
+.oz-tree-node-user .oz-tree-folder {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -592px -128px;
+}
+.oz-tree-node-user .oz-tree-file {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -592px -128px;
+}
+
+.oz-tree-node-userinfo .oz-tree-folder {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -448px -32px;
+}
+.oz-tree-node-userinfo .oz-tree-file {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -448px -32px;
+}
+
+.oz-tree-node-group .oz-tree-folder {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -64px -32px;
+}
+.oz-tree-node-group .oz-tree-file {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -64px -32px;
+}
+
+.oz-tree-node-convenientgroup .oz-tree-folder {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -272px -32px;
+}
+.oz-tree-node-convenientgroup .oz-tree-file {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -272px -32px;
+}
+
+.oz-tree-node-privategroup .oz-tree-folder {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -288px -32px;
+}
+.oz-tree-node-privategroup .oz-tree-file {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -288px -32px;
+}
+
+.oz-tree-node-position .oz-tree-folder {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -16px -256px;
+}
+.oz-tree-node-position .oz-tree-file {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position: -16px -256px;
+}
+
+.oz-tree-node-viewtype .oz-tree-folder {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position:-400px -240px;
+}
+
+.oz-tree-node-viewtype .oz-tree-file {
+	background-image: url(icons/oz-icons_16x16.png);
+	_background-image: url(icons/oz-icons_16x16.gif);
+	background-position:-400px -240px;
+}
+
+/** ============================================================= */
+/** 下面的样式为类型bootstrap按钮所定义                                                                            */
+/** ============================================================= */
+.oz-plain-btn{
+	margin-left:-1px;
+	margin-right:6px;
+	font-family: Tahoma, Helvetica, Arial, sans-serif;
+	display:inline-block;
+	height: 19px;
+	line-height: 19px;
+	padding: 4px 0 5px;
+	text-align: center;
+	border: 1px solid #D2D2D2;
+	color: #666;
+	background-color:#eaeaea;
+	background:-moz-linear-gradient(top, #fdfdfd 0, #eaeaea 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #fdfdfd), color-stop(100%, #eaeaea));
+    background:-webkit-linear-gradient(top, #fdfdfd 0, #eaeaea 100%);
+    background:-o-linear-gradient(top, #fdfdfd 0, #eaeaea 100%);
+    background:-ms-linear-gradient(top, #fdfdfd 0, #eaeaea 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfd', endColorstr='#eaeaea', GradientType=0);
+    background:linear-gradient(top, #fdfdfd 0, #eaeaea 100%)
+}
+
+a.oz-plain-btn{
+	color: #666;
+}
+
+.oz-plain-btn:HOVER{
+	background-color:#FFF9D7;
+	background:-moz-linear-gradient(top, #FFFDF3 0, #FFF9D7 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFFDF3), color-stop(100%, #FFF9D7));
+    background:-webkit-linear-gradient(top, #FFFDF3 0, #FFF9D7 100%);
+    background:-o-linear-gradient(top, #FFFDF3 0, #FFF9D7 100%);
+    background:-ms-linear-gradient(top, #FFFDF3 0, #FFF9D7 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFDF3', endColorstr='#FFF9D7', GradientType=0);
+    background:linear-gradient(top, #FFFDF3 0, #FFF9D7 100%)
+}
+
+.oz-plain-btn span{
+	display:block;
+	vertical-align:middle;
+	height:20px
+}
+
+.oz-plain-btn-blue{
+	border: 1px solid #4789CB;
+	color: #FFF;
+	background-color:#4084C8;
+	background:-moz-linear-gradient(top, #4898E7 0, #4084C8 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #4898E7), color-stop(100%, #4084C8));
+    background:-webkit-linear-gradient(top, #4898E7 0, #4084C8 100%);
+    background:-o-linear-gradient(top, #4898E7 0, #4084C8 100%);
+    background:-ms-linear-gradient(top, #4898E7 0, #4084C8 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4898E7', endColorstr='#4084C8', GradientType=0);
+    background:linear-gradient(top, #4898E7 0, #4084C8 100%)
+}
+
+.oz-plain-btn-blue:HOVER{
+	background-color:#4789CB;
+	background:-moz-linear-gradient(top, #5EA9F4 0, #488DD2 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #5EA9F4), color-stop(100%, #488DD2));
+    background:-webkit-linear-gradient(top, #5EA9F4 0, #488DD2 100%);
+    background:-o-linear-gradient(top, #5EA9F4 0, #488DD2 100%);
+    background:-ms-linear-gradient(top, #5EA9F4 0, #488DD2 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5EA9F4', endColorstr='#488DD2', GradientType=0);
+    background:linear-gradient(top, #5EA9F4 0, #488DD2 100%)
+}
+
+a.oz-plain-btn-blue{
+	color: #FFF;
+}
+
+.oz-plain-btn-icon{
+	height: 19px;
+	width: 18px;
+	margin-right: 5px;
+	vertical-align: middle;
+	display: inline-block;
+	background-image: url(icons/btn-icons.png);
+	background-repeat: no-repeat;
+	background-position:-999px -999px;
+}
+
+.oz-btn-upload{
+	background-position:-196px -118px;
+}
+
+.oz-btn-download{
+	background-position:-266px -19px;
+}
+
+.oz-btn-add{
+	background-position:-302px -38px;
+}
+
+.oz-plain-btn-groups{
+	display:inline-block;
+	margin-right:6px;
+}
+
+.oz-plain-btn-groups .oz-plain-btn{
+	margin-right:0px;
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<template id="page" ui-ref="oz-core" js-ref="oz-adapter" css-ref="oz-page">
+        <js src="/oz/webui/oz/page/oz.template.page.js" />
+		<css href="/ems/themes/all/oz.page.css" />
+		<css href="/ems/themes/main/tabs.css" />		
+	</template>
+	
+	<template id="form" ui-ref="oz-toolbar" js-ref="oz-adapter" css-ref="oz-page">
+		<js src="/oz/webui/oz/page/oz.template.form.js" />
+		<js src="/oz/webui/jquery-plugins/loadmask/jquery.loadmask.min.js" />
+		<css href="/oz/webui/jquery-plugins/loadmask/jquery.loadmask.css" />
+		<css href="/ems/themes/all/oz.page.css" />
+		<css href="/ems/themes/main/tabs.css" />
+	</template>
+
+	<template id="view" ui-ref="oz-grid,oz-toolbar" js-ref="oz-adapter" css-ref="oz-page">
+		<js src="/oz/webui/oz/page/oz.template.view.js" />
+		<css href="/ems/themes/all/oz.page.css" />
+		<css href="/ems/themes/portlet/portal.css" />
+	</template>
+
+	<template id="dialog" ui-ref="oz-toolbar" js-ref="oz-adapter" css-ref="oz-page">
+        <js src="/oz/webui/oz/page/oz.template.dialog.js" />
+		<css href="/ems/themes/all/oz.page.css" />
+	</template>
+	
+    <template id="portal"  dep="page" ui-ref="jquery-ui">
+		<css href="/oz/apps/portal/css/portal.css" /> 
+		<css href="/ems/themes/portlet/portal.css" />	      
+    </template>
+    
+    <template id="portalForm" dep="form" ui-ref="jquery-ui" >
+		<css href="/oz/apps/portal/css/portal.css" />   
+		<css href="/ems/themes/portlet/portal.css" />	     
+    </template>
+    
+</root>

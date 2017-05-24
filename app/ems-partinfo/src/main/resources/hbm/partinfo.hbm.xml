@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" package="cn.suntak.ems.partinfo.domain">
+	<class name="OrderHeadTemp" table="EMS_DM_ORDER_HEAD">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<component name="useP" class="cn.oz.FileAuthor">
+			<property name="id" column="USE_P_ID" />
+			<property name="name" column="USE_P" />
+		</component>
+		<property name="operation" column="OPERATION"/>
+		<property name="dateTime" column="DATE_TIME"/>
+		<property name="orderNo" column="ORDER_NO"/>
+		<property name="supplier" column="SUPPLIER"/>
+		<property name="useD" column="USE_D"/>
+		<property name="operationType" column="OPERATION_TYPE"/>
+		<property name="remark" column="REMARK"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<property name="maintenanceNo" column="MAINTENANCE_NO"/>
+		<property name="repairId" column="REPAIR_ID"/>
+		<property name="ebsState" column="EBS_STATE"/>
+		<set name="orderLineTemps" inverse="true" cascade="all delete-orphan">
+			<key column="HEAD_ID"></key>
+			<one-to-many class="OrderLineTemp"/>
+		</set>
+		<many-to-one name="equipmentDetails" column="EQUIPMENT_ID" class="cn.suntak.ems.equipmentdetails.domain.EquipmentDetails" lazy="false"/>
+	</class>
+	
+	<class name="OrderLineTemp" table="EMS_DM_ORDER_LINE">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		
+		<property name="lineTypeId" column="LINE_TYPE_ID"/>
+		<property name="partId" column="PART_ID"/>
+		<property name="itemId" column="ITEM_ID"/>
+		<property name="partNo" column="PART_NO"/>
+		<property name="partName" column="PART_NAME"/>
+		<property name="type" column="TYPE"/>
+		<property name="amount" column="AMOUNT"/>
+		<property name="price" column="PRICE"/>
+		<property name="qty" column="QTY"/>
+		<property name="UOMCode" column="UOM_CODE"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<many-to-one name="orderHeadTemp" column="HEAD_ID" class="OrderHeadTemp" lazy="false"/>
+	</class>
+
+
+ 	<class name="OrderHead" table="EMS_ORDERHEAD_V">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="equipmentId" column="EQUIPMENT_ID"/>
+		<property name="operation" column="OPERATION"/>
+		<property name="dateTime" column="DATE_TIME"/>
+		<property name="orderNo" column="ORDER_NO"/>
+		<property name="supplier" column="SUPPLIER"/>
+		<property name="useP" column="USE_P"/>
+		<property name="operationType" column="OPERATION_TYPE"/>
+		<property name="remark" column="REMARK"/>
+	</class>
+	
+	<class name="OrderLine" table="EMS_ORDERLINE_V">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="partId" column="PART_ID"/>
+		<property name="partNo" column="PART_NO"/>
+		<property name="partName" column="PART_NAME"/>
+		<property name="qty" column="QTY"/>
+		<property name="price" column="PRICE"/>
+		<property name="amount" column="AMOUNT"/>
+		<property name="currencyCode" column="CURRENCY_CODE"/>
+		<property name="rate" column="RATE"/>
+		<property name="startInventory" column="START_INVENTORY"/>
+		<property name="endInventory" column="END_INVENTORY"/>
+		<property name="UOMCode" column="UOM_CODE"/>
+		<many-to-one name="orderHead" column="HEAD_ID" class="OrderHead" lazy="false"/>
+	</class>
+
+	<class name="EPUnion" table="EMS_DM_E_P_UNION">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="equipmentId" column="EQUIPMENT_ID"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<set name="partInfos" inverse="true" cascade="all delete-orphan">
+			<key column="PART_ID"></key>
+			<one-to-many class="PartInfo"/>
+		</set>
+	</class>
+	
+	<class name="PartInfoTree" table="EMS_DM_PART_INFO_TREE">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="equipmentId" column="EQUIPMENT_ID"/>
+		<property name="partId" column="PART_ID"/>
+		<property name="qty" column="QTY"/>
+		<property name="isExclusive" column="IS_EXCLUSIVE"/>
+		<property name="type" column="TYPE"/>
+		<property name="section" column="SECTION"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<property name="usePeriod" column="USE_PERIOD"/>
+		<property name="replaceDate" column="REPLACE_DATE"/>
+		<property name="nextReDate" column="NEXT_RE_DATE"/>
+		<many-to-one name="parent" column="PARENT_ID" class="PartInfoTree"/>
+		<set name="childs" inverse="true" cascade="all delete-orphan">
+			<key column="PARENT_ID" />
+			<one-to-many class="PartInfoTree"/>
+		</set>
+	</class>
+	
+	<class name="PartInfo" table="EMS_PARTDETAIL_V">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<property name="organizationName" column="ORGANIZATION_NAME"/>
+		<property name="itemId" column="ITEM_ID"/>
+		<property name="partNo" column="PART_NO"/>
+		<property name="partName" column="PART_NAME"/>
+		<property name="UOMCode" column="UOM_CODE"/>
+		<property name="partType" column="PART_TYPE"/>
+		<property name="price" column="PRICE"/>
+		<property name="category1" column="CATEGORY1"/>
+		<property name="category2" column="CATEGORY2"/>
+		<property name="onhandQty" column="ONHAND_QTY"/>
+		<property name="onroadQty" column="ONROAD_QTY"/>
+		<property name="totalOnhandQty" column="TOTAL_ONHAND_QTY"/>
+	</class>
+	<class name="PRHead" table="EMS_DM_PR_HEAD">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="currencyCode" column="CURRENCY_CODE"/>
+		<property name="orgId" column="ORG_ID"/>
+		<property name="prNo" column="PR_NO"/>
+		<property name="deptId" column="DEPT_ID"/>
+		<property name="prDate" column="PR_DATE"/>
+		<property name="needReason" column="NEED_REASON"/>
+		<property name="applBy" column="APPL_BY"/>
+		<property name="applByName" column="APPL_BY_NAME"/>
+		<property name="approveStatus" column="APPROVE_STATUS"/>
+		<property name="agentId" column="AGENT_ID"/>
+		<property name="poRate" column="PO_RATE"/>
+		<property name="ebsState" column="EBS_STATE"/>
+		<set name="pRLines" inverse="true" cascade="all delete-orphan">
+			<key column="PR_HEAD_ID"></key>
+			<one-to-many class="PRLine"/>
+		</set>
+	</class>
+	<class name="PRLine" table="EMS_DM_PR_LINE">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="lineTypeId" column="LINE_TYPE_ID"/>
+		<property name="lineTypeName" column="LINE_TYPE_NAME"/>
+		<property name="itemId" column="ITEM_ID"/>
+		<property name="itemNo" column="ITEM_NO"/>
+		<property name="itemName" column="ITEM_NAME"/>
+		<property name="itemUnit" column="ITEM_UNIT"/>
+		<property name="qty" column="QTY"/>
+		<property name="price" column="PRICE"/>
+		<property name="amount" column="AMOUNT"/>
+		<property name="needDate" column="NEED_DATE"/>
+		<property name="isUrgent" column="IS_URGENT"/>
+		<property name="promisedDate" column="PROMISED_DATE"/>
+		<property name="needReason" column="NEED_REASON"/>
+		<many-to-one name="pRHead" column="PR_HEAD_ID" class="PRHead" lazy="false"/>
+	</class>
+	<class name="PartQuality" table="EMS_DM_PART_QUALITY">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="qualityType" column="QUALITY_TYPE"/>
+		<property name="judgmentDetail" column="JUDGEMENT_DETAIL"/>
+		<property name="createdBy" column="CREATED_BY"/>
+		<property name="createdDate" column="CREATED_DATE"/>
+		<property name="partId" column="PART_ID"/>
+	</class>
+
+	<class name="GroupInventory" table="EMS_GROUPINVENTORY_V">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<property name="organizationName" column="ORGANIZATION_NAME"/>
+		<property name="partNo" column="PART_NO"/>
+		<property name="onhandQty" column="ONHAND_QTY"/>
+		<property name="onroadQty" column="ONROAD_QTY"/>
+	</class>
+</hibernate-mapping>

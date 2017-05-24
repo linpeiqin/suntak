@@ -1,0 +1,96 @@
+/*圆角样式*/
+.main-left {
+	background-color: #D9DEE4;
+}
+/*调整文字*/
+.oz-tree-title {
+	padding: 0 2px 0 2px;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 20px;
+}
+/*调整右边图标定位*/
+.oz-tree-node {
+	padding: 6px 0;
+	position: relative;
+	background-color: transparent;
+	border-top: 1px solid #B5B9BC;
+}
+
+.oz-tree-node-hover {
+	
+}
+
+.oz-tree-node-selected {
+	
+}
+/*第一层的演示*/
+.tree-root-bg {
+	background-color: transparent;
+	font-weight: bold;
+}
+
+.oz-tree-node.tree-root-bg {
+	border-top-width: 0px;
+}
+
+.tree-root-bg.oz-tree-node-hover {
+	background-position: 0 -100px;
+}
+
+.tree-root-bg .oz-tree-folder,.tree-root-bg .oz-tree-file {
+	margin-left: 6px;
+}
+
+.oz-tree-hit,.oz-tree-nothit {
+	position: absolute;
+	right: 0px;
+	top: 7px;
+}
+
+.oz-tree li {
+	padding: 0px 0px;
+	position: relative;
+}
+
+.oz-tree>li {
+	margin: 6px 6px;
+	/* border-radius: 5px; */
+	border: 1px solid #B5B9BC;
+	background-color: white;
+	border-image: initial;
+	position: relative;
+}
+
+/*圆角*/
+.oz-tree-li-lt,.oz-tree-li-rt,.oz-tree-li-lb,.oz-tree-li-rb {
+	display: block;
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	background-image: url("images/radius.png");
+}
+
+.oz-tree-li-lt {
+	left: -1px;
+	top: -1px;
+	background-position: 0 0;
+}
+
+.oz-tree-li-rt {
+	right: -1px;
+	top: -1px;
+	background-position: right top;
+}
+
+.oz-tree-li-lb {
+	bottom: -1px;
+	left: -1px;
+	background-position: left bottom;
+}
+
+.oz-tree-li-rb {
+	bottom: -1px;
+	right: -1px;
+	background-position: right bottom;
+}

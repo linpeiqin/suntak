@@ -1,0 +1,217 @@
+/*
+ul.oz-tabs-strip-top {
+	background-image: url("images/tabs.png");
+	border-bottom: 1px solid #21910e;
+}
+*/
+ul.oz-tabs-strip-top{
+	padding-top: 1px;
+	background: url(images/tabs/tab-strip-bg.gif) #cedff5 repeat-x bottom;
+	border-bottom: 1px solid #8db2e3;
+}
+
+
+/*
+.oz-tabs-header {
+	border-color:#21910e;
+	background-color: white;
+	margin-bottom:-1px;
+}
+*/
+
+.oz-tabs-header {
+	padding-bottom: 2px;
+}
+
+/*
+.oz-tabs-body {
+	border-color:#21910e;
+}
+*/
+.oz-tabs-body {
+    border: 1px solid #8db2e3;
+    background:#fff;
+}
+
+.oz-tabs-body-top {
+	border-top: 0 none;
+}
+
+/*
+.oz-tabs-strip-top .oz-tabs-right {
+	background-image: url(images/tabs-sprite.png);
+}
+
+.oz-tabs-strip-top .oz-tabs-left {
+	background-image: url(images/tabs-sprite.png);
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-inner {
+	background-image: url(images/tabs-sprite.png);
+}
+
+
+*/
+.oz-tabs-strip-top .oz-tabs-right {
+	background: transparent url(images/tabs/tabs-sprite.gif) no-repeat 0 -51px;
+
+}
+
+
+.oz-tabs-strip-top .oz-tabs-left {
+	background: transparent url(images/tabs/tabs-sprite.gif) no-repeat right -351px;
+
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-inner {
+	background: transparent url(images/tabs/tabs-sprite.gif) repeat-x 0 -201px;
+}
+
+/*
+.oz-tabs-strip .oz-tabs-strip-closable a.oz-tabs-strip-close {
+	background-image: url(images/tab-close.gif);
+}
+*/
+.oz-tabs-strip .oz-tabs-strip-closable a.oz-tabs-strip-close {
+	background-image:url(images/tabs/tab-close.gif);
+    opacity:.6;
+    -moz-opacity:.6;
+    background-repeat:no-repeat;
+    display:block;
+	width:11px;height:11px;
+    position:absolute;
+    top:3px;
+    right:3px;
+    cursor:pointer;
+    z-index:2;
+}
+
+.oz-tabs-strip .oz-tabs-strip-closable a.oz-tabs-strip-close:hover{
+	background-image:url(images/tabs/tab-close.gif);
+    opacity:1;
+    -moz-opacity:1;
+}
+
+/*
+ul.oz-tabs-strip li {
+    margin-top: 6px;
+	margin-left: 5px;
+}
+*/
+ul.oz-tabs-strip li {
+    float:left;
+    margin-left:2px;
+}
+
+/*
+.oz-tabs-strip span.oz-tabs-strip-text {
+    color: #FFF;
+    cursor: pointer;
+    font: 12px/15px tahoma,arial,helvetica;
+    padding: 4px 0;
+    white-space: nowrap;
+}
+*/
+.oz-tabs-strip span.oz-tabs-strip-text {
+	font:normal 12px tahoma,arial,helvetica;
+	color:#416aa3;
+	white-space: nowrap;
+	cursor:pointer;
+    padding:4px 0; 
+    line-height:15px;
+}
+
+/*
+.oz-tabs-strip-active span.oz-tabs-strip-text {
+    color: #00501c;
+    cursor: default;
+    font-weight: bold;
+}
+*/
+.oz-tabs-strip-active span.oz-tabs-strip-text {
+	cursor:default;
+	color:#15428b;
+    font-weight:bold;
+}
+
+/*
+.oz-tabs-strip-over span.oz-tabs-strip-text{
+	font-weight:bold;
+	color: #00501c;}
+	*/
+.oz-tabs-strip-over span.oz-tabs-strip-text {
+	color:#15428b;
+}
+
+/*
+.oz-tabs-scroller-left {
+    background: url("images/scroll-left.gif") no-repeat scroll -18px 0 transparent;
+    border-bottom: 1px solid #21910e;
+    cursor: pointer;
+    display: none;
+    height: 30px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 18px;
+    z-index: 10;
+}
+.oz-tabs-scroller-right {
+    background: url("images/scroll-right.gif") no-repeat scroll 0 0 transparent;
+    border-bottom: 1px solid #21910e;
+    cursor: pointer;
+    display: none;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 18px;
+    z-index: 10;
+}
+*/
+/**左右滚动的按钮**/
+.oz-tabs-scroller-left {
+    background: transparent url(images/tabs/scroll-left.gif) no-repeat -18px 0;
+    border-bottom: 1px solid #8db2e3;
+    width:18px;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:10;
+    cursor:pointer;
+    display: none;
+	height:24px;
+	
+}
+.oz-tabs-scroller-left-over {
+    background-position: 0 0;
+}
+.oz-tabs-scroller-left-disabled {
+    background-position: -18px 0;
+    opacity:.5;
+    -moz-opacity:.5;
+    filter:alpha(opacity=50);
+    cursor:default;
+}
+.oz-tabs-scroller-right {
+    background: transparent url(images/tabs/scroll-right.gif) no-repeat 0 0;
+    border-bottom: 1px solid #8db2e3;
+    width:18px;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index:10;
+    cursor:pointer;
+    display: none;
+	height:24px;
+}
+.oz-tabs-scroller-right-over {
+    background-position: -18px 0;
+}
+.oz-tabs-scroller-right-disabled {
+    background-position: 0 0;
+    opacity:.5;
+    -moz-opacity:.5;
+    filter:alpha(opacity=50);
+    cursor:default;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+
+	<action-mappings>
+	
+		<action path="/ems/emsCommonAction"
+				type="cn.suntak.ems.common.action.EMSCRUDAction"
+				scope="request" 
+				validate="false" 
+				parameter="action">
+			<forward name="dlgAgent" path="/ems/common/Dlg_Agent.jsp"/>
+			<forward name="dlgEmployee" path="/ems/common/Dlg_Employee.jsp"/>
+			<forward name="dlgEmployees" path="/ems/common/Dlg_Employees.jsp"/>
+		</action>
+	</action-mappings>
+</struts-config>

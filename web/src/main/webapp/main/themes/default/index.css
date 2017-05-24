@@ -1,0 +1,213 @@
+html {
+	overflow: hidden;
+	height: 100%;
+}
+body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+	background: url('images/index_bgx.png') repeat-x 0 -288px;
+}
+
+#mainPage {
+	height: 100%;
+	width: auto;
+	overflow: hidden;
+	border: none;
+	margin: 0 auto;
+	max-width: auto;
+	background-color: transparent;
+}
+
+/*top*/
+.main-top {
+	height: 100%;
+	width: 100%;
+	/* background: url('images/index_bgx.png') repeat-x 0 -90px; */
+	overflow: hidden;
+}
+
+.top-logo {
+	display: block;
+	width: 100%;
+	height: 60px;
+	display: block;
+}
+
+.top-right {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+}
+.top-right a{
+	text-decoration: none;
+}
+
+.top-right a:hover{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.top-tip{
+	background-image: url(images/bg_left.jpg);
+}
+.main-left { /* background-color: #F4FEFF; */
+	
+}
+
+/*top的按钮div*/
+.top-btns {
+	float: right;
+}
+
+.top-btns li {
+	margin: 5px;
+	float: left;
+}
+
+.btn-switch {
+	background: url('images/btns.png') no-repeat 0 0;
+	display: block;
+	width: 76px;
+	height: 24px;
+}
+
+.btn-back {
+	background: url('images/btns.png') no-repeat 0 -101px;
+	display: block;
+	width: 86px;
+	height: 26px;
+}
+.btn-back:hover {
+	background: url('images/btns.png') no-repeat -128px -101px;
+}
+.btn-logout {
+	background: url('images/btns.png') no-repeat -146px 0;
+	display: block;
+	width: 54px;
+	height: 24px;
+}
+
+.btn-help {
+	background: url('images/btns.png') no-repeat -84px 0 ;
+	display: block;
+	width: 54px;
+	height: 24px;
+}
+
+/*top的信息div*/
+.top-info {
+	line-height: 23px;
+	color: #FFF;
+	font-weight: bold;
+}
+
+.top-info li {
+	margin: 0 5px;
+	float: left;
+}
+
+.info-icon {
+	background: url('images/profile.gif') no-repeat right 0;
+	display: block;
+	width: 24px;
+	height: 24px;
+}
+
+.alarm-icon {
+	background: url('images/alarm.gif') no-repeat right 0;
+	display: block;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+/*加载提示*/
+#loadingCover {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1000000;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	/* background: #B4D9F1; */
+	background-color: white;
+}
+
+#loadingLogo {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -30px 0 0 -75px;
+	width: 150px;
+	height: 85px;
+	background: url(./images/loading_logo.png);
+}
+
+#loadingText {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: 80px 0 0 -80px;
+	width: 160px;
+	height: 50px;
+	font-family: Arial, Tahoma, 微软雅黑;
+	font-size: 20px;
+	color: black;
+	text-shadow: #666 0 0 3px;
+	text-align: center;
+	cursor: default;
+}
+
+#loadingBarContainer {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: 120px 0 0 -51px;
+	width: 100px;
+	height: 2px;
+	overflow: hidden;
+	font-size: 0;
+	border: 1px solid #999;
+	background: #666;
+	border-image: initial;
+}
+
+#loadingBar {
+	width: 0;
+	height: 2px;
+	overflow: hidden;
+	font-size: 0;
+	background: #FE780A url("./images/loading_bar.gif");
+}
+
+#loadingTips {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: 112px 0 0 60px;
+	width: 40px;
+	height: 20px;
+	overflow: hidden;
+	color: #666;
+	font-size: 12px;
+	font-family: tahoma;
+}
+
+.top-logo {
+	display: block;
+	height: 60px;
+	display: block;
+	padding-left: 5px;
+	display: block;
+}
+
+.top-right {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+}

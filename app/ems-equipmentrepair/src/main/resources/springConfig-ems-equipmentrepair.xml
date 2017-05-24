@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<bean id="repairRecordDao" class="cn.suntak.ems.equipmentrepair.dao.hibernate.RepairRecordDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="repairRecordService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentrepair.service.impl.RepairRecordServiceImpl">
+				<property name="fileNumberService" ref="fileNumberService"/>
+				<property name="orderHeadTempService" ref="orderHeadTempService"/>
+				<property name="groupDao" ref="groupDao"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="partReplaceDao" class="cn.suntak.ems.equipmentrepair.dao.hibernate.PartReplaceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="partReplaceService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentrepair.service.impl.PartReplaceServiceImpl">
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="repairPlanDao" class="cn.suntak.ems.equipmentrepair.dao.hibernate.RepairPlanDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="repairPlanService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentrepair.service.impl.RepairPlanServiceImpl">
+				<property name="repairPlanTimeService" ref="repairPlanTimeService"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="repairPlanRuleDao" class="cn.suntak.ems.equipmentrepair.dao.hibernate.RepairPlanRuleDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="repairPlanRuleService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentrepair.service.impl.RepairPlanRuleServiceImpl">
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="repairPlanTimeDao" class="cn.suntak.ems.equipmentrepair.dao.hibernate.RepairPlanTimeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="repairPlanTimeService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentrepair.service.impl.RepairPlanTimeServiceImpl">
+			</bean>
+		</property>
+	</bean>
+		
+	<bean id="faultDescDao" class="cn.suntak.ems.equipmentrepair.dao.hibernate.FaultDescDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="faultDescService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentrepair.service.impl.FaultDescServiceImpl">
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="repairMonthPlanDao" class="cn.suntak.ems.equipmentrepair.dao.hibernate.RepairMonthPlanDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="repairMonthPlanService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentrepair.service.impl.RepairMonthPlanServiceImpl">
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="monthPlanDetailDao" class="cn.suntak.ems.equipmentrepair.dao.hibernate.MonthPlanDetailDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="monthPlanDetailService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentrepair.service.impl.MonthPlanDetailServiceImpl">
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="repairYearPlanDao" class="cn.suntak.ems.equipmentrepair.dao.hibernate.RepairYearPlanDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="repairYearPlanService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentrepair.service.impl.RepairYearPlanServiceImpl">
+				<property name="repairPlanTimeService" ref="repairPlanTimeService"/>
+				<property name="yearPlanDetailService" ref="yearPlanDetailService"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="yearPlanDetailDao" class="cn.suntak.ems.equipmentrepair.dao.hibernate.YearPlanDetailDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="yearPlanDetailService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentrepair.service.impl.YearPlanDetailServiceImpl">
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="maintainDao" class="cn.suntak.ems.equipmentrepair.dao.hibernate.MaintainDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="maintainService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentrepair.service.impl.MaintainServiceImpl">
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="maintainContentDao" class="cn.suntak.ems.equipmentrepair.dao.hibernate.MaintainContentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="maintainContentService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.equipmentrepair.service.impl.MaintainContentServiceImpl">
+			</bean>
+		</property>
+	</bean>
+	
+		<!-- 抓取月计划任务 -->
+	<bean id="grabMonthPlan" parent="txProxyTemplate">
+		<property name="target">
+			<bean  class="cn.suntak.ems.equipmentrepair.job.GrabMonthPlan">
+				<property name="repairMonthPlanService" ref="repairMonthPlanService"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- 抓取年计划任务 -->
+	<bean id="grabYearPlan" parent="txProxyTemplate">
+		<property name="target">
+			<bean  class="cn.suntak.ems.equipmentrepair.job.GrabYearPlan">
+				<property name="repairYearPlanService" ref="repairYearPlanService"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- 推送保养计划 -->
+	<bean id="pushMaintainJob" parent="txProxyTemplate">
+		<property name="target">
+			<bean  class="cn.suntak.ems.equipmentrepair.job.PushMaintainJob">
+				<property name="maintainService" ref="maintainService"/>
+			</bean>
+		</property>
+	</bean>
+</beans>

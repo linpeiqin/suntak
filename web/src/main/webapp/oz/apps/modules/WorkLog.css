@@ -1,0 +1,25 @@
+﻿/* 工作日志视图的样式控制 */
+.oz-worklog{table-layout: fixed;width: 100%;}
+.oz-worklog tr{vertical-align: top;}
+.oz-worklog td{word-break:break-all;}
+
+.fixedWidth{width:150px;}
+.oz-worklog-simple td{ background-color:#E9F2F8; height:20px; line-height:20px;text-indent:5px;}
+.oz-worklog-simple .subject{}
+.oz-worklog-simple .subject span{color:#666666;font-weight: bold;}
+.oz-worklog-simple .time span{color:#935D0B;}
+
+.oz-worklog-detail td{padding:10px; color:#666666; border-bottom:1px dotted #CCCCCC;}
+.oz-worklog-detail .attachments{ margin-top:6px;}
+.oz-worklog-detail .attachments ul{margin:0px; padding:0px; width:100%;}
+.oz-worklog-detail .attachments ul li{ list-style:none; float:left; color:#000000; text-indent:3px;}
+.oz-worklog-detail .attachments a{ color:#006699; text-decoration:underline;}
+.oz-worklog-detail .attachments .attachment-icon{
+	width:16px; height:16px;
+	background-image:url(images/worklog-icon.gif);
+	background-position:-48px -16px; 
+	background-repeat:no-repeat;
+}
+
+.oz-worklog-empty {height: 34px;vertical-align: bottom;}
+.oz-worklog-empty td{padding:10px;}

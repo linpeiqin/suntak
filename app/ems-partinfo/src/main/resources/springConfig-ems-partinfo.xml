@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<bean id="partInfoDao" class="cn.suntak.ems.partinfo.dao.hibernate.PartInfoDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="partInfoService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.partinfo.service.impl.PartInfoServiceImpl">
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="partInfoTreeDao" class="cn.suntak.ems.partinfo.dao.hibernate.PartInfoTreeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="partInfoTreeService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.partinfo.service.impl.PartInfoTreeServiceImpl">
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="orderHeadDao" class="cn.suntak.ems.partinfo.dao.hibernate.OrderHeadDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="orderHeadService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.partinfo.service.impl.OrderHeadServiceImpl">
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="orderHeadTempDao" class="cn.suntak.ems.partinfo.dao.hibernate.OrderHeadTempDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="orderHeadTempService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.partinfo.service.impl.OrderHeadTempServiceImpl">
+			</bean>
+		</property>
+	</bean>
+
+
+	
+	<bean id="orderLineDao" class="cn.suntak.ems.partinfo.dao.hibernate.OrderLineDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="orderLineService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.partinfo.service.impl.OrderLineServiceImpl">
+			</bean>
+		</property>
+	</bean>
+	
+	
+	<bean id="PRHeadDao" class="cn.suntak.ems.partinfo.dao.hibernate.PRHeadDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="pRHeadService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.partinfo.service.impl.PRHeadServiceImpl">
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="PRLineDao" class="cn.suntak.ems.partinfo.dao.hibernate.PRLineDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="pRLineService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.partinfo.service.impl.PRLineServiceImpl">
+				<property name="lineTypeVService" ref="lineTypeVService" />
+			</bean>
+		</property>
+	</bean>
+
+	
+	<bean id="PartQualityDao" class="cn.suntak.ems.partinfo.dao.hibernate.PartQualityDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="partQualityService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.partinfo.service.impl.PartQualityServiceImpl">
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="GroupInventoryDao" class="cn.suntak.ems.partinfo.dao.hibernate.GroupInventoryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="GroupInventoryService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.partinfo.service.impl.GroupInventoryServiceImpl">
+			</bean>
+		</property>
+	</bean>
+	<!--  抓取配件采购申请实际到达日期 -->
+	<bean id="grabPRLine" parent="txProxyTemplate">
+		<property name="target">
+			<bean  class="cn.suntak.ems.partinfo.job.GrabPRLine">
+				<property name="pRLinesVService" ref="pRLinesVService"/>
+				<property name="pRLineService" ref="pRLineService"/>
+			</bean>
+		</property>
+	</bean>
+</beans>

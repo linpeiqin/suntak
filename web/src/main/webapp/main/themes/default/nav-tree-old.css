@@ -1,0 +1,41 @@
+.oz-tree-title {
+	padding: 0 2px 0 2px;
+}
+.oz-tree-node{
+	border-bottom: 1px solid #99BBE8;
+	padding: 4px 0; 
+	background:#FFFFFF;
+}
+
+.oz-tree-node-selected{
+	background:#FBEC88;
+}
+
+.oz-tree-node-hover{
+	background:#EEEEEE;
+}
+
+.tree-root-bg{
+	background-color:#DCECFA;
+	background: url("images/bgx.png") repeat-x 0 -130px;
+	font-weight: bold;
+	padding: 5px 0;
+	font-size: 14px;
+}
+
+.tree-root-bg .oz-tree-title {
+	font-weight: bold;
+	font-size: 14px;
+	padding: 0 2px 0 5px;
+}
+
+.tree-root-bg.oz-tree-node-hover{
+	background-position: 0 -100px;
+}
+.tree-root-bg .oz-tree-hit {
+	background-image: none;
+}
+
+.oz-panel-header{
+	background: url("images/bg-h.gif") repeat-x 0 -26px;
+}

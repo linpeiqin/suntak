@@ -1,0 +1,53 @@
+/*普通样式*/
+.main-left {
+	
+}
+
+.oz-tree-title {
+	padding: 0 2px 0 2px;
+}
+
+/*调整右边图标定位*/
+.oz-tree-node {
+	padding: 4px 0;
+	background: #FFFFFF;
+	position: relative;
+	border: solid #E6E6E6;
+	border-width: 1px 0;
+	margin-bottom: -1px;
+}
+
+.oz-tree-node-hover {
+	background: #EEEEEE;
+}
+
+.oz-tree-node-selected {
+	background-color: #345797;
+	font-weight: bold;
+}
+
+.oz-tree-node-selected .oz-tree-title {
+	color: white;
+}
+
+.oz-tree-folder,.oz-tree-file {
+	display: none;
+}
+
+.oz-tree-li-lt,.oz-tree-li-rt,.oz-tree-li-lb,.oz-tree-li-rb {
+	display: none;
+}
+.tree-depth-0 {
+		background-color: #EDEDED;
+}
+.tree-depth-0.oz-tree-node-selected .oz-tree-title  {
+	color: black;
+}
+
+.tree-depth-0 .oz-tree-title {
+	font-weight: bold;
+}
+
+.tree-depth-0 .oz-tree-folder,.tree-root-bg .oz-tree-file {
+
+}

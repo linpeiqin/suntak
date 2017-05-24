@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" package="cn.suntak.ems.common.domain">
+	<class name="DepartmentV" table="EMS_DEPARTMENT_V">
+		<id name="flexValue" column="FLEX_VALUE" >
+			<generator class="native" />
+		</id>
+		<property name="description" column="DESCRIPTION" />
+		<property name="summaryFlag" column="SUMMARY_FLAG" />
+	</class>
+	
+    <class name="CategoriesV" table="EMS_CATEGORIES_V">
+		<id name="categoryId" column="CATEGORY_ID" >
+			<generator class="native" />
+		</id>
+		<property name="faCategory" column="FA_CATEGORY" />
+	</class>
+	
+	<class name="UserV" table="EMS_USER_V">
+		<id name="userId" column="USER_ID" >
+			<generator class="native" />
+		</id>
+		<property name="userName" column="USER_NAME" />
+		<property name="description" column="DESCRIPTION" />
+	</class>
+	
+	<class name="SuppliersV" table="EMS_SUPPLIERS_V">
+		<id name="vendorId" column="VENDOR_ID" >
+			<generator class="native" />
+		</id>
+		<property name="vendorName" column="VENDOR_NAME" />
+	</class>
+	<class name="CurrencyV" table="EMS_CURRENCY_CODE_V">
+		<id name="currencyCode" column="CURRENCY_CODE" >
+			<generator class="native" />
+		</id>
+		<property name="currencyName" column="NAME" />
+	</class>
+	<class name="EmployeeV" table="EMS_EMPLOYEE_V">
+		<id name="personId" column="PERSON_ID" >
+			<generator class="native" />
+		</id>
+		<property name="personName" column="FULL_NAME" />
+	</class>
+	<class name="EmployeesV" table="EMS_EMPLOYEES_V">
+		<id name="employeeId" column="EMPLOYEE_ID" >
+			<generator class="native" />
+		</id>
+		<property name="fullName" column="FULL_NAME" />
+	</class>
+	<class name="LineTypeV" table="EMS_LINE_TYPE_V">
+		<id name="lineTypeId" column="LINE_TYPE_ID" >
+			<generator class="native" />
+		</id>
+		<property name="lineTypeName" column="LINE_TYPE" />
+	</class>
+	<class name="OrgV" table="EMS_ORG_CODE_V">
+		<id name="orgId" column="ORGANIZATION_ID" >
+			<generator class="native" />
+		</id>
+		<property name="orgName" column="NAME" />
+	</class>
+	<class name="ShipToLocationV" table="EMS_SHIP_TO_LOCATION_V">
+		<id name="location" column="LOCATION_CODE" >
+			<generator class="native" />
+		</id>
+		<property name="description" column="DESCRIPTION" />
+	</class>
+	<class name="PoMethodV" table="EMS_PO_CODE_V">
+		<id name="poMethod" column="ATTRIBUTE4" >
+			<generator class="native" />
+		</id>
+	</class>
+	<class name="VendorSitePersV" table="EMS_VENDOR_SITE_PEOPLE_V">
+		<id name="vendorId" column="VENDOR_ID" >
+			<generator class="native" />
+		</id>
+		<property name="peopleNameId" column="PEOPLE_NAME_ID" />
+		<property name="peopleName" column="PEOPLE_NAME" />
+	</class>
+	<class name="VendorSiteAddrV" table="EMS_VENDOR_SITE_ADDRESS_V">
+		<id name="vendorSiteId" column="VENDOR_SITE_ID" >
+			<generator class="native" />
+		</id>
+		<property name="vendorId" column="VENDOR_ID" />
+		<property name="addressShortName" column="ADDRESS_LINE1" />
+	</class>
+	<class name="PRLinesV" table="EMS_DM_PR_LINE_V">
+		<id name="id" column="ID" >
+			<generator class="native" />
+		</id>
+		<property name="receiveDate" column="RECEIVE_DATE" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+     <!-- 定义系统中个性定义的信息 -->
+
+    <bean id="autoProxyCreator" class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator">  
+    </bean>
+    
+	<!-- 用户验证提供者 -->
+	<bean id="dbAuthentication" class="cn.oz.impl.security.authentication.DbAuthentication">
+		<property name="userService" ref="userService"></property>
+	</bean>
+
+	<bean id="authentication" class="cn.oz.impl.security.authentication.CompositeAuthentication">
+		<property name="authentications">
+			<list>
+				<ref bean="dbAuthentication"/>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 缓存配置 -->
+	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation" value="classpath:ehcache/ehcache.xml" />
+	</bean>
+	<bean id="cache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheName" value="cn.oz.cache" />
+		<property name="eternal" value="true"/>
+	</bean>
+</beans>

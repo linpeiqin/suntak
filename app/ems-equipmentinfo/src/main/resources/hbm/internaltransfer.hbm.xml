@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" package="cn.suntak.ems.internaltransfer.domain">
+	<class name="InternalTransfer" table="EMS_DM_INTERNALTRANSFER">
+		<id name="id" column="ID" unsaved-value="-1">
+			<generator class="native" />
+		</id>
+		<property name="number" column="EMS_NUMBER"/>
+		<property name="fixedAssetsName" column="FIXED_ASSETS_NAME"/>
+		<property name="specificationModel" column="SPECIFICATiON_MODEL"/>
+		<property name="fixedAssetsType" column="FIXED_ASSETS_TYPE"/>
+		<property name="fixedAssetsNo" column="FIXED_ASSETS_NO"/>
+		<property name="assetsNumber" column="ASSETS_NUMBER"/>
+		<property name="agent" column="AGENT"/>
+		<property name="origin" column="ORIGIN"/>
+		<property name="manufacturer" column="MANUFACTURER"/>
+		<property name="faPrincipleTechnology" column="FA_PRINCIPLE_TECHNOLOGY"/>
+		<property name="startTime" column="START_TIME"/>
+		<property name="ascriptionMD" column="ASCRIPTION_M_D"/>
+		<property name="installationLocation" column="INSTALLATION_LOCATION"/>
+		<property name="useD" column="USE_D"/>
+		<property name="newInstallationLocation" column="NEW_INSTALLATION_LOCATION"/>
+		<property name="newUseD" column="NEW_USE_D"/>
+		<property name="usefulLife" column="USEFUL_LIFE"/>
+		<property name="canUseLife" column="CAN_USE_LIFE"/>
+		<property name="faTransferExplain" column="FA_TRANSFER_EXPLAIN"/>
+		<property name="putUnderCharge" column="PUT_UNDER_CHARGE"/>
+		<property name="putUnderDMH" column="PUT_UNDER_D_M_H"/>
+		<property name="useDOpinion" column="USE_D_OPINION"/>
+		<property name="useDCharge" column="USE_D_CHARGE"/>
+		<property name="useDMH" column="USE_D_M_H"/>
+		<property name="newUseDOpinion" column="NEW_USE_D_OPINION"/>
+		<property name="newUseDCharge" column="NEW_USE_D_CHARGE"/>
+		<property name="newUseDMH" column="NEW_USE_D_M_H"/>
+		<property name="originalValue" column="ORIGINAL_VALUE"/>
+		<property name="netWorth" column="NET_WORTH"/>
+		<property name="financeFillPerson" column="FINANCE_FILL_PERSON2"/>
+		<property name="financeDMH" column="FINANCE_D_M_H"/>
+		<property name="faTransferOpinion" column="FA_TRANSFER_OPINION"/>
+		<property name="GM" column="G_M"/>
+		<property name="chairman" column="CHAIRMAN"/>
+		<property name="createdDate" column="CREATED_DATE"/>
+		<property name="createdBy" column="CREATED_BY"/>
+		<property name="updatedDate" column="UPDATED_DATE"/>
+		<property name="updatedBy" column="UPDATED_BY"/>
+		<property name="type" column="TYPE"/>
+		<property name="organizationId" column="ORGANIZATION_ID"/>
+		<property name="processId" column="PROCESS_ID"/>
+		<property name="processState" column="PROCESS_STATE"/>
+		<property name="serialNumber" column="SERIAL_NUMBER"/>
+		<property name="ascriptionMDebs" column="ASCRIPTION_M_D_EBS"/>
+		<property name="ascriptionMDname" column="ASCRIPTION_M_D_NAME"/>
+		<property name="useDebs" column="USE_D_EBS"/>
+		<property name="useDname" column="USE_D_NAME"/>
+		<property name="newUseDname" column="NEW_USE_D_NAME"/>
+		<property name="newUseDebs" column="NEW_USE_D_EBS"/>
+		<many-to-one name="equipmentLifeCycle" column="LIFE_CYCLE_ID" class="cn.suntak.ems.equipmentlifecycle.domain.EquipmentLifeCycle" unique="true"></many-to-one>
+	</class>
+	
+</hibernate-mapping>

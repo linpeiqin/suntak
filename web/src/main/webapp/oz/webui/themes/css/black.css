@@ -1,0 +1,564 @@
+body {
+    color: #FFFFFF;
+    background: url("../images/black/bg.jpg") #3C3F41 repeat;
+}
+
+.oz-tb-searchbutton-wrap input{
+    background-color: #2B2B2B;
+    color: #c6c6c6;
+}
+
+/*top*/
+.main-top {
+    background: url('../images/black/topbar_bg.png') repeat-x bottom;
+}
+
+.main-top .page-header-wrapper {
+    background: none;
+}
+
+.main-top .top-logo {
+    /*background: url('../images/default/top_bg.png') no-repeat 0 -0px;*/
+}
+
+.main-top .top-functions .top-menu {
+    color: #ffffff;
+}
+
+.main-top .main-left {
+    background: url("../images/black/sidebar_bg.png")
+}
+
+/*top的信息div*/
+.main-top .top-info {
+    color: #ffffff;
+}
+
+/******
+Tree
+****/
+/*普通样式*/
+.main-left {
+    background: url("../images/black/sidebar_bg.png") repeat;
+    border-right: 1px solid #4a484f;
+}
+
+.main-left .oz-tree-title {
+}
+
+/*调整右边图标定位*/
+.main-left .oz-tree-node {
+    color: #C6C6C6;
+    background: transparent;
+}
+
+.main-left .oz-tree-folder,
+.main-left .oz-tree-file {
+}
+
+/*调整展开状态的位置*/
+.main-left .oz-tree-hit,
+.main-left .oz-tree-nothit {
+}
+
+.main-left .oz-tree-collapsed {
+    background: url("../images/black/tree.gif") no-repeat scroll 0 -16px transparent;
+}
+
+.main-left .oz-tree-expanded {
+    background: url("../images/black/tree.gif") no-repeat scroll -16px -16px transparent;
+}
+
+.main-left .oz-tree-li-lt,
+.main-left .oz-tree-li-rt,
+.main-left .oz-tree-li-lb,
+.main-left .oz-tree-li-rb {
+}
+
+.main-left .oz-tree {
+}
+
+/*第一层的演示*/
+.main-left .tree-depth-0 {
+    background: none;
+    border: 1px solid #4a484f;
+    border-width: 1px 0;
+    color: #C6C6C6;
+    margin: -1px 0 0 0;
+    padding: 10px 0;
+}
+
+.main-left .tree-depth-0.oz-tree-node-hover,
+.main-left .tree-depth-2.oz-tree-node-hover {
+    background: #55731e;
+}
+
+.main-left .tree-depth-0.oz-tree-node-selected {
+
+}
+
+.main-left .tree-depth-0 .oz-tree-title {
+}
+
+.main-left .tree-depth-0 .oz-tree-folder, .tree-root-bg .oz-tree-file {
+
+}
+
+.main-left .tree-depth-1 {
+    background: #3C3F41;
+    border-bottom: 1px solid #4a484f;
+}
+
+.main-left .tree-depth-2 {
+    border-bottom: 1px solid #4a484f;
+}
+
+.main-left .oz-tree-node-selected {
+    background-color: #0D293E;
+}
+
+.main-left .tree-depth-1.oz-tree-node-hover {
+    background: #55731e;
+}
+
+/****Tabs***/
+.main-center ul.oz-tabs-strip li {
+    background: transparent;
+}
+
+.main-center ul.oz-tabs-strip li.oz-tabs-strip-active {
+    background: #0F0F0F;
+}
+
+.main-center ul.oz-tabs-strip li.oz-tabs-strip-over {
+    background: #55731e;
+}
+
+.main-center ul.oz-tabs-strip li span.oz-tabs-strip-text {
+    color: #C6C6C6;
+}
+
+.main-center ul.oz-tabs-strip li.oz-tabs-strip-active span.oz-tabs-strip-text {
+    color: #C6C6C6;
+}
+
+.main-center ul.oz-tabs-strip li.oz-tabs-strip-over span.oz-tabs-strip-text {
+    color: #C6C6C6;
+}
+
+.main-center ul.oz-tabs-strip li.oz-tabs-strip-active.oz-tabs-strip-over {
+    background: #0F0F0F
+}
+
+.main-center ul.oz-tabs-strip-top {
+    /*background: url("../images/blue/tabbar.png") #cedff5 repeat-x top;;*/
+    border-bottom: 1px solid #a3a0ac;
+    background: transparent;
+}
+
+.main-center .oz-tabs-header {
+
+}
+
+.main-center .oz-tabs-body {
+    border-color: #a3a0ac;
+}
+/***dialog***/
+.oz-window {
+    background: #2b2b2b;
+    border: 1px solid #c6c6c6;
+}
+.oz-window .oz-panel-title {
+    color: #ffffff;
+}
+
+.oz-window .oz-window-body{
+    background: #dddddd;
+    color: #000000;
+    border: 1px solid #c6c6c6;
+    border-top-width: 0px;
+}
+
+.oz-window .oz-panel-header-noborder {
+    border-width: 0px;
+    border-bottom: 1px solid #c6c6c6;
+}
+.oz-window .oz-dialog-button{
+    background: #4b4b4b;
+}
+
+/**************************************/
+
+/***
+Toolbar Style
+***/
+.oz-body .oz-tb,
+.oz-body .oz-page-top {
+    background: #3C3F41;
+    height: auto;
+    border-bottom: 1px solid #2F2F2F;
+}
+
+.oz-body .oz-tb ul,
+.oz-body .oz-btn {
+    margin: 4px;
+    font-size: 12px;
+    padding: 4px 1px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: inherit;
+    line-height: 24px;
+    color: #C6C6C6;
+}
+
+.oz-body .oz-tb .oz-btn-seperator {
+    float: left;
+    margin: 6px 2px 6px 2px;
+    width: 0px;
+    height: 24px;
+    border-left: 1px solid #7b7b7b;
+    border-right: 0px solid #727272;
+    background: none;
+}
+
+.oz-body .oz-tb-searchbutton-wrap {
+    margin-top: 0px;
+}
+
+.oz-body .oz-btn.mouseover .oz-btn-left,
+.oz-body .oz-btn.mouseover .oz-btn-right,
+.oz-body .oz-btn.mouseover .oz-btn-center,
+.oz-body .oz-btn.mousedown .oz-btn-left,
+.oz-body .oz-btn.mousedown .oz-btn-right,
+.oz-body .oz-btn.mousedown .oz-btn-center {
+    background: none;
+}
+
+.oz-body .oz-btn.mouseover {
+    background: #696969;
+}
+
+.oz-body .oz-btn.mousedown {
+    background: #868686;
+}
+
+.oz-body .oz-tb-searchbutton-wrap .searchquey {
+    width: 150px;
+    border: 1px solid #7a7a7a;
+}
+
+/*Tree*/
+.oz-body .oz-page-center-tree {
+    background: #3C3F41;
+}
+
+.oz-body .oz-tree {
+    line-height: 18px;
+    font-size: 12px;
+    color: #c6c6c6;
+}
+
+.oz-body  .oz-tree ul {
+    font-size: 12px;
+}
+
+.oz-body .oz-tree-node-hover {
+    background: #55731e;
+}
+
+.oz-body  .oz-tree-node-selected {
+    background: #55731e;
+}
+
+/****/
+.oz-body .oz-page-center-grid-top {
+    background-color: transparent;
+}
+
+.oz-body .oz-form-label {
+    color: #c6c6c6;
+}
+
+.oz-body .oz-page-center-grid,
+.oz-body .oz-page-center {
+
+}
+
+/*Gird*/
+.oz-body .oz-grid-header {
+    background: #3E4142;
+    border: 1px solid #2F2F2F;
+}
+
+.oz-body .oz-column-header {
+    background: #3E4142;
+    border-color: #2F2F2F;
+}
+
+.oz-body .oz-column-header-over,
+.oz-body .oz-column-header-sort-ASC,
+.oz-body .oz-column-header-sort-DESC {
+    background: #35393a;
+}
+
+.oz-body .oz-column-header-text {
+    color: #C6C6C6;
+}
+
+.oz-body .oz-grid-body {
+    background: transparent;
+}
+
+.oz-body .oz-panel-default .oz-panel-body {
+    border: 1px solid #2F2F2F;
+}
+
+.oz-body .oz-grid-view {
+    /*background-color: #2B2B2B;*/
+}
+
+.oz-body .oz-grid-row .oz-grid-cell {
+    background: #262626;
+}
+
+.oz-body .oz-grid-row-alt .oz-grid-cell,
+.oz-body .oz-grid-row-alt .oz-grid-rowwrap-div {
+    background: #2B2B2B;
+}
+
+.oz-body .oz-grid-row-over .oz-grid-cell,
+.oz-body .oz-grid-row-over .oz-grid-rowwrap-div {
+    background: #333333;
+}
+
+.oz-body .oz-grid-row .oz-grid-cell {
+    color: #C6C6C6;
+    font-size: 12px;
+}
+
+.oz-body .oz-grid-row {
+    line-height: 25px;
+}
+
+.oz-body .oz-panel-with-col-lines .oz-grid-row .oz-grid-cell {
+    border-width: 0px;
+}
+
+.oz-body .oz-grid a:link {
+    COLOR: #C6C6C6;
+}
+
+.oz-body .oz-grid a:visited {
+    COLOR: #C6C6C6;
+}
+
+.oz-body .oz-grid a:active {
+    COLOR: #C6C6C6;
+}
+
+.oz-body .oz-grid a:hover {
+    color: #C6C6C6;
+}
+
+.oz-body .oz-grid-pagenav {
+    color: #c6c6c6;
+    border: 1px solid #99BBE8;
+    background-color: #3C3F41;
+    border-top-width: 0 !important;
+}
+
+.oz-grid-pagenav div.btnseparator {
+    border-left: 1px solid #c6c6c6;
+    border-right: 0px solid #fff;
+}
+
+/*oTab*/
+.oz-body .ui-tab-trigger-item {
+
+}
+
+.oz-body .oz-form-button {
+
+}
+
+/*** protlet **/
+.oz-portlet-box {
+    color: #000;
+}
+
+/*table头部背景色*/
+.oz-portlet-grid .oz-grid-head {
+    background: #3E4142;
+}
+
+/*边框颜色*/
+.oz-portlet-box-content {
+    border: 1px solid #C8C8C8;
+}
+
+.oz-portlet-body-outer {
+    background-color: white;
+    border-top: 1px solid #C8C8C8;
+    overflow: hidden;
+    padding: 3px;
+    position: relative;
+}
+
+.oz-qiickstart-body {
+    border: 1px solid #C8C8C8;
+    padding: 3px;
+}
+
+/*标题栏的样式*/
+.oz-portlet-box .oz-portlet-titleBar {
+    background: #afb7ba;
+}
+
+.oz-portlet-box .oz-portlet-titleBar .oz-portlet-title {
+    color: #ffffff;
+}
+
+.oz-portlet-btn-more a, .oz-portlet-btn-more a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.oz-portlet-btn-more a:hover {
+    font-weight: bold;
+}
+
+.oz-portlet-box .title {
+    padding-right: 5px;
+    display: inline-block;
+}
+
+.oz-portlet-box .subtitle {
+    padding-left: 3px;
+    display: inline-block;
+}
+
+.oz-portlet-box .oz-portlet-btn-more {
+    background-image: none;
+    right: 2px;
+}
+
+.oz-portlet-box .oz-portlet-buttonBar {
+
+}
+
+.oz-portlet-buttonBar .state-btn {
+    background-image: url('images/portal/state_btn.png');
+    background-repeat: no-repeat;
+    background-position: 0 -13px;
+    width: 13px;
+    height: 13px;
+}
+
+.oz-portlet-collapsed .state-btn {
+    background-position: 0 0;
+}
+
+.oz-portlet-btn-more a {
+    color: #000000;
+}
+
+.oz-portlet-grid .oz-grid-content {
+    background-color: #FFFFFF;
+}
+
+.oz-portlet-grid .oz-grid-content-even {
+    background-color: #FFFFFF;
+}
+
+.oz-portlet-collapsed .oz-portlet-body-outer {
+    border-top-width: 1px;
+    padding: 1px;
+    background-color: #ECEEEF;
+}
+
+.oz-portlet-buttonBar {
+    /* 鼠标移上去折叠、展开的图标才显示 */
+    /*  display: block; */
+}
+
+.oz-portlet-box2 .oz-portlet-titleBar {
+    background-image: url('images/portal/portlet_title_bg_2.png');
+    background-repeat: repeat-x;
+}
+
+.oz-portlet-box3 .oz-portlet-titleBar {
+    background-image: url('images/portal/portlet_title_bg_3.png');
+    background-repeat: repeat-x;
+}
+
+/*常用信息*/
+.pTool li {
+    background: url("images/portal/toos_bg.png");
+}
+
+/***表单引擎***/
+.oz-body .form-ui-tab {
+    background: #ffffff;
+}
+
+.oz-body .oz-form-title {
+    color: #c6c6c6;
+}
+
+.oz-body .oz-form-fields > table,
+.oz-body .oz-form-fields2 > table {
+    border-color: #c6c6c6;
+    background-color: transparent;
+}
+.oz-body .oz-form-label,
+.oz-body .oz-form-topLabel,
+.oz-body .oz-form-label-r,
+.oz-body .oz-form-topLabel-r {
+    color: #c6c6c6;
+    background-color: transparent;
+}
+.oz-body .oz-property input {
+    height: auto;
+    line-height: 20px;
+}
+.oz-body .oz-form-button {
+    color: #000000;
+}
+.oz-body .oz-form-separator-area ,
+.oz-body .oz-form-separator-title{
+    background-color: transparent;
+}
+.oz-body .oz-form-separator-title{
+    color: #c6c6c6;
+}
+.oz-body .oz-form-separator {
+    background:none;
+}
+.oz-body .oz-form-bordertable {
+    background-color: transparent;
+}
+.oz-body .oz-form-field {
+    color: #ffffff;
+    background-color: #3f3f3f;
+    border-bottom: 1px solid #a09daa;
+    border-right: 1px solid #a09daa;
+    border-left: 1px solid #727272;
+    border-top: 1px solid #727272;;
+}
+
+.oz-body .oz-form-btField {
+    color: #ffffff;
+    background-color: #2B2B2B;
+    border-bottom: 1px solid #a09daa;
+    border-right: 1px solid #a09daa;
+    border-left: 1px solid #727272;
+    border-top: 1px solid #727272;;
+}
+
+/**/
+.oz-body .oz-tabs-body {
+    border: 1px solid #4a484f;
+    background: #2b2b2b;
+}

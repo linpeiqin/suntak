@@ -1,0 +1,317 @@
+body {
+    background: url("../images/blue/bg.png") #e7f2f9 repeat;
+}
+
+/*top*/
+.main-top {
+    color: #FFFFFF;
+    background: url('../images/blue/topbar_bg.png') repeat-x left bottom;
+}
+
+.main-top .page-header-wrapper {
+    background: url('../images/blue/topbar_left.png') no-repeat left bottom;
+}
+
+.main-top .top-logo {
+    /*background: url('../images/default/top_bg.png') no-repeat 0 -0px;*/
+}
+
+.main-top .top-functions .top-menu {
+    color: #ffffff;
+}
+
+/*top的信息div*/
+.main-top .top-info {
+    color: #ffffff;
+}
+
+/******
+Tree
+****/
+/*普通样式*/
+.main-left {
+    background-color: #F0F1F3;
+    border-right: 1px solid #d9d5e4;
+}
+
+.main-left .page-nav-wrapper {
+    background: url("../images/blue/sidebar_topbg.png") no-repeat;
+}
+
+.main-left .oz-tree-title {
+    color: #000000;
+}
+
+/*调整右边图标定位*/
+.main-left .oz-tree-node {
+    color: #ffffff;
+    background: transparent;
+}
+
+.main-left .oz-tree-folder, .oz-tree-file {
+}
+
+/*调整展开状态的位置*/
+.main-left .oz-tree-hit,
+.main-left .oz-tree-nothit {
+}
+
+.main-left .oz-tree-collapsed {
+    /*background: url("../images/blue/tree.gif") no-repeat scroll 0 -16px transparent;*/
+}
+
+.main-left .oz-tree-expanded {
+    /*background: url("../images/blue/tree.gif") no-repeat scroll -16px -16px transparent;*/
+}
+
+.main-left .oz-tree-li-lt,
+.main-left .oz-tree-li-rt,
+.main-left .oz-tree-li-lb,
+.main-left .oz-tree-li-rb {
+}
+
+.main-left .oz-tree {
+}
+
+/*第一层的演示*/
+.main-left .tree-depth-0 {
+    background: transparent;
+    border: 1px solid #d9d5e4;
+    border-width: 1px 0;
+    color: #FFFFFF;
+    margin: -1px 0 0 0;
+    padding: 10px 0;
+}
+
+.main-left .tree-depth-0.oz-tree-node-hover,
+.main-left .tree-depth-2.oz-tree-node-hover {
+    background: #6FC8FF;
+}
+
+.main-left .tree-depth-0.oz-tree-node-selected {
+
+}
+
+.main-left .tree-depth-0 .oz-tree-title {
+}
+
+.main-left .tree-depth-0 .oz-tree-folder,
+.main-left .tree-root-bg .oz-tree-file {
+
+}
+
+.main-left .tree-depth-1 {
+    border-bottom: 1px solid #d9d5e4;
+}
+
+.main-left .tree-depth-2 {
+    border-bottom: 1px solid #d9d5e4;
+}
+
+.main-left .oz-tree-node-selected {
+    background-color: #6FC8FF;
+}
+
+.main-left .tree-depth-1.oz-tree-node-hover {
+    background: #6FC8FF;
+}
+
+/****Tabs***/
+.main-center ul.oz-tabs-strip li {
+    background: transparent;
+}
+
+.main-center ul.oz-tabs-strip li.oz-tabs-strip-active {
+    background: #3897D8;
+}
+
+.main-center ul.oz-tabs-strip li.oz-tabs-strip-over {
+    background: #6FC8FF;
+}
+
+.main-center ul.oz-tabs-strip li span.oz-tabs-strip-text {
+    color: #000000;
+}
+
+.main-center ul.oz-tabs-strip li.oz-tabs-strip-active span.oz-tabs-strip-text {
+    color: #ffffff;
+}
+
+.main-center ul.oz-tabs-strip li.oz-tabs-strip-over span.oz-tabs-strip-text {
+    color: #ffffff;
+}
+
+.main-center ul.oz-tabs-strip li.oz-tabs-strip-active.oz-tabs-strip-over {
+    background: #3897D8;
+}
+
+.main-center ul.oz-tabs-strip-top {
+    /*background: url("../images/blue/tabbar.png") #cedff5 repeat-x top;;*/
+    border-bottom: 1px solid #a3a0ac;
+    background: transparent;
+}
+
+.main-center .oz-tabs-header {
+    background-color: transparent;
+}
+
+.main-center .oz-tabs-body {
+    border-color: #a3a0ac;
+}
+
+/**************************************/
+
+/***
+Toolbar Style
+***/
+.oz-body .oz-tb,
+.oz-body .oz-page-top {
+    background: #6FC8FF;
+    height: auto;
+}
+
+.oz-body .oz-page-top {
+    border: 1px solid #a3a0ac;
+}
+
+.oz-body .oz-tb ul, .oz-btn {
+    margin: 4px;
+    font-size: 12px;
+    padding: 4px 1px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: inherit;
+    line-height: 24px;
+}
+
+.oz-body .oz-tb .oz-btn-seperator {
+    float: left;
+    margin: 6px 2px 6px 2px;
+    width: 0px;
+    height: 24px;
+    border-left: 1px solid #F0F0F0;
+    border-right: 1px solid #c0c0c0;
+    background: none;
+}
+
+.oz-body .oz-tb-searchbutton-wrap {
+    margin-top: 0px;
+}
+
+.oz-body .oz-btn.mouseover .oz-btn-left,
+.oz-body .oz-btn.mouseover .oz-btn-right,
+.oz-body .oz-btn.mouseover .oz-btn-center,
+.oz-body .oz-btn.mousedown .oz-btn-left,
+.oz-body .oz-btn.mousedown .oz-btn-right,
+.oz-body .oz-btn.mousedown .oz-btn-center {
+    background: none;
+}
+
+.oz-body .oz-btn.mouseover {
+    background: #FFFFFF;
+}
+
+.oz-body .oz-btn.mousedown {
+    background: #f0f0f0;
+}
+
+/*Tree*/
+.oz-body .oz-tree {
+}
+
+.oz-body .oz-tree ul {
+}
+
+/*Gird*/
+
+/*Gird*/
+.oz-body .oz-grid-header {
+
+}
+
+.oz-body .oz-column-header {
+
+}
+
+.oz-body .oz-column-header-over,
+.oz-body .oz-column-header-sort-ASC,
+.oz-body .oz-column-header-sort-DESC {
+
+}
+
+.oz-body .oz-column-header-text {
+
+}
+
+.oz-body .oz-grid-body {
+    background: transparent;
+}
+
+.oz-body .oz-panel-default .oz-panel-body {
+
+}
+
+.oz-body .oz-grid-view {
+    /*background-color: #2B2B2B;*/
+}
+
+.oz-body .oz-grid-row .oz-grid-cell {
+
+}
+
+.oz-body .oz-grid-row-alt .oz-grid-cell,
+.oz-body .oz-grid-row-alt .oz-grid-rowwrap-div {
+
+}
+
+.oz-body .oz-grid-row-over .oz-grid-cell,
+.oz-body .oz-grid-row-over .oz-grid-rowwrap-div {
+
+}
+
+.oz-body .oz-grid-row .oz-grid-cell {
+
+}
+
+.oz-body .oz-grid-row {
+    line-height: 25px;
+}
+
+.oz-body .oz-panel-with-col-lines .oz-grid-row .oz-grid-cell {
+    border-width: 0px;
+}
+
+.oz-body .oz-grid a:link {
+
+}
+
+.oz-body .oz-grid a:visited {
+
+}
+
+.oz-body .oz-grid a:active {
+
+}
+
+.oz-body .oz-grid a:hover {
+
+}
+
+.oz-body .oz-grid-pagenav {
+
+}
+
+.oz-body .oz-grid-pagenav div.btnseparator {
+
+}
+
+/*oTab*/
+.oz-body .ui-tab-trigger-item {
+
+}
+
+.oz-body .oz-form-button {
+
+}

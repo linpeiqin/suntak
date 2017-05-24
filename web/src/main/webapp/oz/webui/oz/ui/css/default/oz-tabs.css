@@ -1,0 +1,433 @@
+.oz-clear{clear:both;height:0;overflow:hidden;line-height:0;font-size:0;}
+
+.oz-tabs-panel {
+    overflow:hidden;
+}
+
+.oz-tabPanel {
+	overflow:hidden;
+	font-size:12px;
+}
+
+.oz-tabs-header, .oz-tabs-footer {
+	background: #deecfd;
+	border: 1px solid #8db2e3;
+    overflow:hidden;
+    zoom:1;
+}
+
+.oz-tabs-header {
+	padding-bottom: 2px;
+}
+
+.oz-tabs-header-noborder{
+	border-width:0px;
+	border-bottom: 1px solid #8db2e3;
+}
+.oz-tabs-footer {
+	padding-top: 2px;
+}
+.oz-tabs-footer-noborder{
+	border-width:0px;
+	border-top: 1px solid #8db2e3;
+}
+.oz-tabs-strip-wrap {
+	width:100%;
+    overflow:hidden;
+    position:relative;
+    zoom:1;
+}
+ul.oz-tabs-strip {
+	list-style-type:none;
+	display:block;
+    width:5000px;
+    zoom:1;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul.oz-tabs-strip-top{
+	padding-top: 1px;
+	background: url(images/tabs/tab-strip-bg.gif) #cedff5 repeat-x bottom;
+	border-bottom: 1px solid #8db2e3;
+}
+
+ul.oz-tabs-strip-bottom{
+	padding-bottom: 1px;
+	background: url(images/tabs/tab-strip-btm-bg.gif) #cedff5 repeat-x top;
+	border-top: 1px solid #8db2e3;
+	border-bottom: 0 none;
+}
+
+.oz-tabs-header-plain .oz-tabs-strip-top {
+    background:transparent !important;
+    padding-top:0 !important;
+}
+.oz-tabs-header-plain {
+    background:transparent !important;
+    border-width:0 !important;
+    padding-bottom:0 !important;
+}
+
+.oz-tabs-header-plain .oz-tabs-strip-spacer,
+.oz-tabs-footer-plain .oz-tabs-strip-spacer {
+    border:1px solid #8db2e3;
+    height:2px;
+    background: #deecfd;
+    font-size:1px;
+    line-height:1px;
+}
+.oz-tabs-header-plain .oz-tabs-strip-spacer {
+    border-top: 0 none;
+}
+.oz-tabs-footer-plain .oz-tabs-strip-spacer {
+    border-bottom: 0 none;
+}
+
+.oz-tabs-footer-plain .oz-tabs-strip-bottom {
+    background:transparent !important;
+    padding-bottom:0 !important;
+}
+.oz-tabs-footer-plain {
+    background:transparent !important;
+    border-width:0 !important;
+    padding-top:0 !important;
+}
+
+ul.oz-tabs-strip li {
+    float:left;
+    margin-left:2px;
+}
+
+/*tabs的最右边的样式*/
+ul.oz-tabs-strip li.oz-tabs-edge {
+    float:left;
+    margin:0 !important;
+    padding:0 !important;
+    border:0 none !important;
+    font-size:1px !important;
+    line-height:1px !important;
+    overflow:hidden;
+    zoom:1;
+    background:transparent !important;
+    width:1px;
+}
+
+.oz-tabs-strip a, .oz-tabs-strip span, .oz-tabs-strip em {
+	display:block;
+}
+
+.oz-tabs-strip a {
+	text-decoration:none !important;
+	-moz-outline: none;
+	outline: none;
+	cursor:pointer;
+}
+
+/*文字部分*/
+.oz-tabs-strip-inner {
+    overflow:hidden;
+	text-overflow: ellipsis;
+}
+.oz-tabs-strip span.oz-tabs-strip-text {
+	font:normal 12px tahoma,arial,helvetica;
+	color:#416aa3;
+	white-space: nowrap;
+	cursor:pointer;
+    padding:4px 0; 
+    line-height:15px;
+}
+/*有图标后*/
+.oz-tabs-strip-top .oz-tabs-with-icon .oz-tabs-right {
+    padding-left:6px;
+}
+
+.oz-tabs-strip .oz-tabs-with-icon span.oz-tabs-strip-text {
+	padding-left:20px;
+    background-position: 0 3px;
+    background-repeat: no-repeat;
+}
+
+.oz-tabs-strip-over span.oz-tabs-strip-text {
+	color:#15428b;
+}
+
+.oz-tabs-strip-active, .oz-tabs-strip-active a.oz-tabs-right {
+    cursor:default;
+}
+
+.oz-tabs-strip-active span.oz-tabs-strip-text {
+	cursor:default;
+	color:#15428b;
+    font-weight:bold;
+}
+
+.oz-tabs-strip-disabled .oz-tabss-text {
+	cursor:default;
+	color:#aaaaaa;
+}
+
+.oz-tabs-body {
+    overflow:hidden;
+}
+.oz-tabs-bwrap {
+    overflow:hidden;
+}
+.oz-ie .oz-tabs-strip .oz-tabs-right {
+    position:relative;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-active .oz-tabs-right {
+    margin-bottom:-1px;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-active .oz-tabs-right span.oz-tabs-strip-text {
+    padding-bottom:5px;
+}
+
+.oz-tabs-strip-bottom .oz-tabs-strip-active .oz-tabs-right {
+    margin-top:-1px;
+}
+.oz-tabs-strip-bottom .oz-tabs-strip-active .oz-tabs-right span.oz-tabs-strip-text {
+    padding-top:5px;
+}
+
+
+.oz-tabs-strip-top .oz-tabs-right {
+	background: transparent url(images/tabs/tabs-sprite.gif) no-repeat 0 -51px;
+    padding-left:10px;
+}
+
+.oz-tabs-strip-top .oz-tabs-left {
+	background: transparent url(images/tabs/tabs-sprite.gif) no-repeat right -351px;
+    padding-right:10px;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-inner {
+	background: transparent url(images/tabs/tabs-sprite.gif) repeat-x 0 -201px;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-over .oz-tabs-right {
+	 background-position:0 -101px;
+}
+.oz-tabs-strip-top .oz-tabs-strip-over .oz-tabs-left {
+	 background-position:right -401px;
+}
+.oz-tabs-strip-top .oz-tabs-strip-over .oz-tabs-strip-inner {
+	 background-position:0 -251px;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-active .oz-tabs-right {
+	background-position: 0 0;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-active .oz-tabs-left {
+	background-position: right -301px;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-active .oz-tabs-strip-inner {
+	background-position: 0 -151px;
+}
+
+.oz-tabs-strip-bottom .oz-tabs-right {
+	background: url(images/tabs/tab-btm-inactive-right-bg.gif) no-repeat bottom right;
+}
+
+.oz-tabs-strip-bottom .oz-tabs-left {
+	background: url(images/tabs/tab-btm-inactive-left-bg.gif) no-repeat bottom left;
+}
+
+.oz-tabs-strip-bottom .oz-tabs-strip-active .oz-tabs-right {
+	background: url(images/tabs/tab-btm-right-bg.gif) no-repeat bottom left;
+}
+
+.oz-tabs-strip-bottom .oz-tabs-strip-active .oz-tabs-left {
+	background: url(images/tabs/tab-btm-left-bg.gif) no-repeat bottom right;
+}
+.oz-tabs-strip-bottom .oz-tabs-left {
+    padding:0 10px;
+}
+.oz-tabs-strip-bottom .oz-tabs-right {
+    padding:0;
+}
+.oz-tabs-strip .oz-tabs-strip-close {
+    display:none;
+    width:0px;
+    height:0px;
+}
+.oz-tabs-strip-closable {
+    position:relative;
+}
+
+.oz-tabs-strip-closable .oz-tabs-left {
+    padding-right:19px;
+}
+
+.oz-tabs-strip .oz-tabs-strip-closable a.oz-tabs-strip-close {
+	background-image:url(images/tabs/tab-close.gif);
+    opacity:.6;
+    -moz-opacity:.6;
+    background-repeat:no-repeat;
+    display:block;
+	width:11px;height:11px;
+    position:absolute;
+    top:3px;
+    right:3px;
+    cursor:pointer;
+    z-index:2;
+}
+
+.oz-tabs-strip .oz-tabs-strip-active a.oz-tabs-strip-close {
+    opacity:.8;
+    -moz-opacity:.8;
+}
+.oz-tabs-strip .oz-tabs-strip-closable a.oz-tabs-strip-close:hover{
+	background-image:url(images/tabs/tab-close.gif);
+    opacity:1;
+    -moz-opacity:1;
+}
+
+.oz-tabs-body {
+    border: 1px solid #8db2e3;
+    background:#fff;
+}
+.oz-tabs-body-top {
+    border-top: 0 none;
+}
+.oz-tabs-body-bottom {
+    border-bottom: 0 none;
+}
+
+.oz-tabs-body-noborder{
+	border: 0px;
+}
+
+/**左右滚动的按钮**/
+.oz-tabs-scroller-left {
+    background: transparent url(images/tabs/scroll-left.gif) no-repeat -18px 0;
+    border-bottom: 1px solid #8db2e3;
+    width:18px;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:10;
+    cursor:pointer;
+    display: none;
+	height:24px;
+	
+}
+.oz-tabs-scroller-left-over {
+    background-position: 0 0;
+}
+.oz-tabs-scroller-left-disabled {
+    background-position: -18px 0;
+    opacity:.5;
+    -moz-opacity:.5;
+    filter:alpha(opacity=50);
+    cursor:default;
+}
+.oz-tabs-scroller-right {
+    background: transparent url(images/tabs/scroll-right.gif) no-repeat 0 0;
+    border-bottom: 1px solid #8db2e3;
+    width:18px;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index:10;
+    cursor:pointer;
+    display: none;
+	height:24px;
+}
+.oz-tabs-scroller-right-over {
+    background-position: -18px 0;
+}
+.oz-tabs-scroller-right-disabled {
+    background-position: 0 0;
+    opacity:.5;
+    -moz-opacity:.5;
+    filter:alpha(opacity=50);
+    cursor:default;
+}
+
+.oz-tabs-scrolling .oz-tabs-strip-wrap {
+    margin-left:18px;
+    margin-right:18px;
+}
+
+.oz-tabs-scrolling {
+    position:relative;    
+}
+
+.oz-tabs-scrolling .oz-tabs-scroller-left,.oz-tabs-scrolling .oz-tabs-scroller-right{
+	display: block;
+}
+
+.oz-tabs-overflow-auto{
+	overflow: auto;
+}
+
+.oz-tabs-overflow-hidden{
+	overflow: hidden;
+}
+
+.oz-tabs-overflow-scroll{
+	overflow: scroll;
+}
+
+/*test
+ul.oz-tabs-strip{
+	
+}
+
+ul.oz-tabs-strip li {
+    z-index: 10;
+    position:relative;
+    margin: 0px -10px 0px 0px;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-active {
+	z-index: 1000;
+}
+.oz-tabs-strip .oz-tabs-strip-close {
+    margin-right: 6px;
+}
+.oz-tabs-strip .oz-tabs-strip-inner{
+    margin-left: 6px;
+}
+
+.oz-tabs-strip-top .oz-tabs-right {
+	background: transparent url(images/tabs/tabs-sprite2.gif) no-repeat -12.5px -51px;
+    padding-left:10px;
+}
+
+.oz-tabs-strip-top .oz-tabs-left {
+	background: transparent url(images/tabs/tabs-sprite2.gif) no-repeat right -376px;
+    padding-right:10px;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-inner {
+	background: transparent url(images/tabs/tabs-sprite2.gif) repeat-x 0 -201px;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-over .oz-tabs-right {
+	 background-position:-12.5px -101px;
+}
+.oz-tabs-strip-top .oz-tabs-strip-over .oz-tabs-left {
+	 background-position:right -426px;
+}
+.oz-tabs-strip-top .oz-tabs-strip-over .oz-tabs-strip-inner {
+	 background-position:0 -251px;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-active .oz-tabs-right {
+	background-position: -12.5px 0;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-active .oz-tabs-left {
+	background-position: right -327px;
+}
+
+.oz-tabs-strip-top .oz-tabs-strip-active .oz-tabs-strip-inner {
+	background-position: 0 -151px;
+}
+*/

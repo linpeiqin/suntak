@@ -1,0 +1,358 @@
+/*
+ * 附件组件样式配置 
+ * 全称attachment，简称ATM
+ *
+ * @author dragon
+ * @date 2009-03-03
+ */
+.oz-atm-contaner-wrap{
+	width:100%;
+	height:100%;
+	border:1px solid #97BFDE;
+}
+/* 容器 */ 
+.oz-atm-contaner-table{
+	margin:0;
+	table-layout:fixed;
+	background-color:#F8FAFD;
+    border:solid 1px #97BFDE;
+}
+.oz-atm-contaner-table td{
+	padding: 0px;
+}
+/* 附件工具条tr */ 
+.oz-atm-tb-tr{
+	height:30px;
+	line-height:26px;
+    background-repeat:repeat-x;
+    background-image:url("images/attachment/toolbar_bg.gif");
+    vertical-align:middle;
+    overflow:hidden;
+}
+/* 附件工具条td */ 
+.oz-atm-tb-td{vertical-align:middle;}
+
+/* 附件标题 */ 
+.oz-atm-title{
+	cursor:default;
+	float:left; 
+	height:25px; 
+	line-height:25px;
+    vertical-align:middle;
+	margin-left:3px;
+	font-weight:bold;
+}
+
+/* 附件折叠 */ 
+.oz-atm-expand-area{
+	cursor:pointer;
+	float:left; 
+	height:16px; 
+	line-height:25px;
+    vertical-align:middle;
+	margin-left:3px;
+	width:16px;
+	margin-top:4px;
+}
+
+.oz-atm-expand-icon{
+	background-image: url(images/attachment/arrow_down.png);
+}
+.oz-atm-collapse-icon{
+	background-image: url(images/attachment/arrow_up.png);
+}
+
+/* 附件按钮 */ 
+.oz-atm-btn{
+	width:60px; 
+	height:21px;
+	cursor:default;
+	float:left; 
+	line-height:21px;
+    vertical-align:middle;
+	text-indent:27px;
+	margin-left:5px;
+	margin-top:1px;
+	background-repeat: no-repeat;
+	cursor:pointer;
+}
+
+/* 附件上传信息容器 */ 
+.oz-atm-info{
+	cursor:default;
+	float:left; 
+	height:25px; 
+	line-height:25px;
+    vertical-align:middle;
+	margin-left:3px;
+	font-style: italic;
+	font-weight: bold;
+	color: #0C4E7C;
+	padding-left:5px;
+	border:0px solid gray;
+}
+/* 总大小信息 */ 
+.oz-atm-progress-size{float:left;padding-right:5px;}
+/* 进度条容器 */ 
+.oz-atm-progress-box{
+	float:left;
+	width:100px;
+	height:16px;
+	_height:18px;
+	text-align:left;
+    vertical-align:middle;
+    margin-top:2px;
+	border:1px solid #6593CF;
+}
+/* 进度条百分比 */ 
+.oz-atm-progress-percent{
+	width:1px;height:100%;
+	background-repeat: repeat-x;
+	background-image: url(images/attachment/progress.png);
+}
+/* 取消 */ 
+.oz-atm-info .btn{
+	float:left;width:14px;	height:14px;
+	margin:4px 5px 0 2px;
+	background-repeat: no-repeat;
+	background-image: url(images/attachment/cancelbutton.gif);
+}
+.oz-atm-info .cancel{
+	background-position: 0 0;
+}
+.oz-atm-info .cancel-mouseOver{
+	background-position: -14px 0;
+}
+
+/* 附件列表 */ 
+.oz-atm-data-table{
+	margin:0;
+	padding:0;
+	table-layout:fixed;
+	width:100%;
+}
+
+/* 标题行 */ 
+.oz-atm-header-tr{
+	width:100%;
+	height:22px; 
+	line-height:20px;
+	background-repeat: repeat-x;
+	background-image: url(images/attachment/header_bg.gif);
+	background-position: bottom;
+	text-align:center;
+}
+
+/* 标题行：单元格 */ 
+.oz-atm-header-td{
+	cursor:default;
+	padding:2px;
+	vertical-align:middle;
+	border-right: 1px solid #CCCCCC;
+}
+/* 标题行：最后一列的单元格 */ 
+.oz-atm-header-td-end{
+	cursor:default;
+	padding:2px;
+	vertical-align:middle;
+	border-right: 1px solid #CCCCCC;
+}
+
+/* 数据行--奇数行 */ 
+.oz-atm-data-tr{
+	height:22px; 
+	line-height:22px;
+	background-color: #FFFFFF;
+}
+/* 数据行--偶数行 */ 
+.oz-atm-data-tr1{
+	height:22px; 
+	line-height:22px;
+	background-color: #F5F2F2;
+}
+
+/* 数据行：单元格 */
+.oz-atm-data-td{
+	cursor:default;
+	padding:2px;
+	vertical-align:middle;
+	border-bottom:1px solid #E2E1E1;
+	border-right: 1px solid #CCCCCC;
+}
+/* 数据行：最后一列的单元格 */ 
+.oz-atm-data-td-end{
+	cursor:default;
+	padding:2px;
+	vertical-align:middle;
+	border-bottom:1px solid #E2E1E1;
+	border-right: 0px solid #CCCCCC;
+}
+
+
+/* 上传按钮 */
+.uploadFlash{
+	text-indent:0;
+}
+
+.uploadATM{
+	background-image: url(images/attachment/btn-attachment.png);
+	background-position:0 0;
+}
+.uploadATM-mouseOver{
+	background-image: url(images/attachment/btn-attachment.png);
+	background-position:0 -21px;
+}
+
+/* 下载按钮 */
+.downloadATM{
+	background-image: url(images/attachment/btn-attachment.png);
+	background-position:-60px 0;
+}
+.downloadATM-mouseOver{
+	background-image: url(images/attachment/btn-attachment.png);
+	background-position:-60px -21px;
+}
+
+.downloadAllATM{
+	width:80px;
+	background-image: url(images/attachment/btn-attachment.png);
+	background-position:-180px 0;
+}
+.downloadAllATM-mouseOver{
+	width:80px;
+	background-image: url(images/attachment/btn-attachment.png);
+	background-position:-180px -21px;
+}
+
+/* 删除按钮 */
+.deleteATM{
+	background-image: url(images/attachment/btn-attachment.png);
+	background-position:-120px 0;
+}
+.deleteATM-mouseOver{
+	background-image: url(images/attachment/btn-attachment.png);
+	background-position:-120px -21px;
+}
+
+/* 文件属性 */
+.fileAttr{
+	width:80px;
+	height:21px;
+	background-image: url(images/attachment/btn-attachment.png);
+	background-position:-260px 0;
+}
+.fileAttr-mouseOver{
+	width:80px;
+	height:21px;
+	background-image: url(images/attachment/btn-attachment.png);
+	background-position:-260px -21px;
+}
+
+/* 文件保存 */
+.fileSave{
+	width:80px;
+	height:21px;
+	background-image: url(images/attachment/btn-attachment.png);
+	background-position:-340px 0;
+}
+.fileSave-mouseOver{
+	width:80px;
+	height:21px;
+	background-image: url(images/attachment/btn-attachment.png);
+	background-position:-340px -21px;
+}
+
+.addfile {cursor:pointer;}
+a.addfile{ 
+	background-image:url(images/attachment/attachment.gif); 
+	background-repeat:no-repeat; 
+	background-position:0px 0px; 
+	display:block; 
+	float:left; 
+	height:21px; 
+	margin-top:4px; 
+	position:relative; 
+	text-decoration:none; 
+	top:0pt; 
+	width:80px; 
+	z-index: 10;
+} 
+ 
+input.addfile{cursor:pointer!important; 
+	height:18px; 
+	left:-13px; 
+	*left:0px;
+	*right:13px; 
+	filter:alpha(opacity=0); 
+	opacity:0;
+	position:absolute; 
+	top:2px; 
+	width:0px; 
+	border:0px;
+	
+} 
+.subDiv{
+	width:100%;	
+	line-height:20px;
+	text-indent:3px;
+	padding-top:0px!important;
+	padding-top:3px;
+	word-wrap: break-word; word-break: break-all;
+	clear:both;
+}
+#container2 span{text-indent:2px;}
+.atmTop{
+	width:100%;
+	height:31px; 
+	background-color:#ECF4F9; 
+	border-bottom:1px solid #D6E6F0;
+	cursor: default;
+}
+.atmTop-left{
+	width:160px; height:31px; line-height:31px; text-indent:5px;  float:left;
+}
+.atmTop-right{
+	width:80px;height:31px; float:right;
+	cursor:pointer;
+}
+.atmMain{width:100%; height:89px;}
+.fileList-overflow{
+	width:100%; 
+	height:89px!important;
+	height:100%; 
+	overflow:auto;
+}
+.delFile-icon{ cursor:pointer;}
+/*文件类型图标*/
+.fileComm{
+	width:13px;
+	height:13px;
+	margin-top:2px;
+	margin-right:2px;
+	margin-left:2px;
+	background-image:url(images/attachment/fileicon.gif);
+	background-position:-2 -3px;
+	background-repeat:no-repeat;
+	float:left;
+}
+
+.file-htm{background-image:url(images/attachment/fileicon.gif);background-position:-2 -16px;}
+.file-html{background-image:url(images/attachment/fileicon.gif);background-position:-2 -17px;}
+.file-mdb{background-image:url(images/attachment/fileicon.gif);background-position:-2 -31px;}
+.file-doc{background-image:url(images/attachment/fileicon.gif);background-position:-2 -45px;}
+.file-ppt{background-image:url(images/attachment/fileicon.gif);background-position:-2 -59px;}
+.file-xls{background-image:url(images/attachment/fileicon.gif);background-position:-2 -73px;}
+.file-txt{background-image:url(images/attachment/fileicon.gif);background-position:-2 -87px;}
+.file-mp3{background-image:url(images/attachment/fileicon.gif);background-position:-2 -101px;}
+.file-zip{background-image:url(images/attachment/fileicon.gif);background-position:-2 -114px;}
+.file-rar{background-image:url(images/attachment/fileicon.gif);background-position:-2 -128px;}
+.file-swf{background-image:url(images/attachment/fileicon.gif);background-position:-2 -142px;}
+.file-exe{background-image:url(images/attachment/fileicon.gif);background-position:-2 -157px;}
+.file-gif{background-image:url(images/attachment/fileicon.gif);background-position:-2 -171;}
+.file-jpg{background-image:url(images/attachment/fileicon.gif);background-position:-2 -171;}
+.file-png{background-image:url(images/attachment/fileicon.gif);background-position:-2 -171;}
+.file-pdf{background-image:url(images/attachment/fileicon.gif);background-position:-2 -185;}
+.file-chm{background-image:url(images/attachment/fileicon.gif);background-position:-2 -199;}
+
+/*表单的附件加框*/
+.oz-atm-wrap{ width:100%; height:100%; border:1px solid #A4BEDA;}

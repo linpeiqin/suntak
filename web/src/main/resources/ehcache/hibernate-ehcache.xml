@@ -1,0 +1,17 @@
+<ehcache updateCheck="false">
+
+    <diskStore path="java.io.tmpdir/hibernate/axe-web"/>
+
+    <defaultCache
+		maxElementsInMemory="100000"
+		eternal="false"
+		overflowToDisk="true"
+        timeToIdleSeconds="3600"
+        timeToLiveSeconds="3600"
+        maxElementsOnDisk="10000000"
+        diskPersistent="false"
+        diskExpiryThreadIntervalSeconds="3600"
+        memoryStoreEvictionPolicy="LRU"
+	/>
+	
+</ehcache>

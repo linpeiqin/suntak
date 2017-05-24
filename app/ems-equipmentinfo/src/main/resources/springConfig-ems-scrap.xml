@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<bean id="scrapDao" class="cn.suntak.ems.scrap.dao.hibernate.ScrapDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="scrapService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.scrap.service.impl.ScrapServiceImpl">
+			</bean>
+		</property>
+	</bean>
+</beans>

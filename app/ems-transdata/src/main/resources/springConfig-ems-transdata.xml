@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+		"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	
+	<bean id="transDataDao" class="cn.suntak.ems.transdata.dao.hibernate.TransDataDaoImpl">
+	</bean>
+	<bean id="transDataService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="cn.suntak.ems.transdata.service.impl.TransDataServiceImpl">
+				<property name="transDataDao" ref="transDataDao"/>
+				<property name="configLocations">
+					<list>
+						<value>classpath*:/td/**/*.td.xml</value>
+					</list>
+				</property>
+			</bean>
+		</property>
+	</bean>
+</beans>

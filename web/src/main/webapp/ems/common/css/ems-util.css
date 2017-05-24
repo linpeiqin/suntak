@@ -1,0 +1,81 @@
+body{
+    font-family: "宋体", "Tahoma", "verdana", "arial", "helvetica", "sans-serif";
+    font-size: 14px;
+}
+.ems-form-main{
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.ems-form-content{
+    height: auto;
+    margin: auto;
+}
+.ems-form-head{
+    margin-top: 30px;
+}
+.ems-form-head img{
+    width: 60%;
+}
+.ems-form-title{
+    margin-top:30px;
+    font-family: 黑体;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.ems-form-title input {
+    width: 30px;
+    height: 30px;
+}
+
+.ems-form-table{
+    border:solid 3px black;
+    margin:auto;
+    width: 90%;
+}
+
+.ems-table-head{
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+.ems-form-table tr td{
+    border: solid 1px black;
+    padding: 5px;
+    text-align: center;
+}
+.ems-form-table-headtr td{
+    padding: 0px !important;
+}
+.ems-form-table td:nth-child(even){
+    text-align: left;
+}
+.ems-table-sub1{
+    width: 100%;
+    border: 0px;
+}
+.ems-table-sub1 tr td{
+    border: solid 1px black;
+    border-top: 0;
+    border-left: 0;
+}
+.ems-table-sub1-head td{
+    padding: 0px !important;
+}
+.ems-form-table textarea{
+    width: 100%;
+    line-height: 2.0;
+    height: 100%
+}
+.oz-form-field-select {
+    background-color: #D5D5D5;
+    border-bottom: 1px solid #B0D7F2;
+    border-right: 1px solid #B0D7F2;
+    border-left: 1px solid #2A72A3;
+    border-top: 1px solid #2A72A3;
+    color: #000066;
+    text-decoration: none;
+    padding-top: 2px;
+}
+

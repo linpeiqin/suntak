@@ -1,0 +1,200 @@
+.nav-menu {
+	border: solid #E6E6E6;
+	border-width: 0 0 1px 0;
+	overflow: hidden;
+	background-color: #FFFFFF;
+}
+
+.nav-menu dl dt {
+	position: relative;
+	margin-bottom: 1px;
+	height: 30px;
+	padding: 0 12px;
+	/*border: 0 solid #E6E6E6;*/
+/* 	border-width: 1px 0; */
+	background: url(images/nav_menu_bg.png) #B5DFFB repeat-x 0 0px;
+	font-weight: bold;
+	line-height: 30px;
+	cursor: pointer;
+}
+
+.nav-menu dl dt b {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 5px;
+	width: 19px;
+	height: 30px;
+	background: url(images/nav_menu_state.png) no-repeat 0 0px;
+}
+
+.nav-menu dl dt:hover {
+	background-position: 0 0;
+}
+
+.nav-menu dl dt:hover b {
+	background-position: 0 0px;
+}
+
+.nav-menu dl.close dt b {
+	background-position: 0 -30px;
+}
+
+.nav-menu dl.close dt:hover b {
+	background-position: 0 -30px;
+}
+
+.nav-menu dl.close .nav-menu-one,.nav-menu dl.close .nav-menu-two {
+	display: none;
+}
+
+.nav-menu-one {
+	padding: 4px 0 5px;
+	overflow: auto;
+	width: 200px;
+}
+
+.nav-menu-one .permission,.nav-menu-one .no-permission {
+	width: 90px;
+	display: block;
+	float: left;
+	text-align: left;
+	line-height: 23px;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.nav-menu-one.curr {
+	font-weight: bold;
+}
+.nav-menu-one .permission a,.nav-menu-one .no-permission a {
+	color: black;
+	display: block;
+	padding: 2px 2px;
+}
+.nav-menu-one .no-permission a {
+	color: #999999;
+}
+
+.nav-menu-one .permission a:hover {
+	background-color: #5D99CE;
+	color: white;
+}
+
+.nav-menu-one .permission abbr,.nav-menu-one .no-permission abbr{
+/*	font-weight: bolder; */
+	font-size:x-large;
+	color: #6EA1D6;
+	text-align:center;
+	width: 15px;
+	height: 20px;
+	display: inline-block;
+}
+
+
+
+.nav-menu-two {
+	/*border: solid #E6E6E6;*/
+	border-width: 0 0 1px 0;
+	overflow: hidden;
+	background-color: #FFFFFF;
+}
+
+.nav-menu-two dl dt {
+	position: relative;
+	margin-bottom: -1px;
+	height: 25px;
+	padding: 0 12px;
+	border: 0 solid #98C1F0;
+	border-width: 1px 0;
+	background: #FFFFFF;
+	font-weight: normal;
+	line-height: 25px;
+	cursor: pointer;
+}
+
+.nav-menu-two dl dt b {
+	display: block;
+	position: absolute;
+	top: 6px;
+	right: 5px;
+	width: 11px;
+	height: 11px;
+	background: url(images/nav_menu_state2.png) no-repeat 0 0px;
+}
+.nav-menu-two dl dd {
+	 background-color: #EEEEEF; 
+
+}
+.nav-menu-two dl dt:hover {
+	background-position: 0 0;
+}
+
+.nav-menu-two dl dt:hover b {
+	background-position: 0 0px;
+}
+
+.nav-menu-two dl.close dt b {
+	background-position: 0 -11px;
+}
+
+.nav-menu-two dl.close dt:hover b {
+	background-position: 0 -11px;
+}
+
+.nav-menu-two dl.close dd {
+	display: none;
+}
+
+.nav-menu-two dd {
+	padding: 0px;
+}
+
+.nav-menu-two dd .permission,.nav-menu-two dd .no-permission{
+	/*  一行显示一个
+	width: auto;
+	*/
+	width: 90px;
+	float: left;
+	
+	display: block;
+	text-align: left;
+	line-height: 23px;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+ background-color: #EEEEEF; 
+}
+
+.nav-menu-two dd .curr {
+	font-weight: bold;
+}
+
+.nav-menu-two dd .permission a,.nav-menu-two .no-permission a {
+	color: black;
+	display: block;
+	padding: 3px 0px 3px 3px;
+}
+.nav-menu-two .no-permission a {
+	color: #999999;
+}
+.nav-menu-two dd .permission abbr,.nav-menu-two dd .no-permission abbr{
+	/* font-weight: bolder;粗体时，有个别电脑显示异常
+	*/
+	font-size:x-large;
+	color: #6EA1D6;
+	text-align:center;
+	width: 15px;
+	height: 20px;
+	display: inline-block;
+}
+.nav-menu-two dd .permission a:hover {
+	background-color: #5D99CE;
+	color: white;
+}
+.nav-menu-two dd .permission a:hover abbr{
+	color: white;
+}

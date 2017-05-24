@@ -1,0 +1,20 @@
+.oz-config-icons li{
+	float:left;
+	height:45px;
+	width: 70px;
+	margin: 2px;
+}
+
+.oz-config-icons li>div{
+	margin-left:1px;
+	margin-top:1px;
+	text-align:center;
+	cursor: pointer;
+}
+
+.oz-config-icons li>div:hover{
+	margin-left:0px;
+	margin-top:0px;
+	font-weight: bold;
+	
+}
